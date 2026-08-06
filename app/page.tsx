@@ -116,13 +116,17 @@ export default function Home() {
 
           <div className="project-list">
             {projects.map((project, index) => (
-              <article className={`project-row project-row-${index + 1}`} key={project.slug}>
+              <article
+                className={`project-row project-row-${index + 1} project-image-${project.imageFit ?? "contain"}`}
+                key={project.slug}
+              >
                 <Link className="project-image" href={`/work/${project.slug}`}>
                   <Image
                     src={project.image}
                     alt={project.imageAlt}
                     fill
                     sizes="(max-width: 760px) 100vw, 54vw"
+                    style={{ objectPosition: project.imagePosition ?? "center" }}
                   />
                 </Link>
                 <div className="project-copy">

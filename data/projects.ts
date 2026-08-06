@@ -14,6 +14,8 @@ export type Project = {
   summary: string;
   image: string;
   imageAlt: string;
+  imageFit?: "cover" | "contain";
+  imagePosition?: string;
   role: string;
   scope: string;
   year: string;
@@ -106,6 +108,8 @@ export const projects: Project[] = [
       "Texas Aviation Partners had years of operational credibility, but its public presentation made a broad airport management and development company look smaller than the work itself.",
     image: "/images/tap-hay-windsock.jpg",
     imageAlt: "A hay bale beside an airport windsock beneath a wide sky",
+    imageFit: "cover",
+    imagePosition: "center 46%",
     role: "Brand strategist & creative lead",
     scope: "Positioning, writing, photography, website",
     year: "2026",
@@ -171,8 +175,10 @@ export const projects: Project[] = [
       "A father-and-son workshop shaped into a distinct product brand with its own language, visual code, model architecture, and commission path.",
     summary:
       "Wimberly Guitars makes small-run electric guitars from walnut, leather, steel, brass, oil, and wire. The brand needed to feel as considered as the instruments without pretending the workshop was a factory.",
-    image: "/images/wimberly-site.png",
-    imageAlt: "Wimberly Guitars homepage with the line Built for time, not trends",
+    image: "/images/wimberly-workshop-hero.avif",
+    imageAlt: "A Wimberly guitar resting on a wooden workbench in the workshop",
+    imageFit: "cover",
+    imagePosition: "center 52%",
     role: "Co-founder, writer & brand lead",
     scope: "Positioning, product language, website, launch",
     year: "2026",
