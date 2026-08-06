@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --paper: #f1efe8;
-  --paper-deep: #e5e1d7;
-  --ink: #151713;
-  --ink-soft: #55594f;
-  --line: #bdbbb2;
-  --signal: #f04b28;
-  --night: #172c24;
-  --night-soft: #d5ddd5;
-  --white: #faf9f5;
+  --paper: #f4efe6;
+  --paper-deep: #d8d0c3;
+  --ink: #0a0a0a;
+  --ink-soft: #5f5a52;
+  --line: #d8d0c3;
+  --signal: #8b1a1a;
+  --night: #0a0a0a;
+  --night-soft: #d8d0c3;
+  --white: #f4efe6;
   --max: 1500px;
 }
 
@@ -64,11 +64,11 @@ img {
 
 ::selection {
   background: var(--signal);
-  color: var(--ink);
+  color: var(--paper);
 }
 
 :focus-visible {
-  outline: 3px solid var(--signal);
+  outline: 3px solid currentColor;
   outline-offset: 5px;
 }
 
@@ -142,7 +142,7 @@ img {
 
 .nav-contact:hover {
   background: var(--signal);
-  color: var(--ink);
+  color: var(--paper);
 }
 
 .nav-contact-short {
@@ -252,7 +252,7 @@ img {
 
 .hero-visual figcaption {
   bottom: 22px;
-  color: white;
+  color: var(--paper);
   font-size: 0.64rem;
   font-weight: 700;
   left: 24px;
@@ -264,6 +264,7 @@ img {
 
 .practice-strip {
   background: var(--signal);
+  color: var(--paper);
   display: grid;
   font-size: clamp(0.65rem, 0.9vw, 0.82rem);
   font-weight: 800;
@@ -275,14 +276,14 @@ img {
 
 .practice-strip span {
   align-items: center;
-  border-right: 1px solid color-mix(in srgb, var(--ink) 35%, transparent);
+  border-right: 1px solid color-mix(in srgb, var(--paper) 35%, transparent);
   display: flex;
   min-height: 72px;
   padding: 0 24px;
 }
 
 .practice-strip span:first-child {
-  border-left: 1px solid color-mix(in srgb, var(--ink) 35%, transparent);
+  border-left: 1px solid color-mix(in srgb, var(--paper) 35%, transparent);
 }
 
 .section {
@@ -446,7 +447,7 @@ img {
 }
 
 .capability > p {
-  color: var(--signal);
+  color: var(--night-soft);
   font-size: 0.72rem;
   font-weight: 700;
   margin: 8px 0 0;
@@ -489,6 +490,11 @@ img {
   background: var(--paper-deep);
   padding-left: 18px;
   padding-right: 18px;
+}
+
+.writing-card:hover > p,
+.writing-card:hover span {
+  color: var(--ink);
 }
 
 .writing-card > p {
@@ -550,7 +556,7 @@ img {
 }
 
 .about-copy > p:not(.section-number) {
-  color: var(--ink-soft);
+  color: var(--ink);
   margin: 0 0 20px;
   max-width: 680px;
 }
@@ -568,6 +574,7 @@ img {
 .contact-section {
   align-items: flex-start;
   background: var(--signal);
+  color: var(--paper);
   display: flex;
   flex-direction: column;
   min-height: 560px;
@@ -584,7 +591,7 @@ img {
 }
 
 .contact-section > a {
-  border-bottom: 2px solid var(--ink);
+  border-bottom: 2px solid var(--paper);
   font-size: clamp(1.15rem, 2vw, 2rem);
   font-weight: 700;
   padding-bottom: 8px;
@@ -593,8 +600,8 @@ img {
 }
 
 .contact-section > a:hover {
-  border-color: var(--white);
-  color: var(--white);
+  border-color: var(--paper-deep);
+  color: var(--paper-deep);
 }
 
 .site-footer {
@@ -868,7 +875,7 @@ img {
 
 .artifact figcaption {
   border-top: 1px solid var(--line);
-  color: var(--ink-soft);
+  color: var(--ink);
   font-size: 0.8rem;
   margin-top: 14px;
   padding-top: 12px;
@@ -881,7 +888,7 @@ img {
 
 .case-theme-workshop .case-artifacts,
 .case-theme-studio .case-artifacts {
-  background: #e9e4da;
+  background: var(--paper-deep);
 }
 
 .case-outcome {
@@ -907,8 +914,8 @@ img {
 }
 
 .case-outcome a {
-  border-bottom: 1px solid var(--signal);
-  color: var(--signal);
+  border-bottom: 1px solid var(--night-soft);
+  color: var(--night-soft);
   display: inline-flex;
   font-size: 0.75rem;
   font-weight: 700;
@@ -921,6 +928,7 @@ img {
 
 .next-project {
   background: var(--signal);
+  color: var(--paper);
   padding: clamp(70px, 9vw, 130px) clamp(20px, 6vw, 90px);
 }
 
