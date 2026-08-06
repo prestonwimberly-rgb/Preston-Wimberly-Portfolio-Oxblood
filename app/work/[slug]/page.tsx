@@ -44,7 +44,7 @@ export default async function WorkPage({ params }: WorkPageProps) {
         </nav>
       </header>
 
-      <main className="case-study">
+      <main className={`case-study case-study-${project.slug}`}>
         <section className="case-hero">
           <p className="eyebrow">{project.kicker}</p>
           <h1>{project.headline}</h1>
