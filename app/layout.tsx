@@ -11,7 +11,7 @@ import "@fontsource/source-sans-3/latin-700.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bright-cobbler-8f540b.netlify.app"),
+  metadataBase: new URL("https://preston-wimberly-portfolio.netlify.app"),
   title: {
     default: "Preston Wimberly — Writer, Brand Builder & Website Maker",
     template: "%s — Preston Wimberly",
