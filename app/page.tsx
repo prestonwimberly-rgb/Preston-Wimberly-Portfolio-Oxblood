@@ -52,21 +52,25 @@ const writing = [
 export default function Home() {
   return (
     <>
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
       <header className="site-header">
         <Link className="wordmark" href="/" aria-label="Preston Wimberly, home">
           Preston Wimberly
         </Link>
         <nav className="site-nav" aria-label="Primary navigation">
           <a href="#work">Work</a>
-          <a href="#writing">Writing</a>
+          <a className="nav-secondary" href="#writing">Writing</a>
           <a href="#about">About</a>
           <a className="nav-contact" href="mailto:preston@prestonwimberly.com">
-            Start a project
+            <span className="nav-contact-long">Start a project</span>
+            <span className="nav-contact-short">Contact</span>
           </a>
         </nav>
       </header>
 
-      <main>
+      <main id="main-content">
         <section className="hero" aria-labelledby="hero-title">
           <div className="hero-copy">
             <p className="eyebrow">Writer · Brand builder · Website maker</p>
@@ -77,8 +81,8 @@ export default function Home() {
             </h1>
             <div className="hero-bottom">
               <p>
-                I help companies understand what makes them matter, then turn it
-                into language, design, and communications people can use.
+                I help complicated organizations understand what makes them matter,
+                then turn it into language, design, and digital experiences people can use.
               </p>
               <a className="text-link" href="#work">
                 See selected work <span aria-hidden="true">↓</span>
@@ -206,13 +210,19 @@ export default function Home() {
               specific story already inside the work and build the right system
               around it.
             </p>
+            <p>
+              I’ve led work across aviation, handcrafted products, publishing,
+              sales, and live production. The settings change; the practice stays
+              the same: understand the work, find the specific idea, and carry it
+              through words, images, systems, and the finished experience.
+            </p>
             <a className="text-link" href="mailto:preston@prestonwimberly.com">
               Talk about your project <span aria-hidden="true">↗</span>
             </a>
           </div>
         </section>
 
-        <section className="contact-section" aria-labelledby="contact-title">
+        <section className="contact-section" id="contact" aria-labelledby="contact-title">
           <p className="eyebrow">Have a complicated story?</p>
           <h2 id="contact-title">Let’s make it clear.</h2>
           <a href="mailto:preston@prestonwimberly.com">preston@prestonwimberly.com</a>

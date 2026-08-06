@@ -6,7 +6,7 @@
   --ink: #151713;
   --ink-soft: #55594f;
   --line: #bdbbb2;
-  --signal: #ff5b35;
+  --signal: #f04b28;
   --night: #172c24;
   --night-soft: #d5ddd5;
   --white: #faf9f5;
@@ -30,11 +30,32 @@ body {
   font-size: 16px;
   line-height: 1.55;
   text-rendering: optimizeLegibility;
+  overflow-x: clip;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.skip-link {
+  background: var(--ink);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 700;
+  left: 18px;
+  letter-spacing: 0.08em;
+  padding: 12px 16px;
+  position: fixed;
+  text-transform: uppercase;
+  top: 12px;
+  transform: translateY(-160%);
+  transition: transform 160ms ease;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
 }
 
 img {
@@ -80,7 +101,7 @@ img {
 .site-nav {
   align-items: center;
   display: flex;
-  font-size: 0.74rem;
+  font-size: 0.75rem;
   font-weight: 700;
   gap: clamp(18px, 2.6vw, 42px);
   letter-spacing: 0.1em;
@@ -124,6 +145,10 @@ img {
   color: var(--ink);
 }
 
+.nav-contact-short {
+  display: none;
+}
+
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(360px, 0.75fr);
@@ -146,7 +171,7 @@ img {
 .case-meta dt,
 .writing-card > p,
 .next-project > p {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   margin: 0;
@@ -309,7 +334,7 @@ img {
 }
 
 .project-image {
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 8 / 5;
   background: var(--night);
   display: block;
   overflow: hidden;
@@ -337,10 +362,6 @@ img {
 
 .project-image:hover::after {
   transform: scale(1);
-}
-
-.project-row-2 .project-image {
-  aspect-ratio: 4 / 3;
 }
 
 .project-copy {
@@ -568,6 +589,7 @@ img {
   font-weight: 700;
   padding-bottom: 8px;
   transition: color 180ms ease, border-color 180ms ease;
+  overflow-wrap: anywhere;
 }
 
 .contact-section > a:hover {
@@ -580,13 +602,19 @@ img {
   background: var(--ink);
   color: var(--white);
   display: grid;
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   font-weight: 700;
   grid-template-columns: repeat(3, 1fr);
   letter-spacing: 0.1em;
   min-height: 100px;
   padding: 20px clamp(20px, 4vw, 64px);
   text-transform: uppercase;
+}
+
+.site-footer a {
+  align-items: center;
+  display: inline-flex;
+  min-height: 44px;
 }
 
 .site-footer p {
@@ -615,7 +643,7 @@ img {
 
 .case-hero h1 {
   font-family: var(--font-serif), Georgia, serif;
-  font-size: clamp(4rem, 9vw, 10.5rem);
+  font-size: clamp(3.6rem, 7.2vw, 8.5rem);
   font-weight: 500;
   letter-spacing: -0.075em;
   line-height: 0.89;
@@ -657,7 +685,7 @@ img {
 }
 
 .case-image {
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 8 / 5;
   background: var(--night);
   margin: 0;
   overflow: hidden;
@@ -668,8 +696,35 @@ img {
   object-fit: contain !important;
 }
 
-.case-study-wimberly-guitars .case-image {
-  aspect-ratio: 4 / 3;
+.case-study-texas-aviation-partners .case-image {
+  aspect-ratio: 3 / 2;
+}
+
+.case-context {
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 0.8fr 0.8fr 1.4fr;
+  margin: 0 auto;
+  max-width: var(--max);
+  padding: 0 clamp(20px, 6vw, 90px);
+}
+
+.case-context > div {
+  border-right: 1px solid var(--line);
+  padding: 34px 36px 38px 0;
+}
+
+.case-context > div + div {
+  padding-left: 36px;
+}
+
+.case-context > div:last-child {
+  border-right: 0;
+}
+
+.case-context p:last-child {
+  color: var(--ink-soft);
+  margin: 14px 0 0;
 }
 
 .case-body {
@@ -746,7 +801,112 @@ img {
   padding-left: 22px;
 }
 
-.deliverables > a {
+.case-artifacts {
+  border-top: 1px solid var(--line);
+  margin: 0 auto;
+  max-width: var(--max);
+  padding: clamp(90px, 11vw, 170px) clamp(20px, 6vw, 90px);
+}
+
+.case-artifacts-heading {
+  display: grid;
+  gap: 60px;
+  grid-template-columns: minmax(160px, 0.4fr) minmax(0, 1fr);
+  margin-bottom: clamp(60px, 8vw, 120px);
+}
+
+.case-artifacts-heading h2,
+.case-outcome h2 {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(2.8rem, 5vw, 6rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 0.99;
+  margin: -0.15em 0 0;
+}
+
+.artifact-grid {
+  align-items: start;
+  display: grid;
+  gap: clamp(44px, 6vw, 90px) clamp(24px, 4vw, 60px);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.artifact {
+  margin: 0;
+}
+
+.artifact-landscape {
+  grid-column: span 9;
+}
+
+.artifact-portrait {
+  grid-column: span 3;
+}
+
+.artifact:nth-child(3) {
+  grid-column: 5 / span 8;
+}
+
+.artifact-image {
+  background: var(--night);
+  overflow: hidden;
+  position: relative;
+}
+
+.artifact-landscape .artifact-image {
+  aspect-ratio: 8 / 5;
+}
+
+.artifact-portrait .artifact-image {
+  aspect-ratio: 390 / 844;
+}
+
+.artifact-image img {
+  object-fit: contain !important;
+}
+
+.artifact figcaption {
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+  margin-top: 14px;
+  padding-top: 12px;
+}
+
+.case-theme-archive .case-artifacts,
+.case-theme-field .case-artifacts {
+  background: var(--paper-deep);
+}
+
+.case-theme-workshop .case-artifacts,
+.case-theme-studio .case-artifacts {
+  background: #e9e4da;
+}
+
+.case-outcome {
+  background: var(--night);
+  color: var(--white);
+  display: grid;
+  gap: 60px;
+  grid-template-columns: minmax(160px, 0.4fr) minmax(0, 1fr);
+  padding: clamp(90px, 11vw, 170px) clamp(20px, 6vw, 90px);
+}
+
+.case-outcome h2 {
+  color: var(--white);
+  margin-bottom: 48px;
+}
+
+.case-outcome > div > p {
+  color: var(--night-soft);
+  font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+  line-height: 1.7;
+  margin: 0 0 26px;
+  max-width: 850px;
+}
+
+.case-outcome a {
   border-bottom: 1px solid var(--signal);
   color: var(--signal);
   display: inline-flex;
@@ -754,6 +914,7 @@ img {
   font-weight: 700;
   gap: 30px;
   letter-spacing: 0.1em;
+  margin-top: 24px;
   min-height: 44px;
   text-transform: uppercase;
 }
@@ -794,18 +955,15 @@ img {
   }
 }
 
-.hero-copy > *,
-.case-hero > * {
+.hero-copy > * {
   animation: rise-in 500ms both;
 }
 
-.hero-copy > :nth-child(2),
-.case-hero > :nth-child(2) {
+.hero-copy > :nth-child(2) {
   animation-delay: 70ms;
 }
 
-.hero-copy > :nth-child(3),
-.case-hero > :nth-child(3) {
+.hero-copy > :nth-child(3) {
   animation-delay: 140ms;
 }
 
@@ -843,19 +1001,32 @@ img {
 
   .site-header {
     height: 66px;
-    padding: 0 18px;
+    padding: 0 10px;
   }
 
   .site-nav {
-    gap: 14px;
+    font-size: 0.75rem;
+    gap: 8px;
   }
 
-  .site-nav > a:not(.nav-contact) {
+  .site-nav > .nav-secondary {
     display: none;
   }
 
   .nav-contact {
-    padding: 0 14px;
+    padding: 0 10px;
+  }
+
+  .nav-contact-long {
+    display: none;
+  }
+
+  .nav-contact-short {
+    display: inline;
+  }
+
+  .wordmark {
+    font-size: 0.9rem;
   }
 
   .hero {
@@ -937,12 +1108,8 @@ img {
   }
 
   .project-image {
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 8 / 5;
     width: 100%;
-  }
-
-  .project-row-2 .project-image {
-    aspect-ratio: 4 / 3;
   }
 
   .project-copy h3 {
@@ -1016,12 +1183,22 @@ img {
   }
 
   .case-hero {
+    padding-bottom: 40px;
+    padding-top: 40px;
     padding-left: 18px;
     padding-right: 18px;
   }
 
   .case-hero h1 {
-    font-size: clamp(3.5rem, 16vw, 5.5rem);
+    font-size: clamp(2.65rem, 12vw, 3.8rem);
+    line-height: 0.94;
+    margin: 24px 0 26px;
+  }
+
+  .case-summary {
+    font-size: 0.98rem;
+    line-height: 1.45;
+    margin-bottom: 28px;
   }
 
   .case-meta {
@@ -1032,15 +1209,35 @@ img {
   .case-meta > div + div {
     border-bottom: 1px solid var(--line);
     border-right: 0;
-    padding: 18px 0;
+    padding: 12px 0;
+  }
+
+  .case-meta dt {
+    margin-bottom: 6px;
+  }
+
+  .case-meta dd {
+    font-size: 0.95rem;
   }
 
   .case-image {
+    aspect-ratio: 8 / 5;
+  }
+
+  .case-study-texas-aviation-partners .case-image {
     aspect-ratio: 3 / 2;
   }
 
-  .case-study-wimberly-guitars .case-image {
-    aspect-ratio: 4 / 3;
+  .case-context {
+    grid-template-columns: 1fr;
+    padding: 0 18px;
+  }
+
+  .case-context > div,
+  .case-context > div + div {
+    border-bottom: 1px solid var(--line);
+    border-right: 0;
+    padding: 26px 0;
   }
 
   .case-body {
@@ -1069,6 +1266,42 @@ img {
 
   .deliverables li:nth-child(even) {
     padding-left: 0;
+  }
+
+  .case-artifacts {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .case-artifacts-heading,
+  .case-outcome {
+    gap: 34px;
+    grid-template-columns: 1fr;
+  }
+
+  .case-artifacts-heading h2,
+  .case-outcome h2 {
+    font-size: clamp(2.65rem, 12vw, 4.4rem);
+  }
+
+  .artifact-grid {
+    gap: 56px;
+    grid-template-columns: 1fr;
+  }
+
+  .artifact-landscape,
+  .artifact-portrait,
+  .artifact:nth-child(3) {
+    grid-column: 1;
+  }
+
+  .artifact-portrait {
+    justify-self: center;
+    width: min(72vw, 330px);
+  }
+
+  .case-outcome {
+    padding: 90px 18px;
   }
 
   .next-project {
