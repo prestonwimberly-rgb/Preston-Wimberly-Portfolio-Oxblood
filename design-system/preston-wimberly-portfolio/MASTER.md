@@ -8,20 +8,22 @@ Contemporary editorial portfolio: confident, restrained, specific, and tactile. 
 
 | Role | Value |
 | --- | --- |
-| Paper | `#F1EFE8` |
-| Deep paper | `#E5E1D7` |
-| Ink | `#151713` |
-| Soft ink | `#55594F` |
-| Forest | `#172C24` |
-| Signal | `#FF5B35` |
+| Paper | `#F4EFE6` |
+| Deep paper | `#D8D0C3` |
+| Ink | `#0A0A0A` |
+| Soft ink | `#5F5A52` |
+| Oxblood | `#8B1A1A` |
 
-Use signal orange for emphasis and conversion moments. Use forest for a single strong inverted section. Avoid gradients, shadows, rounded cards, and generic corporate blue.
+Use oxblood for emphasis and conversion moments, always paired with warm ivory rather than black. Use ink for inverted sections. Avoid gradients, shadows, rounded cards, and generic corporate blue.
 
 ## Typography
 
-- Display: Playfair Display, medium weight, tight letter spacing.
-- Body and interface: DM Sans.
-- Labels: DM Sans, bold uppercase, wide letter spacing.
+- Display: Grifo and Grifinito. Until licensed webfont files are supplied, use Bodoni Moda as the embedded high-contrast serif fallback.
+- Body and editorial leads: Chronicle. Until licensed webfont files are supplied, use Source Serif 4 as the embedded editorial fallback.
+- Interface, navigation, and labels: Ringside and Verlag. Until licensed webfont files are supplied, use Source Sans 3 as the embedded sans-serif fallback.
+- Wordmark: Pistilli Roman, with Bodoni Moda as the embedded fallback to preserve high contrast and ball-terminal character.
+- Display: 400 weight with tight letter spacing; italic is reserved for deliberate emphasis.
+- Labels: 600–700, uppercase, with wide letter spacing.
 - Body copy stays at 16px or larger with at least 1.5 line-height.
 
 ## Layout
@@ -36,7 +38,7 @@ Use signal orange for emphasis and conversion moments. Use forest for a single s
 
 - Touch targets are at least 44px.
 - Hover transitions run 150–300ms and do not shift layout.
-- Keyboard focus uses a visible orange outline.
+- Keyboard focus uses a visible current-color outline.
 - Respect `prefers-reduced-motion`.
 
 ## Avoid
