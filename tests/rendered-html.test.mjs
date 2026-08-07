@@ -31,6 +31,8 @@ test("server-renders the finished portfolio", async () => {
   assert.match(html, /Writer, Brand Builder &amp; Website Maker/);
   assert.match(html, /Clear words/);
   assert.match(html, /organizations with complex work/);
+  assert.match(html, /Photograph by Preston Wimberly · San Marcos Regional Airport, Texas/);
+  assert.match(html, /original photography, image direction/);
   assert.match(html, /The Wild Feathers/);
   assert.match(html, /Texas Aviation Partners/);
   assert.match(html, /Wimberly Guitars/);
@@ -63,6 +65,9 @@ test("server-renders all four project case studies", async () => {
     assert.match(html, liveLink);
     assert.match(html, /<picture class="responsive-picture">/);
     assert.match(html, new RegExp(`/social/${path.split("/").pop()}\\.jpg`));
+    if (path === "/work/texas-aviation-partners") {
+      assert.match(html, /Photograph by Preston Wimberly/);
+    }
   }
 });
 

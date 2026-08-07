@@ -291,6 +291,8 @@ img {
   font-weight: 700;
   left: 24px;
   letter-spacing: 0.12em;
+  line-height: 1.4;
+  max-width: calc(100% - 48px);
   position: absolute;
   text-transform: uppercase;
   z-index: 2;
@@ -788,6 +790,21 @@ img {
 
 .case-image img {
   object-fit: contain !important;
+}
+
+.case-image figcaption {
+  background: color-mix(in srgb, var(--ink) 84%, transparent);
+  bottom: 18px;
+  color: var(--paper);
+  font-family: var(--font-interface);
+  font-size: 0.7rem;
+  font-weight: 700;
+  left: var(--case-gutter);
+  letter-spacing: 0.11em;
+  padding: 9px 12px;
+  position: absolute;
+  text-transform: uppercase;
+  z-index: 2;
 }
 
 .case-study-texas-aviation-partners .case-image {
@@ -1329,6 +1346,11 @@ img {
 
   .case-image {
     aspect-ratio: 8 / 5;
+  }
+
+  .case-image figcaption {
+    bottom: 12px;
+    left: 12px;
   }
 
   .case-study-texas-aviation-partners .case-image {

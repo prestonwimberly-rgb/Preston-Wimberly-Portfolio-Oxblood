@@ -114,6 +114,9 @@ export default async function WorkPage({ params }: WorkPageProps) {
             sizes="100vw"
             style={{ objectPosition: project.imagePosition ?? "center" }}
           />
+          {project.imageCredit ? (
+            <figcaption>{project.imageCredit}</figcaption>
+          ) : null}
         </figure>
 
         <section className="case-context" aria-label="Project context">

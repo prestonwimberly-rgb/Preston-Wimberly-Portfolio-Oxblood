@@ -21,7 +21,7 @@ const capabilities = [
   {
     number: "04",
     title: "Communicate",
-    text: "Marketing plans, public information, stakeholder communications, photography, and campaigns grounded in what the organization does best.",
+    text: "Marketing plans, public information, stakeholder communications, original photography, image direction, and campaigns grounded in what the organization does best.",
   },
 ];
 
@@ -96,7 +96,9 @@ export default function Home() {
               priority
               sizes="(max-width: 900px) 100vw, 43vw"
             />
-            <figcaption>San Marcos Regional Airport · Texas</figcaption>
+            <figcaption>
+              Photograph by Preston Wimberly · San Marcos Regional Airport, Texas
+            </figcaption>
           </figure>
         </section>
 
