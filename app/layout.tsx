@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: siteConfig.title,
     description:
-      "Clear words, useful websites, and brands with a point of view.",
+      "Brand strategy, communications, editorial systems, and websites for organizations with complex work.",
     type: "website",
     url: "/",
     siteName: siteConfig.name,
@@ -43,14 +43,14 @@ export const metadata: Metadata = {
         url: "/social/home.jpg",
         width: 1200,
         height: 630,
-        alt: "Preston Wimberly, writer, brand builder, and website maker",
+        alt: "Preston Wimberly, brand strategist, communications lead, and website maker",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.title,
-    description: "Clear words, useful websites, and brands with a point of view.",
+    description: "Brand strategy, communications, editorial systems, and websites for organizations with complex work.",
     images: ["/social/home.jpg"],
   },
 };

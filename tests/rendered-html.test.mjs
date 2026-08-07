@@ -28,10 +28,12 @@ test("server-renders the finished portfolio", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /Writer, Brand Builder &amp; Website Maker/);
+  assert.match(html, /Brand Strategy, Communications &amp; Web/);
   assert.match(html, /Clear words/);
   assert.match(html, /organizations with complex work/);
   assert.match(html, /Photograph by Preston Wimberly · San Marcos Regional Airport, Texas/);
+  assert.match(html, /Selected work index/);
+  assert.match(html, /Aviation, instruments, music history, and the web/);
   assert.match(html, /original photography, image direction/);
   assert.match(html, /The Wild Feathers/);
   assert.match(html, /Texas Aviation Partners/);
@@ -62,6 +64,8 @@ test("server-renders all four project case studies", async () => {
     assert.match(html, /Observable change/);
     assert.match(html, /Engagement/);
     assert.match(html, /Status/);
+    assert.match(html, /Place/);
+    assert.match(html, /Working principle/);
     assert.match(html, liveLink);
     assert.match(html, /<picture class="responsive-picture">/);
     assert.match(html, new RegExp(`/social/${path.split("/").pop()}\\.jpg`));

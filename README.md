@@ -1,9 +1,9 @@
 # Preston Wimberly portfolio
 
-The working portfolio for Preston Wimberly: writer, brand builder, and website
-maker. The site is designed to win brand-strategy, editorial, communications,
-creative-direction, and website engagements without losing its restrained,
-evidence-led character.
+The working portfolio for Preston Wimberly: brand strategist, communications
+lead, editor, and website maker. The site presents evidence-led work across
+aviation, product, music history, and independent practice without losing its
+restrained editorial character.
 
 Production currently lives at
 [`preston-wimberly-portfolio.netlify.app`](https://preston-wimberly-portfolio.netlify.app/).

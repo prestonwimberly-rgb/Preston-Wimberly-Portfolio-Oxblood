@@ -48,8 +48,9 @@ test("core portfolio color pairings meet WCAG AA", () => {
 test("the reference-led system keeps its restrained design tokens", () => {
   assert.match(css, /--space-base:\s*8px/);
   assert.match(css, /--motion-standard:\s*200ms ease/);
-  assert.match(css, /\.practice-strip\s*\{[^}]*background:\s*var\(--paper\)/s);
-  assert.match(css, /\.practice-strip span::before\s*\{[^}]*background:\s*var\(--signal\)/s);
+  assert.match(css, /\.project-index-rail\s*\{[^}]*background:\s*var\(--paper\)/s);
+  assert.match(css, /\.project-index-rail a::before\s*\{[^}]*background:\s*var\(--signal\)/s);
   assert.doesNotMatch(css, /border-radius:\s*(?!0)/);
   assert.doesNotMatch(css, /box-shadow:/);
+  assert.doesNotMatch(css, /backdrop-filter:/);
 });

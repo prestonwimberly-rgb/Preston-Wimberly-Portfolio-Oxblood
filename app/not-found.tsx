@@ -19,7 +19,7 @@ export default function NotFound() {
         <nav className="site-nav" aria-label="Page not found navigation">
           <Link href="/#work">Work</Link>
           <a className="nav-contact" href="mailto:preston@prestonwimberly.com">
-            <span className="nav-contact-long">Start a project</span>
+            <span className="nav-contact-long">Get in touch</span>
             <span className="nav-contact-short">Contact</span>
           </a>
         </nav>
@@ -37,7 +37,7 @@ export default function NotFound() {
       </main>
       <footer className="site-footer">
         <p>Preston Wimberly</p>
-        <p>Writer · Brand builder · Website maker</p>
+        <p>Brand strategy · Communications · Editorial · Web</p>
         <a href="mailto:preston@prestonwimberly.com">Email Preston</a>
       </footer>
     </>

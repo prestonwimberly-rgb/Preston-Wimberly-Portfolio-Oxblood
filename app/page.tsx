@@ -64,7 +64,7 @@ export default function Home() {
           <a className="nav-secondary" href="#writing">Writing</a>
           <a className="nav-narrow-secondary" href="#about">About</a>
           <a className="nav-contact" href="mailto:preston@prestonwimberly.com">
-            <span className="nav-contact-long">Start a project</span>
+            <span className="nav-contact-long">Get in touch</span>
             <span className="nav-contact-short">Contact</span>
           </a>
         </nav>
@@ -73,7 +73,7 @@ export default function Home() {
       <main id="main-content">
         <section className="hero" aria-labelledby="hero-title">
           <div className="hero-copy">
-            <p className="eyebrow">Writer · Brand builder · Website maker</p>
+            <p className="eyebrow">Brand strategy · Communications · Editorial · Web</p>
             <h1 id="hero-title">
               Clear words.<br />
               Useful websites.<br />
@@ -81,11 +81,11 @@ export default function Home() {
             </h1>
             <div className="hero-bottom">
               <p>
-                I help organizations with complex work turn it into a clear position,
-                useful language, and a website people can act on.
+                I turn complex work into a clear position, useful language, and
+                digital experiences people can act on.
               </p>
               <a className="text-link" href="#work">
-                See selected work <span aria-hidden="true">↓</span>
+                Read the work <span aria-hidden="true">↓</span>
               </a>
             </div>
           </div>
@@ -102,17 +102,19 @@ export default function Home() {
           </figure>
         </section>
 
-        <div className="practice-strip" aria-label="Core services">
-          <span>Brand strategy</span>
-          <span>Editorial</span>
-          <span>Web design & build</span>
-          <span>Marketing communications</span>
-        </div>
+        <nav className="project-index-rail" aria-label="Selected work index">
+          {projects.map((project, index) => (
+            <Link href={`/work/${project.slug}`} key={project.slug}>
+              <span>0{index + 1}</span>
+              {project.title}
+            </Link>
+          ))}
+        </nav>
 
         <section className="section work-section" id="work" aria-labelledby="work-title">
           <div className="section-heading">
             <p className="section-number">01 / Selected work</p>
-            <h2 id="work-title">A strategy is only useful when people can see it.</h2>
+            <h2 id="work-title">Aviation, instruments, music history, and the web.</h2>
           </div>
 
           <div className="project-list">
@@ -136,6 +138,20 @@ export default function Home() {
                     <Link href={`/work/${project.slug}`}>{project.title}</Link>
                   </h3>
                   <p>{project.cardSummary}</p>
+                  <dl className="project-meta">
+                    <div>
+                      <dt>Role</dt>
+                      <dd>{project.role}</dd>
+                    </div>
+                    <div>
+                      <dt>Place</dt>
+                      <dd>{project.place}</dd>
+                    </div>
+                    <div>
+                      <dt>Year</dt>
+                      <dd>{project.year}</dd>
+                    </div>
+                  </dl>
                   <Link className="text-link" href={`/work/${project.slug}`}>
                     Read the case study <span aria-hidden="true">↗</span>
                   </Link>
@@ -147,8 +163,8 @@ export default function Home() {
 
         <section className="capabilities" aria-labelledby="capabilities-title">
           <div className="capabilities-intro">
-            <p className="section-number inverse">02 / What I do</p>
-            <h2 id="capabilities-title">One partner from position to finished page.</h2>
+            <p className="section-number inverse">02 / Working method</p>
+            <h2 id="capabilities-title">One connected practice from research to finished page.</h2>
             <p>
               Positioning, writing, design, and build stay connected, so the central
               idea survives from the first decision to the finished experience.
@@ -219,17 +235,17 @@ export default function Home() {
               through words, images, systems, and the finished experience.
             </p>
             <a className="text-link" href="mailto:preston@prestonwimberly.com">
-              Talk about your project <span aria-hidden="true">↗</span>
+              Get in touch <span aria-hidden="true">↗</span>
             </a>
           </div>
         </section>
 
         <section className="contact-section" id="contact" aria-labelledby="contact-title">
-          <p className="eyebrow">Have complex work to explain?</p>
-          <h2 id="contact-title">Let’s make it clear.</h2>
+          <p className="eyebrow">Roles, collaborations, and selected projects</p>
+          <h2 id="contact-title">Get in touch.</h2>
           <p className="contact-fit">
-            Brand position, editorial systems, websites, and communications for
-            organizations with complex work.
+            Based between San Marcos, Texas, and Salt Lake City, Utah. Brand,
+            communications, editorial, and web work.
           </p>
           <a href="mailto:preston@prestonwimberly.com">preston@prestonwimberly.com</a>
         </section>
@@ -237,7 +253,7 @@ export default function Home() {
 
       <footer className="site-footer">
         <p>© 2026 Preston Wimberly</p>
-        <p>Writer · Brand builder · Website maker</p>
+        <p>Brand strategy · Communications · Editorial · Web</p>
         <a href="#hero-title">Back to top ↑</a>
       </footer>
     </>

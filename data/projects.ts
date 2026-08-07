@@ -2,6 +2,7 @@ export type ProjectArtifact = {
   src: string;
   alt: string;
   caption: string;
+  credit?: string;
   format: "landscape" | "portrait";
 };
 
@@ -20,6 +21,7 @@ export type Project = {
   role: string;
   scope: string;
   year: string;
+  place: string;
   engagementType: string;
   status: string;
   ownership: string;
@@ -56,6 +58,7 @@ const projectRecords: Project[] = [
     role: "Archive editor, writer & site builder",
     scope: "Research, architecture, writing, design, build",
     year: "2025–2026",
+    place: "Nashville, Tennessee",
     engagementType: "Independent editorial archive",
     status: "Private working archive",
     ownership:
@@ -93,13 +96,15 @@ const projectRecords: Project[] = [
       {
         src: "/images/wild-feathers-site.jpg",
         alt: "Desktop view of The Wild Feathers archive homepage",
-        caption: "The current desktop opening connects music, story, and the living archive.",
+        caption: "Desktop opening of the private working archive.",
+        credit: "Archive design and screenshot by Preston Wimberly",
         format: "landscape",
       },
       {
         src: "/images/wild-feathers-mobile.jpg",
         alt: "Mobile view of The Wild Feathers archive homepage",
-        caption: "The same editorial hierarchy carried into a narrow mobile viewport.",
+        caption: "Working archive homepage at a 375-pixel mobile viewport.",
+        credit: "Archive design and screenshot by Preston Wimberly",
         format: "portrait",
       },
     ],
@@ -128,6 +133,7 @@ const projectRecords: Project[] = [
     role: "Brand strategist & creative lead",
     scope: "Positioning, writing, photography, website",
     year: "2026",
+    place: "San Marcos, Texas",
     engagementType: "Client engagement",
     status: "Live",
     ownership:
@@ -164,19 +170,22 @@ const projectRecords: Project[] = [
       {
         src: "/images/tap-projects-site.jpg",
         alt: "Texas Aviation Partners projects page on desktop",
-        caption: "The project system connects airport work to the company’s larger position.",
+        caption: "Desktop projects index organized around the company’s airport work.",
+        credit: "Website design and screenshot by Preston Wimberly",
         format: "landscape",
       },
       {
         src: "/images/tap-mobile.jpg",
         alt: "Texas Aviation Partners homepage on mobile",
-        caption: "The live site at a narrow mobile viewport.",
+        caption: "Texas Aviation Partners homepage at a 375-pixel mobile viewport.",
+        credit: "Website design and screenshot by Preston Wimberly",
         format: "portrait",
       },
       {
         src: "/images/tap-surveyor.jpg",
         alt: "A surveyor working on an airport runway under large clouds",
-        caption: "Original field photography makes the physical work visible.",
+        caption: "A surveyor works on the runway at San Marcos Regional Airport.",
+        credit: "Photograph by Preston Wimberly",
         format: "landscape",
       },
     ],
@@ -204,6 +213,7 @@ const projectRecords: Project[] = [
     role: "Co-founder, writer & brand lead",
     scope: "Positioning, product language, website, launch",
     year: "2026",
+    place: "Texas",
     engagementType: "Co-founded venture",
     status: "Live",
     ownership:
@@ -240,19 +250,22 @@ const projectRecords: Project[] = [
       {
         src: "/images/wimberly-site.jpg",
         alt: "Desktop view of the Wimberly Guitars homepage",
-        caption: "The opening position comes directly from the workshop’s pace and materials.",
+        caption: "Desktop opening centered on the Jack and the workshop’s material language.",
+        credit: "Website design and screenshot by Preston Wimberly",
         format: "landscape",
       },
       {
         src: "/images/wimberly-mobile.jpg",
         alt: "Mobile view of the Wimberly Guitars homepage",
-        caption: "The commission path remains visible without crowding the product story.",
+        caption: "Wimberly Guitars homepage at a narrow mobile viewport.",
+        credit: "Website design and screenshot by Preston Wimberly",
         format: "portrait",
       },
       {
         src: "/images/wimberly-reference.avif",
         alt: "A walnut and blued-steel material reference",
-        caption: "Walnut, blued steel, and honest wear supplied the visual vocabulary.",
+        caption: "Walnut and blued steel define the workshop’s material palette.",
+        credit: "Photograph by Preston Wimberly",
         format: "landscape",
       },
     ],
@@ -278,6 +291,7 @@ const projectRecords: Project[] = [
     role: "Writer, strategist, designer & builder",
     scope: "Positioning, copy, service design, website",
     year: "2026",
+    place: "San Marcos, Texas · Salt Lake City, Utah",
     engagementType: "Self-directed practice",
     status: "Live",
     ownership:
@@ -313,13 +327,15 @@ const projectRecords: Project[] = [
       {
         src: "/images/preston-session-site.jpg",
         alt: "Desktop view of prestonwimberly.com",
-        caption: "Position, proof, and inquiry share one opening view.",
+        caption: "Desktop opening with work samples, services, and inquiry in one sequence.",
+        credit: "Website design and screenshot by Preston Wimberly",
         format: "landscape",
       },
       {
         src: "/images/preston-session-mobile.jpg",
         alt: "Mobile view of prestonwimberly.com",
-        caption: "The mobile version keeps the work and primary action close together.",
+        caption: "Session-musician homepage at a 375-pixel mobile viewport.",
+        credit: "Website design and screenshot by Preston Wimberly",
         format: "portrait",
       },
     ],

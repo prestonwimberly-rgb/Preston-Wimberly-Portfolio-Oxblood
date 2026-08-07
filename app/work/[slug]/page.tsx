@@ -68,7 +68,7 @@ export default async function WorkPage({ params }: WorkPageProps) {
           <Link href="/#work">Work</Link>
           <Link className="nav-narrow-secondary" href="/#about">About</Link>
           <a className="nav-contact" href="mailto:preston@prestonwimberly.com">
-            <span className="nav-contact-long">Start a project</span>
+            <span className="nav-contact-long">Get in touch</span>
             <span className="nav-contact-short">Contact</span>
           </a>
         </nav>
@@ -98,6 +98,10 @@ export default async function WorkPage({ params }: WorkPageProps) {
             <div>
               <dt>Year</dt>
               <dd>{project.year}</dd>
+            </div>
+            <div>
+              <dt>Place</dt>
+              <dd>{project.place}</dd>
             </div>
             <div>
               <dt>Status</dt>
@@ -145,9 +149,10 @@ export default async function WorkPage({ params }: WorkPageProps) {
             </div>
           </div>
 
-          <div className="case-pullquote">
+          <aside className="case-principle" aria-label="Working principle">
+            <p className="section-number">Working principle</p>
             <p>{project.closing}</p>
-          </div>
+          </aside>
 
           <div className="case-section">
             <p className="section-number">02 / The decision</p>
@@ -188,7 +193,10 @@ export default async function WorkPage({ params }: WorkPageProps) {
                     sizes={artifact.format === "portrait" ? "(max-width: 760px) 72vw, 28vw" : "(max-width: 760px) 100vw, 70vw"}
                   />
                 </div>
-                <figcaption>{artifact.caption}</figcaption>
+                <figcaption>
+                  {artifact.caption}
+                  {artifact.credit ? <span>{artifact.credit}</span> : null}
+                </figcaption>
               </figure>
             ))}
           </div>
@@ -223,7 +231,7 @@ export default async function WorkPage({ params }: WorkPageProps) {
       <footer className="site-footer">
         <p>© 2026 Preston Wimberly</p>
         <Link href="/">Home</Link>
-        <a href="mailto:preston@prestonwimberly.com">Start a conversation ↗</a>
+        <a href="mailto:preston@prestonwimberly.com">Get in touch ↗</a>
       </footer>
     </>
   );
