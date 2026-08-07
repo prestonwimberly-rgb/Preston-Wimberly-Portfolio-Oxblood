@@ -7,11 +7,12 @@
   },
   "scripts": {
     "dev": "vinext dev",
-    "build": "vinext build",
+    "build": "node scripts/optimize-images.mjs && vinext build",
     "build:netlify": "npm run build && node scripts/export-netlify.mjs",
     "start": "vinext start",
     "test": "npm run build:netlify && node --test tests/*.test.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
+    "quality": "npm run lint && npm test && npm audit --omit=dev",
     "db:generate": "drizzle-kit generate"
   },
   "dependencies": {
@@ -39,6 +40,7 @@
     "eslint-plugin-react-hooks": "7.1.1",
     "globals": "16.4.0",
     "react-server-dom-webpack": "19.2.6",
+    "sharp": "0.34.5",
     "tailwindcss": "4.2.1",
     "typescript": "5.9.3",
     "typescript-eslint": "8.59.3",

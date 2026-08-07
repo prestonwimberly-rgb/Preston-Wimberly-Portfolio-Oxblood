@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ResponsiveImage } from "@/components/responsive-image";
 import { getProject, projects } from "@/data/projects";
+import { siteConfig } from "@/lib/site";
 
 type WorkPageProps = { params: Promise<{ slug: string }> };
 
@@ -14,9 +15,35 @@ export async function generateMetadata({ params }: WorkPageProps): Promise<Metad
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) return {};
+  const canonicalPath = `/work/${project.slug}/`;
+  const socialTitle = `${project.title} — Preston Wimberly`;
   return {
     title: project.title,
     description: project.cardSummary,
+    alternates: {
+      canonical: canonicalPath,
+    },
+    openGraph: {
+      title: socialTitle,
+      description: project.cardSummary,
+      type: "article",
+      url: canonicalPath,
+      siteName: siteConfig.name,
+      images: [
+        {
+          url: `/social/${project.slug}.jpg`,
+          width: 1200,
+          height: 630,
+          alt: `${project.title} case study by Preston Wimberly`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: socialTitle,
+      description: project.cardSummary,
+      images: [`/social/${project.slug}.jpg`],
+    },
   };
 }
 
@@ -39,7 +66,7 @@ export default async function WorkPage({ params }: WorkPageProps) {
         </Link>
         <nav className="site-nav" aria-label="Case study navigation">
           <Link href="/#work">Work</Link>
-          <Link href="/#about">About</Link>
+          <Link className="nav-narrow-secondary" href="/#about">About</Link>
           <a className="nav-contact" href="mailto:preston@prestonwimberly.com">
             <span className="nav-contact-long">Start a project</span>
             <span className="nav-contact-short">Contact</span>
@@ -57,6 +84,10 @@ export default async function WorkPage({ params }: WorkPageProps) {
           <p className="case-summary">{project.summary}</p>
           <dl className="case-meta">
             <div>
+              <dt>Engagement</dt>
+              <dd>{project.engagementType}</dd>
+            </div>
+            <div>
               <dt>Role</dt>
               <dd>{project.role}</dd>
             </div>
@@ -68,21 +99,31 @@ export default async function WorkPage({ params }: WorkPageProps) {
               <dt>Year</dt>
               <dd>{project.year}</dd>
             </div>
+            <div>
+              <dt>Status</dt>
+              <dd>{project.status}</dd>
+            </div>
           </dl>
         </section>
 
         <figure className="case-image">
-          <Image src={project.image} alt={project.imageAlt} fill priority sizes="100vw" />
+          <ResponsiveImage
+            src={project.image}
+            alt={project.imageAlt}
+            priority
+            sizes="100vw"
+            style={{ objectPosition: project.imagePosition ?? "center" }}
+          />
         </figure>
 
         <section className="case-context" aria-label="Project context">
           <div>
             <p className="section-number">My ownership</p>
-            <p>{project.role}. My work covered {project.scope.toLowerCase()}.</p>
+            <p>{project.ownership}</p>
           </div>
           <div>
             <p className="section-number">Collaboration</p>
-            <p>{project.collaborators}.</p>
+            <p>{project.collaboration}.</p>
           </div>
           <div>
             <p className="section-number">Constraint</p>
@@ -138,10 +179,9 @@ export default async function WorkPage({ params }: WorkPageProps) {
                 key={artifact.src}
               >
                 <div className="artifact-image">
-                  <Image
+                  <ResponsiveImage
                     src={artifact.src}
                     alt={artifact.alt}
-                    fill
                     sizes={artifact.format === "portrait" ? "(max-width: 760px) 72vw, 28vw" : "(max-width: 760px) 100vw, 70vw"}
                   />
                 </div>
@@ -158,16 +198,21 @@ export default async function WorkPage({ params }: WorkPageProps) {
             {project.outcome.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
-            <a href={project.liveUrl} target="_blank" rel="noreferrer">
-              {project.liveLabel} <span aria-hidden="true">↗</span>
-            </a>
+            {project.liveUrl && project.liveLabel ? (
+              <a href={project.liveUrl} target="_blank" rel="noreferrer">
+                {project.liveLabel} <span aria-hidden="true">↗</span>
+              </a>
+            ) : project.accessNote ? (
+              <p className="case-access-note">{project.accessNote}</p>
+            ) : null}
           </div>
         </section>
 
         <section className="next-project">
           <p>Next case study</p>
           <Link href={`/work/${nextProject.slug}`}>
-            {nextProject.title} <span aria-hidden="true">→</span>
+            <span className="next-project-title">{nextProject.title}</span>
+            <span className="next-project-arrow" aria-hidden="true">→</span>
           </Link>
         </section>
       </main>

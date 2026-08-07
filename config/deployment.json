@@ -1,0 +1,3 @@
+{
+  "nonIndexableContexts": ["deploy-preview", "branch-deploy"]
+}

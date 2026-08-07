@@ -1,11 +1,24 @@
-import { cp, mkdir, rm, writeFile } from "node:fs/promises";
+import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
+import { isIndexableContext } from "../lib/deployment.mjs";
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const projectDirectory = path.resolve(scriptDirectory, "..");
 const clientDirectory = path.join(projectDirectory, "dist", "client");
 const outputDirectory = path.join(projectDirectory, "netlify-dist");
+const siteConfig = JSON.parse(
+  await readFile(path.join(projectDirectory, "config", "site.json"), "utf8"),
+);
+const deploymentConfig = JSON.parse(
+  await readFile(path.join(projectDirectory, "config", "deployment.json"), "utf8"),
+);
+const siteOrigin = (process.env.SITE_URL ?? siteConfig.defaultOrigin).replace(/\/$/, "");
+const deploymentContext = process.env.CONTEXT ?? "local";
+const isIndexable = isIndexableContext(
+  deploymentContext,
+  deploymentConfig.nonIndexableContexts,
+);
 const workerUrl = pathToFileURL(
   path.join(projectDirectory, "dist", "server", "index.js"),
 );
@@ -15,8 +28,8 @@ const { default: worker } = await import(workerUrl.href);
 
 const routes = [
   "/",
-  "/work/wild-feathers",
   "/work/texas-aviation-partners",
+  "/work/wild-feathers",
   "/work/wimberly-guitars",
   "/work/preston-session-site",
 ];
@@ -38,9 +51,9 @@ function stripRuntime(html) {
     );
 }
 
-async function render(route) {
+async function render(route, expectedStatus = 200) {
   const response = await worker.fetch(
-    new Request(`https://preston-wimberly-portfolio.netlify.app${route}`, {
+    new Request(`${siteOrigin}${route}`, {
       headers: { accept: "text/html" },
     }),
     makeEnvironment(),
@@ -50,7 +63,7 @@ async function render(route) {
     },
   );
 
-  if (response.status !== 200) {
+  if (response.status !== expectedStatus) {
     throw new Error(`Static render failed for ${route}: ${response.status}`);
   }
 
@@ -74,9 +87,31 @@ for (const route of routes) {
   await writeFile(path.join(targetDirectory, "index.html"), await render(route));
 }
 
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${routes
+  .map((route) => {
+    const canonicalUrl = route === "/" ? siteOrigin : `${siteOrigin}${route}/`;
+    return `  <url><loc>${canonicalUrl}</loc></url>`;
+  })
+  .join("\n")}
+</urlset>
+`;
+
+await writeFile(path.join(outputDirectory, "sitemap.xml"), sitemap);
+await writeFile(
+  path.join(outputDirectory, "robots.txt"),
+  isIndexable
+    ? `User-agent: *\nAllow: /\n\nSitemap: ${siteOrigin}/sitemap.xml\n`
+    : "User-agent: *\nDisallow: /\n",
+);
+
 await writeFile(
   path.join(outputDirectory, "404.html"),
-  `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Page not found — Preston Wimberly</title><style>body{margin:0;background:#f4efe6;color:#0a0a0a;font-family:Georgia,serif;display:grid;min-height:100vh;place-items:center;text-align:center}main{padding:2rem}a{color:#8b1a1a}</style></head><body><main><p>404</p><h1>That page is not here.</h1><p><a href="/">Return to the portfolio</a></p></main></body></html>`,
+  (await render("/__portfolio-not-found__", 404)).replace(
+    /<link rel="canonical"[^>]*>/i,
+    "",
+  ),
 );
 
 console.log(`Exported ${routes.length} routes to ${outputDirectory}`);
