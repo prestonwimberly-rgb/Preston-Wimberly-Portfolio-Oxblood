@@ -24,6 +24,29 @@
   --font-body: "Chronicle Text G1", "Chronicle Text", "Source Serif 4", Georgia, serif;
   --font-interface: "Ringside Regular A", "Ringside Regular B", "Ringside", "Verlag", "Source Sans 3", Arial, sans-serif;
   --font-wordmark: "Pistilli Roman", "Bodoni Moda", Didot, serif;
+
+  /* North Star semantic contract; preserve the existing Oxblood system. */
+  --color-paper: var(--paper);
+  --color-paper-deep: var(--paper-deep);
+  --color-ink: var(--ink);
+  --color-muted: var(--ink-soft);
+  --color-rule: var(--line);
+  --color-cool: var(--night);
+  --color-accent: var(--signal);
+  --font-metadata: var(--font-interface);
+  --text-xs: 0.72rem;
+  --text-sm: 0.86rem;
+  --text-body: clamp(1.05rem, 0.98rem + 0.25vw, 1.22rem);
+  --text-deck: clamp(1.2rem, 1.05rem + 0.7vw, 1.65rem);
+  --text-h2: clamp(2rem, 1.45rem + 2.2vw, 4.1rem);
+  --text-display: clamp(3.2rem, 1.8rem + 6vw, 8.5rem);
+  --space-1: var(--space-base);
+  --space-5: 40px;
+  --space-7: 56px;
+  --space-9: 72px;
+  --measure-reading: 46rem;
+  --radius-detail: 2px;
+  --motion-fast: var(--motion-standard);
 }
 
 * {
@@ -37,8 +60,8 @@ html {
 
 body {
   margin: 0;
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--color-paper);
+  color: var(--color-ink);
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.6;
