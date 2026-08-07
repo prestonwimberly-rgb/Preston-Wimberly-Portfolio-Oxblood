@@ -9,34 +9,49 @@ import "@fontsource/source-sans-3/latin-400.css";
 import "@fontsource/source-sans-3/latin-600.css";
 import "@fontsource/source-sans-3/latin-700.css";
 import "./globals.css";
+import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://preston-wimberly-portfolio.netlify.app"),
+  metadataBase: new URL(siteConfig.origin),
   title: {
-    default: "Preston Wimberly — Writer, Brand Builder & Website Maker",
+    default: siteConfig.title,
     template: "%s — Preston Wimberly",
   },
-  description:
-    "Writing, brand strategy, websites, marketing, and communications for organizations with a complicated story to tell.",
+  description: siteConfig.description,
+  alternates: {
+    canonical: `${siteConfig.origin}/`,
+  },
+  robots: siteConfig.isIndexable
+    ? { index: true, follow: true }
+    : { index: false, follow: false, noarchive: true },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "64x64" },
+    ],
+    shortcut: "/favicon.ico",
+  },
   openGraph: {
-    title: "Preston Wimberly — Writer, Brand Builder & Website Maker",
+    title: siteConfig.title,
     description:
       "Clear words, useful websites, and brands with a point of view.",
     type: "website",
+    url: "/",
+    siteName: siteConfig.name,
     images: [
       {
-        url: "/og.png",
-        width: 1536,
-        height: 1024,
+        url: "/social/home.jpg",
+        width: 1200,
+        height: 630,
         alt: "Preston Wimberly, writer, brand builder, and website maker",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Preston Wimberly — Writer, Brand Builder & Website Maker",
+    title: siteConfig.title,
     description: "Clear words, useful websites, and brands with a point of view.",
-    images: ["/og.png"],
+    images: ["/social/home.jpg"],
   },
 };
 

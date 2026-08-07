@@ -1,100 +1,64 @@
-# vinext-starter
+# Preston Wimberly portfolio
 
-A clean full-stack starter running on
-[vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and
-Drizzle support.
+The working portfolio for Preston Wimberly: writer, brand builder, and website
+maker. The site is designed to win brand-strategy, editorial, communications,
+creative-direction, and website engagements without losing its restrained,
+evidence-led character.
 
-## Prerequisites
+Production currently lives at
+[`preston-wimberly-portfolio.netlify.app`](https://preston-wimberly-portfolio.netlify.app/).
+The separate session-musician site remains at
+[`prestonwimberly.com`](https://prestonwimberly.com/).
 
-- Node.js `>=22.13.0`
+## Local development
 
-## Quick Start
+Use Node.js 22.13 or later.
 
 ```bash
-npm install
+npm ci
 npm run dev
-npm run build
 ```
 
-This starter does not use `wrangler.jsonc`.
+The complete local quality gate is:
 
-## Included Shape
-
-- edit site code under `app/`
-- `.openai/hosting.json` declares optional Sites D1 and R2 bindings
-- `vite.config.ts` simulates declared bindings for local development
-- `db/schema.ts` starts intentionally empty
-- `examples/d1/` contains an optional D1 example surface
-- `drizzle.config.ts` supports local migration generation when needed
-
-## Workspace Auth Headers
-
-Signed-in visitors receive both `oai-authenticated-user-id` and `oai-authenticated-user-email`. Private Sites require every visitor to sign in; public Sites may also have anonymous visitors, for whom neither header is present.
-
-The user ID is stable for the same user on the same Site and different across Sites. Email and name are intended for display or contact purposes.
-
-SIWC-authenticated workspace sites may also receive
-`oai-authenticated-user-full-name` when the user's SIWC profile has a non-empty
-`name` claim. The full-name value is percent-encoded UTF-8 and is accompanied by
-`oai-authenticated-user-full-name-encoding: percent-encoded-utf-8`.
-
-Treat the full name as optional and fall back to email when it is absent:
-
-```tsx
-import { headers } from "next/headers";
-
-export default async function Home() {
-  const requestHeaders = await headers();
-  const userId = requestHeaders.get("oai-authenticated-user-id");
-  const email = requestHeaders.get("oai-authenticated-user-email");
-  const encodedFullName = requestHeaders.get("oai-authenticated-user-full-name");
-  const fullName =
-    encodedFullName &&
-    requestHeaders.get("oai-authenticated-user-full-name-encoding") ===
-      "percent-encoded-utf-8"
-      ? decodeURIComponent(encodedFullName)
-      : null;
-
-  const displayName = fullName ?? email;
-  // ...
-}
+```bash
+npm run quality
 ```
 
-## Optional Dispatch-Owned ChatGPT Sign-In
+This lints the source, generates responsive images and social cards, builds and
+exports the static site, runs the rendering and asset tests, and audits
+production dependencies.
 
-Import the ready-to-use helpers from `app/chatgpt-auth.ts` when the site needs
-optional or required ChatGPT sign-in:
+## Build and deployment
 
-- Use `getChatGPTUser()` for optional signed-in UI.
-- Use `requireChatGPTUser(returnTo)` for server-rendered pages that should send
-  anonymous visitors through Sign in with ChatGPT.
-- Use `chatGPTSignInPath(returnTo)` and `chatGPTSignOutPath(returnTo)` for
-  browser links or actions.
-- Pass a same-origin relative `returnTo` path for the destination after sign-in
-  or sign-out. The helper validates and safely encodes it.
-- Mark protected pages with `export const dynamic = "force-dynamic"` because
-  they depend on per-request identity headers.
+Netlify runs `npm run build:netlify` and publishes `netlify-dist/`, as declared
+in `netlify.toml`. The export contains five public routes, a branded `404.html`,
+`robots.txt`, `sitemap.xml`, generated social cards, and responsive AVIF/WebP
+assets. No application JavaScript is required in the exported pages.
 
-Dispatch owns `/signin-with-chatgpt`, `/signout-with-chatgpt`, `/callback`, the
-OAuth cookies, and identity header injection. Do not implement app routes for
-those reserved paths. Routes that do not import and call the helper remain
-anonymous-compatible.
+`SITE_URL` controls the canonical origin. Copy `.env.example` for local testing;
+keep its default Netlify origin until a custom portfolio subdomain is approved
+and connected. Netlify preview and branch-deploy contexts automatically emit
+`noindex` metadata and a fully disallowing robots file.
 
-SIWC establishes identity only; it does not prove workspace membership. Use the
-Sites hosting platform's access policy controls for workspace-wide restrictions,
-or enforce explicit server-side membership or allowlist checks.
+Generated assets live in `public/optimized/` and `public/social/`. They are not
+committed; `npm run build` recreates them from `config/images.json` and
+`config/social-cards.json`.
 
-Use SIWC for account pages, user-specific dashboards, saved records, and write
-actions tied to the current ChatGPT user. Leave public content anonymous.
+## Project structure
 
-## Useful Commands
+- `app/` — homepage, case-study route, metadata, 404, and global styles
+- `components/` — responsive image markup
+- `config/` — site, deployment, image, and social-card configuration
+- `data/projects.ts` — the four case-study records and internal verification notes
+- `docs/design-direction.md` — visual-system rationale and guardrails
+- `docs/launch-checklist.md` — domain, content-verification, QA, and release checklist
+- `scripts/` — image generation and static Netlify export
+- `tests/` — build, HTML, accessibility-token, asset, and deployment checks
+- `.github/workflows/quality.yml` — pull-request and main-branch quality workflow
 
-- `npm run dev`: start local development
-- `npm run build`: verify the vinext build output
-- `npm test`: build the starter and verify its rendered loading skeleton
-- `npm run db:generate`: generate Drizzle migrations after schema changes
+## Publishing guardrails
 
-## Learn More
-
-- [vinext Documentation](https://github.com/cloudflare/vinext)
-- [Drizzle D1 Guide](https://orm.drizzle.team/docs/get-started/d1-new)
+Do not publish, change domains or DNS, archive a repository, or promote a deploy
+without Preston’s explicit approval. Resolve the fact and rights checks listed in
+`docs/launch-checklist.md` before treating the revised portfolio as launch-ready.

@@ -19,9 +19,13 @@ export type Project = {
   role: string;
   scope: string;
   year: string;
-  liveUrl: string;
-  liveLabel: string;
-  collaborators: string;
+  engagementType: string;
+  status: string;
+  ownership: string;
+  collaboration: string;
+  liveUrl?: string;
+  liveLabel?: string;
+  accessNote?: string;
   constraint: string;
   challengeTitle: string;
   challenge: string[];
@@ -33,9 +37,10 @@ export type Project = {
   artifacts: ProjectArtifact[];
   closing: string;
   theme: "archive" | "field" | "workshop" | "studio";
+  verificationNotes?: string[];
 };
 
-export const projects: Project[] = [
+const projectRecords: Project[] = [
   {
     slug: "wild-feathers",
     title: "The Wild Feathers",
@@ -45,15 +50,19 @@ export const projects: Project[] = [
       "An evidence-first music archive that connects songs, shows, photographs, and firsthand history without flattening them into promotion.",
     summary:
       "The Wild Feathers had a long public history scattered across tour records, photographs, releases, interviews, and personal memory. The assignment was to build a useful record while keeping provenance, rights, and uncertainty visible.",
-    image: "/images/wild-feathers-site.png",
+    image: "/images/wild-feathers-site.jpg",
     imageAlt: "The Wild Feathers working archive homepage",
     role: "Archive editor, writer & site builder",
     scope: "Research, architecture, writing, design, build",
     year: "2025–2026",
-    liveUrl: "https://wildfeathers.netlify.app/",
-    liveLabel: "View the working archive",
-    collaborators:
-      "Band history, credited source material, and documented rights records",
+    engagementType: "Independent editorial archive",
+    status: "Private working archive",
+    ownership:
+      "I defined the archive model, researched and structured the records, wrote the narrative, designed the editorial system, and built the site.",
+    collaboration:
+      "Source-led independent work using credited band history and documented rights records",
+    accessNote:
+      "Public link withheld while image rights and fact-checking remain open.",
     constraint:
       "The working archive is not cleared for a public launch while image rights and fact-checking remain open.",
     challengeTitle: "History was abundant. Evidence was uneven.",
@@ -81,13 +90,13 @@ export const projects: Project[] = [
     ],
     artifacts: [
       {
-        src: "/images/wild-feathers-site.png",
+        src: "/images/wild-feathers-site.jpg",
         alt: "Desktop view of The Wild Feathers archive homepage",
         caption: "The current desktop opening connects music, story, and the living archive.",
         format: "landscape",
       },
       {
-        src: "/images/wild-feathers-mobile.png",
+        src: "/images/wild-feathers-mobile.jpg",
         alt: "Mobile view of The Wild Feathers archive homepage",
         caption: "The same editorial hierarchy carried into a narrow mobile viewport.",
         format: "portrait",
@@ -96,6 +105,10 @@ export const projects: Project[] = [
     closing:
       "The central idea is simple: memory becomes useful when the evidence stays attached.",
     theme: "archive",
+    verificationNotes: [
+      "Confirm the counts for performances, canonical photographs, chapters, and archive collections.",
+      "Confirm the rights and fact-checking status before restoring any public archive link.",
+    ],
   },
   {
     slug: "texas-aviation-partners",
@@ -113,10 +126,14 @@ export const projects: Project[] = [
     role: "Brand strategist & creative lead",
     scope: "Positioning, writing, photography, website",
     year: "2026",
+    engagementType: "Client engagement",
+    status: "Live",
+    ownership:
+      "I led the position, message architecture, website narrative, original photography, design direction, and front-end build.",
+    collaboration:
+      "Developed with company leadership, airport teams, and public-sector stakeholders",
     liveUrl: "https://texasaviationpartners.com/",
     liveLabel: "Visit Texas Aviation Partners",
-    collaborators:
-      "Company leadership, airport teams, and public-sector stakeholders",
     constraint:
       "The new position had to show greater range without overstating the company or losing the practical credibility behind it.",
     challengeTitle: "The company had outgrown its own description.",
@@ -140,17 +157,16 @@ export const projects: Project[] = [
     outcomeTitle: "A broader business became easier to understand.",
     outcome: [
       "The finished site gives prospective partners direct routes into services, projects, leadership, news, and conversation. The editorial structure also gives the company a durable place to explain development work as it happens.",
-      "The change is observable in the first impression: the company now appears as a Texas aviation operator and development partner, not the manager of a single field.",
     ],
     artifacts: [
       {
-        src: "/images/tap-projects-site.png",
+        src: "/images/tap-projects-site.jpg",
         alt: "Texas Aviation Partners projects page on desktop",
         caption: "The project system connects airport work to the company’s larger position.",
         format: "landscape",
       },
       {
-        src: "/images/tap-mobile.png",
+        src: "/images/tap-mobile.jpg",
         alt: "Texas Aviation Partners homepage on mobile",
         caption: "The live site at a narrow mobile viewport.",
         format: "portrait",
@@ -165,6 +181,10 @@ export const projects: Project[] = [
     closing:
       "The finished system gives the company language equal to the work: practical, experienced, and specific.",
     theme: "field",
+    verificationNotes: [
+      "Confirm Preston’s decision authority and the description of stakeholder collaboration.",
+      "Add verified post-launch business or communications evidence if it becomes available.",
+    ],
   },
   {
     slug: "wimberly-guitars",
@@ -182,9 +202,14 @@ export const projects: Project[] = [
     role: "Co-founder, writer & brand lead",
     scope: "Positioning, product language, website, launch",
     year: "2026",
+    engagementType: "Co-founded venture",
+    status: "Live",
+    ownership:
+      "As co-founder and brand lead, I set the position and voice, structured the product story, and designed and built the website and commission journey.",
+    collaboration:
+      "Developed with the workshop’s co-founder around the instruments, materials, and build process",
     liveUrl: "https://wimberlycustomguitars.com/",
     liveLabel: "Visit Wimberly Guitars",
-    collaborators: "Built with the workshop’s co-founder",
     constraint:
       "The market is crowded with vintage cues and generic craft claims, while the workshop builds slowly and only in small runs.",
     challengeTitle: "A handmade object needs more than handmade language.",
@@ -205,20 +230,19 @@ export const projects: Project[] = [
       "Commission and waitlist journey",
       "Build journal and launch structure",
     ],
-    outcomeTitle: "A workshop now has a recognizable front door.",
+    outcomeTitle: "The workshop now has a clear commission path.",
     outcome: [
-      "The live site introduces the workshop through its materials, gives the Jack and Lucio room to feel distinct, and leads an interested player toward a commission or build waitlist.",
-      "The finished brand behaves like the product: it values patience, lets detail do the persuading, and leaves room for each instrument to gather its own history.",
+      "The live site organizes the instruments by model and material, explains the small-run process, and leads an interested player toward a commission or build waitlist.",
     ],
     artifacts: [
       {
-        src: "/images/wimberly-site.png",
+        src: "/images/wimberly-site.jpg",
         alt: "Desktop view of the Wimberly Guitars homepage",
         caption: "The opening position comes directly from the workshop’s pace and materials.",
         format: "landscape",
       },
       {
-        src: "/images/wimberly-mobile.png",
+        src: "/images/wimberly-mobile.jpg",
         alt: "Mobile view of the Wimberly Guitars homepage",
         caption: "The commission path remains visible without crowding the product story.",
         format: "portrait",
@@ -233,6 +257,10 @@ export const projects: Project[] = [
     closing:
       "The brand looks and sounds like the instruments: spare, tactile, regional, and built for time.",
     theme: "workshop",
+    verificationNotes: [
+      "Confirm the co-founder relationship and whether the public offer should be described as commissions, a waitlist, or commerce.",
+      "Replace the current low-resolution mobile artifact before launch.",
+    ],
   },
   {
     slug: "preston-session-site",
@@ -243,14 +271,18 @@ export const projects: Project[] = [
       "A focused session-musician website that connects two decades of studio and touring experience to a clear way to hear the work and start a project.",
     summary:
       "A working musician can have a long résumé and still leave a producer unsure what to do next. This site had to make the offer, taste, process, and booking path immediately understandable.",
-    image: "/images/preston-session-site.png",
+    image: "/images/preston-session-site.jpg",
     imageAlt: "prestonwimberly.com homepage with a musician playing guitar",
     role: "Writer, strategist, designer & builder",
     scope: "Positioning, copy, service design, website",
     year: "2026",
+    engagementType: "Self-directed practice",
+    status: "Live",
+    ownership:
+      "I defined the offer, wrote the positioning and service language, designed the experience, and built the site.",
+    collaboration: "Independent work for my own session practice",
     liveUrl: "https://prestonwimberly.com/",
     liveLabel: "Visit prestonwimberly.com",
-    collaborators: "Independent build for my own session practice",
     constraint:
       "The site needed to show breadth across guitar, pedal steel, bass, studio, television, and touring without reading like a career inventory.",
     challengeTitle: "Experience was not the same as an offer.",
@@ -271,20 +303,19 @@ export const projects: Project[] = [
       "Audio and work-sample presentation",
       "Inquiry and booking path",
     ],
-    outcomeTitle: "The range now resolves into a clear next step.",
+    outcomeTitle: "The offer, proof, and inquiry path now live in one place.",
     outcome: [
       "The finished site gives artists and producers an immediate route to hear the work, understand the available instruments and process, and begin an inquiry.",
-      "It keeps the proof close to the promise while leaving the deeper career history available for people who want it.",
     ],
     artifacts: [
       {
-        src: "/images/preston-session-site.png",
+        src: "/images/preston-session-site.jpg",
         alt: "Desktop view of prestonwimberly.com",
         caption: "Position, proof, and inquiry share one opening view.",
         format: "landscape",
       },
       {
-        src: "/images/preston-session-mobile.png",
+        src: "/images/preston-session-mobile.jpg",
         alt: "Mobile view of prestonwimberly.com",
         caption: "The mobile version keeps the work and primary action close together.",
         format: "portrait",
@@ -293,8 +324,25 @@ export const projects: Project[] = [
     closing:
       "The site does not try to explain every performance. It makes the next recording easier to begin.",
     theme: "studio",
+    verificationNotes: [
+      "Confirm the two-decades claim and the listed instrument and service breadth.",
+      "Add verified inquiry or booking evidence only if it becomes available.",
+    ],
   },
 ];
+
+const featuredProjectOrder = [
+  "texas-aviation-partners",
+  "wild-feathers",
+  "wimberly-guitars",
+  "preston-session-site",
+];
+
+export const projects = featuredProjectOrder.map((slug) => {
+  const project = projectRecords.find((item) => item.slug === slug);
+  if (!project) throw new Error(`Missing portfolio project: ${slug}`);
+  return project;
+});
 
 export function getProject(slug: string) {
   return projects.find((project) => project.slug === slug);

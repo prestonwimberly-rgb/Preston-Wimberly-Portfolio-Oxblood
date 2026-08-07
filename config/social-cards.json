@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "home",
+    "source": "/images/tap-tractor.jpg",
+    "eyebrow": "WRITER · BRAND BUILDER · WEBSITE MAKER",
+    "title": ["Clear words.", "Useful websites.", "Brands with a", "point of view."]
+  },
+  {
+    "slug": "texas-aviation-partners",
+    "source": "/images/tap-hay-windsock.jpg",
+    "eyebrow": "TEXAS AVIATION PARTNERS · CASE STUDY",
+    "title": ["Making the real scale", "of an aviation company", "visible."]
+  },
+  {
+    "slug": "wild-feathers",
+    "source": "/images/wild-feathers-site.jpg",
+    "eyebrow": "THE WILD FEATHERS · CASE STUDY",
+    "title": ["Turning sixteen years", "of a band into a story", "people can enter."]
+  },
+  {
+    "slug": "wimberly-guitars",
+    "source": "/images/wimberly-workshop-hero.avif",
+    "eyebrow": "WIMBERLY GUITARS · CASE STUDY",
+    "title": ["Building a guitar brand", "from the materials up."]
+  },
+  {
+    "slug": "preston-session-site",
+    "source": "/images/preston-session-site.jpg",
+    "eyebrow": "PRESTONWIMBERLY.COM · CASE STUDY",
+    "title": ["Turning a musician’s", "range into one direct", "invitation."]
+  }
+]

@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { ResponsiveImage } from "@/components/responsive-image";
 import { projects } from "@/data/projects";
 
 const capabilities = [
@@ -62,7 +62,7 @@ export default function Home() {
         <nav className="site-nav" aria-label="Primary navigation">
           <a href="#work">Work</a>
           <a className="nav-secondary" href="#writing">Writing</a>
-          <a href="#about">About</a>
+          <a className="nav-narrow-secondary" href="#about">About</a>
           <a className="nav-contact" href="mailto:preston@prestonwimberly.com">
             <span className="nav-contact-long">Start a project</span>
             <span className="nav-contact-short">Contact</span>
@@ -81,8 +81,8 @@ export default function Home() {
             </h1>
             <div className="hero-bottom">
               <p>
-                I help complicated organizations understand what makes them matter,
-                then turn it into language, design, and digital experiences people can use.
+                I help organizations with complex work turn it into a clear position,
+                useful language, and a website people can act on.
               </p>
               <a className="text-link" href="#work">
                 See selected work <span aria-hidden="true">↓</span>
@@ -90,10 +90,9 @@ export default function Home() {
             </div>
           </div>
           <figure className="hero-visual">
-            <Image
+            <ResponsiveImage
               src="/images/tap-tractor.jpg"
               alt="A tractor crossing a runway beneath large Texas clouds"
-              fill
               priority
               sizes="(max-width: 900px) 100vw, 43vw"
             />
@@ -121,10 +120,9 @@ export default function Home() {
                 key={project.slug}
               >
                 <Link className="project-image" href={`/work/${project.slug}`}>
-                  <Image
+                  <ResponsiveImage
                     src={project.image}
                     alt={project.imageAlt}
-                    fill
                     sizes="(max-width: 760px) 100vw, 54vw"
                     style={{ objectPosition: project.imagePosition ?? "center" }}
                   />
@@ -148,11 +146,10 @@ export default function Home() {
         <section className="capabilities" aria-labelledby="capabilities-title">
           <div className="capabilities-intro">
             <p className="section-number inverse">02 / What I do</p>
-            <h2 id="capabilities-title">One partner from first thought to finished page.</h2>
+            <h2 id="capabilities-title">One partner from position to finished page.</h2>
             <p>
-              The strategy, writing, design, and build stay connected. That means
-              fewer handoffs, a stronger voice, and a finished product that still
-              feels like the original idea.
+              Positioning, writing, design, and build stay connected, so the central
+              idea survives from the first decision to the finished experience.
             </p>
           </div>
           <div className="capability-grid">
@@ -168,7 +165,7 @@ export default function Home() {
 
         <section className="section writing-section" id="writing" aria-labelledby="writing-title">
           <div className="section-heading compact-heading">
-            <p className="section-number">03 / Selected writing</p>
+            <p className="section-number">03 / Writing & editorial work</p>
             <h2 id="writing-title">Reporting gives the language something to stand on.</h2>
           </div>
           <div className="writing-list">
@@ -194,10 +191,9 @@ export default function Home() {
 
         <section className="about-section" id="about" aria-labelledby="about-title">
           <figure>
-            <Image
+            <ResponsiveImage
               src="/images/tap-surveyor.jpg"
               alt="A surveyor working on a runway beneath large clouds"
-              fill
               sizes="(max-width: 760px) 100vw, 46vw"
             />
           </figure>
@@ -209,8 +205,8 @@ export default function Home() {
               San Marcos, Texas, and Salt Lake City, Utah.
             </p>
             <p>
-              I like complicated organizations, real materials, field work, and
-              projects with more substance than polish. My job is to find the
+              I like complex work, real materials, field work, and projects with
+              more substance than polish. My job is to find the
               specific story already inside the work and build the right system
               around it.
             </p>
@@ -227,8 +223,12 @@ export default function Home() {
         </section>
 
         <section className="contact-section" id="contact" aria-labelledby="contact-title">
-          <p className="eyebrow">Have a complicated story?</p>
+          <p className="eyebrow">Have complex work to explain?</p>
           <h2 id="contact-title">Let’s make it clear.</h2>
+          <p className="contact-fit">
+            Brand position, editorial systems, websites, and communications for
+            organizations with complex work.
+          </p>
           <a href="mailto:preston@prestonwimberly.com">preston@prestonwimberly.com</a>
         </section>
       </main>
