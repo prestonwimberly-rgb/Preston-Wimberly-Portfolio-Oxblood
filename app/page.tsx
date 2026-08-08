@@ -115,12 +115,15 @@ export default function Home() {
                   </figcaption>
                 </figure>
                 <div className="project-copy">
-                  <p className="project-index">0{index + 1}</p>
-                  <p className="project-kicker">{project.kicker}</p>
+                  <p className="project-index">{project.chapterNumber}</p>
+                  <p className="project-kicker">{project.chapter}</p>
                   <h3 className={project.title.includes(" ") ? undefined : "title-nowrap"}>
                     <Link href={`/work/${project.slug}`}>{project.title}</Link>
                   </h3>
-                  <p>{project.cardSummary}</p>
+                  <p className="project-premise">{project.premise}</p>
+                  <p className="project-context">
+                    {project.place} · {project.year}
+                  </p>
                   <p className="project-proof">
                     <span>Result</span>
                     {project.outcomeTitle}

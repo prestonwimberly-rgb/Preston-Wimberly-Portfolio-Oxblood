@@ -454,11 +454,29 @@ img {
   color: var(--signal);
 }
 
-.project-copy > p:not(.project-index, .project-kicker, .project-proof) {
+.project-copy > p:not(.project-index, .project-kicker, .project-premise, .project-context, .project-proof) {
   color: var(--ink-soft);
   font-size: clamp(1rem, 1.2vw, 1.18rem);
   margin: 0 0 30px;
   max-width: 560px;
+}
+
+.project-premise {
+  color: var(--ink);
+  font-size: clamp(1.08rem, 1.35vw, 1.3rem);
+  line-height: 1.5;
+  margin: 0 0 18px;
+  max-width: 560px;
+}
+
+.project-context {
+  color: var(--ink-soft);
+  font-family: var(--font-interface);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin: 0 0 24px;
+  text-transform: uppercase;
 }
 
 .project-proof {
@@ -773,14 +791,40 @@ img {
   width: 100%;
 }
 
+.case-hero-meta {
+  align-items: baseline;
+  display: flex;
+  gap: 28px;
+  justify-content: space-between;
+}
+
+.case-chapter {
+  color: var(--signal);
+  font-family: var(--font-interface);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
 .case-hero h1 {
   font-family: var(--font-display);
   font-size: clamp(3.6rem, 7.2vw, 8.5rem);
   font-weight: 400;
   letter-spacing: -0.075em;
   line-height: 0.89;
-  margin: 40px 0 55px;
+  margin: 40px 0 38px;
   max-width: 1300px;
+}
+
+.case-premise {
+  color: var(--signal);
+  font-size: clamp(1.08rem, 1.45vw, 1.35rem);
+  font-style: italic;
+  line-height: 1.5;
+  margin: 0 0 24px;
+  max-width: 840px;
 }
 
 .case-summary {
@@ -1049,6 +1093,10 @@ img {
   line-height: 1.05;
   margin: 24px 0 0;
   max-width: 1000px;
+}
+
+.case-theme-studio .case-body > .case-principle:first-child {
+  margin-top: 0;
 }
 
 .deliverables {
@@ -1506,6 +1554,17 @@ img {
     font-size: clamp(2.65rem, 12vw, 3.8rem);
     line-height: 0.94;
     margin: 24px 0 26px;
+  }
+
+  .case-hero-meta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .case-premise {
+    font-size: 1.02rem;
+    margin-bottom: 18px;
   }
 
   .case-summary {
