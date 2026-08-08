@@ -54,3 +54,15 @@ test("the reference-led system keeps its restrained design tokens", () => {
   assert.doesNotMatch(css, /box-shadow:/);
   assert.doesNotMatch(css, /backdrop-filter:/);
 });
+
+test("mobile navigation and contact targets preserve the 44-pixel minimum", () => {
+  assert.match(css, /\.site-nav a\s*\{[^}]*min-height:\s*44px[^}]*min-width:\s*44px/s);
+  assert.match(css, /\.contact-section > a\s*\{[^}]*min-height:\s*44px/s);
+  assert.match(css, /\.skip-link\s*\{[^}]*padding:\s*13px 16px/s);
+});
+
+test("case-study evidence worlds use restrained project-specific surfaces", () => {
+  assert.match(css, /\.case-theme-field \.case-evidence\s*\{[^}]*background:\s*var\(--paper-deep\)/s);
+  assert.match(css, /\.case-theme-archive \.case-evidence\s*\{[^}]*background:\s*var\(--night\)/s);
+  assert.match(css, /\.case-theme-workshop \.case-evidence\s*\{[^}]*background:\s*var\(--signal\)/s);
+});

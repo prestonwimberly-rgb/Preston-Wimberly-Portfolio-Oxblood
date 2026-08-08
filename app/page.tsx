@@ -237,8 +237,9 @@ export default function Home() {
             </p>
             <p>
               I’ve worked across aviation, handcrafted products, publishing,
-              sales, and live production. I start with research and finish with
-              words, images, and a working system.
+              sales, and live production. The medium changes, but the method is
+              consistent: I start with research and finish with words, images,
+              and a working system.
             </p>
             <a className="text-link" href="mailto:preston@prestonwimberly.com">
               Get in touch <span aria-hidden="true">↗</span>

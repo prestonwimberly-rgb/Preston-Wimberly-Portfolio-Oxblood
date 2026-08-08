@@ -55,13 +55,13 @@ test("server-renders the finished portfolio", async () => {
 
 test("server-renders all four project case studies", async () => {
   const cases = [
-    ["/work/wild-feathers", /Turning sixteen years of a band/, /I’m keeping the public link offline while image rights and fact-checking remain open/],
-    ["/work/texas-aviation-partners", /Making the real scale of an aviation company visible/, /Visit Texas Aviation Partners/],
-    ["/work/wimberly-guitars", /Building a guitar brand from the materials up/, /Visit Wimberly Guitars/],
-    ["/work/preston-session-site", /Turning a musician’s range into one direct invitation/, /Visit prestonwimberly.com/],
+    ["/work/wild-feathers", /Turning sixteen years of a band/, /I’m keeping the public link offline while image rights and fact-checking remain open/, /Archive method/],
+    ["/work/texas-aviation-partners", /Making the real scale of an aviation company visible/, /Visit Texas Aviation Partners/, /Public proof/],
+    ["/work/wimberly-guitars", /Building a guitar brand from the materials up/, /Visit Wimberly Guitars/, /Material system/],
+    ["/work/preston-session-site", /Turning a musician’s range into one direct invitation/, /Visit prestonwimberly.com/, /Service sequence/],
   ];
 
-  for (const [path, heading, liveLink] of cases) {
+  for (const [path, heading, liveLink, evidenceLabel] of cases) {
     const response = await render(path);
     assert.equal(response.status, 200);
     const html = await response.text();
@@ -72,6 +72,7 @@ test("server-renders all four project case studies", async () => {
     assert.match(html, /Status/);
     assert.match(html, /Place/);
     assert.match(html, /Working principle/);
+    assert.match(html, evidenceLabel);
     assert.match(html, liveLink);
     assert.match(html, /<picture class="responsive-picture">/);
     assert.match(html, new RegExp(`/social/${path.split("/").pop()}\\.jpg`));
@@ -87,6 +88,18 @@ test("server-renders all four project case studies", async () => {
       assert.match(html, /hand-tooled leather pickguard and antique bronze knobs/);
     }
   }
+});
+
+test("public case studies exclude unresolved figures and rejected guitar artifacts", async () => {
+  const wildResponse = await render("/work/wild-feathers");
+  const wildHtml = await wildResponse.text();
+  assert.doesNotMatch(wildHtml, /384 performances|200 canonical photographs|six story chapters|eleven archive collections/i);
+
+  const guitarResponse = await render("/work/wimberly-guitars");
+  const guitarHtml = await guitarResponse.text();
+  assert.doesNotMatch(guitarHtml, /wimberly-mobile|wimberly-reference|wimberly-workshop-hero/i);
+  assert.doesNotMatch(guitarHtml, /co-founder|commission|waitlist|commerce/i);
+  assert.match(guitarHtml, /ask directly about availability/i);
 });
 
 test("server-renders unknown routes with the portfolio 404", async () => {

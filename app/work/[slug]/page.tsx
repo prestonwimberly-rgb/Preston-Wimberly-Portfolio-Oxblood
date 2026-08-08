@@ -141,6 +141,25 @@ export default async function WorkPage({ params }: WorkPageProps) {
           </div>
         </section>
 
+        <section className="case-evidence" aria-labelledby="evidence-title">
+          <div className="case-evidence-intro">
+            <p className="section-number">{project.evidenceEyebrow}</p>
+            <h2 id="evidence-title">{project.evidenceTitle}</h2>
+            <p>{project.evidenceIntro}</p>
+          </div>
+          <dl className="case-evidence-list">
+            {project.evidence.map((item, index) => (
+              <div key={item.label}>
+                <dt>
+                  <span aria-hidden="true">0{index + 1}</span>
+                  {item.label}
+                </dt>
+                <dd>{item.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+
         <section className="case-body">
           <div className="case-section">
             <p className="section-number">01 / Context</p>
@@ -181,7 +200,10 @@ export default async function WorkPage({ params }: WorkPageProps) {
         <section className="case-artifacts" aria-labelledby="artifacts-title">
           <div className="case-artifacts-heading">
             <p className="section-number">04 / Finished experience</p>
-            <h2 id="artifacts-title">The work in use.</h2>
+            <div>
+              <h2 id="artifacts-title">{project.artifactTitle}</h2>
+              <p>{project.artifactIntro}</p>
+            </div>
           </div>
           <div className="artifact-grid">
             {project.artifacts.map((artifact, index) => (

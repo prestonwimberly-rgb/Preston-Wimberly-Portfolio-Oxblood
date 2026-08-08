@@ -6,6 +6,11 @@ export type ProjectArtifact = {
   format: "landscape" | "portrait";
 };
 
+export type ProjectEvidence = {
+  label: string;
+  value: string;
+};
+
 export type Project = {
   slug: string;
   title: string;
@@ -35,7 +40,13 @@ export type Project = {
   challenge: string[];
   decisionTitle: string;
   decision: string[];
+  evidenceEyebrow: string;
+  evidenceTitle: string;
+  evidenceIntro: string;
+  evidence: ProjectEvidence[];
   deliverables: string[];
+  artifactTitle: string;
+  artifactIntro: string;
   outcomeTitle: string;
   outcome: string[];
   artifacts: ProjectArtifact[];
@@ -83,17 +94,38 @@ const projectRecords: Project[] = [
       "I organized the material as connected records: a performance ledger, canonical photographs, story chapters, archive collections, sources, rights, and provenance. I wrote the public narrative from those records and kept the source trails visible.",
       "I used large type for scale, then kept captions, source notes, and verification language close to the claims.",
     ],
+    evidenceEyebrow: "Archive method",
+    evidenceTitle: "Keep the source attached to the story.",
+    evidenceIntro:
+      "The working system preserves the difference between a documented record, a firsthand memory, and an open question.",
+    evidence: [
+      {
+        label: "Records",
+        value: "Songs, shows, photographs, narrative, sources, rights, and provenance remain connected.",
+      },
+      {
+        label: "Editorial rule",
+        value: "Verification language stays beside the claim instead of disappearing during polish.",
+      },
+      {
+        label: "Publication status",
+        value: "Private while image rights and fact-checking remain open.",
+      },
+    ],
     deliverables: [
       "Archive and information architecture",
-      "Six-part narrative structure",
+      "Narrative chapter structure",
       "Performance and photo records",
       "Rights and provenance workflow",
       "Editorial design and writing",
       "Static-site build and image pipeline",
     ],
+    artifactTitle: "The archive as a working system.",
+    artifactIntro:
+      "Desktop and mobile views show the editorial structure without presenting the private archive as publication-ready.",
     outcomeTitle: "Editors can trace the public narrative back to its records and sources.",
     outcome: [
-      "I organized 384 performances, 200 canonical photographs, six story chapters, and eleven archive collections. Visitors can move between music, shows, story, timeline, field notes, sources, and rights information through linked records.",
+      "I organized performance, photography, narrative, and collection records so editors can move between the story, its source trail, and the related rights information.",
       "I have kept publication limited until the rights review and fact-checking close.",
     ],
     artifacts: [
@@ -141,9 +173,9 @@ const projectRecords: Project[] = [
     engagementType: "Client engagement",
     status: "Live",
     ownership:
-      "I led the position, message architecture, website narrative, original photography, design direction, and front-end build.",
+      "My work covered the position, message architecture, website narrative, original photography, design direction, and front-end build.",
     collaboration:
-      "Developed with company leadership, airport teams, and public-sector stakeholders",
+      "Website and communications work within a broader company and public-sector operating context",
     liveUrl: "https://texasaviationpartners.com/",
     liveLabel: "Visit Texas Aviation Partners",
     constraint:
@@ -158,6 +190,24 @@ const projectRecords: Project[] = [
       "I built a plain-language service model and rewrote the company story. I also photographed the airports and landscapes where the claims have to hold up.",
       "I linked projects, leadership, services, and reporting so prospective partners can move from a claim to the work behind it.",
     ],
+    evidenceEyebrow: "Public proof",
+    evidenceTitle: "Move from the claim to the work behind it.",
+    evidenceIntro:
+      "The system connects plain-language positioning with projects, leadership information, reporting, and original field photography.",
+    evidence: [
+      {
+        label: "Position",
+        value: "Airport management and development presented as one connected practice.",
+      },
+      {
+        label: "Proof path",
+        value: "Services connect to projects, leadership, news, and direct contact.",
+      },
+      {
+        label: "Field record",
+        value: "Original photographs keep the public language tied to airport work and place.",
+      },
+    ],
     deliverables: [
       "Brand position and message architecture",
       "Website strategy, writing, and build",
@@ -166,6 +216,9 @@ const projectRecords: Project[] = [
       "Project and editorial structure",
       "Responsive design and metadata",
     ],
+    artifactTitle: "Field and public record.",
+    artifactIntro:
+      "Website views sit beside original airport photography so the public story remains connected to work, people, and place.",
     outcomeTitle: "Prospective partners can trace each service to supporting work.",
     outcome: [
       "Prospective partners can move from services to projects, leadership, news, or a direct conversation. The company can publish development reporting in the same system.",
@@ -204,26 +257,26 @@ const projectRecords: Project[] = [
   {
     slug: "wimberly-guitars",
     title: "Wimberly Guitars",
-    kicker: "Brand · Product storytelling · Commerce",
+    kicker: "Brand · Product storytelling · Web",
     headline: "Building a guitar brand from the materials up.",
     cardSummary:
-      "For a father-and-son workshop, I built a product brand with its own language, visual code, model architecture, and commission path.",
+      "For a father-and-son workshop, I built a product brand with its own language, visual code, model architecture, and inquiry path.",
     summary:
       "Wimberly Guitars makes small-run electric guitars from walnut, leather, steel, brass, oil, and wire. We needed a brand as considered as the instruments, with no claim to factory scale.",
     image: "/images/wimberly-jack-antique-bronze-knobs.jpeg",
     imageAlt: "Close view of a walnut Wimberly guitar with a hand-tooled leather pickguard and antique bronze knobs",
     imageFit: "cover",
     imagePosition: "center 52%",
-    role: "Co-founder, writer & brand lead",
+    role: "Writer & brand lead",
     scope: "Positioning, product language, website, launch",
     year: "2026",
     place: "Texas",
-    engagementType: "Co-founded venture",
+    engagementType: "Independent workshop brand",
     status: "Live",
     ownership:
-      "As co-founder and brand lead, I set the position and voice, structured the product story, and designed and built the website and commission journey.",
+      "I set the position and voice, structured the product story, and designed and built the website and inquiry journey.",
     collaboration:
-      "Developed with the workshop’s co-founder around the instruments, materials, and build process",
+      "Developed with the workshop around the instruments, materials, and build process",
     liveUrl: "https://wimberlycustomguitars.com/",
     liveLabel: "Visit Wimberly Guitars",
     constraint:
@@ -236,19 +289,40 @@ const projectRecords: Project[] = [
     decisionTitle: "Build every rule from the instruments.",
     decision: [
       "I built the voice around honest materials and the discipline of a small workshop. I organized The Jack and the Lucio as two models in one family.",
-      "I used spare page rhythm, close photography, and direct commission steps to help players compare the models.",
+      "I used spare page rhythm, close photography, and direct inquiry steps to help players compare the models.",
+    ],
+    evidenceEyebrow: "Material system",
+    evidenceTitle: "Let the instrument set the rules.",
+    evidenceIntro:
+      "The brand language comes from the materials, model family, and honest scale of the workshop.",
+    evidence: [
+      {
+        label: "Materials",
+        value: "Walnut, hand-tooled leather, blued steel, blackened nickel, and raw brass.",
+      },
+      {
+        label: "Model system",
+        value: "The Jack and the Lucio presented as two models in one family.",
+      },
+      {
+        label: "Scale",
+        value: "A small workshop building a few instruments at a time.",
+      },
     ],
     deliverables: [
       "Brand position and voice",
       "Model and materials architecture",
       "Product and process writing",
       "Website design and front-end build",
-      "Commission and waitlist journey",
+      "Availability and inquiry journey",
       "Build journal and launch structure",
     ],
-    outcomeTitle: "The workshop now has a clear commission path.",
+    artifactTitle: "The object and its language.",
+    artifactIntro:
+      "The finished website carries the instruments’ material vocabulary into a focused model and product presentation.",
+    outcomeTitle: "The workshop now has a clear inquiry path.",
     outcome: [
-      "Players can compare models and materials, learn how we build, and join a commission or waitlist.",
+      "Players can compare models and materials, learn how the workshop builds, and ask directly about availability.",
     ],
     artifacts: [
       {
@@ -258,27 +332,14 @@ const projectRecords: Project[] = [
         credit: "Website design and screenshot by Preston Wimberly",
         format: "landscape",
       },
-      {
-        src: "/images/wimberly-mobile.jpg",
-        alt: "Mobile view of the Wimberly Guitars homepage",
-        caption: "Wimberly Guitars homepage at a narrow mobile viewport.",
-        credit: "Website design and screenshot by Preston Wimberly",
-        format: "portrait",
-      },
-      {
-        src: "/images/wimberly-reference.avif",
-        alt: "A walnut and blued-steel material reference",
-        caption: "Walnut and blued steel define the workshop’s material palette.",
-        credit: "Photograph by Preston Wimberly",
-        format: "landscape",
-      },
     ],
     closing:
       "I based the language and visuals on the walnut, leather, steel, and brass we use at the bench.",
     theme: "workshop",
     verificationNotes: [
       "Confirm the co-founder relationship and whether the public offer should be described as commissions, a waitlist, or commerce.",
-      "Replace the current low-resolution mobile artifact before launch.",
+      "Use a higher-resolution mobile artifact before restoring any mobile screenshot.",
+      "Confirm the provenance and intended use of the excluded reference and workshop images before publishing either asset.",
     ],
   },
   {
@@ -304,7 +365,7 @@ const projectRecords: Project[] = [
     liveUrl: "https://prestonwimberly.com/",
     liveLabel: "Visit prestonwimberly.com",
     constraint:
-      "I needed to show guitar, pedal steel, bass, studio, television, and touring work in one focused offer.",
+      "I needed to present a wide range of studio and touring experience in one focused offer.",
     challengeTitle: "A long résumé still left the offer unclear.",
     challenge: [
       "Producers and artists need a quick sense of judgment, feel, working process, and fit. A complete career inventory would slow that decision.",
@@ -315,6 +376,24 @@ const projectRecords: Project[] = [
       "I organized the site around “The right part, played like it matters.” I used work samples, services, process, availability, and booking to support that promise.",
       "I used dark stage tones, warm wood, and large editorial type. Visitors can hear the work, understand the process, then start a project.",
     ],
+    evidenceEyebrow: "Service sequence",
+    evidenceTitle: "Put the listening decision first.",
+    evidenceIntro:
+      "The site reduces a broad résumé to the information an artist or producer needs before starting a conversation.",
+    evidence: [
+      {
+        label: "Offer",
+        value: "The right part, played like it matters.",
+      },
+      {
+        label: "Reading order",
+        value: "Work samples, services, process, availability, and inquiry.",
+      },
+      {
+        label: "Audience",
+        value: "Artists and producers considering the next recording.",
+      },
+    ],
     deliverables: [
       "Positioning and core message",
       "Service and process architecture",
@@ -323,6 +402,9 @@ const projectRecords: Project[] = [
       "Audio and work-sample presentation",
       "Inquiry and booking path",
     ],
+    artifactTitle: "The offer in one sequence.",
+    artifactIntro:
+      "Desktop and mobile views keep listening, service information, process, and inquiry in a direct reading order.",
     outcomeTitle: "Producers can hear the work and start a project on one page.",
     outcome: [
       "Artists and producers can hear the work, understand the available instruments and process, and begin an inquiry.",
@@ -347,7 +429,7 @@ const projectRecords: Project[] = [
       "Visitors get the information they need to start the next recording.",
     theme: "studio",
     verificationNotes: [
-      "Confirm the two-decades claim and the listed instrument and service breadth.",
+      "Confirm the two-decades claim and specific instrument and service breadth before expanding public copy.",
       "Add verified inquiry or booking evidence only if it becomes available.",
     ],
   },
