@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: WorkPageProps): Promise<Metad
   const project = getProject(slug);
   if (!project) return {};
   const canonicalPath = `/work/${project.slug}/`;
-  const socialTitle = `${project.title} — Preston Wimberly`;
+  const socialTitle = `${project.title} | Preston Wimberly`;
   return {
     title: project.title,
     description: project.cardSummary,
@@ -206,7 +206,7 @@ export default async function WorkPage({ params }: WorkPageProps) {
         </section>
 
         <section className="case-outcome">
-          <p className="section-number">05 / Observable change</p>
+          <p className="section-number">05 / Result</p>
           <div>
             <h2>{project.outcomeTitle}</h2>
             {project.outcome.map((paragraph) => (

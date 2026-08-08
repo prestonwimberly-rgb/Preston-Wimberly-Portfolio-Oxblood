@@ -6,22 +6,22 @@ const capabilities = [
   {
     number: "01",
     title: "Position",
-    text: "Brand strategy, naming, message architecture, audience definition, and the hard sentence that makes the rest of the work make sense.",
+    text: "I define the audience, sharpen the position, and write the sentence that makes the rest of the work clear.",
   },
   {
     number: "02",
     title: "Write",
-    text: "Websites, essays, case studies, executive communications, press materials, newsletters, and editorial systems built to last.",
+    text: "I report and write websites, essays, case studies, executive communications, and press materials.",
   },
   {
     number: "03",
     title: "Build",
-    text: "Fast, durable websites with a clear point of view, accessible structure, responsive design, and a publishing workflow people can use.",
+    text: "I design and build fast, accessible websites with publishing workflows people can use.",
   },
   {
     number: "04",
     title: "Communicate",
-    text: "Marketing plans, public information, stakeholder communications, original photography, image direction, and campaigns grounded in what the organization does best.",
+    text: "I plan campaigns, handle stakeholder communications, and make original photography for organizations with complex work.",
   },
 ];
 
@@ -37,14 +37,14 @@ const writing = [
     type: "News · Economic development",
     title: "San Marcos Airport expands with 170-acre land purchase",
     description:
-      "Turning a land transaction into a clear account of aviation growth, public infrastructure, and long-term opportunity.",
+      "A report on a 170-acre land purchase, public infrastructure, and the airport’s growth plans.",
     href: "https://texasaviationpartners.com/san-marcos-regional-airport-expands-with-170-acre-land-purchase/",
   },
   {
     type: "Case study · Brand transformation",
     title: "Making the real scale of a business visible",
     description:
-      "How positioning, reporting, photography, and a new website changed the first impression of an aviation company.",
+      "The positioning, reporting, photography, and site build behind a broader public identity for Texas Aviation Partners.",
     href: "/work/texas-aviation-partners",
   },
 ];
@@ -77,13 +77,12 @@ export default function Home() {
             <h1 id="hero-title">
               Clear words.<br />
               Useful websites.<br />
-              <em>Brands with a point of view.</em>
+              <em>Work people can understand.</em>
             </h1>
             <div className="hero-bottom">
               <p>
-                I help organizations with complex work find the specific idea,
-                language, and digital system that makes the work easier to
-                understand—and act on.
+                If your public story no longer matches the work, I can set the
+                position, write the language, and build the site.
               </p>
               <a className="text-link" href="#work">
                 Read the work <span aria-hidden="true">↓</span>
@@ -158,7 +157,7 @@ export default function Home() {
                     </div>
                   </dl>
                   <p className="project-proof">
-                    <span>Observable change</span>
+                    <span>Result</span>
                     {project.outcomeTitle}
                   </p>
                   <Link className="text-link" href={`/work/${project.slug}`}>
@@ -173,10 +172,10 @@ export default function Home() {
         <section className="capabilities" aria-labelledby="capabilities-title">
           <div className="capabilities-intro">
             <p className="section-number inverse">02 / Working method</p>
-            <h2 id="capabilities-title">One connected practice from research to finished page.</h2>
+            <h2 id="capabilities-title">I work from research through the finished page.</h2>
             <p>
-              Positioning, writing, design, and build stay connected, so the central
-              idea survives from the first decision to the finished experience.
+              I handle positioning, writing, design, and build. One central
+              decision guides the finished page.
             </p>
           </div>
           <div className="capability-grid">
@@ -193,7 +192,7 @@ export default function Home() {
         <section className="section writing-section" id="writing" aria-labelledby="writing-title">
           <div className="section-heading compact-heading">
             <p className="section-number">03 / Writing & editorial work</p>
-            <h2 id="writing-title">Reporting gives the language something to stand on.</h2>
+            <h2 id="writing-title">I report before I write.</h2>
           </div>
           <div className="writing-list">
             {writing.map((item) => {
@@ -232,16 +231,14 @@ export default function Home() {
               San Marcos, Texas, and Salt Lake City, Utah.
             </p>
             <p>
-              I like complex work, real materials, field work, and projects with
-              more substance than polish. My job is to find the
-              specific story already inside the work and build the right system
-              around it.
+              I like complex assignments, field reporting, and physical
+              materials. I interview the people doing the work, find the useful
+              facts, and build a clear public account.
             </p>
             <p>
-              I’ve led work across aviation, handcrafted products, publishing,
-              sales, and live production. The settings change; the practice stays
-              the same: understand the work, find the specific idea, and carry it
-              through words, images, systems, and the finished experience.
+              I’ve worked across aviation, handcrafted products, publishing,
+              sales, and live production. I start with research and finish with
+              words, images, and a working system.
             </p>
             <a className="text-link" href="mailto:preston@prestonwimberly.com">
               Get in touch <span aria-hidden="true">↗</span>

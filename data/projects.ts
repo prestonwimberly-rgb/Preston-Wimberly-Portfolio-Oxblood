@@ -51,9 +51,9 @@ const projectRecords: Project[] = [
     kicker: "Archive · Editorial · Web",
     headline: "Turning sixteen years of a band into a story people can enter.",
     cardSummary:
-      "An evidence-first music archive that connects songs, shows, photographs, and firsthand history without flattening them into promotion.",
+      "I built an evidence-first music archive that links songs, shows, photographs, and firsthand accounts to documented sources and rights records.",
     summary:
-      "The Wild Feathers had a long public history scattered across tour records, photographs, releases, interviews, and personal memory. The assignment was to build a useful record while keeping provenance, rights, and uncertainty visible.",
+      "I found The Wild Feathers’ public history across tour records, photographs, releases, interviews, and personal memory. I built a record that keeps provenance, rights, and uncertainty attached to each item.",
     image: "/images/wild-feathers-laugh.png",
     imageAlt: "The five members of The Wild Feathers seated together outside, laughing",
     imageFit: "cover",
@@ -70,18 +70,18 @@ const projectRecords: Project[] = [
     collaboration:
       "Source-led independent work using credited band history and documented rights records",
     accessNote:
-      "Public link withheld while image rights and fact-checking remain open.",
+      "I’m keeping the public link offline while image rights and fact-checking remain open.",
     constraint:
-      "The working archive is not cleared for a public launch while image rights and fact-checking remain open.",
-    challengeTitle: "History was abundant. Evidence was uneven.",
+      "Image rights and fact-checking remain open, so I’m keeping the working archive private.",
+    challengeTitle: "The archive began with uneven evidence.",
     challenge: [
-      "A band story can become mythology quickly. Dates drift, captions lose their sources, and photographs get used as atmosphere rather than documents. The archive needed to distinguish what was verified, what was remembered, and what still required review.",
-      "It also had to work at several scales: a listener entering through a song, a fan looking for a show, and a future editor tracing the source behind a claim.",
+      "People repeat dates without sources, detach captions from photographs, and turn records into atmosphere. I separated verified records, firsthand memory, and open questions.",
+      "I designed three entry points: songs for listeners, shows for fans, and source trails for future editors.",
     ],
     decisionTitle: "Build the evidence before polishing the story.",
     decision: [
-      "I organized the material as connected records: a performance ledger, canonical photographs, story chapters, archive collections, sources, rights, and provenance. The public-facing narrative sits on top of that structure rather than replacing it.",
-      "The visual system is editorial and restrained. Large type gives the band room to feel cinematic; captions, source notes, and verification language keep the work accountable.",
+      "I organized the material as connected records: a performance ledger, canonical photographs, story chapters, archive collections, sources, rights, and provenance. I wrote the public narrative from those records and kept the source trails visible.",
+      "I used large type for scale, then kept captions, source notes, and verification language close to the claims.",
     ],
     deliverables: [
       "Archive and information architecture",
@@ -91,10 +91,10 @@ const projectRecords: Project[] = [
       "Editorial design and writing",
       "Static-site build and image pipeline",
     ],
-    outcomeTitle: "A private working archive with a public shape.",
+    outcomeTitle: "Editors can trace the public narrative back to its records and sources.",
     outcome: [
-      "The system now holds a 384-performance ledger, 200 canonical photographs, six story chapters, and eleven archive collections. Music, shows, story, timeline, field notes, sources, and rights information can reinforce one another instead of living as separate fragments.",
-      "Publication remains deliberately limited until rights and fact-checking are resolved. That restraint is part of the editorial work, not a missing layer of polish.",
+      "I organized 384 performances, 200 canonical photographs, six story chapters, and eleven archive collections. Visitors can move between music, shows, story, timeline, field notes, sources, and rights information through linked records.",
+      "I have kept publication limited until the rights review and fact-checking close.",
     ],
     artifacts: [
       {
@@ -113,7 +113,7 @@ const projectRecords: Project[] = [
       },
     ],
     closing:
-      "The central idea is simple: memory becomes useful when the evidence stays attached.",
+      "Each published memory stays linked to its source.",
     theme: "archive",
     verificationNotes: [
       "Confirm the counts for performances, canonical photographs, chapters, and archive collections.",
@@ -126,9 +126,9 @@ const projectRecords: Project[] = [
     kicker: "Brand strategy · Editorial · Web",
     headline: "Making the real scale of an aviation company visible.",
     cardSummary:
-      "A sharper position, voice, website, and editorial system for an aviation company whose experience had outgrown its public identity.",
+      "I used positioning, writing, photography, and a new website to show the full operating range of Texas Aviation Partners.",
     summary:
-      "Texas Aviation Partners had years of operational credibility, but its public presentation made a broad airport management and development company look smaller than the work itself.",
+      "Texas Aviation Partners manages and develops airports, but visitors saw one location and one category of work on its old site.",
     image: "/images/tap-hay-windsock.jpg",
     imageAlt: "A hay bale beside an airport windsock beneath a wide sky",
     imageCredit: "Photograph by Preston Wimberly",
@@ -147,16 +147,16 @@ const projectRecords: Project[] = [
     liveUrl: "https://texasaviationpartners.com/",
     liveLabel: "Visit Texas Aviation Partners",
     constraint:
-      "The new position had to show greater range without overstating the company or losing the practical credibility behind it.",
-    challengeTitle: "The company had outgrown its own description.",
+      "I needed to show the company’s full range and keep every claim tied to its record.",
+    challengeTitle: "The old site centered on one airport and one category of work.",
     challenge: [
       "The earlier website centered on one airport and one category of work. Airport development, capital projects, public-sector coordination, land strategy, and advisory work were difficult to see as one connected practice.",
-      "The task was to make the full operating range legible while keeping every claim grounded in real projects, people, and public records.",
+      "Prospective partners could not see how the services fit together or trace the claims to projects, people, and public records.",
     ],
     decisionTitle: "Organize the brand around completed work.",
     decision: [
-      "I built a plain-language service model, rewrote the company story, and paired it with original field photography. The airports and landscapes are not background texture; they show the physical setting where the claims have to hold up.",
-      "Projects, leadership experience, services, and long-form reporting now work as one system. Each part gives the next conversation more context.",
+      "I built a plain-language service model and rewrote the company story. I also photographed the airports and landscapes where the claims have to hold up.",
+      "I linked projects, leadership, services, and reporting so prospective partners can move from a claim to the work behind it.",
     ],
     deliverables: [
       "Brand position and message architecture",
@@ -166,9 +166,9 @@ const projectRecords: Project[] = [
       "Project and editorial structure",
       "Responsive design and metadata",
     ],
-    outcomeTitle: "A broader business became easier to understand.",
+    outcomeTitle: "Prospective partners can trace each service to supporting work.",
     outcome: [
-      "The finished site gives prospective partners direct routes into services, projects, leadership, news, and conversation. The editorial structure also gives the company a durable place to explain development work as it happens.",
+      "Prospective partners can move from services to projects, leadership, news, or a direct conversation. The company can publish development reporting in the same system.",
     ],
     artifacts: [
       {
@@ -194,7 +194,7 @@ const projectRecords: Project[] = [
       },
     ],
     closing:
-      "The finished system gives the company language equal to the work: practical, experienced, and specific.",
+      "The company now describes its work in practical, specific language.",
     theme: "field",
     verificationNotes: [
       "Confirm Preston’s decision authority and the description of stakeholder collaboration.",
@@ -207,9 +207,9 @@ const projectRecords: Project[] = [
     kicker: "Brand · Product storytelling · Commerce",
     headline: "Building a guitar brand from the materials up.",
     cardSummary:
-      "A father-and-son workshop shaped into a distinct product brand with its own language, visual code, model architecture, and commission path.",
+      "For a father-and-son workshop, I built a product brand with its own language, visual code, model architecture, and commission path.",
     summary:
-      "Wimberly Guitars makes small-run electric guitars from walnut, leather, steel, brass, oil, and wire. The brand needed to feel as considered as the instruments without pretending the workshop was a factory.",
+      "Wimberly Guitars makes small-run electric guitars from walnut, leather, steel, brass, oil, and wire. We needed a brand as considered as the instruments, with no claim to factory scale.",
     image: "/images/wimberly-jack-antique-bronze-knobs.jpeg",
     imageAlt: "Close view of a walnut Wimberly guitar with a hand-tooled leather pickguard and antique bronze knobs",
     imageFit: "cover",
@@ -227,16 +227,16 @@ const projectRecords: Project[] = [
     liveUrl: "https://wimberlycustomguitars.com/",
     liveLabel: "Visit Wimberly Guitars",
     constraint:
-      "The market is crowded with vintage cues and generic craft claims, while the workshop builds slowly and only in small runs.",
-    challengeTitle: "A handmade object needs more than handmade language.",
+      "Large brands fill the market with vintage cues and generic craft claims. Our workshop builds a few instruments at a time.",
+    challengeTitle: "We built the product language from the materials.",
     challenge: [
-      "The useful difference was already in the instruments: walnut, hand-tooled leather, blued steel, blackened nickel, and raw brass. The job was to turn those choices into a product system without sanding away their regional character.",
-      "The site also had to explain unfamiliar finishes and make commissioning feel direct without implying immediate inventory or volume production.",
+      "We build with walnut, hand-tooled leather, blued steel, blackened nickel, and raw brass. I turned those choices into model and product language with the same regional character.",
+      "I explained unfamiliar finishes and set clear expectations about inventory and build volume.",
     ],
-    decisionTitle: "Let the product set every rule.",
+    decisionTitle: "Build every rule from the instruments.",
     decision: [
-      "I built the voice around honest materials, permanence, and the discipline of a small workshop. The Jack and the Lucio became distinct models inside one recognizable family.",
-      "Page rhythm, photography, materials language, and the commission journey follow the same standard: spare, tactile, and specific enough to help a player make a decision.",
+      "I built the voice around honest materials and the discipline of a small workshop. I organized The Jack and the Lucio as two models in one family.",
+      "I used spare page rhythm, close photography, and direct commission steps to help players compare the models.",
     ],
     deliverables: [
       "Brand position and voice",
@@ -248,7 +248,7 @@ const projectRecords: Project[] = [
     ],
     outcomeTitle: "The workshop now has a clear commission path.",
     outcome: [
-      "The live site organizes the instruments by model and material, explains the small-run process, and leads an interested player toward a commission or build waitlist.",
+      "Players can compare models and materials, learn how we build, and join a commission or waitlist.",
     ],
     artifacts: [
       {
@@ -274,7 +274,7 @@ const projectRecords: Project[] = [
       },
     ],
     closing:
-      "The brand looks and sounds like the instruments: spare, tactile, regional, and built for time.",
+      "I based the language and visuals on the walnut, leather, steel, and brass we use at the bench.",
     theme: "workshop",
     verificationNotes: [
       "Confirm the co-founder relationship and whether the public offer should be described as commissions, a waitlist, or commerce.",
@@ -287,9 +287,9 @@ const projectRecords: Project[] = [
     kicker: "Positioning · Service design · Web",
     headline: "Turning a musician’s range into one direct invitation.",
     cardSummary:
-      "A focused session-musician website that connects two decades of studio and touring experience to a clear way to hear the work and start a project.",
+      "A focused session-musician site where producers can hear the work, understand the process, and start a project.",
     summary:
-      "A working musician can have a long résumé and still leave a producer unsure what to do next. This site had to make the offer, taste, process, and booking path immediately understandable.",
+      "Producers need to hear the work, understand the offer, and know how to book the session. I built one site for those three decisions.",
     image: "/images/preston-session-site.jpg",
     imageAlt: "prestonwimberly.com homepage with a musician playing guitar",
     role: "Writer, strategist, designer & builder",
@@ -304,16 +304,16 @@ const projectRecords: Project[] = [
     liveUrl: "https://prestonwimberly.com/",
     liveLabel: "Visit prestonwimberly.com",
     constraint:
-      "The site needed to show breadth across guitar, pedal steel, bass, studio, television, and touring without reading like a career inventory.",
-    challengeTitle: "Experience was not the same as an offer.",
+      "I needed to show guitar, pedal steel, bass, studio, television, and touring work in one focused offer.",
+    challengeTitle: "A long résumé still left the offer unclear.",
     challenge: [
-      "Producers and artists do not need every credit before they understand whether a player belongs on a song. They need a quick sense of judgment, feel, working process, and fit.",
-      "The challenge was to turn a wide body of work into a specific promise without losing the personality behind it.",
+      "Producers and artists need a quick sense of judgment, feel, working process, and fit. A complete career inventory would slow that decision.",
+      "I turned a wide body of work into one specific promise and kept the personality behind it.",
     ],
-    decisionTitle: "Lead with the part the client actually wants.",
+    decisionTitle: "Lead with the part the client wants.",
     decision: [
-      "“The right part, played like it matters” became the organizing idea. Work samples, services, process, availability, and booking all support that sentence rather than compete with it.",
-      "The visual direction uses dark stage tones, warm wood, and large editorial type. The conversion path stays plain: hear the work, understand the process, then start a project.",
+      "I organized the site around “The right part, played like it matters.” I used work samples, services, process, availability, and booking to support that promise.",
+      "I used dark stage tones, warm wood, and large editorial type. Visitors can hear the work, understand the process, then start a project.",
     ],
     deliverables: [
       "Positioning and core message",
@@ -323,9 +323,9 @@ const projectRecords: Project[] = [
       "Audio and work-sample presentation",
       "Inquiry and booking path",
     ],
-    outcomeTitle: "The offer, proof, and inquiry path now live in one place.",
+    outcomeTitle: "Producers can hear the work and start a project on one page.",
     outcome: [
-      "The finished site gives artists and producers an immediate route to hear the work, understand the available instruments and process, and begin an inquiry.",
+      "Artists and producers can hear the work, understand the available instruments and process, and begin an inquiry.",
     ],
     artifacts: [
       {
@@ -344,7 +344,7 @@ const projectRecords: Project[] = [
       },
     ],
     closing:
-      "The site does not try to explain every performance. It makes the next recording easier to begin.",
+      "Visitors get the information they need to start the next recording.",
     theme: "studio",
     verificationNotes: [
       "Confirm the two-decades claim and the listed instrument and service breadth.",

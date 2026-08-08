@@ -34,10 +34,11 @@ test("server-renders the finished portfolio", async () => {
   assert.match(html, /Photograph by Preston Wimberly · San Marcos Regional Airport, Texas/);
   assert.match(html, /Selected work index/);
   assert.match(html, /Aviation, instruments, music history, and the web/);
-  assert.match(html, /original photography, image direction/);
-  assert.match(html, /Observable change/);
-  assert.match(html, /A broader business became easier to understand/);
-  assert.match(html, /The offer, proof, and inquiry path now live in one place/);
+  assert.match(html, /make original photography for organizations with complex work/);
+  assert.match(html, /Work people can understand/);
+  assert.match(html, />Result</);
+  assert.match(html, /Prospective partners can trace each service to supporting work/);
+  assert.match(html, /Producers can hear the work and start a project on one page/);
   assert.match(html, /The Wild Feathers/);
   assert.match(html, /Texas Aviation Partners/);
   assert.match(html, /Wimberly Guitars/);
@@ -54,7 +55,7 @@ test("server-renders the finished portfolio", async () => {
 
 test("server-renders all four project case studies", async () => {
   const cases = [
-    ["/work/wild-feathers", /Turning sixteen years of a band/, /Public link withheld while image rights and fact-checking remain open/],
+    ["/work/wild-feathers", /Turning sixteen years of a band/, /I’m keeping the public link offline while image rights and fact-checking remain open/],
     ["/work/texas-aviation-partners", /Making the real scale of an aviation company visible/, /Visit Texas Aviation Partners/],
     ["/work/wimberly-guitars", /Building a guitar brand from the materials up/, /Visit Wimberly Guitars/],
     ["/work/preston-session-site", /Turning a musician’s range into one direct invitation/, /Visit prestonwimberly.com/],
@@ -66,7 +67,7 @@ test("server-renders all four project case studies", async () => {
     const html = await response.text();
     assert.match(html, heading);
     assert.match(html, /What I made/);
-    assert.match(html, /Observable change/);
+    assert.match(html, /05 \/ Result/);
     assert.match(html, /Engagement/);
     assert.match(html, /Status/);
     assert.match(html, /Place/);

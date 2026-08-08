@@ -62,7 +62,7 @@ test("exports a branded, non-indexable 404 page", async () => {
     "utf8",
   );
 
-  assert.match(html, /Page not found — Preston Wimberly/);
+  assert.match(html, /Page not found \| Preston Wimberly/);
   assert.match(html, /404 \/ Page not found/);
   assert.match(html, /Return to selected work/);
   assert.match(html, /name="robots" content="noindex/i);
