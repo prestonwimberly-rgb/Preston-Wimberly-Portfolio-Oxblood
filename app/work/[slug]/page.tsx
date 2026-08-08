@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ResponsiveImage } from "@/components/responsive-image";
+import { StructuredData } from "@/components/structured-data";
 import { getProject, projects } from "@/data/projects";
 import { siteConfig } from "@/lib/site";
+import { projectStructuredData } from "@/lib/structured-data";
 
 type WorkPageProps = { params: Promise<{ slug: string }> };
 
@@ -16,9 +18,9 @@ export async function generateMetadata({ params }: WorkPageProps): Promise<Metad
   const project = getProject(slug);
   if (!project) return {};
   const canonicalPath = `/work/${project.slug}/`;
-  const socialTitle = `${project.title} | Preston Wimberly`;
+  const socialTitle = `${project.metaTitle} | Preston Wimberly`;
   return {
-    title: project.title,
+    title: project.metaTitle,
     description: project.cardSummary,
     alternates: {
       canonical: canonicalPath,
@@ -57,6 +59,7 @@ export default async function WorkPage({ params }: WorkPageProps) {
 
   return (
     <>
+      <StructuredData data={projectStructuredData(project)} />
       <a className="skip-link" href="#case-content">
         Skip to case study
       </a>

@@ -1,27 +1,29 @@
 import Link from "next/link";
 import { ResponsiveImage } from "@/components/responsive-image";
+import { StructuredData } from "@/components/structured-data";
 import { projects } from "@/data/projects";
+import { homeStructuredData } from "@/lib/structured-data";
 
 const capabilities = [
   {
     number: "01",
-    title: "Position",
-    text: "I define the audience, sharpen the position, and write the sentence that makes the rest of the work clear.",
+    title: "Judgment",
+    text: "I identify the central problem, define the audience, and decide what the work must make clear.",
   },
   {
     number: "02",
-    title: "Write",
-    text: "I report and write websites, essays, case studies, executive communications, and press materials.",
+    title: "Direction",
+    text: "I set the governing idea, message architecture, and visual and editorial direction.",
   },
   {
     number: "03",
-    title: "Build",
-    text: "I design and build fast, accessible websites with publishing workflows people can use.",
+    title: "System",
+    text: "I turn that direction into language, publishing structure, design rules, and a practical workflow.",
   },
   {
     number: "04",
-    title: "Communicate",
-    text: "I plan campaigns, handle stakeholder communications, and make original photography for organizations with complex work.",
+    title: "Execution",
+    text: "I write, photograph, design, and build the finished work when hands-on execution is useful.",
   },
 ];
 
@@ -52,6 +54,7 @@ const writing = [
 export default function Home() {
   return (
     <>
+      <StructuredData data={homeStructuredData(projects)} />
       <a className="skip-link" href="#main-content">
         Skip to content
       </a>
@@ -73,7 +76,9 @@ export default function Home() {
       <main id="main-content">
         <section className="hero" aria-labelledby="hero-title">
           <div className="hero-copy">
-            <p className="eyebrow">Brand strategy · Communications · Editorial · Web</p>
+            <p className="eyebrow">
+              Creative direction · Brand strategy · Communications · Editorial · Web
+            </p>
             <h1 id="hero-title">
               Clear words.<br />
               Useful websites.<br />
@@ -81,8 +86,8 @@ export default function Home() {
             </h1>
             <div className="hero-bottom">
               <p>
-                If your public story no longer matches the work, I can set the
-                position, write the language, and build the site.
+                I identify the central problem, set the direction, and carry it
+                through language, images, and finished digital work.
               </p>
               <a className="text-link" href="#work">
                 Read the work <span aria-hidden="true">↓</span>
@@ -170,10 +175,10 @@ export default function Home() {
         <section className="capabilities" aria-labelledby="capabilities-title">
           <div className="capabilities-intro">
             <p className="section-number inverse">02 / Working method</p>
-            <h2 id="capabilities-title">I work from research through the finished page.</h2>
+            <h2 id="capabilities-title">Judgment first. Direction through the finished work.</h2>
             <p>
-              I handle positioning, writing, design, and build. One central
-              decision guides the finished page.
+              I establish the central decision, build a system around it, and
+              execute where the work needs it.
             </p>
           </div>
           <div className="capability-grid">
@@ -226,8 +231,8 @@ export default function Home() {
             <p className="section-number">04 / About</p>
             <h2 id="about-title">I work where strategy, journalism, design, and the web overlap.</h2>
             <p className="about-lead">
-              I’m Preston Wimberly, a writer and brand builder based between
-              San Marcos, Texas, and Salt Lake City, Utah.
+              I’m Preston Wimberly, a creative director, brand strategist, and
+              writer based between San Marcos, Texas, and Salt Lake City, Utah.
             </p>
             <p>
               I like complex assignments, field reporting, and physical
@@ -250,8 +255,8 @@ export default function Home() {
           <p className="eyebrow">Roles, collaborations, and selected projects</p>
           <h2 id="contact-title">Get in touch.</h2>
           <p className="contact-fit">
-            Based between San Marcos, Texas, and Salt Lake City, Utah. Brand,
-            communications, editorial, and web work.
+            Based between San Marcos, Texas, and Salt Lake City, Utah. Creative
+            direction, brand strategy, communications, editorial, and digital work.
           </p>
           <a href="mailto:preston@prestonwimberly.com">preston@prestonwimberly.com</a>
         </section>
@@ -259,7 +264,7 @@ export default function Home() {
 
       <footer className="site-footer">
         <p>© 2026 Preston Wimberly</p>
-        <p>Brand strategy · Communications · Editorial · Web</p>
+        <p>Creative direction · Brand strategy · Communications · Editorial · Web</p>
         <a href="#hero-title">Back to top ↑</a>
       </footer>
     </>

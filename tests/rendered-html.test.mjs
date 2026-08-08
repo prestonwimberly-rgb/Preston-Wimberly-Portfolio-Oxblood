@@ -28,13 +28,14 @@ test("server-renders the finished portfolio", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /Brand Strategy, Communications &amp; Web/);
+  assert.match(html, /Creative Director, Brand Strategist &amp; Writer/);
   assert.match(html, /Clear words/);
-  assert.match(html, /organizations with complex work/);
+  assert.match(html, /creative director, brand strategist, and writer/);
   assert.match(html, /Photograph by Preston Wimberly/);
   assert.match(html, /Selected work index/);
   assert.match(html, /Aviation, instruments, music history, and the web/);
-  assert.match(html, /make original photography for organizations with complex work/);
+  assert.match(html, /Judgment first. Direction through the finished work/);
+  assert.match(html, /write, photograph, design, and build the finished work/);
   assert.match(html, /Work people can understand/);
   assert.match(html, />Result</);
   assert.match(html, /Prospective partners can trace each service to supporting work/);
@@ -51,17 +52,22 @@ test("server-renders the finished portfolio", async () => {
   assert.match(html, /\/optimized\/wild-feathers-laugh-[0-9]+\.avif/);
   assert.match(html, /\/optimized\/wimberly-jack-antique-bronze-knobs-[0-9]+\.avif/);
   assert.match(html, /\/social\/home\.jpg/);
+  assert.match(html, /type="application\/ld\+json"/);
+  assert.match(html, /"@type":"ProfilePage"/);
+  assert.match(html, /"@type":"Person"/);
+  assert.match(html, /"@type":"WebSite"/);
+  assert.doesNotMatch(html, /"sameAs"/);
 });
 
 test("server-renders all four project case studies", async () => {
   const cases = [
-    ["/work/wild-feathers", /Turning sixteen years of a band/, /I’m keeping the public link offline while image rights and fact-checking remain open/, /Archive method/],
-    ["/work/texas-aviation-partners", /Making the real scale of an aviation company visible/, /Visit Texas Aviation Partners/, /Public proof/],
-    ["/work/wimberly-guitars", /Building a guitar brand from the materials up/, /Visit Wimberly Guitars/, /Material system/],
-    ["/work/preston-session-site", /Turning a musician’s range into one direct invitation/, /Visit prestonwimberly.com/, /Service sequence/],
+    ["/work/wild-feathers", /Turning sixteen years of a band/, /I’m keeping the public link offline while image rights and fact-checking remain open/, /Archive method/, /The Wild Feathers Music Archive \| Preston Wimberly/],
+    ["/work/texas-aviation-partners", /Making the real scale of an aviation company visible/, /Visit Texas Aviation Partners/, /Public proof/, /Texas Aviation Partners Brand Strategy \| Preston Wimberly/],
+    ["/work/wimberly-guitars", /Building a guitar brand from the materials up/, /Visit Wimberly Guitars/, /Material system/, /Wimberly Guitars Brand Strategy \| Preston Wimberly/],
+    ["/work/preston-session-site", /Turning a musician’s range into one direct invitation/, /Visit prestonwimberly.com/, /Service sequence/, /prestonwimberly.com Website Strategy \| Preston Wimberly/],
   ];
 
-  for (const [path, heading, liveLink, evidenceLabel] of cases) {
+  for (const [path, heading, liveLink, evidenceLabel, metaTitle] of cases) {
     const response = await render(path);
     assert.equal(response.status, 200);
     const html = await response.text();
@@ -74,6 +80,11 @@ test("server-renders all four project case studies", async () => {
     assert.match(html, /Working principle/);
     assert.match(html, evidenceLabel);
     assert.match(html, liveLink);
+    assert.match(html, metaTitle);
+    assert.match(html, /type="application\/ld\+json"/);
+    assert.match(html, /"@type":"CreativeWork"/);
+    assert.match(html, /"creator":\{"@id":"https:\/\/work\.prestonwimberly\.com\/#person"\}/);
+    assert.doesNotMatch(html, /"sameAs"/);
     assert.match(html, /<picture class="responsive-picture">/);
     assert.match(html, new RegExp(`/social/${path.split("/").pop()}\\.jpg`));
     if (path === "/work/texas-aviation-partners") {
