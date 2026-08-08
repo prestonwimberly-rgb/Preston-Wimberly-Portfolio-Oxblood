@@ -32,10 +32,10 @@ test("server-renders the finished portfolio", async () => {
   assert.match(html, /Clear words/);
   assert.match(html, /creative director, brand strategist, and writer/);
   assert.match(html, /Photograph by Preston Wimberly/);
-  assert.match(html, /Selected work index/);
+  assert.doesNotMatch(html, /Selected work index/);
   assert.match(html, /Aviation, instruments, music history, and the web/);
-  assert.match(html, /Judgment first. Direction through the finished work/);
-  assert.match(html, /write, photograph, design, and build the finished work/);
+  assert.match(html, /Start with the record/);
+  assert.match(html, /Research/);
   assert.match(html, /Work people can understand/);
   assert.match(html, />Result</);
   assert.match(html, /Prospective partners can trace each service to supporting work/);
@@ -44,6 +44,8 @@ test("server-renders the finished portfolio", async () => {
   assert.match(html, /Texas Aviation Partners/);
   assert.match(html, /Wimberly Guitars/);
   assert.match(html, /prestonwimberly.com/);
+  assert.match(html, /Hay bales and an airport windsock in the working landscape/);
+  assert.match(html, /Walnut, hand-tooled leather, and antique bronze hardware/);
   assert.doesNotMatch(html, /\/work\/san-marcos-airport/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|Starter Project/i);
   assert.ok(html.indexOf("Texas Aviation Partners") < html.indexOf("The Wild Feathers"));

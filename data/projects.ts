@@ -22,6 +22,7 @@ export type Project = {
   summary: string;
   image: string;
   imageAlt: string;
+  imageCaption: string;
   imageCredit?: string;
   imageFit?: "cover" | "contain";
   imagePosition?: string;
@@ -70,6 +71,7 @@ const projectRecords: Project[] = [
       "I found The Wild Feathers’ public history across tour records, photographs, releases, interviews, and personal memory. I built a record that keeps provenance, rights, and uncertainty attached to each item.",
     image: "/images/wild-feathers-laugh.png",
     imageAlt: "The five members of The Wild Feathers seated together outside, laughing",
+    imageCaption: "The Wild Feathers, archival band photograph.",
     imageFit: "cover",
     imagePosition: "center 45%",
     imageAspect: "33 / 14",
@@ -167,6 +169,7 @@ const projectRecords: Project[] = [
       "Texas Aviation Partners manages and develops airports, but visitors saw one location and one category of work on its old site.",
     image: "/images/tap-hay-windsock.jpg",
     imageAlt: "A hay bale beside an airport windsock beneath a wide sky",
+    imageCaption: "Hay bales and an airport windsock in the working landscape.",
     imageCredit: "Photograph by Preston Wimberly",
     imageFit: "cover",
     imagePosition: "center 46%",
@@ -265,6 +268,7 @@ const projectRecords: Project[] = [
       "Wimberly Guitars makes small-run electric guitars from walnut, leather, steel, brass, oil, and wire. We needed a brand as considered as the instruments, with no claim to factory scale.",
     image: "/images/wimberly-jack-antique-bronze-knobs.jpeg",
     imageAlt: "Close view of a walnut Wimberly guitar with a hand-tooled leather pickguard and antique bronze knobs",
+    imageCaption: "Walnut, hand-tooled leather, and antique bronze hardware.",
     imageFit: "cover",
     imagePosition: "center 52%",
     role: "Writer & brand lead",
@@ -361,6 +365,7 @@ const projectRecords: Project[] = [
       "Producers need to hear the work, understand the offer, and know how to book the session. I built one site for those three decisions.",
     image: "/images/preston-session-site.jpg",
     imageAlt: "prestonwimberly.com homepage with a musician playing guitar",
+    imageCaption: "prestonwimberly.com, desktop opening.",
     role: "Writer, strategist, designer & builder",
     scope: "Positioning, copy, service design, website",
     year: "2026",

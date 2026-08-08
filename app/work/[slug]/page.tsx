@@ -56,6 +56,25 @@ export default async function WorkPage({ params }: WorkPageProps) {
 
   const currentIndex = projects.findIndex((item) => item.slug === project.slug);
   const nextProject = projects[(currentIndex + 1) % projects.length];
+  const imageFirst = project.theme === "archive" || project.theme === "workshop";
+  const caseImage = (
+    <figure
+      className={`case-image case-image-${project.imageFit ?? "contain"}`}
+      style={{ aspectRatio: project.imageAspect }}
+    >
+      <ResponsiveImage
+        src={project.image}
+        alt={project.imageAlt}
+        priority
+        sizes="100vw"
+        style={{ objectPosition: project.imagePosition ?? "center" }}
+      />
+      <figcaption>
+        {project.imageCaption}
+        {project.imageCredit ? <span>{project.imageCredit}</span> : null}
+      </figcaption>
+    </figure>
+  );
 
   return (
     <>
@@ -81,10 +100,16 @@ export default async function WorkPage({ params }: WorkPageProps) {
         className={`case-study case-study-${project.slug} case-theme-${project.theme}`}
         id="case-content"
       >
+        {imageFirst ? caseImage : null}
         <section className="case-hero">
           <p className="eyebrow">{project.kicker}</p>
           <h1>{project.headline}</h1>
           <p className="case-summary">{project.summary}</p>
+        </section>
+
+        {!imageFirst ? caseImage : null}
+
+        <section className="case-details" aria-label="Project details">
           <dl className="case-meta">
             <div>
               <dt>Engagement</dt>
@@ -112,22 +137,6 @@ export default async function WorkPage({ params }: WorkPageProps) {
             </div>
           </dl>
         </section>
-
-        <figure
-          className={`case-image case-image-${project.imageFit ?? "contain"}`}
-          style={{ aspectRatio: project.imageAspect }}
-        >
-          <ResponsiveImage
-            src={project.image}
-            alt={project.imageAlt}
-            priority
-            sizes="100vw"
-            style={{ objectPosition: project.imagePosition ?? "center" }}
-          />
-          {project.imageCredit ? (
-            <figcaption>{project.imageCredit}</figcaption>
-          ) : null}
-        </figure>
 
         <section className="case-context" aria-label="Project context">
           <div>
