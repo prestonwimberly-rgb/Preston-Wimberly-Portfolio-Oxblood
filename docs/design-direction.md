@@ -4,6 +4,10 @@
 
 An editorial working portfolio for a writer, brand builder, and website maker. The design should make evidence, authorship, and judgment visible without behaving like a luxury-brand imitation or a generic agency showcase.
 
+**Page direction:** A modern editorial portfolio for hiring leaders and collaborators that feels field-tested, tactile, and exacting and helps visitors see what Preston owned, what he made, and what changed.
+
+The primary path is to scan the work, open the most relevant case study, and then start a conversation. Homepage project rows should therefore surface an observable change alongside role, place, and date rather than making visitors infer the result from atmosphere alone.
+
 ## What the supplied references clarified
 
 - Treat the identity as a repeatable system rather than a collection of effects.

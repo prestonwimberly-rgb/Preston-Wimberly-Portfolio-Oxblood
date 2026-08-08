@@ -35,6 +35,9 @@ test("server-renders the finished portfolio", async () => {
   assert.match(html, /Selected work index/);
   assert.match(html, /Aviation, instruments, music history, and the web/);
   assert.match(html, /original photography, image direction/);
+  assert.match(html, /Observable change/);
+  assert.match(html, /A broader business became easier to understand/);
+  assert.match(html, /The offer, proof, and inquiry path now live in one place/);
   assert.match(html, /The Wild Feathers/);
   assert.match(html, /Texas Aviation Partners/);
   assert.match(html, /Wimberly Guitars/);
@@ -44,6 +47,8 @@ test("server-renders the finished portfolio", async () => {
   assert.ok(html.indexOf("Texas Aviation Partners") < html.indexOf("The Wild Feathers"));
   assert.match(html, /<picture class="responsive-picture">/);
   assert.match(html, /\/optimized\/tap-tractor-[0-9]+\.avif/);
+  assert.match(html, /\/optimized\/wild-feathers-laugh-[0-9]+\.avif/);
+  assert.match(html, /\/optimized\/wimberly-jack-antique-bronze-knobs-[0-9]+\.avif/);
   assert.match(html, /\/social\/home\.jpg/);
 });
 
@@ -71,6 +76,14 @@ test("server-renders all four project case studies", async () => {
     assert.match(html, new RegExp(`/social/${path.split("/").pop()}\\.jpg`));
     if (path === "/work/texas-aviation-partners") {
       assert.match(html, /Photograph by Preston Wimberly/);
+    }
+    if (path === "/work/wild-feathers") {
+      assert.match(html, /case-image-cover/);
+      assert.match(html, /The five members of The Wild Feathers seated together outside, laughing/);
+    }
+    if (path === "/work/wimberly-guitars") {
+      assert.match(html, /case-image-cover/);
+      assert.match(html, /hand-tooled leather pickguard and antique bronze knobs/);
     }
   }
 });

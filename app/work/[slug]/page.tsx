@@ -110,7 +110,10 @@ export default async function WorkPage({ params }: WorkPageProps) {
           </dl>
         </section>
 
-        <figure className="case-image">
+        <figure
+          className={`case-image case-image-${project.imageFit ?? "contain"}`}
+          style={{ aspectRatio: project.imageAspect }}
+        >
           <ResponsiveImage
             src={project.image}
             alt={project.imageAlt}

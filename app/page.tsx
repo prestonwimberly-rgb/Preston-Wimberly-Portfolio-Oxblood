@@ -81,8 +81,9 @@ export default function Home() {
             </h1>
             <div className="hero-bottom">
               <p>
-                I turn complex work into a clear position, useful language, and
-                digital experiences people can act on.
+                I help organizations with complex work find the specific idea,
+                language, and digital system that makes the work easier to
+                understand—and act on.
               </p>
               <a className="text-link" href="#work">
                 Read the work <span aria-hidden="true">↓</span>
@@ -123,7 +124,11 @@ export default function Home() {
                 className={`project-row project-row-${index + 1} project-image-${project.imageFit ?? "contain"}`}
                 key={project.slug}
               >
-                <Link className="project-image" href={`/work/${project.slug}`}>
+                <Link
+                  className="project-image"
+                  href={`/work/${project.slug}`}
+                  style={{ aspectRatio: project.imageAspect }}
+                >
                   <ResponsiveImage
                     src={project.image}
                     alt={project.imageAlt}
@@ -152,6 +157,10 @@ export default function Home() {
                       <dd>{project.year}</dd>
                     </div>
                   </dl>
+                  <p className="project-proof">
+                    <span>Observable change</span>
+                    {project.outcomeTitle}
+                  </p>
                   <Link className="text-link" href={`/work/${project.slug}`}>
                     Read the case study <span aria-hidden="true">↗</span>
                   </Link>

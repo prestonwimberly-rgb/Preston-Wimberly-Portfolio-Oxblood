@@ -18,6 +18,7 @@ export type Project = {
   imageCredit?: string;
   imageFit?: "cover" | "contain";
   imagePosition?: string;
+  imageAspect?: string;
   role: string;
   scope: string;
   year: string;
@@ -53,8 +54,11 @@ const projectRecords: Project[] = [
       "An evidence-first music archive that connects songs, shows, photographs, and firsthand history without flattening them into promotion.",
     summary:
       "The Wild Feathers had a long public history scattered across tour records, photographs, releases, interviews, and personal memory. The assignment was to build a useful record while keeping provenance, rights, and uncertainty visible.",
-    image: "/images/wild-feathers-site.jpg",
-    imageAlt: "The Wild Feathers working archive homepage",
+    image: "/images/wild-feathers-laugh.png",
+    imageAlt: "The five members of The Wild Feathers seated together outside, laughing",
+    imageFit: "cover",
+    imagePosition: "center 45%",
+    imageAspect: "33 / 14",
     role: "Archive editor, writer & site builder",
     scope: "Research, architecture, writing, design, build",
     year: "2025–2026",
@@ -206,8 +210,8 @@ const projectRecords: Project[] = [
       "A father-and-son workshop shaped into a distinct product brand with its own language, visual code, model architecture, and commission path.",
     summary:
       "Wimberly Guitars makes small-run electric guitars from walnut, leather, steel, brass, oil, and wire. The brand needed to feel as considered as the instruments without pretending the workshop was a factory.",
-    image: "/images/wimberly-workshop-hero.avif",
-    imageAlt: "A Wimberly guitar resting on a wooden workbench in the workshop",
+    image: "/images/wimberly-jack-antique-bronze-knobs.jpeg",
+    imageAlt: "Close view of a walnut Wimberly guitar with a hand-tooled leather pickguard and antique bronze knobs",
     imageFit: "cover",
     imagePosition: "center 52%",
     role: "Co-founder, writer & brand lead",

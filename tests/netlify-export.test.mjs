@@ -45,17 +45,15 @@ test("exports crawl files for every canonical route", async () => {
   }
 });
 
-test("exports the corrected Wimberly workshop image", async () => {
+test("exports the selected project photography", async () => {
   const html = await readFile(
     new URL("../netlify-dist/index.html", import.meta.url),
     "utf8",
   );
-  assert.match(html, /\/images\/wimberly-workshop-hero\.avif/);
-  assert.match(html, /A Wimberly guitar resting on a wooden workbench/);
-  assert.doesNotMatch(
-    html,
-    /\/images\/(?:wild-feathers|tap|wimberly|preston-session)[^"']*\.png/,
-  );
+  assert.match(html, /\/images\/wimberly-jack-antique-bronze-knobs\.jpeg/);
+  assert.match(html, /hand-tooled leather pickguard and antique bronze knobs/);
+  assert.match(html, /\/images\/wild-feathers-laugh\.png/);
+  assert.match(html, /The five members of The Wild Feathers seated together outside, laughing/);
 });
 
 test("exports a branded, non-indexable 404 page", async () => {
