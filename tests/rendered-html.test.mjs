@@ -31,7 +31,7 @@ test("server-renders the finished portfolio", async () => {
   assert.match(html, /Brand Strategy, Communications &amp; Web/);
   assert.match(html, /Clear words/);
   assert.match(html, /organizations with complex work/);
-  assert.match(html, /Photograph by Preston Wimberly · San Marcos Regional Airport, Texas/);
+  assert.match(html, /Photograph by Preston Wimberly/);
   assert.match(html, /Selected work index/);
   assert.match(html, /Aviation, instruments, music history, and the web/);
   assert.match(html, /make original photography for organizations with complex work/);
@@ -77,7 +77,12 @@ test("server-renders all four project case studies", async () => {
     assert.match(html, /<picture class="responsive-picture">/);
     assert.match(html, new RegExp(`/social/${path.split("/").pop()}\\.jpg`));
     if (path === "/work/texas-aviation-partners") {
-      assert.match(html, /Photograph by Preston Wimberly/);
+      assert.match(html, /Work recorded in the field/);
+      assert.match(html, /\/optimized\/tap-hay-windsock-[0-9]+\.avif/);
+      assert.match(html, /\/optimized\/tap-tractor-[0-9]+\.avif/);
+      assert.match(html, /\/optimized\/tap-surveyor-[0-9]+\.avif/);
+      assert.ok((html.match(/Photograph by Preston Wimberly/g)?.length ?? 0) >= 3);
+      assert.doesNotMatch(html, /tap-projects-site|tap-mobile|san-marcos-tower/i);
     }
     if (path === "/work/wild-feathers") {
       assert.match(html, /case-image-cover/);

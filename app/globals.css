@@ -78,6 +78,7 @@ a {
 .site-nav,
 .text-link,
 .hero-visual figcaption,
+.about-section > figure figcaption,
 .project-index-rail,
 .capability > p,
 .contact-section > a,
@@ -692,6 +693,28 @@ img {
 
 .about-section > figure img {
   object-fit: contain !important;
+}
+
+.about-section > figure::after {
+  background: linear-gradient(180deg, transparent 60%, rgba(0, 0, 0, 0.42));
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.about-section > figure figcaption {
+  bottom: 22px;
+  color: var(--paper);
+  font-size: 0.75rem;
+  font-weight: 700;
+  left: 24px;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  max-width: calc(100% - 48px);
+  position: absolute;
+  text-transform: uppercase;
+  z-index: 2;
 }
 
 .about-copy {

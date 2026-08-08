@@ -4,6 +4,7 @@ export type ProjectArtifact = {
   caption: string;
   credit?: string;
   format: "landscape" | "portrait";
+  aspect?: string;
 };
 
 export type ProjectEvidence = {
@@ -216,34 +217,29 @@ const projectRecords: Project[] = [
       "Project and editorial structure",
       "Responsive design and metadata",
     ],
-    artifactTitle: "Field and public record.",
+    artifactTitle: "Work recorded in the field.",
     artifactIntro:
-      "Website views sit beside original airport photography so the public story remains connected to work, people, and place.",
+      "Original photography keeps the case study grounded in airport land, runway maintenance, and people doing the work.",
     outcomeTitle: "Prospective partners can trace each service to supporting work.",
     outcome: [
       "Prospective partners can move from services to projects, leadership, news, or a direct conversation. The company can publish development reporting in the same system.",
     ],
     artifacts: [
       {
-        src: "/images/tap-projects-site.jpg",
-        alt: "Texas Aviation Partners projects page on desktop",
-        caption: "Desktop projects index organized around the company’s airport work.",
-        credit: "Website design and screenshot by Preston Wimberly",
+        src: "/images/tap-tractor.jpg",
+        alt: "A tractor crossing an airport runway beneath large clouds",
+        caption: "A tractor works across an airport runway.",
+        credit: "Photograph by Preston Wimberly",
         format: "landscape",
-      },
-      {
-        src: "/images/tap-mobile.jpg",
-        alt: "Texas Aviation Partners homepage on mobile",
-        caption: "Texas Aviation Partners homepage at a 375-pixel mobile viewport.",
-        credit: "Website design and screenshot by Preston Wimberly",
-        format: "portrait",
+        aspect: "1280 / 851",
       },
       {
         src: "/images/tap-surveyor.jpg",
         alt: "A surveyor working on an airport runway under large clouds",
-        caption: "A surveyor works on the runway at San Marcos Regional Airport.",
+        caption: "A surveyor works on an airport runway.",
         credit: "Photograph by Preston Wimberly",
         format: "landscape",
+        aspect: "4 / 3",
       },
     ],
     closing:

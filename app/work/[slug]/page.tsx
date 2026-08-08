@@ -211,7 +211,10 @@ export default async function WorkPage({ params }: WorkPageProps) {
                 className={`artifact artifact-${artifact.format} artifact-${index + 1}`}
                 key={artifact.src}
               >
-                <div className="artifact-image">
+                <div
+                  className="artifact-image"
+                  style={artifact.aspect ? { aspectRatio: artifact.aspect } : undefined}
+                >
                   <ResponsiveImage
                     src={artifact.src}
                     alt={artifact.alt}

@@ -96,9 +96,7 @@ export default function Home() {
               priority
               sizes="(max-width: 900px) 100vw, 43vw"
             />
-            <figcaption>
-              Photograph by Preston Wimberly · San Marcos Regional Airport, Texas
-            </figcaption>
+            <figcaption>Photograph by Preston Wimberly</figcaption>
           </figure>
         </section>
 
@@ -222,6 +220,7 @@ export default function Home() {
               alt="A surveyor working on a runway beneath large clouds"
               sizes="(max-width: 760px) 100vw, 46vw"
             />
+            <figcaption>Photograph by Preston Wimberly</figcaption>
           </figure>
           <div className="about-copy">
             <p className="section-number">04 / About</p>
