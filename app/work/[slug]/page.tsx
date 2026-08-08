@@ -70,7 +70,7 @@ export default async function WorkPage({ params }: WorkPageProps) {
         <nav className="site-nav" aria-label="Case study navigation">
           <Link href="/#work">Work</Link>
           <Link className="nav-narrow-secondary" href="/#about">About</Link>
-          <a className="nav-contact" href="mailto:preston@prestonwimberly.com">
+          <a className="nav-contact" href={`mailto:${siteConfig.email}`}>
             <span className="nav-contact-long">Get in touch</span>
             <span className="nav-contact-short">Contact</span>
           </a>
@@ -262,7 +262,7 @@ export default async function WorkPage({ params }: WorkPageProps) {
       <footer className="site-footer">
         <p>© 2026 Preston Wimberly</p>
         <Link href="/">Home</Link>
-        <a href="mailto:preston@prestonwimberly.com">Get in touch ↗</a>
+        <a href={`mailto:${siteConfig.email}`}>Get in touch ↗</a>
       </footer>
     </>
   );

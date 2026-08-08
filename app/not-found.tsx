@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Page not found",
@@ -18,7 +19,7 @@ export default function NotFound() {
         </Link>
         <nav className="site-nav" aria-label="Page not found navigation">
           <Link href="/#work">Work</Link>
-          <a className="nav-contact" href="mailto:preston@prestonwimberly.com">
+          <a className="nav-contact" href={`mailto:${siteConfig.email}`}>
             <span className="nav-contact-long">Get in touch</span>
             <span className="nav-contact-short">Contact</span>
           </a>
@@ -38,7 +39,7 @@ export default function NotFound() {
       <footer className="site-footer">
         <p>Preston Wimberly</p>
         <p>Brand strategy · Communications · Editorial · Web</p>
-        <a href="mailto:preston@prestonwimberly.com">Email Preston</a>
+        <a href={`mailto:${siteConfig.email}`}>Email Preston</a>
       </footer>
     </>
   );

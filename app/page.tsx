@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ResponsiveImage } from "@/components/responsive-image";
 import { StructuredData } from "@/components/structured-data";
 import { projects } from "@/data/projects";
+import { siteConfig } from "@/lib/site";
 import { homeStructuredData } from "@/lib/structured-data";
 
 const capabilities = [
@@ -66,7 +67,7 @@ export default function Home() {
           <a href="#work">Work</a>
           <a className="nav-secondary" href="#writing">Writing</a>
           <a className="nav-narrow-secondary" href="#about">About</a>
-          <a className="nav-contact" href="mailto:preston@prestonwimberly.com">
+          <a className="nav-contact" href={`mailto:${siteConfig.email}`}>
             <span className="nav-contact-long">Get in touch</span>
             <span className="nav-contact-short">Contact</span>
           </a>
@@ -245,7 +246,7 @@ export default function Home() {
               consistent: I start with research and finish with words, images,
               and a working system.
             </p>
-            <a className="text-link" href="mailto:preston@prestonwimberly.com">
+            <a className="text-link" href={`mailto:${siteConfig.email}`}>
               Get in touch <span aria-hidden="true">↗</span>
             </a>
           </div>
@@ -258,7 +259,7 @@ export default function Home() {
             Based between San Marcos, Texas, and Salt Lake City, Utah. Creative
             direction, brand strategy, communications, editorial, and digital work.
           </p>
-          <a href="mailto:preston@prestonwimberly.com">preston@prestonwimberly.com</a>
+          <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
         </section>
       </main>
 
