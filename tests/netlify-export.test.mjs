@@ -37,8 +37,11 @@ test("exports every portfolio route as standalone Netlify HTML", async () => {
     assert.ok(html.includes(`/social/${socialSlug}.jpg`));
     const [jsonLd] = structuredData(html);
     assert.equal(jsonLd["@context"], "https://schema.org");
-    assert.ok(jsonLd["@graph"].some((node) => node["@type"] === "Person"));
+    const person = jsonLd["@graph"].find((node) => node["@type"] === "Person");
+    assert.equal(person?.email, "preston.wimberly@gmail.com");
     assert.ok(jsonLd["@graph"].some((node) => node["@type"] === "WebSite"));
+    assert.match(html, /mailto:preston\.wimberly@gmail\.com/);
+    assert.doesNotMatch(html, /preston@prestonwimberly\.com/);
     assert.doesNotMatch(JSON.stringify(jsonLd), /sameAs/);
     if (socialSlug === "home") {
       assert.ok(jsonLd["@graph"].some((node) => node["@type"] === "ProfilePage"));
@@ -95,6 +98,8 @@ test("exports a branded, non-indexable 404 page", async () => {
   assert.match(html, /Page not found \| Preston Wimberly/);
   assert.match(html, /404 \/ Page not found/);
   assert.match(html, /Return to selected work/);
+  assert.match(html, /mailto:preston\.wimberly@gmail\.com/);
+  assert.doesNotMatch(html, /preston@prestonwimberly\.com/);
   assert.match(html, /name="robots" content="noindex/i);
   assert.doesNotMatch(html, /rel="canonical"/i);
   assert.doesNotMatch(

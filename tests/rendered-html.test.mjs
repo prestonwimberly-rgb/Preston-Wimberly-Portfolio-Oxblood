@@ -56,6 +56,9 @@ test("server-renders the finished portfolio", async () => {
   assert.match(html, /"@type":"ProfilePage"/);
   assert.match(html, /"@type":"Person"/);
   assert.match(html, /"@type":"WebSite"/);
+  assert.match(html, /"email":"preston\.wimberly@gmail\.com"/);
+  assert.match(html, /mailto:preston\.wimberly@gmail\.com/);
+  assert.doesNotMatch(html, /preston@prestonwimberly\.com/);
   assert.doesNotMatch(html, /"sameAs"/);
 });
 
@@ -83,6 +86,9 @@ test("server-renders all four project case studies", async () => {
     assert.match(html, metaTitle);
     assert.match(html, /type="application\/ld\+json"/);
     assert.match(html, /"@type":"CreativeWork"/);
+    assert.match(html, /"email":"preston\.wimberly@gmail\.com"/);
+    assert.match(html, /mailto:preston\.wimberly@gmail\.com/);
+    assert.doesNotMatch(html, /preston@prestonwimberly\.com/);
     assert.match(html, /"creator":\{"@id":"https:\/\/work\.prestonwimberly\.com\/#person"\}/);
     assert.doesNotMatch(html, /"sameAs"/);
     assert.match(html, /<picture class="responsive-picture">/);
@@ -132,5 +138,7 @@ test("server-renders unknown routes with the portfolio 404", async () => {
   assert.match(html, /That page/);
   assert.match(html, /Return to selected work/);
   assert.match(html, /Preston Wimberly/);
+  assert.match(html, /mailto:preston\.wimberly@gmail\.com/);
+  assert.doesNotMatch(html, /preston@prestonwimberly\.com/);
   assert.match(html, /name="robots" content="noindex/i);
 });
