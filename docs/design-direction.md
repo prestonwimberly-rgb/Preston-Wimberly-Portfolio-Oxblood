@@ -26,7 +26,8 @@ The primary path is to scan the work, open the most relevant case study, and the
 - Use the paper color on oxblood or black surfaces; never place black text on oxblood.
 - Use muted grey primarily for rules, secondary surfaces, and supporting copy, not essential controls.
 - Keep animation limited to short link, image, and navigation feedback, with reduced-motion support.
+- Keep the shared editorial shell, but let each case study use its evidence differently: field record for aviation, source ledger for the archive, material system for guitars, and service sequence for the session practice.
 
 ## Content standard
 
-Every project should identify the problem, Preston’s ownership, collaboration, the central creative decision, the finished work, and an observable change. Unverified figures, rights status, attribution, and business outcomes remain explicitly flagged until confirmed.
+Every project should identify the problem, Preston’s ownership, collaboration, the central creative decision, the finished work, and an observable change. Unverified figures, rights status, attribution, and business outcomes remain explicitly flagged until confirmed. Project-specific evidence blocks may vary in structure, but they must stay factual, scannable, and supported by the public record or supplied assets.

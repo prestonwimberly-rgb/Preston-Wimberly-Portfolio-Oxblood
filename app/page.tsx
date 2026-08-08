@@ -96,9 +96,7 @@ export default function Home() {
               priority
               sizes="(max-width: 900px) 100vw, 43vw"
             />
-            <figcaption>
-              Photograph by Preston Wimberly · San Marcos Regional Airport, Texas
-            </figcaption>
+            <figcaption>Photograph by Preston Wimberly</figcaption>
           </figure>
         </section>
 
@@ -222,6 +220,7 @@ export default function Home() {
               alt="A surveyor working on a runway beneath large clouds"
               sizes="(max-width: 760px) 100vw, 46vw"
             />
+            <figcaption>Photograph by Preston Wimberly</figcaption>
           </figure>
           <div className="about-copy">
             <p className="section-number">04 / About</p>
@@ -237,8 +236,9 @@ export default function Home() {
             </p>
             <p>
               I’ve worked across aviation, handcrafted products, publishing,
-              sales, and live production. I start with research and finish with
-              words, images, and a working system.
+              sales, and live production. The medium changes, but the method is
+              consistent: I start with research and finish with words, images,
+              and a working system.
             </p>
             <a className="text-link" href="mailto:preston@prestonwimberly.com">
               Get in touch <span aria-hidden="true">↗</span>
