@@ -1089,7 +1089,7 @@ img {
 }
 
 .artifact figcaption span {
-  color: var(--ink-soft);
+  color: color-mix(in srgb, var(--ink) 35%, var(--ink-soft) 65%);
   display: block;
   font-family: var(--font-interface);
   font-size: 0.7rem;
