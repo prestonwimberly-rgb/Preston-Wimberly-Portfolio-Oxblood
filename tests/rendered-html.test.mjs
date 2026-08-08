@@ -92,6 +92,10 @@ test("server-renders all four project case studies", async () => {
       assert.match(html, /case-image-cover/);
       assert.match(html, /hand-tooled leather pickguard and antique bronze knobs/);
     }
+    if (path === "/work/preston-session-site") {
+      assert.match(html, /\/optimized\/preston-session-mobile-[0-9]+\.avif/);
+      assert.match(html, /390-pixel mobile viewport/);
+    }
   }
 });
 
@@ -102,7 +106,9 @@ test("public case studies exclude unresolved figures and rejected guitar artifac
 
   const guitarResponse = await render("/work/wimberly-guitars");
   const guitarHtml = await guitarResponse.text();
-  assert.doesNotMatch(guitarHtml, /wimberly-mobile|wimberly-reference|wimberly-workshop-hero/i);
+  assert.match(guitarHtml, /\/optimized\/wimberly-mobile-[0-9]+\.avif/);
+  assert.match(guitarHtml, /390-pixel mobile viewport/);
+  assert.doesNotMatch(guitarHtml, /wimberly-reference|wimberly-workshop-hero/i);
   assert.doesNotMatch(guitarHtml, /co-founder|commission|waitlist|commerce/i);
   assert.match(guitarHtml, /ask directly about availability/i);
 });

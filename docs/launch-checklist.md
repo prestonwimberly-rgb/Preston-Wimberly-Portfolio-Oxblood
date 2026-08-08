@@ -57,8 +57,7 @@ cannot be verified, narrow or remove it rather than substituting a new claim.
 
 - Confirm the co-founder relationship.
 - Decide whether the public offer is accurately described as commissions, a
-- The low-resolution mobile artifact has been removed. Restore a mobile view only
-  when a better source image exists.
+  waitlist, or commerce.
 - Confirm the provenance and intended use of `wimberly-reference.avif` and
   `wimberly-workshop-hero.avif`; keep both assets out of the public case study
   until that review is complete.

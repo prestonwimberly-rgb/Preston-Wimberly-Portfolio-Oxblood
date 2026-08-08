@@ -315,7 +315,7 @@ const projectRecords: Project[] = [
     ],
     artifactTitle: "The object and its language.",
     artifactIntro:
-      "The finished website carries the instruments’ material vocabulary into a focused model and product presentation.",
+      "Desktop and mobile views carry the instruments’ material vocabulary into a focused model and product presentation.",
     outcomeTitle: "The workshop now has a clear inquiry path.",
     outcome: [
       "Players can compare models and materials, learn how the workshop builds, and ask directly about availability.",
@@ -324,9 +324,17 @@ const projectRecords: Project[] = [
       {
         src: "/images/wimberly-site.jpg",
         alt: "Desktop view of the Wimberly Guitars homepage",
-        caption: "Desktop opening centered on the Jack and the workshop’s material language.",
+        caption: "Desktop opening centered on the workshop, an unfinished instrument, and the material language.",
         credit: "Website design and screenshot by Preston Wimberly",
         format: "landscape",
+        aspect: "1417 / 892",
+      },
+      {
+        src: "/images/wimberly-mobile.jpg",
+        alt: "Mobile view of the Wimberly Guitars homepage",
+        caption: "Wimberly Guitars homepage at a 390-pixel mobile viewport.",
+        credit: "Website design and screenshot by Preston Wimberly",
+        format: "portrait",
       },
     ],
     closing:
@@ -334,7 +342,6 @@ const projectRecords: Project[] = [
     theme: "workshop",
     verificationNotes: [
       "Confirm the co-founder relationship and whether the public offer should be described as commissions, a waitlist, or commerce.",
-      "Use a higher-resolution mobile artifact before restoring any mobile screenshot.",
       "Confirm the provenance and intended use of the excluded reference and workshop images before publishing either asset.",
     ],
   },
@@ -409,14 +416,15 @@ const projectRecords: Project[] = [
       {
         src: "/images/preston-session-site.jpg",
         alt: "Desktop view of prestonwimberly.com",
-        caption: "Desktop opening with work samples, services, and inquiry in one sequence.",
+        caption: "Desktop opening with the core offer, project CTA, and work-sample path.",
         credit: "Website design and screenshot by Preston Wimberly",
         format: "landscape",
+        aspect: "1417 / 900",
       },
       {
         src: "/images/preston-session-mobile.jpg",
         alt: "Mobile view of prestonwimberly.com",
-        caption: "Session-musician homepage at a 375-pixel mobile viewport.",
+        caption: "Session-musician homepage at a 390-pixel mobile viewport.",
         credit: "Website design and screenshot by Preston Wimberly",
         format: "portrait",
       },
