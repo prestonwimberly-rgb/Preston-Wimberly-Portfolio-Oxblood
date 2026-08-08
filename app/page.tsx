@@ -138,7 +138,7 @@ export default function Home() {
                 <div className="project-copy">
                   <p className="project-index">0{index + 1}</p>
                   <p className="project-kicker">{project.kicker}</p>
-                  <h3>
+                  <h3 className={project.title.includes(" ") ? undefined : "title-nowrap"}>
                     <Link href={`/work/${project.slug}`}>{project.title}</Link>
                   </h3>
                   <p>{project.cardSummary}</p>
