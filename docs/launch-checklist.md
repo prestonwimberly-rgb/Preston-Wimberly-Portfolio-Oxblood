@@ -13,11 +13,11 @@ This makes the relationship clear without forcing two different audiences into
 one homepage. The word “work” is direct, memorable, and broad enough to hold
 writing, brand, editorial, communications, and web engagements.
 
-Until that change is approved and complete, the canonical origin should remain
-`https://preston-wimberly-portfolio.netlify.app`. Do not publish custom-domain
-canonicals before the custom domain resolves reliably.
+The approved canonical production origin is
+`https://work.prestonwimberly.com`. Keep the root musician site and its `www`
+hostname unchanged.
 
-When Preston approves the domain move:
+Custom-domain release sequence:
 
 1. Add `work.prestonwimberly.com` to the existing Netlify site and configure the
    DNS record without changing the apex musician site.

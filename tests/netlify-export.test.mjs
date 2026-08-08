@@ -3,11 +3,11 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 const pages = [
-  ["../netlify-dist/index.html", /Clear words/, "https://preston-wimberly-portfolio.netlify.app", "home"],
-  ["../netlify-dist/work/texas-aviation-partners/index.html", /Making the real scale/, "https://preston-wimberly-portfolio.netlify.app/work/texas-aviation-partners/", "texas-aviation-partners"],
-  ["../netlify-dist/work/wild-feathers/index.html", /Turning sixteen years/, "https://preston-wimberly-portfolio.netlify.app/work/wild-feathers/", "wild-feathers"],
-  ["../netlify-dist/work/wimberly-guitars/index.html", /Building a guitar brand/, "https://preston-wimberly-portfolio.netlify.app/work/wimberly-guitars/", "wimberly-guitars"],
-  ["../netlify-dist/work/preston-session-site/index.html", /Turning a musician/, "https://preston-wimberly-portfolio.netlify.app/work/preston-session-site/", "preston-session-site"],
+  ["../netlify-dist/index.html", /Clear words/, "https://work.prestonwimberly.com", "home"],
+  ["../netlify-dist/work/texas-aviation-partners/index.html", /Making the real scale/, "https://work.prestonwimberly.com/work/texas-aviation-partners/", "texas-aviation-partners"],
+  ["../netlify-dist/work/wild-feathers/index.html", /Turning sixteen years/, "https://work.prestonwimberly.com/work/wild-feathers/", "wild-feathers"],
+  ["../netlify-dist/work/wimberly-guitars/index.html", /Building a guitar brand/, "https://work.prestonwimberly.com/work/wimberly-guitars/", "wimberly-guitars"],
+  ["../netlify-dist/work/preston-session-site/index.html", /Turning a musician/, "https://work.prestonwimberly.com/work/preston-session-site/", "preston-session-site"],
 ];
 
 test("exports every portfolio route as standalone Netlify HTML", async () => {
@@ -38,7 +38,7 @@ test("exports crawl files for every canonical route", async () => {
   assert.match(robots, /Allow: \//);
   assert.match(
     robots,
-    /Sitemap: https:\/\/preston-wimberly-portfolio\.netlify\.app\/sitemap\.xml/,
+    /Sitemap: https:\/\/work\.prestonwimberly\.com\/sitemap\.xml/,
   );
   for (const [, , canonicalUrl] of pages) {
     assert.ok(sitemap.includes(`<loc>${canonicalUrl}</loc>`));

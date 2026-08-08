@@ -5,8 +5,8 @@ lead, editor, and website maker. The site presents evidence-led work across
 aviation, product, music history, and independent practice without losing its
 restrained editorial character.
 
-Production currently lives at
-[`preston-wimberly-portfolio.netlify.app`](https://preston-wimberly-portfolio.netlify.app/).
+Production lives at
+[`work.prestonwimberly.com`](https://work.prestonwimberly.com/).
 The separate session-musician site remains at
 [`prestonwimberly.com`](https://prestonwimberly.com/).
 
@@ -37,9 +37,9 @@ in `netlify.toml`. The export contains five public routes, a branded `404.html`,
 assets. No application JavaScript is required in the exported pages.
 
 `SITE_URL` controls the canonical origin. Copy `.env.example` for local testing;
-keep its default Netlify origin until a custom portfolio subdomain is approved
-and connected. Netlify preview and branch-deploy contexts automatically emit
-`noindex` metadata and a fully disallowing robots file.
+its default is the portfolio production origin at `work.prestonwimberly.com`.
+Netlify preview and branch-deploy contexts automatically emit noindex metadata
+and a fully disallowing robots file.
 
 Generated assets live in `public/optimized/` and `public/social/`. They are not
 committed; `npm run build` recreates them from `config/images.json` and
