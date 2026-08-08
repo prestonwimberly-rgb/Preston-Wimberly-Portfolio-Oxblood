@@ -44,7 +44,10 @@ function makeEnvironment() {
 
 function stripRuntime(html) {
   return html
-    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "")
+    .replace(
+      /<script\b(?![^>]*\btype=["']application\/ld\+json["'])[^>]*>[\s\S]*?<\/script>/gi,
+      "",
+    )
     .replace(
       /<link\b(?=[^>]*(?:rel=["']modulepreload["']|as=["']script["']|href=["'][^"']+\.js(?:\?[^"']*)?["']))[^>]*>/gi,
       "",
@@ -68,7 +71,10 @@ async function render(route, expectedStatus = 200) {
   }
 
   const html = stripRuntime(await response.text());
-  if (/<script\b/i.test(html) || /\/_next\/image\?/i.test(html)) {
+  if (
+    /<script\b(?![^>]*\btype=["']application\/ld\+json["'])/i.test(html) ||
+    /\/_next\/image\?/i.test(html)
+  ) {
     throw new Error(`Static render for ${route} still contains runtime-only markup`);
   }
 

@@ -98,6 +98,16 @@ cannot be verified, narrow or remove it rather than substituting a new claim.
 - Monitor the first production deploy for broken routes, image errors, and form
   or email-link failures.
 
+## Google Search Console
+
+- Use `https://work.prestonwimberly.com/sitemap.xml` as the sitemap submission.
+- Add or select the appropriate Search Console property, verify ownership, and
+  submit the sitemap through the Sitemaps report.
+- Do not add a DNS verification record until Google provides the exact TXT or
+  CNAME value for the chosen property. Preserve all existing DNS records.
+- Validate the homepage and one case study with Google’s URL Inspection and
+  Rich Results tools after the production deploy is live.
+
 ## Repository consolidation
 
 The active repository is

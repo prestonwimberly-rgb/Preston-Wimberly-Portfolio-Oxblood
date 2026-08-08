@@ -15,6 +15,7 @@ export type ProjectEvidence = {
 export type Project = {
   slug: string;
   title: string;
+  metaTitle: string;
   kicker: string;
   headline: string;
   cardSummary: string;
@@ -60,6 +61,7 @@ const projectRecords: Project[] = [
   {
     slug: "wild-feathers",
     title: "The Wild Feathers",
+    metaTitle: "The Wild Feathers Music Archive",
     kicker: "Archive · Editorial · Web",
     headline: "Turning sixteen years of a band into a story people can enter.",
     cardSummary:
@@ -156,6 +158,7 @@ const projectRecords: Project[] = [
   {
     slug: "texas-aviation-partners",
     title: "Texas Aviation Partners",
+    metaTitle: "Texas Aviation Partners Brand Strategy",
     kicker: "Brand strategy · Editorial · Web",
     headline: "Making the real scale of an aviation company visible.",
     cardSummary:
@@ -253,6 +256,7 @@ const projectRecords: Project[] = [
   {
     slug: "wimberly-guitars",
     title: "Wimberly Guitars",
+    metaTitle: "Wimberly Guitars Brand Strategy",
     kicker: "Brand · Product storytelling · Web",
     headline: "Building a guitar brand from the materials up.",
     cardSummary:
@@ -348,6 +352,7 @@ const projectRecords: Project[] = [
   {
     slug: "preston-session-site",
     title: "prestonwimberly.com",
+    metaTitle: "prestonwimberly.com Website Strategy",
     kicker: "Positioning · Service design · Web",
     headline: "Turning a musician’s range into one direct invitation.",
     cardSummary:
