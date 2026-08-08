@@ -5,28 +5,7 @@ import { projects } from "@/data/projects";
 import { siteConfig } from "@/lib/site";
 import { homeStructuredData } from "@/lib/structured-data";
 
-const capabilities = [
-  {
-    number: "01",
-    title: "Judgment",
-    text: "I identify the central problem, define the audience, and decide what the work must make clear.",
-  },
-  {
-    number: "02",
-    title: "Direction",
-    text: "I set the governing idea, message architecture, and visual and editorial direction.",
-  },
-  {
-    number: "03",
-    title: "System",
-    text: "I turn that direction into language, publishing structure, design rules, and a practical workflow.",
-  },
-  {
-    number: "04",
-    title: "Execution",
-    text: "I write, photograph, design, and build the finished work when hands-on execution is useful.",
-  },
-];
+const workingMethod = ["Research", "Position", "Write", "Photograph", "Design", "Build"];
 
 const writing = [
   {
@@ -65,7 +44,6 @@ export default function Home() {
         </Link>
         <nav className="site-nav" aria-label="Primary navigation">
           <a href="#work">Work</a>
-          <a className="nav-secondary" href="#writing">Writing</a>
           <a className="nav-narrow-secondary" href="#about">About</a>
           <a className="nav-contact" href={`mailto:${siteConfig.email}`}>
             <span className="nav-contact-long">Get in touch</span>
@@ -106,15 +84,6 @@ export default function Home() {
           </figure>
         </section>
 
-        <nav className="project-index-rail" aria-label="Selected work index">
-          {projects.map((project, index) => (
-            <Link href={`/work/${project.slug}`} key={project.slug}>
-              <span>0{index + 1}</span>
-              {project.title}
-            </Link>
-          ))}
-        </nav>
-
         <section className="section work-section" id="work" aria-labelledby="work-title">
           <div className="section-heading">
             <p className="section-number">01 / Selected work</p>
@@ -127,39 +96,34 @@ export default function Home() {
                 className={`project-row project-row-${index + 1} project-image-${project.imageFit ?? "contain"}`}
                 key={project.slug}
               >
-                <Link
-                  className="project-image"
-                  href={`/work/${project.slug}`}
-                  style={{ aspectRatio: project.imageAspect }}
-                >
-                  <ResponsiveImage
-                    src={project.image}
-                    alt={project.imageAlt}
-                    sizes="(max-width: 760px) 100vw, 54vw"
-                    style={{ objectPosition: project.imagePosition ?? "center" }}
-                  />
-                </Link>
+                <figure className="project-visual">
+                  <Link
+                    className="project-image"
+                    href={`/work/${project.slug}`}
+                    style={{ aspectRatio: project.imageAspect }}
+                  >
+                    <ResponsiveImage
+                      src={project.image}
+                      alt={project.imageAlt}
+                      sizes="(max-width: 760px) 100vw, 54vw"
+                      style={{ objectPosition: project.imagePosition ?? "center" }}
+                    />
+                  </Link>
+                  <figcaption>
+                    {project.imageCaption}
+                    {project.imageCredit ? <span>{project.imageCredit}</span> : null}
+                  </figcaption>
+                </figure>
                 <div className="project-copy">
-                  <p className="project-index">0{index + 1}</p>
-                  <p className="project-kicker">{project.kicker}</p>
+                  <p className="project-index">{project.chapterNumber}</p>
+                  <p className="project-kicker">{project.chapter}</p>
                   <h3 className={project.title.includes(" ") ? undefined : "title-nowrap"}>
                     <Link href={`/work/${project.slug}`}>{project.title}</Link>
                   </h3>
-                  <p>{project.cardSummary}</p>
-                  <dl className="project-meta">
-                    <div>
-                      <dt>Role</dt>
-                      <dd>{project.role}</dd>
-                    </div>
-                    <div>
-                      <dt>Place</dt>
-                      <dd>{project.place}</dd>
-                    </div>
-                    <div>
-                      <dt>Year</dt>
-                      <dd>{project.year}</dd>
-                    </div>
-                  </dl>
+                  <p className="project-premise">{project.premise}</p>
+                  <p className="project-context">
+                    {project.place} · {project.year}
+                  </p>
                   <p className="project-proof">
                     <span>Result</span>
                     {project.outcomeTitle}
@@ -173,23 +137,22 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="capabilities" aria-labelledby="capabilities-title">
-          <div className="capabilities-intro">
+        <section className="practice-note" aria-labelledby="practice-title">
+          <div>
             <p className="section-number inverse">02 / Working method</p>
-            <h2 id="capabilities-title">Judgment first. Direction through the finished work.</h2>
-            <p>
-              I establish the central decision, build a system around it, and
-              execute where the work needs it.
-            </p>
+            <h2 id="practice-title">Start with the record. End with something people can use.</h2>
           </div>
-          <div className="capability-grid">
-            {capabilities.map((item) => (
-              <article className="capability" key={item.number}>
-                <p>{item.number}</p>
-                <h3>{item.title}</h3>
-                <span>{item.text}</span>
-              </article>
-            ))}
+          <div className="practice-note-copy">
+            <p>
+              I interview the people doing the work, find the useful facts, and
+              make one central decision before the writing, photographs, and
+              digital system take shape.
+            </p>
+            <ul aria-label="Working method disciplines">
+              {workingMethod.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
           </div>
         </section>
 

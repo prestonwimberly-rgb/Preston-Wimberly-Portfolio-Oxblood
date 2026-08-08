@@ -14,6 +14,9 @@ export type ProjectEvidence = {
 
 export type Project = {
   slug: string;
+  chapterNumber: string;
+  chapter: string;
+  premise: string;
   title: string;
   metaTitle: string;
   kicker: string;
@@ -22,6 +25,7 @@ export type Project = {
   summary: string;
   image: string;
   imageAlt: string;
+  imageCaption: string;
   imageCredit?: string;
   imageFit?: "cover" | "contain";
   imagePosition?: string;
@@ -60,6 +64,10 @@ export type Project = {
 const projectRecords: Project[] = [
   {
     slug: "wild-feathers",
+    chapterNumber: "02",
+    chapter: "The Road",
+    premise:
+      "What happens when a relatively unknown band signs a major-label record deal and spends the next two years on the road?",
     title: "The Wild Feathers",
     metaTitle: "The Wild Feathers Music Archive",
     kicker: "Archive · Editorial · Web",
@@ -70,6 +78,7 @@ const projectRecords: Project[] = [
       "I found The Wild Feathers’ public history across tour records, photographs, releases, interviews, and personal memory. I built a record that keeps provenance, rights, and uncertainty attached to each item.",
     image: "/images/wild-feathers-laugh.png",
     imageAlt: "The five members of The Wild Feathers seated together outside, laughing",
+    imageCaption: "The Wild Feathers, archival band photograph.",
     imageFit: "cover",
     imagePosition: "center 45%",
     imageAspect: "33 / 14",
@@ -147,8 +156,7 @@ const projectRecords: Project[] = [
         format: "portrait",
       },
     ],
-    closing:
-      "Each published memory stays linked to its source.",
+    closing: "Each published memory stays linked to its source.",
     theme: "archive",
     verificationNotes: [
       "Confirm the counts for performances, canonical photographs, chapters, and archive collections.",
@@ -157,6 +165,10 @@ const projectRecords: Project[] = [
   },
   {
     slug: "texas-aviation-partners",
+    chapterNumber: "01",
+    chapter: "The Airfield",
+    premise:
+      "How do you make airport infrastructure feel consequential without turning it into corporate aviation marketing?",
     title: "Texas Aviation Partners",
     metaTitle: "Texas Aviation Partners Brand Strategy",
     kicker: "Brand strategy · Editorial · Web",
@@ -167,6 +179,7 @@ const projectRecords: Project[] = [
       "Texas Aviation Partners manages and develops airports, but visitors saw one location and one category of work on its old site.",
     image: "/images/tap-hay-windsock.jpg",
     imageAlt: "A hay bale beside an airport windsock beneath a wide sky",
+    imageCaption: "Hay bales and an airport windsock in the working landscape.",
     imageCredit: "Photograph by Preston Wimberly",
     imageFit: "cover",
     imagePosition: "center 46%",
@@ -246,7 +259,7 @@ const projectRecords: Project[] = [
       },
     ],
     closing:
-      "The company now describes its work in practical, specific language.",
+      "A claim should lead to a project, a person, or a public record.",
     theme: "field",
     verificationNotes: [
       "Confirm Preston’s decision authority and the description of stakeholder collaboration.",
@@ -255,6 +268,9 @@ const projectRecords: Project[] = [
   },
   {
     slug: "wimberly-guitars",
+    chapterNumber: "03",
+    chapter: "The Object",
+    premise: "Objects meant to acquire history.",
     title: "Wimberly Guitars",
     metaTitle: "Wimberly Guitars Brand Strategy",
     kicker: "Brand · Product storytelling · Web",
@@ -265,6 +281,7 @@ const projectRecords: Project[] = [
       "Wimberly Guitars makes small-run electric guitars from walnut, leather, steel, brass, oil, and wire. We needed a brand as considered as the instruments, with no claim to factory scale.",
     image: "/images/wimberly-jack-antique-bronze-knobs.jpeg",
     imageAlt: "Close view of a walnut Wimberly guitar with a hand-tooled leather pickguard and antique bronze knobs",
+    imageCaption: "Walnut, hand-tooled leather, and antique bronze hardware.",
     imageFit: "cover",
     imagePosition: "center 52%",
     role: "Writer & brand lead",
@@ -341,8 +358,7 @@ const projectRecords: Project[] = [
         format: "portrait",
       },
     ],
-    closing:
-      "I based the language and visuals on the walnut, leather, steel, and brass we use at the bench.",
+    closing: "A material choice has to earn its place in the story.",
     theme: "workshop",
     verificationNotes: [
       "Confirm the co-founder relationship and whether the public offer should be described as commissions, a waitlist, or commerce.",
@@ -351,6 +367,10 @@ const projectRecords: Project[] = [
   },
   {
     slug: "preston-session-site",
+    chapterNumber: "04",
+    chapter: "The Musician",
+    premise:
+      "Identity for a working musician without turning the person into an influencer.",
     title: "prestonwimberly.com",
     metaTitle: "prestonwimberly.com Website Strategy",
     kicker: "Positioning · Service design · Web",
@@ -361,6 +381,7 @@ const projectRecords: Project[] = [
       "Producers need to hear the work, understand the offer, and know how to book the session. I built one site for those three decisions.",
     image: "/images/preston-session-site.jpg",
     imageAlt: "prestonwimberly.com homepage with a musician playing guitar",
+    imageCaption: "prestonwimberly.com, desktop opening.",
     role: "Writer, strategist, designer & builder",
     scope: "Positioning, copy, service design, website",
     year: "2026",
@@ -435,7 +456,7 @@ const projectRecords: Project[] = [
       },
     ],
     closing:
-      "Visitors get the information they need to start the next recording.",
+      "The work should make the offer clear before the biography has to.",
     theme: "studio",
     verificationNotes: [
       "Confirm the two-decades claim and specific instrument and service breadth before expanding public copy.",

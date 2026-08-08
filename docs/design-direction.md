@@ -28,6 +28,34 @@ The primary path is to scan the work, open the most relevant case study, and the
 - Keep animation limited to short link, image, and navigation feedback, with reduced-motion support.
 - Keep the shared editorial shell, but let each case study use its evidence differently: field record for aviation, source ledger for the archive, material system for guitars, and service sequence for the session practice.
 
+## Monograph refinement
+
+The expanded installed `rrl-web-design` skill is the governing design standard.
+Its portfolio mode treats aviation, music, craft, writing, photography, and web
+work as chapters connected by one recognizable eye.
+
+- Keep the homepage opening concise and evidence-led. The first screen names the
+  practice, preserves the established display statement, and introduces the
+  range of mediums without turning into a service pitch.
+- Move directly from the opening into selected work. Do not restore a dashboard-
+  like project rail or résumé-style metadata stack on the homepage.
+- Present working method as one editorial note rather than a grid of capability
+  cards.
+- Put the strongest artifact before dense project details. Music and guitar case
+  studies open on their evidence; aviation and the session practice state the
+  premise, then show the work before the metadata ledger.
+- Keep captions factual and adjacent to the image. Material character comes from
+  the photographs, type, rules, and spacing rather than gradients or global
+  texture effects.
+- Frame the public work as four editorial chapters: The Airfield, The Road, The
+  Object, and The Musician. Texas Aviation Partners remains first while the Wild
+  Feathers archive rights and fact-checking are open; chapter order may change
+  only after that material is cleared.
+- Vary the case-study sequence by subject. Aviation moves from premise to field
+  record to public proof. The archive and workshop lead with their strongest
+  artifact and evidence system. The musician chapter keeps its working principle
+  and offer close to the opening.
+
 ## Content standard
 
 Every project should identify the problem, Preston’s ownership, collaboration, the central creative decision, the finished work, and an observable change. Unverified figures, rights status, attribution, and business outcomes remain explicitly flagged until confirmed. Project-specific evidence blocks may vary in structure, but they must stay factual, scannable, and supported by the public record or supplied assets.

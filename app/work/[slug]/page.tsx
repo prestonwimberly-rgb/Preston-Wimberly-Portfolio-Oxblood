@@ -56,6 +56,147 @@ export default async function WorkPage({ params }: WorkPageProps) {
 
   const currentIndex = projects.findIndex((item) => item.slug === project.slug);
   const nextProject = projects[(currentIndex + 1) % projects.length];
+  const imageFirst = project.theme === "archive" || project.theme === "workshop";
+  const caseImage = (
+    <figure
+      className={`case-image case-image-${project.imageFit ?? "contain"}`}
+      style={{ aspectRatio: project.imageAspect }}
+    >
+      <ResponsiveImage
+        src={project.image}
+        alt={project.imageAlt}
+        priority
+        sizes="100vw"
+        style={{ objectPosition: project.imagePosition ?? "center" }}
+      />
+      <figcaption>
+        {project.imageCaption}
+        {project.imageCredit ? <span>{project.imageCredit}</span> : null}
+      </figcaption>
+    </figure>
+  );
+  const caseHero = (
+    <section className="case-hero">
+      <div className="case-hero-meta">
+        <p className="case-chapter">
+          {`${project.chapterNumber} / ${project.chapter}`}
+        </p>
+        <p className="eyebrow">{project.kicker}</p>
+      </div>
+      <h1>{project.headline}</h1>
+      <p className="case-premise">{project.premise}</p>
+      <p className="case-summary">{project.summary}</p>
+    </section>
+  );
+  const caseDetails = (
+    <section className="case-details" aria-label="Project details">
+      <dl className="case-meta">
+        <div>
+          <dt>Engagement</dt>
+          <dd>{project.engagementType}</dd>
+        </div>
+        <div>
+          <dt>Role</dt>
+          <dd>{project.role}</dd>
+        </div>
+        <div>
+          <dt>Scope</dt>
+          <dd>{project.scope}</dd>
+        </div>
+        <div>
+          <dt>Year</dt>
+          <dd>{project.year}</dd>
+        </div>
+        <div>
+          <dt>Place</dt>
+          <dd>{project.place}</dd>
+        </div>
+        <div>
+          <dt>Status</dt>
+          <dd>{project.status}</dd>
+        </div>
+      </dl>
+    </section>
+  );
+  const caseContext = (
+    <section className="case-context" aria-label="Project context">
+      <div>
+        <p className="section-number">My ownership</p>
+        <p>{project.ownership}</p>
+      </div>
+      <div>
+        <p className="section-number">Collaboration</p>
+        <p>{project.collaboration}.</p>
+      </div>
+      <div>
+        <p className="section-number">Constraint</p>
+        <p>{project.constraint}</p>
+      </div>
+    </section>
+  );
+  const caseEvidence = (
+    <section className="case-evidence" aria-labelledby="evidence-title">
+      <div className="case-evidence-intro">
+        <p className="section-number">{project.evidenceEyebrow}</p>
+        <h2 id="evidence-title">{project.evidenceTitle}</h2>
+        <p>{project.evidenceIntro}</p>
+      </div>
+      <dl className="case-evidence-list">
+        {project.evidence.map((item, index) => (
+          <div key={item.label}>
+            <dt>
+              <span aria-hidden="true">0{index + 1}</span>
+              {item.label}
+            </dt>
+            <dd>{item.value}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+  );
+  const contextSection = (
+    <div className="case-section">
+      <p className="section-number">
+        {`${project.theme === "workshop" ? "02" : "01"} / Context`}
+      </p>
+      <div>
+        <h2>{project.challengeTitle}</h2>
+        {project.challenge.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
+      </div>
+    </div>
+  );
+  const principleSection = (
+    <aside className="case-principle" aria-label="Working principle">
+      <p className="section-number">Working principle</p>
+      <p>{project.closing}</p>
+    </aside>
+  );
+  const decisionSection = (
+    <div className="case-section">
+      <p className="section-number">
+        {`${project.theme === "workshop" ? "01" : "02"} / The decision`}
+      </p>
+      <div>
+        <h2>{project.decisionTitle}</h2>
+        {project.decision.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
+      </div>
+    </div>
+  );
+  const deliverablesSection = (
+    <div className="deliverables">
+      <p className="section-number inverse">03 / Selected work</p>
+      <h2>What I made</h2>
+      <ul>
+        {project.deliverables.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  );
 
   return (
     <>
@@ -81,123 +222,21 @@ export default async function WorkPage({ params }: WorkPageProps) {
         className={`case-study case-study-${project.slug} case-theme-${project.theme}`}
         id="case-content"
       >
-        <section className="case-hero">
-          <p className="eyebrow">{project.kicker}</p>
-          <h1>{project.headline}</h1>
-          <p className="case-summary">{project.summary}</p>
-          <dl className="case-meta">
-            <div>
-              <dt>Engagement</dt>
-              <dd>{project.engagementType}</dd>
-            </div>
-            <div>
-              <dt>Role</dt>
-              <dd>{project.role}</dd>
-            </div>
-            <div>
-              <dt>Scope</dt>
-              <dd>{project.scope}</dd>
-            </div>
-            <div>
-              <dt>Year</dt>
-              <dd>{project.year}</dd>
-            </div>
-            <div>
-              <dt>Place</dt>
-              <dd>{project.place}</dd>
-            </div>
-            <div>
-              <dt>Status</dt>
-              <dd>{project.status}</dd>
-            </div>
-          </dl>
-        </section>
-
-        <figure
-          className={`case-image case-image-${project.imageFit ?? "contain"}`}
-          style={{ aspectRatio: project.imageAspect }}
-        >
-          <ResponsiveImage
-            src={project.image}
-            alt={project.imageAlt}
-            priority
-            sizes="100vw"
-            style={{ objectPosition: project.imagePosition ?? "center" }}
-          />
-          {project.imageCredit ? (
-            <figcaption>{project.imageCredit}</figcaption>
-          ) : null}
-        </figure>
-
-        <section className="case-context" aria-label="Project context">
-          <div>
-            <p className="section-number">My ownership</p>
-            <p>{project.ownership}</p>
-          </div>
-          <div>
-            <p className="section-number">Collaboration</p>
-            <p>{project.collaboration}.</p>
-          </div>
-          <div>
-            <p className="section-number">Constraint</p>
-            <p>{project.constraint}</p>
-          </div>
-        </section>
-
-        <section className="case-evidence" aria-labelledby="evidence-title">
-          <div className="case-evidence-intro">
-            <p className="section-number">{project.evidenceEyebrow}</p>
-            <h2 id="evidence-title">{project.evidenceTitle}</h2>
-            <p>{project.evidenceIntro}</p>
-          </div>
-          <dl className="case-evidence-list">
-            {project.evidence.map((item, index) => (
-              <div key={item.label}>
-                <dt>
-                  <span aria-hidden="true">0{index + 1}</span>
-                  {item.label}
-                </dt>
-                <dd>{item.value}</dd>
-              </div>
-            ))}
-          </dl>
-        </section>
+        {imageFirst ? caseImage : null}
+        {caseHero}
+        {!imageFirst ? caseImage : null}
+        {project.theme !== "field" ? caseEvidence : null}
+        {caseDetails}
+        {project.theme === "field" ? caseContext : null}
+        {project.theme === "field" ? caseEvidence : null}
+        {project.theme !== "field" ? caseContext : null}
 
         <section className="case-body">
-          <div className="case-section">
-            <p className="section-number">01 / Context</p>
-            <div>
-              <h2>{project.challengeTitle}</h2>
-              {project.challenge.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-            </div>
-          </div>
-
-          <aside className="case-principle" aria-label="Working principle">
-            <p className="section-number">Working principle</p>
-            <p>{project.closing}</p>
-          </aside>
-
-          <div className="case-section">
-            <p className="section-number">02 / The decision</p>
-            <div>
-              <h2>{project.decisionTitle}</h2>
-              {project.decision.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-            </div>
-          </div>
-
-          <div className="deliverables">
-            <p className="section-number inverse">03 / Selected work</p>
-            <h2>What I made</h2>
-            <ul>
-              {project.deliverables.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
+          {project.theme === "studio" ? principleSection : null}
+          {project.theme === "workshop" ? decisionSection : contextSection}
+          {project.theme === "studio" ? null : principleSection}
+          {project.theme === "workshop" ? contextSection : decisionSection}
+          {deliverablesSection}
         </section>
 
         <section className="case-artifacts" aria-labelledby="artifacts-title">
