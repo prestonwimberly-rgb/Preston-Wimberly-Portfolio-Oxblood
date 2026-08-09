@@ -80,7 +80,10 @@ export default function Home() {
               priority
               sizes="(max-width: 900px) 100vw, 43vw"
             />
-            <figcaption>Photograph by Preston Wimberly</figcaption>
+            <figcaption>
+              A tractor works across an airport runway.
+              <span>Photograph by Preston Wimberly</span>
+            </figcaption>
           </figure>
         </section>
 
@@ -120,12 +123,14 @@ export default function Home() {
                   <h3 className={project.title.includes(" ") ? undefined : "title-nowrap"}>
                     <Link href={`/work/${project.slug}`}>{project.title}</Link>
                   </h3>
-                  <p className="project-premise">{project.premise}</p>
+                  <p className="project-premise">
+                    {project.homepagePremise ?? project.premise}
+                  </p>
                   <p className="project-context">
                     {project.place} · {project.year}
                   </p>
                   <p className="project-proof">
-                    <span>Result</span>
+                    <span>What changed</span>
                     {project.outcomeTitle}
                   </p>
                   <Link className="text-link" href={`/work/${project.slug}`}>
@@ -189,7 +194,10 @@ export default function Home() {
               alt="A surveyor working on a runway beneath large clouds"
               sizes="(max-width: 760px) 100vw, 46vw"
             />
-            <figcaption>Photograph by Preston Wimberly</figcaption>
+            <figcaption>
+              A surveyor works on an airport runway.
+              <span>Photograph by Preston Wimberly</span>
+            </figcaption>
           </figure>
           <div className="about-copy">
             <p className="section-number">04 / About</p>
@@ -199,15 +207,12 @@ export default function Home() {
               writer based between San Marcos, Texas, and Salt Lake City, Utah.
             </p>
             <p>
-              I like complex assignments, field reporting, and physical
-              materials. I interview the people doing the work, find the useful
-              facts, and build a clear public account.
-            </p>
-            <p>
               I’ve worked across aviation, handcrafted products, publishing,
-              sales, and live production. The medium changes, but the method is
-              consistent: I start with research and finish with words, images,
-              and a working system.
+              sales, and live production. I’m drawn to complex assignments,
+              field reporting, and physical materials. The subject changes, but
+              the method stays consistent: find the useful facts, establish the
+              point of view, and carry it through words, images, and a working
+              system.
             </p>
             <a className="text-link" href={`mailto:${siteConfig.email}`}>
               Get in touch <span aria-hidden="true">↗</span>

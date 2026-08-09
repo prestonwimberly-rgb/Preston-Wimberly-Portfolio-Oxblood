@@ -4,7 +4,7 @@
   --paper: #f4efe6;
   --paper-deep: #d8d0c3;
   --ink: #0a0a0a;
-  --ink-soft: #5f5a52;
+  --ink-soft: #5e5951;
   --line: #d8d0c3;
   --signal: #8b1a1a;
   --night: #0a0a0a;
@@ -305,15 +305,24 @@ img {
   bottom: 16px;
   color: var(--paper);
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 400;
   left: 16px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.01em;
   line-height: 1.4;
   max-width: calc(100% - 32px);
   padding: 8px 10px;
   position: absolute;
-  text-transform: uppercase;
   z-index: 2;
+}
+
+.hero-visual figcaption span,
+.about-section > figure figcaption span {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-top: 3px;
+  text-transform: uppercase;
 }
 
 .section {
@@ -628,14 +637,13 @@ img {
   bottom: 16px;
   color: var(--paper);
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 400;
   left: 16px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.01em;
   line-height: 1.4;
   max-width: calc(100% - 32px);
   padding: 8px 10px;
   position: absolute;
-  text-transform: uppercase;
   z-index: 2;
 }
 
@@ -1330,7 +1338,11 @@ img {
 
 @media (max-width: 1050px) {
   .hero {
-    grid-template-columns: 1.3fr 0.7fr;
+    grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+  }
+
+  .hero h1 {
+    font-size: clamp(3.25rem, 6vw, 4.5rem);
   }
 
   .hero-bottom {

@@ -17,6 +17,7 @@ export type Project = {
   chapterNumber: string;
   chapter: string;
   premise: string;
+  homepagePremise?: string;
   title: string;
   metaTitle: string;
   kicker: string;
@@ -271,6 +272,8 @@ const projectRecords: Project[] = [
     chapterNumber: "03",
     chapter: "The Object",
     premise: "Objects meant to acquire history.",
+    homepagePremise:
+      "How do you build a guitar brand from real materials without borrowing generic vintage language?",
     title: "Wimberly Guitars",
     metaTitle: "Wimberly Guitars Brand Strategy",
     kicker: "Brand · Product storytelling · Web",
