@@ -31,6 +31,8 @@ test("server-renders the finished portfolio", async () => {
   assert.match(html, /Creative Director, Brand Strategist &amp; Writer/);
   assert.match(html, /Clear words/);
   assert.match(html, /creative director, brand strategist, and writer/);
+  assert.match(html, /communications, editorial, photography, and digital production/);
+  assert.doesNotMatch(html, /photography, and web design/);
   assert.match(html, /Photograph by Preston Wimberly/);
   assert.doesNotMatch(html, /Selected work index/);
   assert.match(html, /Aviation, instruments, music history, and the web/);
