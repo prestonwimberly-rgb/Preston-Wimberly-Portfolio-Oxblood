@@ -37,7 +37,7 @@ test("server-renders the finished portfolio", async () => {
   assert.match(html, /Start with the record/);
   assert.match(html, /Research/);
   assert.match(html, /Work people can understand/);
-  assert.match(html, />Result</);
+  assert.match(html, />What changed</);
   assert.match(html, /Prospective partners can trace each service to supporting work/);
   assert.match(html, /Producers can hear the work and start a project on one page/);
   assert.match(html, /The Wild Feathers/);
@@ -49,7 +49,10 @@ test("server-renders the finished portfolio", async () => {
   assert.match(html, /The Object/);
   assert.match(html, /The Musician/);
   assert.match(html, /How do you make airport infrastructure feel consequential/);
-  assert.match(html, /Objects meant to acquire history/);
+  assert.match(
+    html,
+    /How do you build a guitar brand from real materials without borrowing generic vintage language\?/,
+  );
   assert.match(html, /Hay bales and an airport windsock in the working landscape/);
   assert.match(html, /Walnut, hand-tooled leather, and antique bronze hardware/);
   assert.doesNotMatch(html, /\/work\/san-marcos-airport/);
@@ -120,6 +123,7 @@ test("server-renders all four project case studies", async () => {
       assert.ok(html.indexOf("Material system") < html.indexOf("Engagement"));
       assert.ok(html.indexOf("Build every rule from the instruments") < html.indexOf("We built the product language from the materials"));
       assert.match(html, /case-image-cover/);
+      assert.match(html, /Objects meant to acquire history/);
       assert.match(html, /hand-tooled leather pickguard and antique bronze knobs/);
     }
     if (path === "/work/preston-session-site") {

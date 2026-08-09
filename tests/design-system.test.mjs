@@ -31,6 +31,7 @@ function contrast(first, second) {
 
 test("core portfolio color pairings meet WCAG AA", () => {
   const ink = colorVariable("ink");
+  const inkSoft = colorVariable("ink-soft");
   const paper = colorVariable("paper");
   const paperDeep = colorVariable("paper-deep");
   const signal = colorVariable("signal");
@@ -39,6 +40,10 @@ test("core portfolio color pairings meet WCAG AA", () => {
 
   assert.ok(contrast(ink, paper) >= 7, "Ink on paper should meet AAA");
   assert.ok(contrast(ink, paperDeep) >= 7, "Ink on muted paper should meet AAA");
+  assert.ok(
+    contrast(inkSoft, paperDeep) >= 4.5,
+    "Supporting text on muted paper should meet AA",
+  );
   assert.ok(contrast(signal, paper) >= 4.5, "Oxblood on paper should meet AA");
   assert.ok(contrast(signal, paperDeep) >= 4.5, "Oxblood on muted paper should meet AA");
   assert.ok(contrast(paper, signal) >= 7, "Paper on oxblood should meet AAA");
