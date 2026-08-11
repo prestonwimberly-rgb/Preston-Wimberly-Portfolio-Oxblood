@@ -38,7 +38,7 @@ export default function NotFound() {
       </main>
       <footer className="site-footer">
         <p>Preston Wimberly</p>
-        <p>Brand strategy · Communications · Editorial · Web</p>
+        <p>Creative Director · Brand Strategy · Editorial</p>
         <a href={`mailto:${siteConfig.email}`}>Email Preston</a>
       </footer>
     </>

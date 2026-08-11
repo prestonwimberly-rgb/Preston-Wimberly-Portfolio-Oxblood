@@ -5,7 +5,7 @@ import { projects } from "@/data/projects";
 import { siteConfig } from "@/lib/site";
 import { homeStructuredData } from "@/lib/structured-data";
 
-const workingMethod = ["Research", "Position", "Write", "Photograph", "Design", "Build"];
+const workingMethod = ["Research", "Position", "Direct", "Write", "Photograph", "Build"];
 
 const writing = [
   {
@@ -26,7 +26,7 @@ const writing = [
     type: "Case study · Brand transformation",
     title: "Making the real scale of a business visible",
     description:
-      "The positioning, reporting, photography, and site build behind a broader public identity for Texas Aviation Partners.",
+      "The diagnosis, positioning, reporting, and field direction behind a broader public identity for Texas Aviation Partners.",
     href: "/work/texas-aviation-partners",
   },
 ];
@@ -56,17 +56,16 @@ export default function Home() {
         <section className="hero" aria-labelledby="hero-title">
           <div className="hero-copy">
             <p className="eyebrow">
-              Creative direction · Brand strategy · Communications · Editorial · Web
+              Creative Director · Brand Strategy · Editorial
             </p>
             <h1 id="hero-title">
-              Clear words.<br />
-              Useful websites.<br />
-              <em>Work people can understand.</em>
+              Find the truth.<br />
+              <em>Give it form.</em>
             </h1>
             <div className="hero-bottom">
               <p>
-                I identify the central problem, set the direction, and carry it
-                through language, images, and finished digital work.
+                I find the central truth inside a company, set the creative
+                direction, and carry it through words, images, and finished work.
               </p>
               <a className="text-link" href="#work">
                 Read the work <span aria-hidden="true">↓</span>
@@ -90,7 +89,7 @@ export default function Home() {
         <section className="section work-section" id="work" aria-labelledby="work-title">
           <div className="section-heading">
             <p className="section-number">01 / Selected work</p>
-            <h2 id="work-title">Aviation, instruments, music history, and the web.</h2>
+            <h2 id="work-title">Aviation, music history, instruments, and independent practice.</h2>
           </div>
 
           <div className="project-list">
@@ -181,6 +180,7 @@ export default function Home() {
                   <h3>{item.title}</h3>
                   <span>{item.description}</span>
                   <b aria-hidden="true">↗</b>
+                  {external ? <span className="sr-only"> (opens in a new tab)</span> : null}
                 </a>
               );
             })}
@@ -201,18 +201,21 @@ export default function Home() {
           </figure>
           <div className="about-copy">
             <p className="section-number">04 / About</p>
-            <h2 id="about-title">I work where strategy, journalism, design, and the web overlap.</h2>
+            <h2 id="about-title">One method, carried across industries.</h2>
             <p className="about-lead">
-              I’m Preston Wimberly, a creative director, brand strategist, and
-              writer based between San Marcos, Texas, and Salt Lake City, Utah.
+              I’m Preston Wimberly, a creative director based between San Marcos,
+              Texas, and Salt Lake City, Utah.
             </p>
             <p>
-              I’ve worked across aviation, handcrafted products, publishing,
-              sales, and live production. I’m drawn to complex assignments,
-              field reporting, and physical materials. The subject changes, but
-              the method stays consistent: find the useful facts, establish the
-              point of view, and carry it through words, images, and a working
-              system.
+              Texas Monthly taught me to report before I wrote and to edit toward
+              the strongest idea. Years with The Wild Feathers, signed to Warner
+              Bros., and work with Jamestown Revival taught me what cultural
+              credibility, road wear, performance, and backstage life
+              look like. Building guitars turned that attention toward materials,
+              construction, repair, permanence, and the way good objects age
+              through use. Aviation brought the same method into a serious
+              operating business: understand the work, find the central truth,
+              and give it a public form.
             </p>
             <a className="text-link" href={`mailto:${siteConfig.email}`}>
               Get in touch <span aria-hidden="true">↗</span>
@@ -221,11 +224,11 @@ export default function Home() {
         </section>
 
         <section className="contact-section" id="contact" aria-labelledby="contact-title">
-          <p className="eyebrow">Roles, collaborations, and selected projects</p>
+          <p className="eyebrow">Creative direction for companies with more substance than story</p>
           <h2 id="contact-title">Get in touch.</h2>
           <p className="contact-fit">
-            Based between San Marcos, Texas, and Salt Lake City, Utah. Creative
-            direction, brand strategy, communications, editorial, and digital work.
+            Senior judgment with hands-on range across brand strategy,
+            communications, editorial, photography, and digital production.
           </p>
           <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
         </section>
@@ -233,7 +236,7 @@ export default function Home() {
 
       <footer className="site-footer">
         <p>© 2026 Preston Wimberly</p>
-        <p>Creative direction · Brand strategy · Communications · Editorial · Web</p>
+        <p>Creative Director · Brand Strategy · Editorial</p>
         <a href="#hero-title">Back to top ↑</a>
       </footer>
     </>

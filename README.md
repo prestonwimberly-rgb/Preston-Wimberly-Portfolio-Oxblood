@@ -1,9 +1,10 @@
 # Preston Wimberly portfolio
 
-The working portfolio for Preston Wimberly: brand strategist, communications
-lead, editor, and website maker. The site presents evidence-led work across
-aviation, product, music history, and independent practice without losing its
-restrained editorial character.
+The working portfolio for Preston Wimberly, a creative director whose practice
+spans brand strategy, communications, editorial work, photography, and digital
+production. The site presents evidence-led work across aviation, product, music
+history, and independent practice without losing its restrained editorial
+character.
 
 Production lives at
 [`work.prestonwimberly.com`](https://work.prestonwimberly.com/).

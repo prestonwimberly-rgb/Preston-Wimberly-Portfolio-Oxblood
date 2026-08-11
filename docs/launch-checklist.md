@@ -36,6 +36,14 @@ Custom-domain release sequence:
 These statements must be confirmed by Preston before launch. If a statement
 cannot be verified, narrow or remove it rather than substituting a new claim.
 
+### About and role language
+
+- Confirm the public phrasing of the Texas Monthly relationship, The Wild
+  Feathers’ Warner Bros. period, the Jamestown Revival work, and Preston’s
+  guitar-building experience.
+- Confirm the Creative Director umbrella and each project-specific role label.
+  Texas Aviation Partners decision authority remains a separate open item below.
+
 ### The Wild Feathers
 
 - Confirm the counts for 384 performances, 200 canonical photographs, six story

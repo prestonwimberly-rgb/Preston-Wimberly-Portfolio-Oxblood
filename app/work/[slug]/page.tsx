@@ -92,10 +92,6 @@ export default async function WorkPage({ params }: WorkPageProps) {
     <section className="case-details" aria-label="Project details">
       <dl className="case-meta">
         <div>
-          <dt>Engagement</dt>
-          <dd>{project.engagementType}</dd>
-        </div>
-        <div>
           <dt>Role</dt>
           <dd>{project.role}</dd>
         </div>
@@ -108,12 +104,8 @@ export default async function WorkPage({ params }: WorkPageProps) {
           <dd>{project.year}</dd>
         </div>
         <div>
-          <dt>Place</dt>
-          <dd>{project.place}</dd>
-        </div>
-        <div>
-          <dt>Status</dt>
-          <dd>{project.status}</dd>
+          <dt>Constraint</dt>
+          <dd>{project.constraint}</dd>
         </div>
       </dl>
     </section>
@@ -121,16 +113,12 @@ export default async function WorkPage({ params }: WorkPageProps) {
   const caseContext = (
     <section className="case-context" aria-label="Project context">
       <div>
-        <p className="section-number">My ownership</p>
+        <p className="section-number">Direction &amp; ownership</p>
         <p>{project.ownership}</p>
       </div>
       <div>
         <p className="section-number">Collaboration</p>
         <p>{project.collaboration}.</p>
-      </div>
-      <div>
-        <p className="section-number">Constraint</p>
-        <p>{project.constraint}</p>
       </div>
     </section>
   );
@@ -189,7 +177,7 @@ export default async function WorkPage({ params }: WorkPageProps) {
   const deliverablesSection = (
     <div className="deliverables">
       <p className="section-number inverse">03 / Selected work</p>
-      <h2>What I made</h2>
+      <h2>Scope of work</h2>
       <ul>
         {project.deliverables.map((item) => (
           <li key={item}>{item}</li>
@@ -241,7 +229,7 @@ export default async function WorkPage({ params }: WorkPageProps) {
 
         <section className="case-artifacts" aria-labelledby="artifacts-title">
           <div className="case-artifacts-heading">
-            <p className="section-number">04 / Finished experience</p>
+            <p className="section-number">04 / Selected evidence</p>
             <div>
               <h2 id="artifacts-title">{project.artifactTitle}</h2>
               <p>{project.artifactIntro}</p>
@@ -273,7 +261,7 @@ export default async function WorkPage({ params }: WorkPageProps) {
         </section>
 
         <section className="case-outcome">
-          <p className="section-number">05 / Result</p>
+          <p className="section-number">05 / What changed</p>
           <div>
             <h2>{project.outcomeTitle}</h2>
             {project.outcome.map((paragraph) => (
@@ -282,6 +270,7 @@ export default async function WorkPage({ params }: WorkPageProps) {
             {project.liveUrl && project.liveLabel ? (
               <a href={project.liveUrl} target="_blank" rel="noreferrer">
                 {project.liveLabel} <span aria-hidden="true">↗</span>
+                <span className="sr-only"> (opens in a new tab)</span>
               </a>
             ) : project.accessNote ? (
               <p className="case-access-note">{project.accessNote}</p>
