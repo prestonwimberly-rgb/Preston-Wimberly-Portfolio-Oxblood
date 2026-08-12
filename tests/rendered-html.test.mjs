@@ -38,14 +38,14 @@ test("server-renders the finished portfolio", async () => {
   assert.match(html, /Start with the record/);
   assert.match(html, /Report/);
   assert.match(html, /Give it form/);
-  assert.match(html, /Ways to work together/);
+  assert.match(html, /Where I lead/);
   assert.match(html, /Creative direction/);
   assert.match(html, /Brand &amp; editorial systems/);
   assert.match(html, /Hands-on execution/);
   assert.match(html, /Tell me what is changing/);
   assert.match(html, />What changed</);
   assert.match(html, /increased website traffic 40% in its first month/);
-  assert.match(html, /Producers can hear the work and start a project on one page/);
+  assert.match(html, /A complete 38-chapter manuscript now has a three-part narrative/);
   assert.match(html, /The Wild Feathers/);
   assert.match(html, /Texas Aviation Partners/);
   assert.match(html, /Wimberly Custom Guitars/);
@@ -53,7 +53,7 @@ test("server-renders the finished portfolio", async () => {
   assert.match(html, /The Airfield/);
   assert.match(html, /The Road/);
   assert.match(html, /The Object/);
-  assert.match(html, /The Musician/);
+  assert.match(html, /The Manuscript/);
   assert.match(html, /From 2008 to 2011, I sold advertising at Texas Monthly/);
   assert.match(html, /Warner Bros\./);
   assert.match(html, /Jamestown Revival/);
@@ -64,10 +64,9 @@ test("server-renders the finished portfolio", async () => {
     /How do you build a guitar brand from real materials without borrowing generic vintage language\?/,
   );
   assert.match(html, /The proposed Texas Aviation Partners homepage/);
-  assert.match(html, /Memoir · 50,000 words/);
+  assert.match(html, /Complete manuscript · 50,000 words · 38 chapters/);
   assert.match(html, /href="\/sandpaper"/);
-  assert.match(html, /Experience shaped by/);
-  assert.match(html, /Warner Bros. Records/);
+  assert.doesNotMatch(html, /Experience shaped by/);
   assert.match(html, /Walnut, hand-tooled leather, and antique bronze hardware/);
   assert.doesNotMatch(html, /\/work\/san-marcos-airport/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|Starter Project/i);
@@ -98,12 +97,13 @@ test("server-renders the SANDPAPER memoir project", async () => {
   assert.match(html, /Finer Grits/);
   assert.match(html, /Photographs, emails, contracts, medical records, and calendars/);
   assert.match(html, /\/optimized\/sandpaper-cover-[0-9]+\.avif/);
+  assert.match(html, /\/social\/sandpaper\.jpg/);
   assert.match(html, /The piece has to look worse before it can look honest/);
 });
 
 test("server-renders all four project case studies", async () => {
   const cases = [
-    ["/work/wild-feathers", /Reconstructing a band’s history/, /not yet deployed at thewildfeathersband\.com/, /Archive method/, /02 \/ The Road/, /The Wild Feathers Archive Creative Direction \| Preston Wimberly/],
+    ["/work/wild-feathers", /Reconstructing a band’s history/, /deployment to the owned domain remains a separate release step/, /Archive method/, /02 \/ The Road/, /The Wild Feathers Archive Creative Direction \| Preston Wimberly/],
     ["/work/texas-aviation-partners", /Making the real scale of an aviation company visible/, /Visit Texas Aviation Partners/, /Public proof/, /01 \/ The Airfield/, /Texas Aviation Partners Creative Direction \| Preston Wimberly/],
     ["/work/wimberly-guitars", /Building a guitar brand from the materials up/, /Visit Wimberly Custom Guitars/, /Material system/, /03 \/ The Object/, /Wimberly Custom Guitars Creative Direction \| Preston Wimberly/],
     ["/work/preston-session-site", /Turning a musician’s range into one direct invitation/, /Visit prestonwimberly.com/, /Service sequence/, /04 \/ The Musician/, /prestonwimberly.com Creative Direction \| Preston Wimberly/],
@@ -114,10 +114,11 @@ test("server-renders all four project case studies", async () => {
     assert.equal(response.status, 200);
     const html = await response.text();
     assert.match(html, heading);
-    assert.match(html, /Selected work/);
+    assert.match(html, /System in use/);
     assert.match(html, /05 \/ Result/);
     assert.match(html, /Role/);
-    assert.match(html, /Direction &amp; collaboration/);
+    assert.match(html, /Direction record/);
+    assert.match(html, /Made by Preston/);
     assert.doesNotMatch(html, /<dt>Engagement<\/dt>/);
     assert.doesNotMatch(html, /<dt>Status<\/dt>/);
     assert.match(html, /Place/);
@@ -137,14 +138,15 @@ test("server-renders all four project case studies", async () => {
     assert.match(html, new RegExp(`/social/${path.split("/").pop()}\\.jpg`));
     if (path === "/work/texas-aviation-partners") {
       assert.ok(html.indexOf("Role") < html.indexOf("Public proof"));
-      assert.match(html, /The public system in transition/);
+      assert.match(html, /Field record, public proof, and the next editorial system/);
       assert.match(html, /\/optimized\/tap-hay-windsock-[0-9]+\.avif/);
       assert.match(html, /\/optimized\/tap-site-before-[0-9]+\.avif/);
       assert.match(html, /\/optimized\/tap-site-after-[0-9]+\.avif/);
       assert.match(html, /Public website capture · August 2026/);
       assert.match(html, /Netlify deploy capture · August 2026/);
+      assert.match(html, /\/optimized\/tap-projects-live-[0-9]+\.avif/);
+      assert.match(html, /\/optimized\/tap-san-marcos-live-[0-9]+\.avif/);
       assert.match(html, /Google Analytics recorded a 40% increase/);
-      assert.doesNotMatch(html, /tap-projects-site|tap-mobile|san-marcos-tower/i);
     }
     if (path === "/work/wild-feathers") {
       assert.ok(html.indexOf("Archive method") < html.indexOf("Role"));
@@ -167,27 +169,28 @@ test("server-renders all four project case studies", async () => {
   }
 });
 
-test("public case studies include confirmed facts and exclude unresolved guitar artifacts", async () => {
+test("public case studies include confirmed records and only cleared guitar artifacts", async () => {
   const wildResponse = await render("/work/wild-feathers");
   const wildHtml = await wildResponse.text();
-  assert.match(wildHtml, /384 performances/);
-  assert.match(wildHtml, /200 canonical photographs/);
-  assert.match(wildHtml, /six story chapters/);
-  assert.match(wildHtml, /eleven collections/);
+  assert.match(wildHtml, /384 performance records/);
+  assert.match(wildHtml, /193 archive records/);
+  assert.match(wildHtml, /seven flagship stories/);
+  assert.match(wildHtml, /110 source records/);
   assert.doesNotMatch(wildHtml, /href="https:\/\/thewildfeathersband\.com/i);
 
   const guitarResponse = await render("/work/wimberly-guitars");
   const guitarHtml = await guitarResponse.text();
   assert.match(guitarHtml, /\/optimized\/wimberly-mobile-[0-9]+\.avif/);
+  assert.match(guitarHtml, /\/optimized\/wimberly-reference-[0-9]+\.avif/);
   assert.match(guitarHtml, /model and material hierarchy stays direct/);
-  assert.doesNotMatch(guitarHtml, /wimberly-reference|wimberly-workshop-hero/i);
+  assert.doesNotMatch(guitarHtml, /wimberly-workshop-hero/i);
   assert.doesNotMatch(guitarHtml, /co-founder|commission|commerce/i);
   assert.match(guitarHtml, /Founder \/ Creative Director/);
   assert.match(guitarHtml, /join the waitlist/i);
 
   const tapResponse = await render("/work/texas-aviation-partners");
   const tapHtml = await tapResponse.text();
-  assert.match(tapHtml, /The public system in transition/);
+  assert.match(tapHtml, /Field record, public proof, and the next editorial system/);
   assert.match(tapHtml, /\/optimized\/tap-site-before-[0-9]+\.avif/);
   assert.match(tapHtml, /\/optimized\/tap-site-after-[0-9]+\.avif/);
   assert.match(tapHtml, /Public website capture · August 2026/);

@@ -74,6 +74,26 @@ function creativeWorkNode(project: Project) {
   };
 }
 
+function sandpaperWorkNode() {
+  const url = absoluteUrl("/sandpaper/");
+  return {
+    "@type": "CreativeWork",
+    "@id": `${url}#creative-work`,
+    url,
+    name: "SANDPAPER",
+    headline: "A memoir structured through the material language of guitar finishing.",
+    description:
+      "A 50,000-word memoir built from photographs, records, and lived memory across a three-part editorial architecture.",
+    creator: { "@id": personId },
+    isPartOf: { "@id": websiteId },
+    mainEntityOfPage: { "@id": `${url}#web-page` },
+    image: absoluteUrl("/images/sandpaper-cover.png"),
+    genre: ["Memoir", "Editorial direction", "Book design"],
+    keywords: "Writing, long-form structure, documentary method, book design",
+    dateCreated: "2026",
+  };
+}
+
 function webPageNode(project: Project) {
   const url = projectUrl(project);
   return {
@@ -89,7 +109,7 @@ function webPageNode(project: Project) {
 }
 
 export function homeStructuredData(projects: Project[]) {
-  const selectedWork = projects.map(creativeWorkNode);
+  const selectedWork = [...projects.map(creativeWorkNode), sandpaperWorkNode()];
   return {
     "@context": "https://schema.org",
     "@graph": [

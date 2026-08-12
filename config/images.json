@@ -4,14 +4,20 @@
   "/images/preston-session-mobile.jpg": { "width": 390, "height": 844 },
   "/images/preston-session-site.jpg": { "width": 1417, "height": 900 },
   "/images/tap-hay-windsock.jpg": { "width": 1280, "height": 853 },
+  "/images/tap-projects-live.png": { "width": 1440, "height": 1000 },
+  "/images/tap-san-marcos-live.png": { "width": 1440, "height": 1000 },
   "/images/tap-site-after.jpg": { "width": 960, "height": 600 },
   "/images/tap-site-before.jpg": { "width": 1363, "height": 852 },
   "/images/tap-surveyor.jpg": { "width": 1280, "height": 960 },
   "/images/tap-tractor.jpg": { "width": 1280, "height": 851 },
   "/images/wild-feathers-laugh.png": { "width": 1584, "height": 672 },
   "/images/wild-feathers-mobile.jpg": { "width": 375, "height": 812 },
+  "/images/wild-feathers-sources-live.png": { "width": 1440, "height": 1000 },
   "/images/wild-feathers-site.jpg": { "width": 1425, "height": 891 },
+  "/images/wild-feathers-story-live.png": { "width": 1440, "height": 1000 },
+  "/images/wild-feathers-timeline-live.png": { "width": 1440, "height": 1000 },
+  "/images/wimberly-jack-antique-bronze-knobs.jpeg": { "width": 1080, "height": 603 },
   "/images/wimberly-mobile.jpg": { "width": 390, "height": 844 },
-  "/images/wimberly-site.jpg": { "width": 1417, "height": 892 },
-  "/images/wimberly-jack-antique-bronze-knobs.jpeg": { "width": 1080, "height": 603 }
+  "/images/wimberly-reference.avif": { "width": 1080, "height": 810 },
+  "/images/wimberly-site.jpg": { "width": 1417, "height": 892 }
 }

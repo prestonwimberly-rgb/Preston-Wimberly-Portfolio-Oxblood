@@ -50,10 +50,10 @@ work as chapters connected by one recognizable eye.
 - Keep captions factual and adjacent to the image. Material character comes from
   the photographs, type, rules, and spacing rather than gradients or global
   texture effects.
-- Frame the public work as four editorial chapters: The Airfield, The Road, The
-  Object, and The Musician. Texas Aviation Partners remains first while the Wild
-  Feathers archive rights and fact-checking are open; chapter order may change
-  only after that material is cleared.
+- Frame the primary homepage work as four distinct editorial chapters: The
+  Airfield, The Road, The Object, and The Manuscript. Keep the musician case
+  available as independent practice rather than asking a fourth website case to
+  carry the same weight as the client, archive, product, and book work.
 - Vary the case-study sequence by subject. Aviation moves from premise to field
   record to public proof. The archive and workshop lead with their strongest
   artifact and evidence system. The musician chapter keeps its working principle

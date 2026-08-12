@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ResponsiveImage } from "@/components/responsive-image";
 import { StructuredData } from "@/components/structured-data";
-import { projects } from "@/data/projects";
+import { featuredProjects } from "@/data/projects";
 import { siteConfig } from "@/lib/site";
 import { homeStructuredData } from "@/lib/structured-data";
 
@@ -33,20 +33,32 @@ const services = [
 
 const inquiryHref = `mailto:${siteConfig.email}?subject=${encodeURIComponent("Freelance project inquiry")}`;
 
+const sandpaperFeature = {
+  chapterNumber: "04",
+  chapter: "The Manuscript",
+  title: "SANDPAPER",
+  premise:
+    "How do you turn 50,000 words of lived history into a narrative system that can hold memory accountable?",
+  role: "Writer / Creative Director",
+  year: "2026",
+  outcome:
+    "A complete 38-chapter manuscript now has a three-part narrative and editorial architecture.",
+};
+
 const writing = [
-  {
-    type: "Memoir · 50,000 words",
-    title: "SANDPAPER",
-    description:
-      "A three-part memoir built from photographs, records, and lived memory, with guitar finishing as its structural language.",
-    href: "/sandpaper",
-  },
   {
     type: "Essay · Craft & brand voice",
     title: "On the slowness of oil",
     description:
       "A letter from the guitar bench about patience, inheritance, and the time real materials require.",
     href: "https://wimberlycustomguitars.com/build-journal",
+  },
+  {
+    type: "Reported archive · Music history",
+    title: "Four voices. One changing band.",
+    description:
+      "Seven flagship stories and six chronological chapters built from records, photographs, sources, and attributed memory.",
+    href: "https://wildfeathers.netlify.app/story/",
   },
   {
     type: "News · Economic development",
@@ -56,18 +68,18 @@ const writing = [
     href: "https://texasaviationpartners.com/san-marcos-regional-airport-expands-with-170-acre-land-purchase/",
   },
   {
-    type: "Case study · Brand transformation",
-    title: "Making the real scale of a business visible",
+    type: "Independent practice · Positioning",
+    title: "The right part, played like it matters.",
     description:
-      "The positioning, reporting, photography, and site build behind a broader public identity for Texas Aviation Partners.",
-    href: "/work/texas-aviation-partners",
+      "A focused session-musician offer where producers can hear the work, understand the process, and start a project.",
+    href: "/work/preston-session-site",
   },
 ];
 
 export default function Home() {
   return (
     <>
-      <StructuredData data={homeStructuredData(projects)} />
+      <StructuredData data={homeStructuredData(featuredProjects)} />
       <a className="skip-link" href="#main-content">
         Skip to content
       </a>
@@ -121,17 +133,6 @@ export default function Home() {
           </figure>
         </section>
 
-        <aside className="experience-rail" aria-label="Selected experience">
-          <p>Experience shaped by</p>
-          <ul>
-            <li>Texas Monthly</li>
-            <li>Warner Bros. Records</li>
-            <li>The road</li>
-            <li>The guitar bench</li>
-            <li>Airport operations</li>
-          </ul>
-        </aside>
-
         <section className="section work-section" id="work" aria-labelledby="work-title">
           <div className="section-heading">
             <p className="section-number">01 / Selected work</p>
@@ -139,7 +140,7 @@ export default function Home() {
           </div>
 
           <div className="project-list">
-            {projects.map((project, index) => {
+            {featuredProjects.map((project, index) => {
               const image = project.homepageImage ?? project.image;
               const imageAlt = project.homepageImageAlt ?? project.imageAlt;
               const imageCaption =
@@ -198,12 +199,48 @@ export default function Home() {
               </article>
               );
             })}
+            <article className="project-row project-row-editorial">
+              <figure className="project-visual project-visual-manuscript">
+                <Link
+                  className="project-image project-image-manuscript"
+                  href="/sandpaper"
+                >
+                  <ResponsiveImage
+                    src="/images/sandpaper-cover.png"
+                    alt="Title page for SANDPAPER, a memoir by Preston Wimberly"
+                    sizes="(max-width: 760px) 74vw, 30vw"
+                  />
+                </Link>
+                <figcaption>
+                  Complete manuscript · 50,000 words · 38 chapters
+                  <span>Three-part editorial architecture</span>
+                </figcaption>
+              </figure>
+              <div className="project-copy">
+                <p className="project-index">{sandpaperFeature.chapterNumber}</p>
+                <p className="project-kicker">{sandpaperFeature.chapter}</p>
+                <h3>
+                  <Link href="/sandpaper">{sandpaperFeature.title}</Link>
+                </h3>
+                <p className="project-premise">{sandpaperFeature.premise}</p>
+                <p className="project-context">
+                  {sandpaperFeature.role} · {sandpaperFeature.year}
+                </p>
+                <p className="project-proof">
+                  <span>What changed</span>
+                  {sandpaperFeature.outcome}
+                </p>
+                <Link className="text-link" href="/sandpaper">
+                  Read the project <span aria-hidden="true">↗</span>
+                </Link>
+              </div>
+            </article>
           </div>
         </section>
 
         <section className="section services-section" id="services" aria-labelledby="services-title">
           <div className="section-heading compact-heading">
-            <p className="section-number">02 / Ways to work together</p>
+            <p className="section-number">02 / Where I lead</p>
             <div>
               <h2 id="services-title">Direction first. Execution when it helps.</h2>
               <p className="services-intro">
@@ -258,8 +295,8 @@ export default function Home() {
 
         <section className="section writing-section" id="writing" aria-labelledby="writing-title">
           <div className="section-heading compact-heading">
-            <p className="section-number">04 / Writing & editorial work</p>
-            <h2 id="writing-title">I report before I write.</h2>
+            <p className="section-number">04 / Writing & independent work</p>
+            <h2 id="writing-title">The work continues in words.</h2>
           </div>
           <div className="writing-list">
             {writing.map((item) => {

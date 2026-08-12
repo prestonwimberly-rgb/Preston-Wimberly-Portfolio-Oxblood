@@ -323,47 +323,6 @@ img {
   text-transform: uppercase;
 }
 
-.experience-rail {
-  align-items: center;
-  background: var(--paper-deep);
-  border-bottom: 1px solid var(--line);
-  border-top: 1px solid var(--line);
-  display: grid;
-  gap: 36px;
-  grid-template-columns: minmax(150px, 0.38fr) minmax(0, 1fr);
-  margin: 0 auto;
-  max-width: var(--max);
-  padding: 22px var(--page-gutter);
-}
-
-.experience-rail p,
-.experience-rail ul {
-  font-family: var(--font-interface);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  margin: 0;
-  text-transform: uppercase;
-}
-
-.experience-rail p {
-  color: var(--signal);
-}
-
-.experience-rail ul {
-  color: var(--ink-soft);
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  padding: 0;
-}
-
-.experience-rail li:not(:last-child)::after {
-  color: var(--line-strong);
-  content: " / ";
-  padding: 0 10px;
-}
-
 .about-section > figure figcaption span {
   display: block;
   font-size: 0.68rem;
@@ -430,6 +389,10 @@ img {
   order: 2;
 }
 
+.project-row-editorial {
+  grid-template-columns: minmax(300px, 0.65fr) minmax(0, 1.15fr);
+}
+
 .project-visual {
   margin: 0;
   min-width: 0;
@@ -449,6 +412,20 @@ img {
 
 .project-image-cover .project-image img {
   object-fit: cover !important;
+}
+
+.project-visual-manuscript {
+  justify-self: center;
+  width: min(100%, 460px);
+}
+
+.project-image-manuscript {
+  aspect-ratio: 2 / 3;
+  background: var(--paper-deep);
+}
+
+.project-image-manuscript img {
+  object-fit: contain !important;
 }
 
 .project-visual figcaption {
@@ -1264,6 +1241,64 @@ img {
   margin: 0;
 }
 
+.case-direction-record {
+  border-bottom: 1px solid var(--line);
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: clamp(48px, 7vw, 110px);
+  grid-template-columns: minmax(220px, 0.65fr) minmax(0, 1.35fr);
+  margin: 0 auto;
+  max-width: var(--max);
+  padding: clamp(70px, 8vw, 120px) var(--case-gutter);
+}
+
+.case-direction-heading h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 4.5vw, 5.4rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 0.99;
+  margin: 28px 0 0;
+}
+
+.case-direction-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+}
+
+.case-direction-list > div {
+  border-bottom: 1px solid var(--line);
+  min-height: 170px;
+  padding: 24px 28px 28px 0;
+}
+
+.case-direction-list > div:nth-child(even) {
+  border-left: 1px solid var(--line);
+  padding-left: 28px;
+}
+
+.case-direction-list > div:last-child {
+  grid-column: 1 / -1;
+  min-height: 0;
+}
+
+.case-direction-list dt {
+  color: var(--signal);
+  font-family: var(--font-interface);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.case-direction-list dd {
+  font-size: clamp(1rem, 1.2vw, 1.16rem);
+  line-height: 1.55;
+  margin: 0;
+}
+
 .case-image {
   aspect-ratio: 8 / 5;
   background: var(--paper-deep);
@@ -1647,6 +1682,46 @@ img {
   grid-column: span 6;
 }
 
+.case-study-texas-aviation-partners .artifact-landscape:nth-child(3) {
+  grid-column: 1 / span 7;
+}
+
+.case-study-texas-aviation-partners .artifact-landscape:nth-child(4) {
+  grid-column: 8 / span 5;
+}
+
+.case-theme-archive .artifact:nth-child(1) {
+  grid-column: 1 / span 9;
+}
+
+.case-theme-archive .artifact:nth-child(2) {
+  grid-column: 4 / span 9;
+}
+
+.case-theme-archive .artifact:nth-child(3) {
+  grid-column: 2 / span 10;
+}
+
+.case-theme-archive .artifact:nth-child(4) {
+  grid-column: 1 / span 8;
+}
+
+.case-theme-archive .artifact:nth-child(5) {
+  grid-column: 9 / span 4;
+}
+
+.case-theme-workshop .artifact:nth-child(1) {
+  grid-column: 2 / span 10;
+}
+
+.case-theme-workshop .artifact:nth-child(2) {
+  grid-column: 1 / span 7;
+}
+
+.case-theme-workshop .artifact:nth-child(3) {
+  grid-column: 9 / span 4;
+}
+
 .case-outcome {
   background: var(--night);
   color: var(--white);
@@ -1828,16 +1903,6 @@ img {
     width: 100%;
   }
 
-  .experience-rail {
-    gap: 12px;
-    grid-template-columns: 1fr;
-    padding: 22px 18px;
-  }
-
-  .experience-rail li:not(:last-child)::after {
-    padding: 0 8px;
-  }
-
   .section {
     padding-left: 18px;
     padding-right: 18px;
@@ -1891,6 +1956,15 @@ img {
   .project-image {
     aspect-ratio: 8 / 5;
     width: 100%;
+  }
+
+  .project-visual-manuscript {
+    justify-self: center;
+    width: min(74vw, 360px);
+  }
+
+  .project-image-manuscript {
+    aspect-ratio: 2 / 3;
   }
 
   .project-copy h3 {
@@ -2095,6 +2169,31 @@ img {
     padding: 0 18px;
   }
 
+  .case-direction-record {
+    gap: 44px;
+    grid-template-columns: 1fr;
+    padding: 70px 18px;
+  }
+
+  .case-direction-heading h2 {
+    font-size: clamp(2.65rem, 12vw, 4.4rem);
+  }
+
+  .case-direction-list {
+    grid-template-columns: 1fr;
+  }
+
+  .case-direction-list > div,
+  .case-direction-list > div:nth-child(even) {
+    border-left: 0;
+    min-height: 0;
+    padding: 22px 0;
+  }
+
+  .case-direction-list > div:last-child {
+    grid-column: 1;
+  }
+
   .case-meta > div,
   .case-meta > div + div {
     border-bottom: 1px solid var(--line);
@@ -2214,6 +2313,10 @@ img {
   .artifact-portrait {
     justify-self: center;
     width: min(72vw, 330px);
+  }
+
+  .case-artifacts .artifact {
+    grid-column: 1 !important;
   }
 
   .case-outcome {

@@ -7,6 +7,32 @@ export const metadata: Metadata = {
   title: "SANDPAPER, a memoir",
   description:
     "A 50,000-word memoir by Preston Wimberly, structured through the material language of guitar finishing and built from photographs, records, and lived memory.",
+  alternates: {
+    canonical: "/sandpaper/",
+  },
+  openGraph: {
+    title: "SANDPAPER, a memoir | Preston Wimberly",
+    description:
+      "A 50,000-word memoir structured through guitar finishing and built from photographs, records, and lived memory.",
+    type: "article",
+    url: "/sandpaper/",
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: "/social/sandpaper.jpg",
+        width: 1200,
+        height: 630,
+        alt: "SANDPAPER, a memoir and editorial project by Preston Wimberly",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SANDPAPER, a memoir | Preston Wimberly",
+    description:
+      "A 50,000-word memoir structured through guitar finishing and built from photographs, records, and lived memory.",
+    images: ["/social/sandpaper.jpg"],
+  },
 };
 
 const inquiryHref = `mailto:${siteConfig.email}?subject=${encodeURIComponent("SANDPAPER manuscript inquiry")}`;

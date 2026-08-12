@@ -12,6 +12,11 @@ export type ProjectEvidence = {
   value: string;
 };
 
+export type ProjectDirectionRecord = {
+  label: string;
+  value: string;
+};
+
 export type Project = {
   slug: string;
   chapterNumber: string;
@@ -46,6 +51,7 @@ export type Project = {
   status: string;
   ownership: string;
   collaboration: string;
+  directionRecord: ProjectDirectionRecord[];
   liveUrl?: string;
   liveLabel?: string;
   accessNote?: string;
@@ -81,7 +87,7 @@ const projectRecords: Project[] = [
     kicker: "Creative direction · Archive strategy · Editorial",
     headline: "Reconstructing a band’s history without turning memory into myth.",
     cardSummary:
-      "I directed an evidence-first archive across 384 performances, 200 canonical photographs, six story chapters, and eleven collections.",
+      "I directed an evidence-first archive across 384 performance records, 193 archive records, seven flagship stories, six chronological chapters, and 110 source records.",
     summary:
       "I lived inside this story, but firsthand memory is not a complete record. I reconstructed the band’s public history across tour records, photographs, releases, interviews, and source trails.",
     image: "/images/wild-feathers-laugh.png",
@@ -95,13 +101,31 @@ const projectRecords: Project[] = [
     year: "2025–2026",
     place: "Nashville, Tennessee",
     engagementType: "Independent editorial archive",
-    status: "Complete · Deployment pending",
+    status: "Complete · Owned-domain deployment pending",
     ownership:
       "I set the archive strategy, separated evidence from memory, established the editorial rules, wrote the narrative, and directed the visual and digital system.",
     collaboration:
       "Source-led independent work using credited band history and documented rights records",
+    directionRecord: [
+      {
+        label: "Creative mandate",
+        value: "Turn a lived band history into a usable editorial archive without promoting memory to fact.",
+      },
+      {
+        label: "Direction set",
+        value: "Archive strategy, narrative structure, evidence rules, rights workflow, typography, and digital reading system.",
+      },
+      {
+        label: "Made by Preston",
+        value: "Research, writing, record architecture, captions, editorial design, and the complete digital archive.",
+      },
+      {
+        label: "Collaboration & record",
+        value: "Firsthand accounts, published sources, band history, and rights records remain credited at item level.",
+      },
+    ],
     accessNote:
-      "The completed archive is not yet deployed at thewildfeathersband.com.",
+      "The complete archive is cleared for portfolio review; deployment to the owned domain remains a separate release step.",
     constraint:
       "A lived history still had to meet the same source, rights, and fact-checking standards as any other archive.",
     challengeTitle: "I knew the story. The record was still incomplete.",
@@ -121,15 +145,15 @@ const projectRecords: Project[] = [
     evidence: [
       {
         label: "Records",
-        value: "384 performances, 200 canonical photographs, six story chapters, and eleven collections.",
+        value: "384 performance records and 193 archive records keep the road and its surviving objects visible.",
       },
       {
-        label: "Editorial rule",
-        value: "Verification language stays beside the claim instead of disappearing during polish.",
+        label: "Reading system",
+        value: "Seven flagship stories provide the edited path; six chronological chapters preserve the complete history.",
       },
       {
-        label: "Publication status",
-        value: "Rights and fact-checking complete; public deployment remains pending.",
+        label: "Source ledger",
+        value: "110 source records keep fact, memory, inference, and the still-unknown visibly distinct.",
       },
     ],
     deliverables: [
@@ -146,9 +170,33 @@ const projectRecords: Project[] = [
     outcomeTitle: "Editors can trace the public narrative back to its records and sources.",
     outcome: [
       "I organized performance, photography, narrative, and collection records so editors can move between the story, its source trail, and the related rights information.",
-      "The archive is complete, with rights and fact-checking resolved. Deployment to the owned domain remains the final publication step.",
+      "The archive is complete and cleared for portfolio review. Deployment to the owned domain remains the final publication step.",
     ],
     artifacts: [
+      {
+        src: "/images/wild-feathers-story-live.png",
+        alt: "The Wild Feathers story index introducing seven flagship stories and six chronological chapters",
+        caption: "The edited reading path and the complete chronology are presented as related, not interchangeable, records.",
+        credit: "Live archive capture · August 2026",
+        format: "landscape",
+        aspect: "36 / 25",
+      },
+      {
+        src: "/images/wild-feathers-timeline-live.png",
+        alt: "The Wild Feathers timeline interface with filters for milestones, shows, releases, lineup, television, and recording",
+        caption: "The timeline lets readers change the view without changing the underlying evidence.",
+        credit: "Live archive capture · August 2026",
+        format: "landscape",
+        aspect: "36 / 25",
+      },
+      {
+        src: "/images/wild-feathers-sources-live.png",
+        alt: "The Wild Feathers source ledger explaining fact, memory, inference, and unknown evidence states",
+        caption: "The source ledger keeps conflicts and limits visible instead of polishing them away.",
+        credit: "Live archive capture · August 2026",
+        format: "landscape",
+        aspect: "36 / 25",
+      },
       {
         src: "/images/wild-feathers-site.jpg",
         alt: "Desktop view of The Wild Feathers archive homepage",
@@ -167,7 +215,7 @@ const projectRecords: Project[] = [
     closing: "Each published memory stays linked to its source.",
     theme: "archive",
     verificationNotes: [
-      "Deploy the completed archive before restoring the public link to thewildfeathersband.com.",
+      "Owned-domain deployment remains a separate release task and is not authorized by this portfolio change.",
     ],
   },
   {
@@ -208,6 +256,24 @@ const projectRecords: Project[] = [
       "I had full creative control of the redesign: positioning, information architecture, copy, photography, visual design, and implementation.",
     collaboration:
       "Independent execution with company leadership approval",
+    directionRecord: [
+      {
+        label: "Creative mandate",
+        value: "Make a multi-airport operating and development company legible as one connected practice.",
+      },
+      {
+        label: "Direction set",
+        value: "Positioning, message architecture, information hierarchy, editorial standards, and photography direction.",
+      },
+      {
+        label: "Made by Preston",
+        value: "Strategy, copy, original field photography, visual design, and digital implementation.",
+      },
+      {
+        label: "Collaboration & approval",
+        value: "The work was developed directly with company leadership, which reviewed and approved the public direction.",
+      },
+    ],
     liveUrl: "https://texasaviationpartners.com/",
     liveLabel: "Visit Texas Aviation Partners",
     constraint:
@@ -248,9 +314,9 @@ const projectRecords: Project[] = [
       "Project and editorial structure",
       "Design direction and digital system",
     ],
-    artifactTitle: "The public system in transition.",
+    artifactTitle: "Field record, public proof, and the next editorial system.",
     artifactIntro:
-      "The current and proposed homepages show the shift from a conventional service-led presentation to an evidence-led editorial system.",
+      "The sequence separates the earlier public presentation, the editorial review build, original airport photography, and the live project pages that carry the proof.",
     outcomeTitle: "The new public system increased website traffic 40% in its first month.",
     outcome: [
       "The company now has one public system for its services, projects, leadership, field reporting, and direct inquiries. It can add development reporting without rebuilding the story each time.",
@@ -274,6 +340,38 @@ const projectRecords: Project[] = [
         credit: "Netlify deploy capture · August 2026",
         format: "landscape",
         aspect: "8 / 5",
+      },
+      {
+        src: "/images/tap-surveyor.jpg",
+        alt: "A surveyor working on an airport runway beneath a wide Texas sky",
+        caption: "A surveyor records runway conditions in the operating landscape.",
+        credit: "Photograph by Preston Wimberly",
+        format: "landscape",
+        aspect: "4 / 3",
+      },
+      {
+        src: "/images/tap-tractor.jpg",
+        alt: "A tractor and runway-maintenance equipment crossing an airport runway beneath large clouds",
+        caption: "Runway maintenance makes the operating work visible without resorting to corporate aviation imagery.",
+        credit: "Photograph by Preston Wimberly",
+        format: "landscape",
+        aspect: "3 / 2",
+      },
+      {
+        src: "/images/tap-projects-live.png",
+        alt: "The live Texas Aviation Partners project index connecting company positioning to airport work across Texas",
+        caption: "The live project index moves from the company position to airport-specific engagements.",
+        credit: "Public website capture · August 2026",
+        format: "landscape",
+        aspect: "36 / 25",
+      },
+      {
+        src: "/images/tap-san-marcos-live.png",
+        alt: "The live San Marcos Regional Airport project page presenting cited economic-impact results",
+        caption: "The San Marcos project page connects the brand claim to a cited TxDOT economic-impact record.",
+        credit: "Public website capture · August 2026",
+        format: "landscape",
+        aspect: "36 / 25",
       },
     ],
     closing:
@@ -310,6 +408,24 @@ const projectRecords: Project[] = [
       "As founder, I set the position, voice, material vocabulary, model architecture, and visual direction, then carried those decisions through the public experience.",
     collaboration:
       "Developed with the workshop around the instruments, materials, and build process",
+    directionRecord: [
+      {
+        label: "Creative mandate",
+        value: "Build a premium guitar brand from the instruments’ real material character, not borrowed vintage language.",
+      },
+      {
+        label: "Direction set",
+        value: "Position, voice, material vocabulary, model family, visual codes, product story, and inquiry journey.",
+      },
+      {
+        label: "Made by Preston",
+        value: "Brand strategy, naming architecture, writing, art direction, product presentation, and digital experience.",
+      },
+      {
+        label: "Collaboration & workshop",
+        value: "Product and workshop decisions were developed with Jim Wimberly; Preston led the brand and public expression.",
+      },
+    ],
     liveUrl: "https://wimberlycustomguitars.com/",
     liveLabel: "Visit Wimberly Custom Guitars",
     constraint:
@@ -367,6 +483,14 @@ const projectRecords: Project[] = [
         aspect: "1417 / 892",
       },
       {
+        src: "/images/wimberly-reference.avif",
+        alt: "A nineteenth-century lever-action rifle with a walnut stock and blued steel barrel",
+        caption: "The workshop reference object set practical rules for walnut, blued steel, fitted parts, and surfaces that record use.",
+        credit: "Rights-cleared workshop reference image",
+        format: "landscape",
+        aspect: "4 / 3",
+      },
+      {
         src: "/images/wimberly-mobile.jpg",
         alt: "Mobile view of the Wimberly Guitars homepage",
         caption: "The model and material hierarchy stays direct at a narrow reading width.",
@@ -376,9 +500,6 @@ const projectRecords: Project[] = [
     ],
     closing: "A material choice has to earn its place in the story.",
     theme: "workshop",
-    verificationNotes: [
-      "Confirm the provenance and intended use of the excluded reference and workshop images before publishing either asset.",
-    ],
   },
   {
     slug: "preston-session-site",
@@ -406,6 +527,24 @@ const projectRecords: Project[] = [
     ownership:
       "I reduced a broad music résumé to one commercial position, wrote the offer and service language, and directed the finished experience.",
     collaboration: "Independent work for my own session practice",
+    directionRecord: [
+      {
+        label: "Creative mandate",
+        value: "Turn a broad performing résumé into a focused commercial offer for artists and producers.",
+      },
+      {
+        label: "Direction set",
+        value: "Positioning, service hierarchy, voice, listening sequence, visual tone, and inquiry path.",
+      },
+      {
+        label: "Made by Preston",
+        value: "Offer strategy, writing, work selection, visual direction, and the complete one-page experience.",
+      },
+      {
+        label: "Collaboration",
+        value: "Independent work for Preston’s own session practice; no outside team or client role is implied.",
+      },
+    ],
     liveUrl: "https://prestonwimberly.com/",
     liveLabel: "Visit prestonwimberly.com",
     constraint:
@@ -479,16 +618,28 @@ const projectRecords: Project[] = [
   },
 ];
 
-const featuredProjectOrder = [
+const projectOrder = [
   "texas-aviation-partners",
   "wild-feathers",
   "wimberly-guitars",
   "preston-session-site",
 ];
 
-export const projects = featuredProjectOrder.map((slug) => {
+export const projects = projectOrder.map((slug) => {
   const project = projectRecords.find((item) => item.slug === slug);
   if (!project) throw new Error(`Missing portfolio project: ${slug}`);
+  return project;
+});
+
+const featuredProjectOrder = [
+  "texas-aviation-partners",
+  "wild-feathers",
+  "wimberly-guitars",
+];
+
+export const featuredProjects = featuredProjectOrder.map((slug) => {
+  const project = projects.find((item) => item.slug === slug);
+  if (!project) throw new Error(`Missing featured portfolio project: ${slug}`);
   return project;
 });
 

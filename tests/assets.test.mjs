@@ -51,6 +51,7 @@ test("generates correctly sized editorial social cards", async () => {
     "texas-aviation-partners",
     "wild-feathers",
     "wimberly-guitars",
+    "sandpaper",
     "preston-session-site",
   ];
 

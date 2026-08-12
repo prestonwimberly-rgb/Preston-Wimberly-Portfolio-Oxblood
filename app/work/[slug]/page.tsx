@@ -110,17 +110,24 @@ export default async function WorkPage({ params }: WorkPageProps) {
       </dl>
     </section>
   );
-  const caseContext = (
-    <section className="case-context" aria-label="Project context">
-      <div>
-        <p className="section-number">Direction & collaboration</p>
-        <p>{project.ownership}</p>
-        <p>{project.collaboration}.</p>
+  const caseDirectionRecord = (
+    <section className="case-direction-record" aria-labelledby="direction-record-title">
+      <div className="case-direction-heading">
+        <p className="section-number">Direction record</p>
+        <h2 id="direction-record-title">What I set, made, and directed.</h2>
       </div>
-      <div>
-        <p className="section-number">Constraint</p>
-        <p>{project.constraint}</p>
-      </div>
+      <dl className="case-direction-list">
+        {project.directionRecord.map((item) => (
+          <div key={item.label}>
+            <dt>{item.label}</dt>
+            <dd>{item.value}</dd>
+          </div>
+        ))}
+        <div>
+          <dt>Constraint</dt>
+          <dd>{project.constraint}</dd>
+        </div>
+      </dl>
     </section>
   );
   const caseEvidence = (
@@ -178,7 +185,7 @@ export default async function WorkPage({ params }: WorkPageProps) {
   const deliverablesSection = (
     <div className="deliverables">
       <p className="section-number inverse">03 / Direction in practice</p>
-      <h2>Selected work</h2>
+      <h2>System in use</h2>
       <ul>
         {project.deliverables.map((item) => (
           <li key={item}>{item}</li>
@@ -216,9 +223,8 @@ export default async function WorkPage({ params }: WorkPageProps) {
         {!imageFirst ? caseImage : null}
         {project.theme !== "field" ? caseEvidence : null}
         {caseDetails}
-        {project.theme === "field" ? caseContext : null}
+        {caseDirectionRecord}
         {project.theme === "field" ? caseEvidence : null}
-        {project.theme !== "field" ? caseContext : null}
 
         <section className="case-body">
           {project.theme === "studio" ? principleSection : null}

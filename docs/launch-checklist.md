@@ -33,22 +33,25 @@ Custom-domain release sequence:
 
 ## Content and rights verification
 
-These statements must be confirmed by Preston before launch. If a statement
-cannot be verified, narrow or remove it rather than substituting a new claim.
+Preston confirmed on August 12, 2026 that the website content and image use
+listed below are cleared for this portfolio. Deployment, domain, and release
+steps remain separate approvals.
 
 ### The Wild Feathers
 
-- Rights, fact-checking, and the counts for 384 performances, 200 canonical
-  photographs, six story chapters, and eleven archive collections are confirmed.
-- Deploy the completed archive to `thewildfeathersband.com` before restoring its
-  public link. Domain ownership is confirmed; deployment is not.
+- Portfolio use is cleared for the archive’s current working record: 384
+  performance records, 193 archive records, seven flagship stories, six
+  chronological chapters, and 110 source records.
+- Deployment to `thewildfeathersband.com` remains pending. Domain ownership is
+  confirmed; this portfolio change does not authorize that release.
 
 ### Wimberly Guitars
 
 - Preston is the founder. The current public offer is a waitlist.
-- Confirm the provenance and intended use of `wimberly-reference.avif` and
-  `wimberly-workshop-hero.avif`; keep both assets out of the public case study
-  until that review is complete.
+- Portfolio use of `wimberly-reference.avif` and
+  `wimberly-workshop-hero.avif` is cleared. The reference object is used as a
+  documented source for the material system; the workshop hero remains outside
+  the case-study evidence sequence.
 
 ### Session-musician website
 

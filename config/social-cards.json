@@ -24,6 +24,12 @@
     "title": ["Building a guitar brand", "from the materials up."]
   },
   {
+    "slug": "sandpaper",
+    "source": "/images/sandpaper-cover.png",
+    "eyebrow": "SANDPAPER · MEMOIR · EDITORIAL PROJECT",
+    "title": ["A manuscript shaped", "by records, memory,", "and material process."]
+  },
+  {
     "slug": "preston-session-site",
     "source": "/images/preston-session-site.jpg",
     "eyebrow": "PRESTONWIMBERLY.COM · CASE STUDY",
