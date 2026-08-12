@@ -28,6 +28,7 @@ const { default: worker } = await import(workerUrl.href);
 
 const routes = [
   "/",
+  "/sandpaper",
   "/work/texas-aviation-partners",
   "/work/wild-feathers",
   "/work/wimberly-guitars",

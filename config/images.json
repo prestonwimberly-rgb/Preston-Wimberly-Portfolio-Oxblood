@@ -1,7 +1,11 @@
 {
+  "/images/sandpaper-cover.png": { "width": 540, "height": 810 },
+  "/images/preston-stage.jpeg": { "width": 1672, "height": 941 },
   "/images/preston-session-mobile.jpg": { "width": 390, "height": 844 },
   "/images/preston-session-site.jpg": { "width": 1417, "height": 900 },
   "/images/tap-hay-windsock.jpg": { "width": 1280, "height": 853 },
+  "/images/tap-site-after.jpg": { "width": 960, "height": 600 },
+  "/images/tap-site-before.jpg": { "width": 1363, "height": 852 },
   "/images/tap-surveyor.jpg": { "width": 1280, "height": 960 },
   "/images/tap-tractor.jpg": { "width": 1280, "height": 851 },
   "/images/wild-feathers-laugh.png": { "width": 1584, "height": 672 },

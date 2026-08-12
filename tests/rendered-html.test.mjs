@@ -63,13 +63,17 @@ test("server-renders the finished portfolio", async () => {
     html,
     /How do you build a guitar brand from real materials without borrowing generic vintage language\?/,
   );
-  assert.match(html, /Hay bales and an airport windsock in the working landscape/);
+  assert.match(html, /The proposed Texas Aviation Partners homepage/);
+  assert.match(html, /Memoir · 50,000 words/);
+  assert.match(html, /href="\/sandpaper"/);
+  assert.match(html, /Experience shaped by/);
+  assert.match(html, /Warner Bros. Records/);
   assert.match(html, /Walnut, hand-tooled leather, and antique bronze hardware/);
   assert.doesNotMatch(html, /\/work\/san-marcos-airport/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|Starter Project/i);
   assert.ok(html.indexOf("Texas Aviation Partners") < html.indexOf("The Wild Feathers"));
   assert.match(html, /<picture class="responsive-picture">/);
-  assert.match(html, /\/optimized\/tap-tractor-[0-9]+\.avif/);
+  assert.match(html, /\/optimized\/tap-site-after-[0-9]+\.avif/);
   assert.match(html, /\/optimized\/wild-feathers-laugh-[0-9]+\.avif/);
   assert.match(html, /\/optimized\/wimberly-jack-antique-bronze-knobs-[0-9]+\.avif/);
   assert.match(html, /\/social\/home\.jpg/);
@@ -81,6 +85,20 @@ test("server-renders the finished portfolio", async () => {
   assert.match(html, /mailto:preston\.wimberly@gmail\.com/);
   assert.doesNotMatch(html, /preston@prestonwimberly\.com/);
   assert.doesNotMatch(html, /"sameAs"/);
+});
+
+test("server-renders the SANDPAPER memoir project", async () => {
+  const response = await render("/sandpaper");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /SANDPAPER/);
+  assert.match(html, /50,000 words/);
+  assert.match(html, /The Finish/);
+  assert.match(html, /Removal/);
+  assert.match(html, /Finer Grits/);
+  assert.match(html, /Photographs, emails, contracts, medical records, and calendars/);
+  assert.match(html, /\/optimized\/sandpaper-cover-[0-9]+\.avif/);
+  assert.match(html, /The piece has to look worse before it can look honest/);
 });
 
 test("server-renders all four project case studies", async () => {
@@ -119,11 +137,12 @@ test("server-renders all four project case studies", async () => {
     assert.match(html, new RegExp(`/social/${path.split("/").pop()}\\.jpg`));
     if (path === "/work/texas-aviation-partners") {
       assert.ok(html.indexOf("Role") < html.indexOf("Public proof"));
-      assert.match(html, /Work recorded in the field/);
+      assert.match(html, /The public system in transition/);
       assert.match(html, /\/optimized\/tap-hay-windsock-[0-9]+\.avif/);
-      assert.match(html, /\/optimized\/tap-tractor-[0-9]+\.avif/);
-      assert.match(html, /\/optimized\/tap-surveyor-[0-9]+\.avif/);
-      assert.ok((html.match(/Photograph by Preston Wimberly/g)?.length ?? 0) >= 3);
+      assert.match(html, /\/optimized\/tap-site-before-[0-9]+\.avif/);
+      assert.match(html, /\/optimized\/tap-site-after-[0-9]+\.avif/);
+      assert.match(html, /Public website capture · August 2026/);
+      assert.match(html, /Netlify deploy capture · August 2026/);
       assert.match(html, /Google Analytics recorded a 40% increase/);
       assert.doesNotMatch(html, /tap-projects-site|tap-mobile|san-marcos-tower/i);
     }
@@ -165,6 +184,14 @@ test("public case studies include confirmed facts and exclude unresolved guitar 
   assert.doesNotMatch(guitarHtml, /co-founder|commission|commerce/i);
   assert.match(guitarHtml, /Founder \/ Creative Director/);
   assert.match(guitarHtml, /join the waitlist/i);
+
+  const tapResponse = await render("/work/texas-aviation-partners");
+  const tapHtml = await tapResponse.text();
+  assert.match(tapHtml, /The public system in transition/);
+  assert.match(tapHtml, /\/optimized\/tap-site-before-[0-9]+\.avif/);
+  assert.match(tapHtml, /\/optimized\/tap-site-after-[0-9]+\.avif/);
+  assert.match(tapHtml, /Public website capture · August 2026/);
+  assert.match(tapHtml, /Netlify deploy capture · August 2026/);
 });
 
 test("server-renders unknown routes with the portfolio 404", async () => {

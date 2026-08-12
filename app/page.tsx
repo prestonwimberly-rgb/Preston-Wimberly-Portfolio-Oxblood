@@ -35,6 +35,13 @@ const inquiryHref = `mailto:${siteConfig.email}?subject=${encodeURIComponent("Fr
 
 const writing = [
   {
+    type: "Memoir · 50,000 words",
+    title: "SANDPAPER",
+    description:
+      "A three-part memoir built from photographs, records, and lived memory, with guitar finishing as its structural language.",
+    href: "/sandpaper",
+  },
+  {
     type: "Essay · Craft & brand voice",
     title: "On the slowness of oil",
     description:
@@ -114,6 +121,17 @@ export default function Home() {
           </figure>
         </section>
 
+        <aside className="experience-rail" aria-label="Selected experience">
+          <p>Experience shaped by</p>
+          <ul>
+            <li>Texas Monthly</li>
+            <li>Warner Bros. Records</li>
+            <li>The road</li>
+            <li>The guitar bench</li>
+            <li>Airport operations</li>
+          </ul>
+        </aside>
+
         <section className="section work-section" id="work" aria-labelledby="work-title">
           <div className="section-heading">
             <p className="section-number">01 / Selected work</p>
@@ -121,27 +139,40 @@ export default function Home() {
           </div>
 
           <div className="project-list">
-            {projects.map((project, index) => (
+            {projects.map((project, index) => {
+              const image = project.homepageImage ?? project.image;
+              const imageAlt = project.homepageImageAlt ?? project.imageAlt;
+              const imageCaption =
+                project.homepageImageCaption ?? project.imageCaption;
+              const imageCredit =
+                project.homepageImageCredit ?? project.imageCredit;
+              const imageFit = project.homepageImageFit ?? project.imageFit;
+              const imagePosition =
+                project.homepageImagePosition ?? project.imagePosition;
+              const imageAspect =
+                project.homepageImageAspect ?? project.imageAspect;
+
+              return (
               <article
-                className={`project-row project-row-${index + 1} project-image-${project.imageFit ?? "contain"}`}
+                className={`project-row project-row-${index + 1} project-image-${imageFit ?? "contain"}`}
                 key={project.slug}
               >
                 <figure className="project-visual">
                   <Link
                     className="project-image"
                     href={`/work/${project.slug}`}
-                    style={{ aspectRatio: project.imageAspect }}
+                    style={{ aspectRatio: imageAspect }}
                   >
                     <ResponsiveImage
-                      src={project.image}
-                      alt={project.imageAlt}
+                      src={image}
+                      alt={imageAlt}
                       sizes="(max-width: 760px) 100vw, 54vw"
-                      style={{ objectPosition: project.imagePosition ?? "center" }}
+                      style={{ objectPosition: imagePosition ?? "center" }}
                     />
                   </Link>
                   <figcaption>
-                    {project.imageCaption}
-                    {project.imageCredit ? <span>{project.imageCredit}</span> : null}
+                    {imageCaption}
+                    {imageCredit ? <span>{imageCredit}</span> : null}
                   </figcaption>
                 </figure>
                 <div className="project-copy">
@@ -165,7 +196,8 @@ export default function Home() {
                   </Link>
                 </div>
               </article>
-            ))}
+              );
+            })}
           </div>
         </section>
 
@@ -253,14 +285,12 @@ export default function Home() {
         <section className="about-section" id="about" aria-labelledby="about-title">
           <figure>
             <ResponsiveImage
-              src="/images/tap-surveyor.jpg"
-              alt="A surveyor working on a runway beneath large clouds"
+              src="/images/preston-stage.jpeg"
+              alt="Preston Wimberly playing electric guitar onstage"
               sizes="(max-width: 760px) 100vw, 46vw"
+              style={{ objectPosition: "62% center" }}
             />
-            <figcaption>
-              A surveyor works on an airport runway.
-              <span>Photograph by Preston Wimberly</span>
-            </figcaption>
+            <figcaption>Preston Wimberly in performance.</figcaption>
           </figure>
           <div className="about-copy">
             <p className="section-number">05 / About</p>

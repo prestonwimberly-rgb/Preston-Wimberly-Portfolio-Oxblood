@@ -51,10 +51,17 @@ test("core portfolio color pairings meet WCAG AA", () => {
 });
 
 test("the reference-led system keeps its restrained design tokens", () => {
+  assert.equal(colorVariable("ink"), "#171411");
+  assert.match(css, /--font-display:\s*"Bodoni Moda"/);
+  assert.match(css, /--font-body:\s*"Source Serif 4"/);
+  assert.match(css, /--font-interface:\s*"Source Sans 3"/);
   assert.match(css, /--space-base:\s*8px/);
   assert.match(css, /--motion-standard:\s*200ms ease/);
   assert.match(css, /\.practice-note\s*\{[^}]*background:\s*var\(--night\)/s);
   assert.match(css, /\.project-visual figcaption\s*\{[^}]*border-top:\s*1px solid var\(--line\)/s);
+  assert.match(css, /\.contact-section\s*\{[^}]*background:\s*var\(--ink\)/s);
+  assert.match(css, /\.next-project\s*\{[^}]*background:\s*var\(--ink\)/s);
+  assert.doesNotMatch(css, /letter-spacing:\s*-(?:0\.0[6-9]|0\.[1-9])/);
   assert.doesNotMatch(css, /\.project-index-rail/);
   assert.doesNotMatch(css, /border-radius:\s*(?!0)/);
   assert.doesNotMatch(css, /box-shadow:/);

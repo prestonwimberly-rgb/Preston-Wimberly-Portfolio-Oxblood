@@ -32,7 +32,7 @@ production dependencies.
 ## Build and deployment
 
 Netlify runs `npm run build:netlify` and publishes `netlify-dist/`, as declared
-in `netlify.toml`. The export contains five public routes, a branded `404.html`,
+in `netlify.toml`. The export contains six public routes, a branded `404.html`,
 `robots.txt`, `sitemap.xml`, generated social cards, and responsive AVIF/WebP
 assets. No application JavaScript is required in the exported pages.
 
@@ -47,7 +47,7 @@ committed; `npm run build` recreates them from `config/images.json` and
 
 ## Project structure
 
-- `app/` — homepage, case-study route, metadata, 404, and global styles
+- `app/` — homepage, memoir, case-study routes, metadata, 404, and global styles
 - `components/` — responsive image markup
 - `config/` — site, deployment, image, and social-card configuration
 - `data/projects.ts` — the four case-study records and internal verification notes
