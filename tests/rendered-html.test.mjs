@@ -92,7 +92,7 @@ test("server-renders the SANDPAPER memoir project", async () => {
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /SANDPAPER/);
-  assert.match(html, /50,000-word manuscript/);
+  assert.match(html, /50,000 words/);
   assert.match(html, /The Finish/);
   assert.match(html, /Removal/);
   assert.match(html, /Finer Grits/);
@@ -137,11 +137,12 @@ test("server-renders all four project case studies", async () => {
     assert.match(html, new RegExp(`/social/${path.split("/").pop()}\\.jpg`));
     if (path === "/work/texas-aviation-partners") {
       assert.ok(html.indexOf("Role") < html.indexOf("Public proof"));
-      assert.match(html, /Work recorded in the field/);
+      assert.match(html, /The public system in transition/);
       assert.match(html, /\/optimized\/tap-hay-windsock-[0-9]+\.avif/);
-      assert.match(html, /\/optimized\/tap-tractor-[0-9]+\.avif/);
-      assert.match(html, /\/optimized\/tap-surveyor-[0-9]+\.avif/);
-      assert.ok((html.match(/Photograph by Preston Wimberly/g)?.length ?? 0) >= 3);
+      assert.match(html, /\/optimized\/tap-site-before-[0-9]+\.avif/);
+      assert.match(html, /\/optimized\/tap-site-after-[0-9]+\.avif/);
+      assert.match(html, /Public website capture · August 2026/);
+      assert.match(html, /Netlify deploy capture · August 2026/);
       assert.match(html, /Google Analytics recorded a 40% increase/);
       assert.doesNotMatch(html, /tap-projects-site|tap-mobile|san-marcos-tower/i);
     }
