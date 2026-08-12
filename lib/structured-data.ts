@@ -12,7 +12,7 @@ function personNode() {
     name: siteConfig.name,
     url: siteConfig.origin,
     email: siteConfig.email,
-    jobTitle: ["Creative Director", "Brand Strategist", "Writer"],
+    jobTitle: "Creative Director",
     description: siteConfig.description,
     knowsAbout: [
       "Creative direction",

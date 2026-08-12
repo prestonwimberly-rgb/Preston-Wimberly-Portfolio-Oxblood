@@ -2,7 +2,11 @@
 
 ## Core idea
 
-An editorial working portfolio for a writer, brand builder, and website maker. The design should make evidence, authorship, and judgment visible without behaving like a luxury-brand imitation or a generic agency showcase.
+An editorial working portfolio for a Creative Director with unusually broad
+hands-on range. The design should make evidence, authorship, direction, and
+judgment visible without behaving like a luxury-brand imitation or a generic
+agency showcase. Writing, photography, design, and digital production are proof
+of the direction, not competing job titles.
 
 **Page direction:** A modern editorial portfolio for hiring leaders and collaborators that feels field-tested, tactile, and exacting and helps visitors see what Preston owned, what he made, and what changed.
 
@@ -34,9 +38,8 @@ The expanded installed `rrl-web-design` skill is the governing design standard.
 Its portfolio mode treats aviation, music, craft, writing, photography, and web
 work as chapters connected by one recognizable eye.
 
-- Keep the homepage opening concise and evidence-led. The first screen names the
-  practice, preserves the established display statement, and introduces the
-  range of mediums without turning into a service pitch.
+- Keep the homepage opening concise and evidence-led. The first screen must
+  establish Creative Director before it introduces mediums or services.
 - Move directly from the opening into selected work. Do not restore a dashboard-
   like project rail or résumé-style metadata stack on the homepage.
 - Present working method as one editorial note rather than a grid of capability

@@ -92,10 +92,6 @@ export default async function WorkPage({ params }: WorkPageProps) {
     <section className="case-details" aria-label="Project details">
       <dl className="case-meta">
         <div>
-          <dt>Engagement</dt>
-          <dd>{project.engagementType}</dd>
-        </div>
-        <div>
           <dt>Role</dt>
           <dd>{project.role}</dd>
         </div>
@@ -111,21 +107,14 @@ export default async function WorkPage({ params }: WorkPageProps) {
           <dt>Place</dt>
           <dd>{project.place}</dd>
         </div>
-        <div>
-          <dt>Status</dt>
-          <dd>{project.status}</dd>
-        </div>
       </dl>
     </section>
   );
   const caseContext = (
     <section className="case-context" aria-label="Project context">
       <div>
-        <p className="section-number">My ownership</p>
+        <p className="section-number">Direction & collaboration</p>
         <p>{project.ownership}</p>
-      </div>
-      <div>
-        <p className="section-number">Collaboration</p>
         <p>{project.collaboration}.</p>
       </div>
       <div>
@@ -188,8 +177,8 @@ export default async function WorkPage({ params }: WorkPageProps) {
   );
   const deliverablesSection = (
     <div className="deliverables">
-      <p className="section-number inverse">03 / Selected work</p>
-      <h2>What I made</h2>
+      <p className="section-number inverse">03 / Direction in practice</p>
+      <h2>Selected work</h2>
       <ul>
         {project.deliverables.map((item) => (
           <li key={item}>{item}</li>
@@ -211,8 +200,8 @@ export default async function WorkPage({ params }: WorkPageProps) {
         <nav className="site-nav" aria-label="Case study navigation">
           <Link href="/#work">Work</Link>
           <Link className="nav-narrow-secondary" href="/#about">About</Link>
-          <a className="nav-contact" href={`mailto:${siteConfig.email}`}>
-            <span className="nav-contact-long">Get in touch</span>
+          <a className="nav-contact" href={`mailto:${siteConfig.email}?subject=Creative%20direction%20inquiry`}>
+            <span className="nav-contact-long">Start a project</span>
             <span className="nav-contact-short">Contact</span>
           </a>
         </nav>
@@ -241,7 +230,7 @@ export default async function WorkPage({ params }: WorkPageProps) {
 
         <section className="case-artifacts" aria-labelledby="artifacts-title">
           <div className="case-artifacts-heading">
-            <p className="section-number">04 / Finished experience</p>
+            <p className="section-number">04 / Evidence</p>
             <div>
               <h2 id="artifacts-title">{project.artifactTitle}</h2>
               <p>{project.artifactIntro}</p>
@@ -301,7 +290,7 @@ export default async function WorkPage({ params }: WorkPageProps) {
       <footer className="site-footer">
         <p>© 2026 Preston Wimberly</p>
         <Link href="/">Home</Link>
-        <a href={`mailto:${siteConfig.email}`}>Get in touch ↗</a>
+        <a href={`mailto:${siteConfig.email}?subject=Creative%20direction%20inquiry`}>Start a project ↗</a>
       </footer>
     </>
   );

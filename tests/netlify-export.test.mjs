@@ -3,11 +3,11 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 const pages = [
-  ["../netlify-dist/index.html", /Clear words/, "https://work.prestonwimberly.com", "home", "Preston Wimberly | Creative Director, Brand Strategist &amp; Writer"],
-  ["../netlify-dist/work/texas-aviation-partners/index.html", /Making the real scale/, "https://work.prestonwimberly.com/work/texas-aviation-partners/", "texas-aviation-partners", "Texas Aviation Partners Brand Strategy | Preston Wimberly"],
-  ["../netlify-dist/work/wild-feathers/index.html", /Turning sixteen years/, "https://work.prestonwimberly.com/work/wild-feathers/", "wild-feathers", "The Wild Feathers Music Archive | Preston Wimberly"],
-  ["../netlify-dist/work/wimberly-guitars/index.html", /Building a guitar brand/, "https://work.prestonwimberly.com/work/wimberly-guitars/", "wimberly-guitars", "Wimberly Guitars Brand Strategy | Preston Wimberly"],
-  ["../netlify-dist/work/preston-session-site/index.html", /Turning a musician/, "https://work.prestonwimberly.com/work/preston-session-site/", "preston-session-site", "prestonwimberly.com Website Strategy | Preston Wimberly"],
+  ["../netlify-dist/index.html", /Find what is true/, "https://work.prestonwimberly.com", "home", "Preston Wimberly | Creative Director"],
+  ["../netlify-dist/work/texas-aviation-partners/index.html", /Making the real scale/, "https://work.prestonwimberly.com/work/texas-aviation-partners/", "texas-aviation-partners", "Texas Aviation Partners Creative Direction | Preston Wimberly"],
+  ["../netlify-dist/work/wild-feathers/index.html", /Reconstructing a band’s history/, "https://work.prestonwimberly.com/work/wild-feathers/", "wild-feathers", "The Wild Feathers Archive Creative Direction | Preston Wimberly"],
+  ["../netlify-dist/work/wimberly-guitars/index.html", /Building a guitar brand/, "https://work.prestonwimberly.com/work/wimberly-guitars/", "wimberly-guitars", "Wimberly Custom Guitars Creative Direction | Preston Wimberly"],
+  ["../netlify-dist/work/preston-session-site/index.html", /Turning a musician/, "https://work.prestonwimberly.com/work/preston-session-site/", "preston-session-site", "prestonwimberly.com Creative Direction | Preston Wimberly"],
 ];
 
 function structuredData(html) {

@@ -38,35 +38,22 @@ cannot be verified, narrow or remove it rather than substituting a new claim.
 
 ### The Wild Feathers
 
-- Confirm the counts for 384 performances, 200 canonical photographs, six story
-  chapters, and eleven archive collections. Keep the exact figures out of public
-  copy until they are confirmed.
-- Confirm the rights and fact-checking status before restoring any public archive
-  link. The current no-link access note should remain until both are resolved.
-
-### Texas Aviation Partners
-
-- Confirm Preston’s decision authority and the description of collaboration with
-  company leadership, airport teams, and public-sector stakeholders. Keep public
-  ownership language limited to the documented brand, writing, photography,
-  design, and build work until then.
-- Add post-launch business or communications evidence only if a reliable source
-  becomes available.
+- Rights, fact-checking, and the counts for 384 performances, 200 canonical
+  photographs, six story chapters, and eleven archive collections are confirmed.
+- Deploy the completed archive to `thewildfeathersband.com` before restoring its
+  public link. Domain ownership is confirmed; deployment is not.
 
 ### Wimberly Guitars
 
-- Confirm the co-founder relationship.
-- Decide whether the public offer is accurately described as commissions, a
-  waitlist, or commerce.
+- Preston is the founder. The current public offer is a waitlist.
 - Confirm the provenance and intended use of `wimberly-reference.avif` and
   `wimberly-workshop-hero.avif`; keep both assets out of the public case study
   until that review is complete.
 
 ### Session-musician website
 
-- Confirm the “two decades” description and the stated breadth across guitar,
-  pedal steel, bass, studio, television, and touring work. Keep public copy
-  broader until those specifics are confirmed.
+- Two decades across guitar, pedal steel, bass, studio recording, television,
+  and touring are confirmed.
 - Add inquiry or booking evidence only if verified evidence becomes available.
 
 ## Deploy-preview acceptance

@@ -42,7 +42,7 @@ export const metadata: Metadata = {
         url: "/social/home.jpg",
         width: 1200,
         height: 630,
-        alt: "Preston Wimberly, creative director, brand strategist, and writer",
+        alt: "Preston Wimberly, Creative Director",
       },
     ],
   },

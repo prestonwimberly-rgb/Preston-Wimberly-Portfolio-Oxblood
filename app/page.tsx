@@ -5,7 +5,33 @@ import { projects } from "@/data/projects";
 import { siteConfig } from "@/lib/site";
 import { homeStructuredData } from "@/lib/structured-data";
 
-const workingMethod = ["Research", "Position", "Write", "Photograph", "Design", "Build"];
+const workingMethod = ["Report", "Position", "Direct", "Write", "Photograph", "Build"];
+
+const services = [
+  {
+    number: "01",
+    title: "Creative direction",
+    description:
+      "Find what is distinctive, decide what the whole expression should become, and set the standards that keep it coherent.",
+    scope: "Positioning · Point of view · Creative standards · Decision-making",
+  },
+  {
+    number: "02",
+    title: "Brand & editorial systems",
+    description:
+      "Turn real work, people, history, and evidence into a clear public narrative that others can use.",
+    scope: "Message architecture · Voice · Editorial structure · Photography direction",
+  },
+  {
+    number: "03",
+    title: "Hands-on execution",
+    description:
+      "Write, photograph, design, or build when direct making is the clearest way to carry the direction through.",
+    scope: "Writing · Photography · Design · Digital production",
+  },
+];
+
+const inquiryHref = `mailto:${siteConfig.email}?subject=${encodeURIComponent("Freelance project inquiry")}`;
 
 const writing = [
   {
@@ -45,8 +71,8 @@ export default function Home() {
         <nav className="site-nav" aria-label="Primary navigation">
           <a href="#work">Work</a>
           <a className="nav-narrow-secondary" href="#about">About</a>
-          <a className="nav-contact" href={`mailto:${siteConfig.email}`}>
-            <span className="nav-contact-long">Get in touch</span>
+          <a className="nav-contact" href={inquiryHref}>
+            <span className="nav-contact-long">Start a project</span>
             <span className="nav-contact-short">Contact</span>
           </a>
         </nav>
@@ -56,17 +82,16 @@ export default function Home() {
         <section className="hero" aria-labelledby="hero-title">
           <div className="hero-copy">
             <p className="eyebrow">
-              Creative direction · Brand strategy · Communications · Editorial · Web
+              Creative Director
             </p>
             <h1 id="hero-title">
-              Clear words.<br />
-              Useful websites.<br />
-              <em>Work people can understand.</em>
+              Find what is true.<br />
+              <em>Give it form.</em>
             </h1>
             <div className="hero-bottom">
               <p>
-                I identify the central problem, set the direction, and carry it
-                through language, images, and finished digital work.
+                I find what is distinctive in a business, set the creative
+                direction, and carry it through words, images, and finished work.
               </p>
               <a className="text-link" href="#work">
                 Read the work <span aria-hidden="true">↓</span>
@@ -90,7 +115,7 @@ export default function Home() {
         <section className="section work-section" id="work" aria-labelledby="work-title">
           <div className="section-heading">
             <p className="section-number">01 / Selected work</p>
-            <h2 id="work-title">Aviation, instruments, music history, and the web.</h2>
+            <h2 id="work-title">The industries change. The method does not.</h2>
           </div>
 
           <div className="project-list">
@@ -127,7 +152,7 @@ export default function Home() {
                     {project.homepagePremise ?? project.premise}
                   </p>
                   <p className="project-context">
-                    {project.place} · {project.year}
+                    {project.role} · {project.year}
                   </p>
                   <p className="project-proof">
                     <span>What changed</span>
@@ -142,9 +167,45 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="section services-section" id="services" aria-labelledby="services-title">
+          <div className="section-heading compact-heading">
+            <p className="section-number">02 / Ways to work together</p>
+            <div>
+              <h2 id="services-title">Direction first. Execution when it helps.</h2>
+              <p className="services-intro">
+                I am most useful when the business is better than the way it
+                currently presents itself. The assignment begins with what is
+                true and ends with a system people can understand and use.
+              </p>
+            </div>
+          </div>
+          <div className="service-list">
+            {services.map((service) => (
+              <article className="service-row" key={service.title}>
+                <p>{service.number}</p>
+                <h3>{service.title}</h3>
+                <div>
+                  <p>{service.description}</p>
+                  <span>{service.scope}</span>
+                </div>
+              </article>
+            ))}
+          </div>
+          <div className="services-cta">
+            <p>
+              A good fit usually starts with a meaningful change: a new offer,
+              a clearer position, a body of work that needs a story, or a site
+              that no longer represents the business.
+            </p>
+            <a className="text-link" href={inquiryHref}>
+              Tell me what is changing <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </section>
+
         <section className="practice-note" aria-labelledby="practice-title">
           <div>
-            <p className="section-number inverse">02 / Working method</p>
+            <p className="section-number inverse">03 / Working method</p>
             <h2 id="practice-title">Start with the record. End with something people can use.</h2>
           </div>
           <div className="practice-note-copy">
@@ -163,7 +224,7 @@ export default function Home() {
 
         <section className="section writing-section" id="writing" aria-labelledby="writing-title">
           <div className="section-heading compact-heading">
-            <p className="section-number">03 / Writing & editorial work</p>
+            <p className="section-number">04 / Writing & editorial work</p>
             <h2 id="writing-title">I report before I write.</h2>
           </div>
           <div className="writing-list">
@@ -200,40 +261,45 @@ export default function Home() {
             </figcaption>
           </figure>
           <div className="about-copy">
-            <p className="section-number">04 / About</p>
-            <h2 id="about-title">I work where strategy, journalism, design, and the web overlap.</h2>
+            <p className="section-number">05 / About</p>
+            <h2 id="about-title">Different fields. The same editorial judgment.</h2>
             <p className="about-lead">
-              I’m Preston Wimberly, a creative director, brand strategist, and
-              writer based between San Marcos, Texas, and Salt Lake City, Utah.
+              I’m Preston Wimberly, a Creative Director based between San Marcos,
+              Texas, and Salt Lake City, Utah.
             </p>
             <p>
-              I’ve worked across aviation, handcrafted products, publishing,
-              sales, and live production. I’m drawn to complex assignments,
-              field reporting, and physical materials. The subject changes, but
-              the method stays consistent: find the useful facts, establish the
-              point of view, and carry it through words, images, and a working
-              system.
+              From 2008 to 2011, I sold advertising at Texas Monthly. It was my
+              first job out of college, and I read every issue front to back,
+              learning how reporting, typography, layout, and editing make a
+              story land. As The Wild Feathers’ lead guitarist, songwriter, and
+              pedal steel player through its Warner Bros. years, I also
+              contributed to photography and album artwork. I later toured and
+              recorded with Jamestown Revival. Building guitars turned that
+              judgment toward materials, construction, repair, and aging.
+              Aviation brought the same method into an operational business,
+              where every claim has to hold up against the work. The fields
+              change. The method does not.
             </p>
-            <a className="text-link" href={`mailto:${siteConfig.email}`}>
-              Get in touch <span aria-hidden="true">↗</span>
+            <a className="text-link" href={inquiryHref}>
+              Start a conversation <span aria-hidden="true">↗</span>
             </a>
           </div>
         </section>
 
         <section className="contact-section" id="contact" aria-labelledby="contact-title">
-          <p className="eyebrow">Roles, collaborations, and selected projects</p>
-          <h2 id="contact-title">Get in touch.</h2>
+          <p className="eyebrow">Creative direction · Independent engagements</p>
+          <h2 id="contact-title">What are you trying to make clear?</h2>
           <p className="contact-fit">
-            Based between San Marcos, Texas, and Salt Lake City, Utah. Creative
-            direction, brand strategy, communications, editorial, and digital work.
+            If the business is better than the way it currently presents itself,
+            send a short note about what is changing and what needs to become clear.
           </p>
-          <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+          <a href={inquiryHref}>Start a project ↗</a>
         </section>
       </main>
 
       <footer className="site-footer">
         <p>© 2026 Preston Wimberly</p>
-        <p>Creative direction · Brand strategy · Communications · Editorial · Web</p>
+        <p>Creative Director · Brand strategy · Editorial direction</p>
         <a href="#hero-title">Back to top ↑</a>
       </footer>
     </>
