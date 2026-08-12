@@ -1996,7 +1996,7 @@ img {
   }
 
   .memoir-copy h1 {
-    font-size: clamp(4.6rem, 22vw, 7rem);
+    font-size: clamp(3.2rem, 15vw, 6rem);
     margin: 32px 0 38px;
   }
 

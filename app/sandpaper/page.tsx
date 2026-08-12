@@ -4,7 +4,7 @@ import { ResponsiveImage } from "@/components/responsive-image";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "SANDPAPER, a memoir | Preston Wimberly",
+  title: "SANDPAPER, a memoir",
   description:
     "A 50,000-word memoir by Preston Wimberly, structured through the material language of guitar finishing and built from photographs, records, and lived memory.",
 };
