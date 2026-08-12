@@ -96,7 +96,7 @@ test("server-renders the SANDPAPER memoir project", async () => {
   assert.match(html, /The Finish/);
   assert.match(html, /Removal/);
   assert.match(html, /Finer Grits/);
-  assert.match(html, /photographs, emails, contracts, medical records, and calendars/);
+  assert.match(html, /Photographs, emails, contracts, medical records, and calendars/);
   assert.match(html, /\/optimized\/sandpaper-cover-[0-9]+\.avif/);
   assert.match(html, /The piece has to look worse before it can look honest/);
 });
