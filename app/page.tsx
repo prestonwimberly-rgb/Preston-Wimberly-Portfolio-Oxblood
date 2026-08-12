@@ -99,12 +99,14 @@ export default function Home() {
             </div>
           </div>
           <figure className="hero-visual">
-            <ResponsiveImage
-              src="/images/tap-tractor.jpg"
-              alt="A tractor crossing a runway beneath large Texas clouds"
-              priority
-              sizes="(max-width: 900px) 100vw, 43vw"
-            />
+            <div className="hero-image">
+              <ResponsiveImage
+                src="/images/tap-tractor.jpg"
+                alt="A tractor crossing a runway beneath large Texas clouds"
+                priority
+                sizes="(max-width: 900px) 100vw, 43vw"
+              />
+            </div>
             <figcaption>
               A tractor works across an airport runway.
               <span>Photograph by Preston Wimberly</span>

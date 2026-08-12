@@ -288,34 +288,41 @@ img {
 
 .hero-visual {
   align-self: center;
-  aspect-ratio: 3 / 2;
-  background: var(--night);
   margin: 0;
   min-height: 0;
+  min-width: 0;
+}
+
+.hero-image {
+  aspect-ratio: 3 / 2;
+  background: var(--night);
   overflow: hidden;
   position: relative;
 }
 
-.hero-visual img {
+.hero-image img {
   object-fit: cover !important;
 }
 
 .hero-visual figcaption {
-  background: color-mix(in srgb, var(--ink) 86%, transparent);
-  bottom: 16px;
-  color: var(--paper);
-  font-size: 0.75rem;
-  font-weight: 400;
-  left: 16px;
-  letter-spacing: 0.01em;
-  line-height: 1.4;
-  max-width: calc(100% - 32px);
-  padding: 8px 10px;
-  position: absolute;
-  z-index: 2;
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 0.76rem;
+  line-height: 1.45;
+  margin-top: 12px;
+  padding-top: 10px;
 }
 
-.hero-visual figcaption span,
+.hero-visual figcaption span {
+  color: var(--ink-soft);
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-top: 4px;
+  text-transform: uppercase;
+}
+
 .about-section > figure figcaption span {
   display: block;
   font-size: 0.68rem;
@@ -1512,7 +1519,6 @@ img {
   }
 
   .hero-visual {
-    aspect-ratio: 3 / 2;
     min-height: 0;
     width: 100%;
   }
