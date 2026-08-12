@@ -35,6 +35,13 @@ const inquiryHref = `mailto:${siteConfig.email}?subject=${encodeURIComponent("Fr
 
 const writing = [
   {
+    type: "Memoir · 50,000 words",
+    title: "SANDPAPER",
+    description:
+      "A three-part memoir built from photographs, records, and lived memory, with guitar finishing as its structural language.",
+    href: "/sandpaper",
+  },
+  {
     type: "Essay · Craft & brand voice",
     title: "On the slowness of oil",
     description:

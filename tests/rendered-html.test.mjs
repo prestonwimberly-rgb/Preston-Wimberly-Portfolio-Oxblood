@@ -64,6 +64,8 @@ test("server-renders the finished portfolio", async () => {
     /How do you build a guitar brand from real materials without borrowing generic vintage language\?/,
   );
   assert.match(html, /The proposed Texas Aviation Partners homepage/);
+  assert.match(html, /Memoir · 50,000 words/);
+  assert.match(html, /href="\/sandpaper"/);
   assert.match(html, /Experience shaped by/);
   assert.match(html, /Warner Bros. Records/);
   assert.match(html, /Walnut, hand-tooled leather, and antique bronze hardware/);
@@ -83,6 +85,20 @@ test("server-renders the finished portfolio", async () => {
   assert.match(html, /mailto:preston\.wimberly@gmail\.com/);
   assert.doesNotMatch(html, /preston@prestonwimberly\.com/);
   assert.doesNotMatch(html, /"sameAs"/);
+});
+
+test("server-renders the SANDPAPER memoir project", async () => {
+  const response = await render("/sandpaper");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /SANDPAPER/);
+  assert.match(html, /50,000-word manuscript/);
+  assert.match(html, /The Finish/);
+  assert.match(html, /Removal/);
+  assert.match(html, /Finer Grits/);
+  assert.match(html, /photographs, emails, contracts, medical records, and calendars/);
+  assert.match(html, /\/optimized\/sandpaper-cover-[0-9]+\.avif/);
+  assert.match(html, /The piece has to look worse before it can look honest/);
 });
 
 test("server-renders all four project case studies", async () => {
