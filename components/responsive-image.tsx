@@ -54,7 +54,7 @@ export function ResponsiveImage({
         className={className}
         loading={priority ? "eager" : "lazy"}
         fetchPriority={priority ? "high" : "auto"}
-        decoding="async"
+        decoding={priority ? "sync" : "async"}
         style={{
           position: "absolute",
           inset: 0,

@@ -31,6 +31,13 @@ export type Project = {
   imageFit?: "cover" | "contain";
   imagePosition?: string;
   imageAspect?: string;
+  homepageImage?: string;
+  homepageImageAlt?: string;
+  homepageImageCaption?: string;
+  homepageImageCredit?: string;
+  homepageImageFit?: "cover" | "contain";
+  homepageImagePosition?: string;
+  homepageImageAspect?: string;
   role: string;
   scope: string;
   year: string;
@@ -183,6 +190,14 @@ const projectRecords: Project[] = [
     imageCredit: "Photograph by Preston Wimberly",
     imageFit: "cover",
     imagePosition: "center 46%",
+    homepageImage: "/images/tap-site-after.jpg",
+    homepageImageAlt:
+      "The redesigned Texas Aviation Partners homepage in its Netlify review build",
+    homepageImageCaption:
+      "The proposed Texas Aviation Partners homepage, shown in the Netlify review build.",
+    homepageImageCredit: "Netlify deploy capture · August 2026",
+    homepageImageFit: "cover",
+    homepageImageAspect: "8 / 5",
     role: "Creative Director / Brand Strategy",
     scope: "Positioning, message architecture, writing, photography direction",
     year: "2026",
@@ -233,9 +248,9 @@ const projectRecords: Project[] = [
       "Project and editorial structure",
       "Design direction and digital system",
     ],
-    artifactTitle: "Work recorded in the field.",
+    artifactTitle: "The public system in transition.",
     artifactIntro:
-      "Original photography keeps the case study grounded in airport land, runway maintenance, and people doing the work.",
+      "The current and proposed homepages show the shift from a conventional service-led presentation to an evidence-led editorial system.",
     outcomeTitle: "The new public system increased website traffic 40% in its first month.",
     outcome: [
       "The company now has one public system for its services, projects, leadership, field reporting, and direct inquiries. It can add development reporting without rebuilding the story each time.",
@@ -243,20 +258,22 @@ const projectRecords: Project[] = [
     ],
     artifacts: [
       {
-        src: "/images/tap-tractor.jpg",
-        alt: "A tractor crossing an airport runway beneath large clouds",
-        caption: "A tractor works across an airport runway.",
-        credit: "Photograph by Preston Wimberly",
+        src: "/images/tap-site-before.jpg",
+        alt: "The current Texas Aviation Partners homepage",
+        caption:
+          "Current public homepage: a conventional corporate aviation frame led by services and broad positioning.",
+        credit: "Public website capture · August 2026",
         format: "landscape",
-        aspect: "1280 / 851",
+        aspect: "1363 / 852",
       },
       {
-        src: "/images/tap-surveyor.jpg",
-        alt: "A surveyor working on an airport runway under large clouds",
-        caption: "A surveyor works on an airport runway.",
-        credit: "Photograph by Preston Wimberly",
+        src: "/images/tap-site-after.jpg",
+        alt: "The redesigned Texas Aviation Partners homepage in its Netlify review build",
+        caption:
+          "Proposed homepage: an evidence-led editorial system grounded in operating work, place, and public proof.",
+        credit: "Netlify deploy capture · August 2026",
         format: "landscape",
-        aspect: "4 / 3",
+        aspect: "8 / 5",
       },
     ],
     closing:

@@ -63,13 +63,15 @@ test("server-renders the finished portfolio", async () => {
     html,
     /How do you build a guitar brand from real materials without borrowing generic vintage language\?/,
   );
-  assert.match(html, /Hay bales and an airport windsock in the working landscape/);
+  assert.match(html, /The proposed Texas Aviation Partners homepage/);
+  assert.match(html, /Experience shaped by/);
+  assert.match(html, /Warner Bros. Records/);
   assert.match(html, /Walnut, hand-tooled leather, and antique bronze hardware/);
   assert.doesNotMatch(html, /\/work\/san-marcos-airport/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|Starter Project/i);
   assert.ok(html.indexOf("Texas Aviation Partners") < html.indexOf("The Wild Feathers"));
   assert.match(html, /<picture class="responsive-picture">/);
-  assert.match(html, /\/optimized\/tap-tractor-[0-9]+\.avif/);
+  assert.match(html, /\/optimized\/tap-site-after-[0-9]+\.avif/);
   assert.match(html, /\/optimized\/wild-feathers-laugh-[0-9]+\.avif/);
   assert.match(html, /\/optimized\/wimberly-jack-antique-bronze-knobs-[0-9]+\.avif/);
   assert.match(html, /\/social\/home\.jpg/);
@@ -165,6 +167,14 @@ test("public case studies include confirmed facts and exclude unresolved guitar 
   assert.doesNotMatch(guitarHtml, /co-founder|commission|commerce/i);
   assert.match(guitarHtml, /Founder \/ Creative Director/);
   assert.match(guitarHtml, /join the waitlist/i);
+
+  const tapResponse = await render("/work/texas-aviation-partners");
+  const tapHtml = await tapResponse.text();
+  assert.match(tapHtml, /The public system in transition/);
+  assert.match(tapHtml, /\/optimized\/tap-site-before-[0-9]+\.avif/);
+  assert.match(tapHtml, /\/optimized\/tap-site-after-[0-9]+\.avif/);
+  assert.match(tapHtml, /Public website capture · August 2026/);
+  assert.match(tapHtml, /Netlify deploy capture · August 2026/);
 });
 
 test("server-renders unknown routes with the portfolio 404", async () => {
