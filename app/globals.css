@@ -3,7 +3,7 @@
 :root {
   --paper: #f4efe6;
   --paper-deep: #d8d0c3;
-  --ink: #0a0a0a;
+  --ink: #171411;
   --ink-soft: #5e5951;
   --line: #d8d0c3;
   --signal: #8b1a1a;
@@ -63,7 +63,7 @@ body {
   background: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.6;
   text-rendering: optimizeLegibility;
   overflow-x: clip;
@@ -241,7 +241,7 @@ img {
   font-family: var(--font-display);
   font-size: clamp(3.5rem, 6.3vw, 7.5rem);
   font-weight: 400;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.045em;
   line-height: 0.91;
   margin: 36px 0 60px;
   max-width: 980px;
@@ -398,7 +398,7 @@ img {
   font-family: var(--font-display);
   font-size: clamp(2.6rem, 5.3vw, 6.3rem);
   font-weight: 400;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.045em;
   line-height: 0.99;
   margin: -0.15em 0 0;
   max-width: 1050px;
@@ -491,7 +491,7 @@ img {
   font-family: var(--font-display);
   font-size: clamp(2.2rem, 4vw, 4.8rem);
   font-weight: 400;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.04em;
   line-height: 1;
   margin: 30px 0 24px;
   overflow-wrap: anywhere;
@@ -663,7 +663,7 @@ img {
   font-family: var(--font-display);
   font-size: clamp(2rem, 3.4vw, 4rem);
   font-weight: 400;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.04em;
   line-height: 1;
   margin: 0;
 }
@@ -814,7 +814,7 @@ img {
 
 .contact-section {
   align-items: flex-start;
-  background: var(--signal);
+  background: var(--ink);
   color: var(--paper);
   display: flex;
   flex-direction: column;
@@ -826,7 +826,7 @@ img {
   font-family: var(--font-display);
   font-size: clamp(4rem, 8.5vw, 10rem);
   font-weight: 400;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.05em;
   line-height: 0.9;
   margin: auto 0 40px;
 }
@@ -901,7 +901,7 @@ img {
   font-family: var(--font-display);
   font-size: clamp(4.5rem, 11vw, 11rem);
   font-weight: 400;
-  letter-spacing: -0.075em;
+  letter-spacing: -0.055em;
   line-height: 0.87;
   margin: 38px 0 48px;
 }
@@ -942,7 +942,7 @@ img {
   font-family: var(--font-display);
   font-size: clamp(5rem, 11vw, 12rem);
   font-weight: 400;
-  letter-spacing: -0.065em;
+  letter-spacing: -0.05em;
   line-height: 0.86;
   margin: 38px 0 46px;
 }
@@ -1046,7 +1046,7 @@ img {
   font-family: var(--font-display);
   font-size: clamp(2.8rem, 5.5vw, 6.3rem);
   font-weight: 400;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.045em;
   line-height: 0.98;
   margin: -0.12em 0 32px;
 }
@@ -1153,7 +1153,7 @@ img {
 .memoir-passage p {
   font-family: var(--font-display);
   font-size: clamp(3rem, 6.2vw, 7rem);
-  letter-spacing: -0.055em;
+  letter-spacing: -0.045em;
   line-height: 0.98;
   margin: 0;
   max-width: 1250px;
@@ -1208,7 +1208,7 @@ img {
   font-family: var(--font-display);
   font-size: clamp(3.4rem, 6.4vw, 7.6rem);
   font-weight: 400;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.04em;
   line-height: 0.93;
   margin: 40px 0 38px;
   max-width: 1300px;
@@ -1354,7 +1354,7 @@ img {
   font-family: var(--font-display);
   font-size: clamp(2.8rem, 4.7vw, 5.7rem);
   font-weight: 400;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.045em;
   line-height: 0.98;
   margin: 34px 0 30px;
 }
@@ -1551,7 +1551,7 @@ img {
   font-family: var(--font-display);
   font-size: clamp(2.8rem, 5vw, 6rem);
   font-weight: 400;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.045em;
   line-height: 0.99;
   margin: -0.15em 0 0;
 }
@@ -1698,7 +1698,7 @@ img {
 }
 
 .next-project {
-  background: var(--signal);
+  background: var(--ink);
   color: var(--paper);
   padding: clamp(70px, 9vw, 130px) var(--case-gutter);
 }
@@ -1710,7 +1710,7 @@ img {
   font-size: clamp(3rem, 7vw, 8rem);
   gap: 40px;
   justify-content: space-between;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.05em;
   line-height: 0.95;
   margin-top: 45px;
 }
