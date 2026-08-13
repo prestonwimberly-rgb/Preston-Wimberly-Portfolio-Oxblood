@@ -15,6 +15,12 @@ export const siteConfig = {
   ),
 };
 
-export function absoluteUrl(path = "/") {
+export function absoluteUrl(path = "/"): string {
   return new URL(path, `${siteConfig.origin}/`).toString();
+}
+
+export function mailtoHref(subject?: string): string {
+  return subject
+    ? `mailto:${siteConfig.email}?subject=${encodeURIComponent(subject)}`
+    : `mailto:${siteConfig.email}`;
 }

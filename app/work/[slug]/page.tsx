@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ResponsiveImage } from "@/components/responsive-image";
+import { SiteHeader } from "@/components/site-header";
 import { StructuredData } from "@/components/structured-data";
 import { getProject, projects } from "@/data/projects";
-import { siteConfig } from "@/lib/site";
+import { mailtoHref, siteConfig } from "@/lib/site";
 import { projectStructuredData } from "@/lib/structured-data";
 
 type WorkPageProps = { params: Promise<{ slug: string }> };
@@ -56,6 +57,7 @@ export default async function WorkPage({ params }: WorkPageProps) {
 
   const currentIndex = projects.findIndex((item) => item.slug === project.slug);
   const nextProject = projects[(currentIndex + 1) % projects.length];
+  const inquiryHref = mailtoHref("Creative direction inquiry");
   const imageFirst = project.theme === "archive" || project.theme === "workshop";
   const caseImage = (
     <figure
@@ -68,6 +70,7 @@ export default async function WorkPage({ params }: WorkPageProps) {
         priority
         sizes="100vw"
         style={{ objectPosition: project.imagePosition ?? "center" }}
+        objectFit={project.imageFit ?? "contain"}
       />
       <figcaption>
         {project.imageCaption}
@@ -197,22 +200,16 @@ export default async function WorkPage({ params }: WorkPageProps) {
   return (
     <>
       <StructuredData data={projectStructuredData(project)} />
-      <a className="skip-link" href="#case-content">
-        Skip to case study
-      </a>
-      <header className="site-header work-header">
-        <Link className="wordmark" href="/" aria-label="Preston Wimberly, home">
-          Preston Wimberly
-        </Link>
-        <nav className="site-nav" aria-label="Case study navigation">
-          <Link href="/#work">Work</Link>
-          <Link className="nav-narrow-secondary" href="/#about">About</Link>
-          <a className="nav-contact" href={`mailto:${siteConfig.email}?subject=Creative%20direction%20inquiry`}>
-            <span className="nav-contact-long">Start a project</span>
-            <span className="nav-contact-short">Contact</span>
-          </a>
-        </nav>
-      </header>
+      <SiteHeader
+        skipHref="#case-content"
+        skipLabel="Skip to case study"
+        variant="work"
+        navAriaLabel="Case study navigation"
+        workLink={{ href: "/#work", label: "Work" }}
+        secondaryLink={{ href: "/#about", label: "About", narrow: true }}
+        contactHref={inquiryHref}
+        contactLongLabel="Start a project"
+      />
 
       <main
         className={`case-study case-study-${project.slug} case-theme-${project.theme}`}
@@ -256,6 +253,7 @@ export default async function WorkPage({ params }: WorkPageProps) {
                     src={artifact.src}
                     alt={artifact.alt}
                     sizes={artifact.format === "portrait" ? "(max-width: 760px) 72vw, 28vw" : "(max-width: 760px) 100vw, 70vw"}
+                    objectFit="contain"
                   />
                 </div>
                 <figcaption>
@@ -296,7 +294,7 @@ export default async function WorkPage({ params }: WorkPageProps) {
       <footer className="site-footer">
         <p>© 2026 Preston Wimberly</p>
         <Link href="/">Home</Link>
-        <a href={`mailto:${siteConfig.email}?subject=Creative%20direction%20inquiry`}>Start a project ↗</a>
+        <a href={inquiryHref}>Start a project ↗</a>
       </footer>
     </>
   );

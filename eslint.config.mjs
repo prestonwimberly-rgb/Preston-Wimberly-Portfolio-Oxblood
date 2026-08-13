@@ -38,6 +38,41 @@ const eslintConfig = defineConfig([
       },
     },
   },
+  {
+    // This site is a zero-runtime-JS static export: scripts/export-netlify.mjs
+    // strips <script>/modulepreload markup from every route and asserts none
+    // survives, but that check runs on already-stripped output — it verifies
+    // the stripper ran, not that a page never needed JS. A genuine "use
+    // client" component still renders its static HTML shell fine even after
+    // stripping; it just silently loses its interactivity, with no leftover
+    // markup for that regex check to catch. Banning the directives here, at
+    // the source, is the actual guard.
+    files: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"],
+    rules: {
+      "no-restricted-syntax": [
+        "error",
+        {
+          selector: "Program > ExpressionStatement[expression.value='use client']",
+          message:
+            'This site is a zero-runtime-JS static export (see AGENTS.md). "use client" would compile in silently and lose its interactivity in the exported HTML rather than fail the build. If client-side interactivity is genuinely needed, get explicit approval first.',
+        },
+        {
+          selector: "Program > ExpressionStatement[expression.value='use server']",
+          message:
+            'This site has no server actions or backend — "use server" does not fit the static-export architecture (see AGENTS.md). If this is intentional, get explicit approval first.',
+        },
+        {
+          // Inline server actions declare "use server" as the first statement
+          // of the function body, not at the top of the file — the rule
+          // above alone would miss those.
+          selector:
+            ":matches(FunctionDeclaration, FunctionExpression, ArrowFunctionExpression) > BlockStatement > ExpressionStatement:first-child[expression.value='use server']",
+          message:
+            'This site has no server actions or backend — "use server" does not fit the static-export architecture (see AGENTS.md). If this is intentional, get explicit approval first.',
+        },
+      ],
+    },
+  },
 ]);
 
 export default eslintConfig;

@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
+import { projectSlugs } from "../data/project-order.mjs";
 
 const pages = [
   ["../netlify-dist/index.html", /Find what is true/, "https://work.prestonwimberly.com", "home", "Preston Wimberly | Creative Director"],
@@ -76,6 +77,34 @@ test("exports crawl files for every canonical route", async () => {
   for (const [, , canonicalUrl] of pages) {
     assert.ok(sitemap.includes(`<loc>${canonicalUrl}</loc>`));
   }
+});
+
+test("every case-study project has a matching exported route and sitemap entry", async () => {
+  const sitemap = await readFile(
+    new URL("../netlify-dist/sitemap.xml", import.meta.url),
+    "utf8",
+  );
+
+  for (const slug of projectSlugs) {
+    await assert.doesNotReject(
+      readFile(
+        new URL(`../netlify-dist/work/${slug}/index.html`, import.meta.url),
+        "utf8",
+      ),
+      `data/project-order.mjs declares "${slug}" but netlify-dist/work/${slug}/index.html was not exported`,
+    );
+    assert.ok(
+      sitemap.includes(`<loc>https://work.prestonwimberly.com/work/${slug}/</loc>`),
+      `data/project-order.mjs declares "${slug}" but it is missing from sitemap.xml`,
+    );
+  }
+
+  const sitemapWorkEntries = [...sitemap.matchAll(/<loc>[^<]*\/work\/[^<]+<\/loc>/g)];
+  assert.equal(
+    sitemapWorkEntries.length,
+    projectSlugs.length,
+    "sitemap.xml has a different number of /work/ entries than data/project-order.mjs has slugs — check for a stale or orphaned route",
+  );
 });
 
 test("exports the selected project photography", async () => {

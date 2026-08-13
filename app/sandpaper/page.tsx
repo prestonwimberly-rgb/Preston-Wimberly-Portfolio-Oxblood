@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ResponsiveImage } from "@/components/responsive-image";
-import { siteConfig } from "@/lib/site";
+import { SiteHeader } from "@/components/site-header";
+import { StructuredData } from "@/components/structured-data";
+import { mailtoHref, siteConfig } from "@/lib/site";
+import { sandpaperStructuredData } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: "SANDPAPER, a memoir",
@@ -35,23 +38,20 @@ export const metadata: Metadata = {
   },
 };
 
-const inquiryHref = `mailto:${siteConfig.email}?subject=${encodeURIComponent("SANDPAPER manuscript inquiry")}`;
+const inquiryHref = mailtoHref("SANDPAPER manuscript inquiry");
 
 export default function SandpaperPage() {
   return (
     <>
-      <a className="skip-link" href="#main-content">Skip to content</a>
-      <header className="site-header">
-        <Link className="wordmark" href="/" aria-label="Preston Wimberly, home">Preston Wimberly</Link>
-        <nav className="site-nav" aria-label="Primary navigation">
-          <Link href="/#work">Work</Link>
-          <Link className="nav-narrow-secondary" href="/#writing">Writing</Link>
-          <a className="nav-contact" href={inquiryHref}>
-            <span className="nav-contact-long">Ask about the manuscript</span>
-            <span className="nav-contact-short">Contact</span>
-          </a>
-        </nav>
-      </header>
+      <StructuredData data={sandpaperStructuredData()} />
+      <SiteHeader
+        skipHref="#main-content"
+        navAriaLabel="Primary navigation"
+        workLink={{ href: "/#work", label: "Work" }}
+        secondaryLink={{ href: "/#writing", label: "Writing", narrow: true }}
+        contactHref={inquiryHref}
+        contactLongLabel="Ask about the manuscript"
+      />
 
       <main className="memoir-page" id="main-content">
         <section className="memoir-hero" aria-labelledby="memoir-title">
@@ -76,6 +76,7 @@ export default function SandpaperPage() {
                 alt="Title page for SANDPAPER, a memoir by Preston Wimberly"
                 priority
                 sizes="(max-width: 760px) 86vw, 30vw"
+                objectFit="contain"
               />
             </div>
             <figcaption>Complete manuscript · First edition</figcaption>

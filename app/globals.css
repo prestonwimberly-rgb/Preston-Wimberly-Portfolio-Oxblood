@@ -300,10 +300,6 @@ img {
   position: relative;
 }
 
-.hero-image img {
-  object-fit: cover !important;
-}
-
 .hero-visual figcaption {
   border-top: 1px solid var(--line);
   color: var(--ink);
@@ -406,14 +402,6 @@ img {
   position: relative;
 }
 
-.project-image img {
-  object-fit: cover !important;
-}
-
-.project-image-cover .project-image img {
-  object-fit: cover !important;
-}
-
 .project-visual-manuscript {
   justify-self: center;
   width: min(100%, 460px);
@@ -422,10 +410,6 @@ img {
 .project-image-manuscript {
   aspect-ratio: 2 / 3;
   background: var(--paper-deep);
-}
-
-.project-image-manuscript img {
-  object-fit: contain !important;
 }
 
 .project-visual figcaption {
@@ -740,10 +724,6 @@ img {
   position: relative;
 }
 
-.about-section > figure img {
-  object-fit: contain !important;
-}
-
 .about-section > figure figcaption {
   background: color-mix(in srgb, var(--ink) 86%, transparent);
   bottom: 16px;
@@ -987,10 +967,6 @@ img {
   background: var(--white);
   overflow: hidden;
   position: relative;
-}
-
-.memoir-cover img {
-  object-fit: contain !important;
 }
 
 .memoir-cover figcaption {
@@ -1305,14 +1281,6 @@ img {
   margin: 0;
   overflow: hidden;
   position: relative;
-}
-
-.case-image img {
-  object-fit: contain !important;
-}
-
-.case-image-cover img {
-  object-fit: cover !important;
 }
 
 .case-image figcaption {
@@ -1634,10 +1602,6 @@ img {
 
 .artifact-portrait .artifact-image {
   aspect-ratio: 390 / 844;
-}
-
-.artifact-image img {
-  object-fit: contain !important;
 }
 
 .artifact figcaption {
