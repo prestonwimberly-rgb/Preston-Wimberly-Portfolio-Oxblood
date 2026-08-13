@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { ResponsiveImage } from "@/components/responsive-image";
+import { SiteHeader } from "@/components/site-header";
 import { StructuredData } from "@/components/structured-data";
 import { featuredProjects } from "@/data/projects";
-import { siteConfig } from "@/lib/site";
+import { mailtoHref } from "@/lib/site";
 import { homeStructuredData } from "@/lib/structured-data";
 
 const workingMethod = ["Report", "Position", "Direct", "Write", "Photograph", "Build"];
@@ -31,7 +32,7 @@ const services = [
   },
 ];
 
-const inquiryHref = `mailto:${siteConfig.email}?subject=${encodeURIComponent("Freelance project inquiry")}`;
+const inquiryHref = mailtoHref("Freelance project inquiry");
 
 const sandpaperFeature = {
   chapterNumber: "04",
@@ -80,22 +81,14 @@ export default function Home() {
   return (
     <>
       <StructuredData data={homeStructuredData(featuredProjects)} />
-      <a className="skip-link" href="#main-content">
-        Skip to content
-      </a>
-      <header className="site-header">
-        <Link className="wordmark" href="/" aria-label="Preston Wimberly, home">
-          Preston Wimberly
-        </Link>
-        <nav className="site-nav" aria-label="Primary navigation">
-          <a href="#work">Work</a>
-          <a className="nav-narrow-secondary" href="#about">About</a>
-          <a className="nav-contact" href={inquiryHref}>
-            <span className="nav-contact-long">Start a project</span>
-            <span className="nav-contact-short">Contact</span>
-          </a>
-        </nav>
-      </header>
+      <SiteHeader
+        skipHref="#main-content"
+        navAriaLabel="Primary navigation"
+        workLink={{ href: "#work", label: "Work" }}
+        secondaryLink={{ href: "#about", label: "About", narrow: true }}
+        contactHref={inquiryHref}
+        contactLongLabel="Start a project"
+      />
 
       <main id="main-content">
         <section className="hero" aria-labelledby="hero-title">

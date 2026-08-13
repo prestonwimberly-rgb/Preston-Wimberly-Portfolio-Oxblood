@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { siteConfig } from "@/lib/site";
+import { SiteHeader } from "@/components/site-header";
+import { mailtoHref } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Page not found",
@@ -10,21 +11,14 @@ export const metadata: Metadata = {
 export default function NotFound() {
   return (
     <>
-      <a className="skip-link" href="#not-found-content">
-        Skip to content
-      </a>
-      <header className="site-header work-header">
-        <Link className="wordmark" href="/" aria-label="Preston Wimberly, home">
-          Preston Wimberly
-        </Link>
-        <nav className="site-nav" aria-label="Page not found navigation">
-          <Link href="/#work">Work</Link>
-          <a className="nav-contact" href={`mailto:${siteConfig.email}`}>
-            <span className="nav-contact-long">Get in touch</span>
-            <span className="nav-contact-short">Contact</span>
-          </a>
-        </nav>
-      </header>
+      <SiteHeader
+        skipHref="#not-found-content"
+        variant="work"
+        navAriaLabel="Page not found navigation"
+        workLink={{ href: "/#work", label: "Work" }}
+        contactHref={mailtoHref()}
+        contactLongLabel="Get in touch"
+      />
       <main className="not-found-page" id="not-found-content">
         <p className="eyebrow">404 / Page not found</p>
         <h1>That page<br />is not here.</h1>
@@ -39,7 +33,7 @@ export default function NotFound() {
       <footer className="site-footer">
         <p>Preston Wimberly</p>
         <p>Brand strategy · Communications · Editorial · Web</p>
-        <a href={`mailto:${siteConfig.email}`}>Email Preston</a>
+        <a href={mailtoHref()}>Email Preston</a>
       </footer>
     </>
   );
