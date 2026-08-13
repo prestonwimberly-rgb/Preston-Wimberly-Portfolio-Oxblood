@@ -76,6 +76,7 @@ export default function SandpaperPage() {
                 alt="Title page for SANDPAPER, a memoir by Preston Wimberly"
                 priority
                 sizes="(max-width: 760px) 86vw, 30vw"
+                objectFit="contain"
               />
             </div>
             <figcaption>Complete manuscript · First edition</figcaption>

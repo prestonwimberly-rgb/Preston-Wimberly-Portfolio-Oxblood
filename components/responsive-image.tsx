@@ -8,6 +8,7 @@ type ResponsiveImageProps = {
   priority?: boolean;
   className?: string;
   style?: CSSProperties;
+  objectFit?: "cover" | "contain";
 };
 
 const standardWidths = [480, 768, 1200, 1600];
@@ -36,6 +37,7 @@ export function ResponsiveImage({
   priority = false,
   className,
   style,
+  objectFit = "cover",
 }: ResponsiveImageProps) {
   const details = imageDetails(src);
   const widths = candidateWidths(details.width);
@@ -60,7 +62,7 @@ export function ResponsiveImage({
           inset: 0,
           width: "100%",
           height: "100%",
-          objectFit: "cover",
+          objectFit,
           ...style,
         }}
       />

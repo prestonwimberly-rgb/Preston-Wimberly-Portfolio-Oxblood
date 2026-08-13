@@ -70,6 +70,7 @@ export default async function WorkPage({ params }: WorkPageProps) {
         priority
         sizes="100vw"
         style={{ objectPosition: project.imagePosition ?? "center" }}
+        objectFit={project.imageFit ?? "contain"}
       />
       <figcaption>
         {project.imageCaption}
@@ -252,6 +253,7 @@ export default async function WorkPage({ params }: WorkPageProps) {
                     src={artifact.src}
                     alt={artifact.alt}
                     sizes={artifact.format === "portrait" ? "(max-width: 760px) 72vw, 28vw" : "(max-width: 760px) 100vw, 70vw"}
+                    objectFit="contain"
                   />
                 </div>
                 <figcaption>

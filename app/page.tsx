@@ -162,6 +162,7 @@ export default function Home() {
                       alt={imageAlt}
                       sizes="(max-width: 760px) 100vw, 54vw"
                       style={{ objectPosition: imagePosition ?? "center" }}
+                      objectFit={imageFit ?? "cover"}
                     />
                   </Link>
                   <figcaption>
@@ -202,6 +203,7 @@ export default function Home() {
                     src="/images/sandpaper-cover.png"
                     alt="Title page for SANDPAPER, a memoir by Preston Wimberly"
                     sizes="(max-width: 760px) 74vw, 30vw"
+                    objectFit="contain"
                   />
                 </Link>
                 <figcaption>
@@ -319,6 +321,7 @@ export default function Home() {
               alt="Preston Wimberly playing electric guitar onstage"
               sizes="(max-width: 760px) 100vw, 46vw"
               style={{ objectPosition: "62% center" }}
+              objectFit="contain"
             />
             <figcaption>Preston Wimberly in performance.</figcaption>
           </figure>
