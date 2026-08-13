@@ -61,6 +61,15 @@ const eslintConfig = defineConfig([
           message:
             'This site has no server actions or backend — "use server" does not fit the static-export architecture (see AGENTS.md). If this is intentional, get explicit approval first.',
         },
+        {
+          // Inline server actions declare "use server" as the first statement
+          // of the function body, not at the top of the file — the rule
+          // above alone would miss those.
+          selector:
+            ":matches(FunctionDeclaration, FunctionExpression, ArrowFunctionExpression) > BlockStatement > ExpressionStatement:first-child[expression.value='use server']",
+          message:
+            'This site has no server actions or backend — "use server" does not fit the static-export architecture (see AGENTS.md). If this is intentional, get explicit approval first.',
+        },
       ],
     },
   },
