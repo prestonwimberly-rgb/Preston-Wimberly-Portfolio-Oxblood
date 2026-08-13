@@ -117,8 +117,14 @@ Use this page direction:
 - Treat every `verificationNotes` entry in `data/projects.ts` and every open item
   in `docs/launch-checklist.md` as unresolved until Preston confirms it. Narrow
   or remove an unverifiable claim instead of inventing a replacement.
-- Keep The Wild Feathers archive private and its public link absent until image
-  rights and fact-checking are resolved. Preserve provenance and uncertainty.
+- The Wild Feathers archive's current working record (384 performance records,
+  193 archive records, seven flagship stories, six chronological chapters, 110
+  source records) is cleared for portfolio use, including the homepage's live
+  link to the archive, per `docs/launch-checklist.md`. Deployment of the
+  archive's own domain (`thewildfeathersband.com`) remains separately pending
+  and is not authorized by this portfolio change. Preserve provenance and
+  uncertainty; re-confirm with Preston before extending coverage beyond the
+  cleared record above.
 - Do not change the Wimberly Guitars co-founder/offer language, Texas Aviation
   Partners authority/collaboration claims, or the session-musician duration and
   service claims without evidence and approval.
