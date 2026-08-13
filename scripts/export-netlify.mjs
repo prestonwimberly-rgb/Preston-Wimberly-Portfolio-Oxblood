@@ -2,6 +2,7 @@ import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { isIndexableContext } from "../lib/deployment.mjs";
+import { projects } from "../data/projects.ts";
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const projectDirectory = path.resolve(scriptDirectory, "..");
@@ -26,13 +27,15 @@ workerUrl.searchParams.set("netlify-export", `${Date.now()}`);
 
 const { default: worker } = await import(workerUrl.href);
 
+// "/" and "/sandpaper" are standalone pages, not case studies, so they stay
+// explicit here. The "/work/*" routes are derived from data/projects.ts —
+// the single source of truth for which case studies exist — so a project
+// added or removed there can't silently drift out of sync with what's
+// actually exported to netlify-dist/ and the sitemap.
 const routes = [
   "/",
   "/sandpaper",
-  "/work/texas-aviation-partners",
-  "/work/wild-feathers",
-  "/work/wimberly-guitars",
-  "/work/preston-session-site",
+  ...projects.map((project) => `/work/${project.slug}`),
 ];
 
 function makeEnvironment() {
