@@ -1,3 +1,5 @@
+import { projectSlugs } from "@/data/project-order.mjs";
+
 export type ProjectArtifact = {
   src: string;
   alt: string;
@@ -618,14 +620,7 @@ const projectRecords: Project[] = [
   },
 ];
 
-const projectOrder = [
-  "texas-aviation-partners",
-  "wild-feathers",
-  "wimberly-guitars",
-  "preston-session-site",
-];
-
-export const projects = projectOrder.map((slug) => {
+export const projects = projectSlugs.map((slug) => {
   const project = projectRecords.find((item) => item.slug === slug);
   if (!project) throw new Error(`Missing portfolio project: ${slug}`);
   return project;

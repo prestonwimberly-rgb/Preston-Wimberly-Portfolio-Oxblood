@@ -2,7 +2,7 @@ import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { isIndexableContext } from "../lib/deployment.mjs";
-import { projects } from "../data/projects.ts";
+import { projectSlugs } from "../data/project-order.mjs";
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const projectDirectory = path.resolve(scriptDirectory, "..");
@@ -35,7 +35,7 @@ const { default: worker } = await import(workerUrl.href);
 const routes = [
   "/",
   "/sandpaper",
-  ...projects.map((project) => `/work/${project.slug}`),
+  ...projectSlugs.map((slug) => `/work/${slug}`),
 ];
 
 function makeEnvironment() {
