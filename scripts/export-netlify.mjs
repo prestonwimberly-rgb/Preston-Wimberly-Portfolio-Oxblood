@@ -46,6 +46,11 @@ function makeEnvironment() {
   };
 }
 
+// The raw SSR output for every route legitimately contains dozens of
+// <script>/modulepreload tags — the framework's own hydration and
+// navigation runtime — even though this app has zero "use client"
+// components. Stripping that scaffolding is expected and necessary here,
+// not a sign something went wrong.
 function stripRuntime(html) {
   return html
     .replace(
@@ -75,6 +80,13 @@ async function render(route, expectedStatus = 200) {
   }
 
   const html = stripRuntime(await response.text());
+  // This only catches markup the strip regexes above didn't match — it does
+  // NOT detect a genuine "use client" component, which would still render
+  // its static HTML shell cleanly after stripping and just silently lose
+  // its interactivity. That's guarded separately: eslint.config.mjs bans
+  // the "use client"/"use server" directives outright in app/ and
+  // components/, so this check and that lint rule are deliberately two
+  // different layers, not redundant with each other.
   if (
     /<script\b(?![^>]*\btype=["']application\/ld\+json["'])/i.test(html) ||
     /\/_next\/image\?/i.test(html)
