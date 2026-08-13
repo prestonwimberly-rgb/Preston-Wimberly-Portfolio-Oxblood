@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ResponsiveImage } from "@/components/responsive-image";
+import { StructuredData } from "@/components/structured-data";
 import { siteConfig } from "@/lib/site";
+import { sandpaperStructuredData } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: "SANDPAPER, a memoir",
@@ -40,6 +42,7 @@ const inquiryHref = `mailto:${siteConfig.email}?subject=${encodeURIComponent("SA
 export default function SandpaperPage() {
   return (
     <>
+      <StructuredData data={sandpaperStructuredData()} />
       <a className="skip-link" href="#main-content">Skip to content</a>
       <header className="site-header">
         <Link className="wordmark" href="/" aria-label="Preston Wimberly, home">Preston Wimberly</Link>

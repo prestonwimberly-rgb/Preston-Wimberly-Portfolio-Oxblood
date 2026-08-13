@@ -108,6 +108,21 @@ function webPageNode(project: Project) {
   };
 }
 
+function sandpaperWebPageNode() {
+  const url = absoluteUrl("/sandpaper/");
+  return {
+    "@type": "WebPage",
+    "@id": `${url}#web-page`,
+    url,
+    name: "SANDPAPER, a memoir | Preston Wimberly",
+    description:
+      "A 50,000-word memoir structured through guitar finishing and built from photographs, records, and lived memory.",
+    isPartOf: { "@id": websiteId },
+    about: { "@id": `${url}#creative-work` },
+    inLanguage: "en-US",
+  };
+}
+
 export function homeStructuredData(projects: Project[]) {
   const selectedWork = [...projects.map(creativeWorkNode), sandpaperWorkNode()];
   return {
@@ -138,5 +153,12 @@ export function projectStructuredData(project: Project) {
   return {
     "@context": "https://schema.org",
     "@graph": [personNode(), websiteNode(), webPageNode(project), creativeWorkNode(project)],
+  };
+}
+
+export function sandpaperStructuredData() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [personNode(), websiteNode(), sandpaperWebPageNode(), sandpaperWorkNode()],
   };
 }
