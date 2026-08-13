@@ -49,3 +49,10 @@ constraint in `AGENTS.md`.
 
 Re-run the copy from a fresh checkout of `affaan-m/ECC` and diff against
 this directory; there is no automated sync.
+
+## Related
+
+`.claude/skills/` also carries a curated set from
+[obra/superpowers](https://github.com/obra/superpowers) (process/workflow
+skills: brainstorming, TDD discipline, debugging, code review, branch
+hygiene) — see `SUPERPOWERS-NOTICE.md`.
