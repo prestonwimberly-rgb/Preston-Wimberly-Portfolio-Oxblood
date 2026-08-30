@@ -131,6 +131,7 @@ export default function Home() {
                 alt="A tractor crossing a runway beneath large Texas clouds"
                 priority
                 sizes="(max-width: 900px) 100vw, 43vw"
+                style={{ objectPosition: "20% center" }}
               />
             </div>
             <figcaption>
