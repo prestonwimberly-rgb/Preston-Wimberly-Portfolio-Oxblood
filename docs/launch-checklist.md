@@ -73,7 +73,7 @@ steps remain separate approvals.
 - Confirm email, internal, and approved external links.
 - Inspect response headers for CSP, frame protection, content-type protection,
   permissions policy, referrer policy, and cache rules.
-- Run `npm run quality` and require the GitHub Actions Quality job to pass.
+- Run `npm run quality` locally and retain its complete passing output with the review.
 
 ## Production release
 

@@ -37,29 +37,39 @@ test("core portfolio color pairings meet WCAG AA", () => {
   const signal = colorVariable("signal");
   const night = colorVariable("night");
   const nightSoft = colorVariable("night-soft");
+  const authority = colorVariable("authority");
+  const saddle = colorVariable("saddle");
+  const white = colorVariable("white");
 
   assert.ok(contrast(ink, paper) >= 7, "Ink on paper should meet AAA");
-  assert.ok(contrast(ink, paperDeep) >= 7, "Ink on muted paper should meet AAA");
+  assert.ok(contrast(ink, paperDeep) >= 4.5, "Ink on aluminum should meet AA");
   assert.ok(
     contrast(inkSoft, paperDeep) >= 4.5,
-    "Supporting text on muted paper should meet AA",
+    "Walnut supporting text on aluminum should meet AA",
   );
-  assert.ok(contrast(signal, paper) >= 4.5, "Oxblood on paper should meet AA");
-  assert.ok(contrast(signal, paperDeep) >= 4.5, "Oxblood on muted paper should meet AA");
-  assert.ok(contrast(paper, signal) >= 7, "Paper on oxblood should meet AAA");
-  assert.ok(contrast(nightSoft, night) >= 7, "Muted paper on black should meet AAA");
+  assert.ok(contrast(inkSoft, paper) >= 7, "Walnut on bone should meet AAA");
+  assert.ok(contrast(authority, paper) >= 4.5, "Aviation blue on bone should meet AA");
+  assert.ok(contrast(signal, paper) >= 4.5, "Wright brick on bone should meet AA");
+  assert.ok(contrast(paper, saddle) >= 4.5, "Prairie bone on saddle should meet AA");
+  assert.ok(contrast(white, authority) >= 7, "White on aviation blue should meet AAA");
+  assert.ok(contrast(white, signal) >= 7, "White on Wright brick should meet AAA");
+  assert.ok(contrast(nightSoft, night) >= 4.5, "Aluminum on instrument black should meet AA");
 });
 
-test("the reference-led system keeps its restrained design tokens", () => {
-  assert.equal(colorVariable("ink"), "#171411");
-  assert.match(css, /--font-display:\s*"Bodoni Moda"/);
-  assert.match(css, /--font-body:\s*"Source Serif 4"/);
-  assert.match(css, /--font-interface:\s*"Source Sans 3"/);
+test("the Prairie Airframe system keeps its named design tokens", () => {
+  assert.equal(colorVariable("ink"), "#252624");
+  assert.equal(colorVariable("paper"), "#e8e1d4");
+  assert.equal(colorVariable("authority"), "#39566a");
+  assert.equal(colorVariable("signal"), "#8b3f2f");
+  assert.match(css, /--font-display:\s*"Archivo"/);
+  assert.match(css, /--font-body:\s*"Newsreader"/);
+  assert.match(css, /--font-interface:\s*"Archivo"/);
+  assert.match(css, /--font-metadata:\s*"IBM Plex Mono"/);
   assert.match(css, /--space-base:\s*8px/);
   assert.match(css, /--motion-standard:\s*200ms ease/);
-  assert.match(css, /\.practice-note\s*\{[^}]*background:\s*var\(--night\)/s);
+  assert.match(css, /\.practice-note\s*\{[^}]*background:\s*var\(--authority\)/s);
   assert.match(css, /\.project-visual figcaption\s*\{[^}]*border-top:\s*1px solid var\(--line\)/s);
-  assert.match(css, /\.contact-section\s*\{[^}]*background:\s*var\(--ink\)/s);
+  assert.match(css, /\.contact-section\s*\{[^}]*background:\s*var\(--authority\)/s);
   assert.match(css, /\.next-project\s*\{[^}]*background:\s*var\(--ink\)/s);
   assert.doesNotMatch(css, /letter-spacing:\s*-(?:0\.0[6-9]|0\.[1-9])/);
   assert.doesNotMatch(css, /\.project-index-rail/);

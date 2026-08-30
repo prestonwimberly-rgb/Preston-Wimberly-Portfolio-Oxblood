@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import "@fontsource/bodoni-moda/latin-400.css";
-import "@fontsource/bodoni-moda/latin-400-italic.css";
-import "@fontsource/bodoni-moda/latin-600.css";
-import "@fontsource/source-serif-4/latin-400.css";
-import "@fontsource/source-serif-4/latin-400-italic.css";
-import "@fontsource/source-serif-4/latin-700.css";
-import "@fontsource/source-sans-3/latin-400.css";
-import "@fontsource/source-sans-3/latin-600.css";
-import "@fontsource/source-sans-3/latin-700.css";
+import "@fontsource/archivo/latin-400.css";
+import "@fontsource/archivo/latin-500.css";
+import "@fontsource/archivo/latin-600.css";
+import "@fontsource/archivo/latin-700.css";
+import "@fontsource/archivo/latin-900.css";
+import "@fontsource/newsreader/latin-400.css";
+import "@fontsource/newsreader/latin-400-italic.css";
+import "@fontsource/newsreader/latin-600.css";
+import "@fontsource/ibm-plex-mono/latin-400.css";
+import "@fontsource/ibm-plex-mono/latin-500.css";
 import "./globals.css";
 import { siteConfig } from "@/lib/site";
 

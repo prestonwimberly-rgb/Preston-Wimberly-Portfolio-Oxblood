@@ -16,27 +16,27 @@ The primary path is to scan the work, open the most relevant case study, and the
 
 - Treat the identity as a repeatable system rather than a collection of effects.
 - Build hierarchy with scale, whitespace, fine rules, and placement before adding decoration.
-- Keep oxblood selective: use it for emphasis, labels, conversion surfaces, and small wayfinding marks.
+- Use Wright Brick as a measured signal rather than a field color. Aviation Blue carries authority; Prairie Bone and Instrument Black carry the system.
 - Use only contrast-safe foreground and background combinations.
 - Keep calls to action concise and claims evidence-led.
 - Base spacing decisions on an 8px unit while allowing editorial layouts to use fluid scale.
 
 ## Portfolio-specific decisions
 
-- Keep Bodoni Moda for display typography, Source Serif 4 for reading, and Source Sans 3 for interface language. Libre Baskerville in the reference kit is a substitute, not a direction for this site.
+- Use Archivo for orientation, headlines, and structure; Newsreader for narrative, captions, and human consequence; and IBM Plex Mono only for true dates and identifiers.
 - Keep square geometry. Do not introduce rounded cards or soft shadows unless a future interaction has a functional need for them.
-- Keep the oxblood-and-paper palette, documentary photography, generous negative space, and restrained motion.
+- Use the verified Prairie Airframe palette: Prairie Bone, Airframe Aluminum, Aviation Blue, Instrument Black, Saddle, Walnut, Field Olive, and Wright Brick.
 - Preserve the large display scale and occasional sub-1.0 line height where the type is acting as composition rather than body copy.
-- Use the paper color on oxblood or black surfaces; never place black text on oxblood.
-- Use muted grey primarily for rules, secondary surfaces, and supporting copy, not essential controls.
+- Use only the contrast pairings verified in the build specification. Airframe Aluminum is a fill or rule, never text on Prairie Bone; Wright Brick on Instrument Black is a stripe, never small text.
+- Keep Airframe Aluminum primarily for rules, secondary surfaces, and structural fills, not essential controls.
 - Keep animation limited to short link, image, and navigation feedback, with reduced-motion support.
 - Keep the shared editorial shell, but let each case study use its evidence differently: field record for aviation, source ledger for the archive, material system for guitars, and service sequence for the session practice.
 
-## Monograph refinement
+## Prairie Airframe translation
 
-The expanded installed `rrl-web-design` skill is the governing design standard.
-Its portfolio mode treats aviation, music, craft, writing, photography, and web
-work as chapters connected by one recognizable eye.
+Prairie Airframe provides the governing visual system. Its warm-object / cool-frame
+tension connects aviation, music, craft, writing, photography, and web work without
+turning the portfolio into an aviation theme.
 
 - Keep the homepage opening concise and evidence-led. The first screen must
   establish Creative Director before it introduces mediums or services.

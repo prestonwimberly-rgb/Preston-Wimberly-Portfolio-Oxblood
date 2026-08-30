@@ -16,44 +16,42 @@
 
 Before changing design, content, or implementation:
 
-1. Read the installed shared skill at
-   `/Users/margiewimberly/.codex/skills/rrl-web-design/SKILL.md` completely.
-2. Read `README.md`, `docs/design-direction.md`, and
+1. Read `README.md`, `docs/design-direction.md`, and
    `docs/launch-checklist.md`.
-3. Inspect `data/projects.ts` for project content and verification notes.
-4. Inspect `package.json`, `netlify.toml`, `config/site.json`,
+2. Inspect `data/projects.ts` for project content and verification notes.
+3. Inspect `package.json`, `netlify.toml`, `config/site.json`,
    `config/deployment.json`, relevant image/social-card configuration, and the
    build and export scripts before changing technical behavior.
-5. Start with the real audience, content, evidence, available assets, and
+4. Start with the real audience, content, evidence, available assets, and
    conversion goal. Preserve distinctive existing work and state any necessary
    assumption.
 
-The shared skill is the canonical authority for design philosophy and review.
-The repository documents refine that standard for this portfolio and must not
-be bypassed. The current code, configuration, and package scripts are the source
-of truth for implementation details.
+`docs/design-direction.md` is the canonical authority for design philosophy and
+review. The current code, configuration, and package scripts are the source of
+truth for implementation details.
 
-## 3. Shared design standard
+## 3. Prairie Airframe design standard
 
-- Governing formula: **RRL atmosphere + Texas Monthly hierarchy + Apple-level
-  usability.**
-- Treat heritage as a design philosophy, never a costume.
+- Governing tension: **warmth without sentimentality; precision without
+  sterility; history without nostalgia; modernism without coldness.**
+- Build with structure before decoration, horizontal gravity, honest materials,
+  a warm object inside a cool frame, and utility that creates beauty.
 - Start with real audience, content, evidence, assets, and conversion goal
   before changing code.
 - Let photography, typography, proportion, captions, and spacing carry the
   identity.
 - Preserve fast, legible, responsive, accessible, obvious navigation.
-- Reject costume heritage, fake age, luxury cosplay, creative-agency
-  theatrics, mood without evidence, and direct imitation of RRL proprietary
-  work.
+- Reject fake age, decorative aviation motifs, generic agency theatrics, stock
+  atmosphere, bubbly UI, and mood without evidence.
 - Use one dominant visual idea per page and remove unsupported decoration.
 - Review desktop and mobile and fix the weakest of authenticity, hierarchy,
   material character, evidence, restraint, usability, performance, and
   accessibility first.
 
-Translate principles; never copy an RRL or Texas Monthly font, mark, image,
-copy, proprietary asset, campaign, page, or composition. When uncertain, remove
-one visual device and strengthen the photograph, headline, caption, or spacing.
+Use the named Prairie Airframe palette, type roles, contrast pairings, 8px spacing
+system, and square construction rules documented in `docs/design-direction.md`.
+When uncertain, remove one visual device and strengthen the photograph,
+headline, caption, or spacing.
 
 ## 4. Project-specific direction
 
@@ -63,13 +61,14 @@ Use this page direction:
 > field-tested, tactile, and exacting and helps visitors see what Preston owned,
 > what he made, and what changed.
 
-- Preserve the restrained oxblood-and-paper editorial character, documentary
-  photography, generous negative space, strong margins, fine rules, deliberate
-  asymmetry, square geometry, and restrained motion.
-- Keep Bodoni Moda for display type, Source Serif 4 for reading, and Source Sans
-  3 for interface language unless a documented project need justifies change.
-- Keep oxblood selective. Use paper on oxblood or black surfaces; never use
-  black text on oxblood. Use muted grey only where contrast and importance allow.
+- Preserve documentary photography, generous negative space, strong margins,
+  fine rules, deliberate asymmetry, square geometry, and restrained motion.
+- Use Archivo for orientation and structure, Newsreader for narrative and human
+  consequence, and IBM Plex Mono only for true dates and identifiers.
+- Prairie Bone and Instrument Black carry the system. Aviation Blue carries
+  authority. Wright Brick is a measured signal, never a field color or small
+  text on Instrument Black. Airframe Aluminum is a structural fill or rule,
+  never text on Prairie Bone.
 - Build hierarchy with scale, whitespace, placement, captions, and an editorial
   grid before adding decoration. Do not add rounded cards, soft shadows,
   generic agency components, or atmospheric effects unsupported by the work.
@@ -135,8 +134,8 @@ Use this page direction:
 
 ## 7. Verification
 
-- Run `npm run quality` after implementation changes and require the GitHub
-  Actions Quality job to pass before treating work as ready.
+- Run `npm run quality` after implementation changes before treating work as
+  ready.
 - Review the generated `netlify-dist/` output and test `/`, all four `/work/.../`
   routes, both legacy redirects, the branded 404, crawl files, metadata, links,
   images, and the absence of unexpected runtime scripts.

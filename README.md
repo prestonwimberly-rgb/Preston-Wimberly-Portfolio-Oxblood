@@ -55,7 +55,7 @@ committed; `npm run build` recreates them from `config/images.json` and
 - `docs/launch-checklist.md` — domain, content-verification, QA, and release checklist
 - `scripts/` — image generation and static Netlify export
 - `tests/` — build, HTML, accessibility-token, asset, and deployment checks
-- `.github/workflows/quality.yml` — pull-request and main-branch quality workflow
+- `tests/` and `npm run quality` — local build, export, accessibility-token, and deployment verification
 
 ## Publishing guardrails
 
