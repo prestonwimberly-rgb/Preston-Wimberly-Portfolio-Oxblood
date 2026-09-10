@@ -6,9 +6,9 @@ import { projectSlugs } from "../data/project-order.mjs";
 const pages = [
   ["../netlify-dist/index.html", /Find what is true/, "https://work.prestonwimberly.com", "home", "Preston Wimberly | Creative Director"],
   ["../netlify-dist/work/texas-aviation-partners/index.html", /Making the real scale/, "https://work.prestonwimberly.com/work/texas-aviation-partners/", "texas-aviation-partners", "Texas Aviation Partners Creative Direction | Preston Wimberly"],
-  ["../netlify-dist/work/wild-feathers/index.html", /Reconstructing a band’s history/, "https://work.prestonwimberly.com/work/wild-feathers/", "wild-feathers", "The Wild Feathers Archive Creative Direction | Preston Wimberly"],
+  ["../netlify-dist/work/wild-feathers/index.html", /A band’s history, told from inside/, "https://work.prestonwimberly.com/work/wild-feathers/", "wild-feathers", "The Wild Feathers Archive Creative Direction | Preston Wimberly"],
   ["../netlify-dist/work/wimberly-guitars/index.html", /Building a guitar brand/, "https://work.prestonwimberly.com/work/wimberly-guitars/", "wimberly-guitars", "Wimberly Custom Guitars Creative Direction | Preston Wimberly"],
-  ["../netlify-dist/work/preston-session-site/index.html", /Turning a musician/, "https://work.prestonwimberly.com/work/preston-session-site/", "preston-session-site", "prestonwimberly.com Creative Direction | Preston Wimberly"],
+  ["../netlify-dist/work/preston-session-site/index.html", /The right part, played like it matters/, "https://work.prestonwimberly.com/work/preston-session-site/", "preston-session-site", "prestonwimberly.com Creative Direction | Preston Wimberly"],
 ];
 
 function structuredData(html) {

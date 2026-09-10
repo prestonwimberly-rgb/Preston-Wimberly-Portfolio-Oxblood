@@ -6,8 +6,8 @@
 // with scripts/export-netlify.mjs and tests/netlify-export.test.mjs so the
 // three never drift out of sync.
 export const projectSlugs = [
+  "wimberly-guitars",
   "texas-aviation-partners",
   "wild-feathers",
-  "wimberly-guitars",
   "preston-session-site",
 ];

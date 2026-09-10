@@ -3,36 +3,56 @@
     "slug": "home",
     "source": "/images/tap-tractor.jpg",
     "eyebrow": "PRESTON WIMBERLY · CREATIVE DIRECTOR",
-    "title": ["Find what is true.", "Give it form."]
+    "title": [
+      "Find what is true.",
+      "Give it form."
+    ]
   },
   {
     "slug": "texas-aviation-partners",
     "source": "/images/tap-hay-windsock.jpg",
     "eyebrow": "TEXAS AVIATION PARTNERS · CASE STUDY",
-    "title": ["Making the real scale", "of an aviation company", "visible."]
+    "title": [
+      "Making the real scale",
+      "of an aviation company",
+      "visible."
+    ]
   },
   {
     "slug": "wild-feathers",
     "source": "/images/wild-feathers-laugh.png",
     "eyebrow": "THE WILD FEATHERS · CASE STUDY",
-    "title": ["Reconstructing a band’s", "history without turning", "memory into myth."]
+    "title": [
+      "A band’s history,",
+      "told from inside."
+    ]
   },
   {
     "slug": "wimberly-guitars",
     "source": "/images/wimberly-jack-antique-bronze-knobs.jpeg",
     "eyebrow": "WIMBERLY CUSTOM GUITARS · CASE STUDY",
-    "title": ["Building a guitar brand", "from the materials up."]
+    "title": [
+      "Building a guitar brand",
+      "from the materials up."
+    ]
   },
   {
     "slug": "sandpaper",
     "source": "/images/sandpaper-cover.png",
     "eyebrow": "SANDPAPER · MEMOIR · EDITORIAL PROJECT",
-    "title": ["A manuscript shaped", "by records, memory,", "and material process."]
+    "title": [
+      "SANDPAPER",
+      "A memoir by",
+      "Preston Wimberly"
+    ]
   },
   {
     "slug": "preston-session-site",
-    "source": "/images/preston-session-site.jpg",
+    "source": "/images/preston-stage.jpeg",
     "eyebrow": "PRESTONWIMBERLY.COM · CASE STUDY",
-    "title": ["Turning a musician’s", "range into one direct", "invitation."]
+    "title": [
+      "The right part,",
+      "played like it matters."
+    ]
   }
 ]

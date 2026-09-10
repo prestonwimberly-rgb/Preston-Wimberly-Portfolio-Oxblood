@@ -44,20 +44,19 @@ turning the portfolio into an aviation theme.
   like project rail or résumé-style metadata stack on the homepage.
 - Present working method as one editorial note rather than a grid of capability
   cards.
-- Put the strongest artifact before dense project details. Music and guitar case
-  studies open on their evidence; aviation and the session practice state the
-  premise, then show the work before the metadata ledger.
+- Put the strongest artifact directly after a short brief and before dense
+  project details. Keep ownership and collaboration compact and easy to scan.
 - Keep captions factual and adjacent to the image. Material character comes from
   the photographs, type, rules, and spacing rather than gradients or global
   texture effects.
 - Frame the primary homepage work as four distinct editorial chapters: The
-  Airfield, The Road, The Object, and The Manuscript. Keep the musician case
+  Object, The Airfield, The Road, and The Manuscript, in that order. Keep the musician case
   available as independent practice rather than asking a fourth website case to
   carry the same weight as the client, archive, product, and book work.
-- Vary the case-study sequence by subject. Aviation moves from premise to field
-  record to public proof. The archive and workshop lead with their strongest
-  artifact and evidence system. The musician chapter keeps its working principle
-  and offer close to the opening.
+- Keep the case-study brief short, then show the strongest artifact before
+  dense project detail. Selected work precedes the process explanation. The
+  archive adds a direct writing sample, the workshop includes a clearly labeled
+  campaign concept, and the musician case stays compact.
 
 ## Content standard
 

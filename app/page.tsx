@@ -8,18 +8,18 @@ import { homeStructuredData } from "@/lib/structured-data";
 
 const workingMethod = ["Report", "Position", "Direct", "Write", "Photograph", "Build"];
 
-const inquiryHref = mailtoHref("Freelance project inquiry");
+const inquiryHref = mailtoHref("Creative direction conversation");
 
 const sandpaperFeature = {
   chapterNumber: "04",
   chapter: "The Manuscript",
   title: "SANDPAPER",
   premise:
-    "How do you turn 50,000 words of lived history into a narrative system that can hold memory accountable?",
+    "A memoir about music, addiction, fatherhood, and the patient work of becoming useful.",
   role: "Writer / Creative Director",
   year: "2026",
   outcome:
-    "A complete 38-chapter manuscript now has a three-part narrative and editorial architecture.",
+    "A complete 50,000-word manuscript, edited into 38 chapters and typeset as a 141-page book.",
 };
 
 const writing = [
@@ -31,11 +31,11 @@ const writing = [
     href: "https://wimberlycustomguitars.com/build-journal",
   },
   {
-    type: "Reported archive · Music history",
-    title: "Four voices. One changing band.",
+    type: "First-person essay · Music",
+    title: "Willie in Las Vegas",
     description:
-      "Seven flagship stories and six chronological chapters built from records, photographs, sources, and attributed memory.",
-    href: "https://wildfeathers.netlify.app/story/",
+      "My father’s Martin, Willie Nelson’s stage, and a badly timed visit to a craps table. A firsthand account of the 2013 tour.",
+    href: "https://wildfeathers.netlify.app/field-notes/willie-in-las-vegas/",
   },
   {
     type: "News · Economic development",
@@ -63,7 +63,7 @@ export default function Home() {
         workLink={{ href: "#work", label: "Work" }}
         secondaryLink={{ href: "#about", label: "About", narrow: true }}
         contactHref={inquiryHref}
-        contactLongLabel="Start a project"
+        contactLongLabel="Let’s talk"
       />
 
       <main id="main-content">
@@ -106,7 +106,7 @@ export default function Home() {
         <section className="section work-section" id="work" aria-labelledby="work-title">
           <div className="section-heading">
             <p className="section-number">01 / Selected work</p>
-            <h2 id="work-title">The industries change. The method does not.</h2>
+            <h2 id="work-title">Selected work.</h2>
           </div>
 
           <div className="project-list">
@@ -154,7 +154,7 @@ export default function Home() {
                     <Link href={`/work/${project.slug}`}>{project.title}</Link>
                   </h3>
                   <p className="project-premise">
-                    {project.homepagePremise ?? project.premise}
+                    {project.homepagePremise ?? project.cardSummary}
                   </p>
                   <dl className="project-register" aria-label={`${project.title} project details`}>
                     <div>
@@ -162,16 +162,12 @@ export default function Home() {
                       <dd>{project.role}</dd>
                     </div>
                     <div>
-                      <dt>Place</dt>
-                      <dd>{project.place}</dd>
-                    </div>
-                    <div>
                       <dt>Period</dt>
                       <dd>{project.year}</dd>
                     </div>
                   </dl>
                   <p className="project-proof">
-                    <span>What changed</span>
+                    <span>{project.status}</span>
                     {project.outcomeTitle}
                   </p>
                   <Link className="text-link" href={`/work/${project.slug}`}>
@@ -196,7 +192,7 @@ export default function Home() {
                 </Link>
                 <figcaption>
                   Complete manuscript · 50,000 words · 38 chapters
-                  <span>Three-part editorial architecture</span>
+                  <span>Read an excerpt and see the interior pages</span>
                 </figcaption>
               </figure>
               <div className="project-copy">
@@ -212,20 +208,16 @@ export default function Home() {
                     <dd>{sandpaperFeature.role}</dd>
                   </div>
                   <div>
-                    <dt>Format</dt>
-                    <dd>Memoir · Editorial system</dd>
-                  </div>
-                  <div>
                     <dt>Period</dt>
                     <dd>{sandpaperFeature.year}</dd>
                   </div>
                 </dl>
                 <p className="project-proof">
-                  <span>What changed</span>
+                  <span>Complete manuscript</span>
                   {sandpaperFeature.outcome}
                 </p>
                 <Link className="text-link" href="/sandpaper">
-                  Read the project <span aria-hidden="true">↗</span>
+                  Read an excerpt <span aria-hidden="true">↗</span>
                 </Link>
               </div>
             </article>
@@ -235,7 +227,7 @@ export default function Home() {
         <section className="practice-note" aria-labelledby="practice-title">
           <div>
             <p className="section-number inverse">02 / Working method</p>
-            <h2 id="practice-title">Start with the record.</h2>
+            <h2 id="practice-title">Start with the people doing the work.</h2>
           </div>
           <div className="practice-note-copy">
             <p>
@@ -309,16 +301,20 @@ export default function Home() {
             <a className="text-link" href={inquiryHref}>
               Start a conversation <span aria-hidden="true">↗</span>
             </a>
+            <a className="text-link resume-link" href="/downloads/preston-wimberly-resume.pdf">
+              Résumé <span>PDF · 1 page</span> <span aria-hidden="true">↓</span>
+            </a>
           </div>
         </section>
 
         <section className="contact-section" id="contact" aria-labelledby="contact-title">
-          <p className="eyebrow">Creative direction · Independent engagements</p>
-          <h2 id="contact-title">What are you trying to make clear?</h2>
+          <p className="eyebrow">Creative direction · Writing · Art direction</p>
+          <h2 id="contact-title">Let’s talk about the work.</h2>
           <p className="contact-fit">
-            Tell me about the business, the assignment, and when you need it.
+            I’m open to agency and in-house roles, as well as independent projects.
+            Tell me about the team, the assignment, or the business you’re building.
           </p>
-          <a href={inquiryHref}>Start a project ↗</a>
+          <a href={inquiryHref}>Start a conversation ↗</a>
         </section>
       </main>
 

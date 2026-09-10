@@ -1,0 +1,56 @@
+.memoir-page { background: var(--paper); }
+.memoir-hero {
+  align-items: center; display: grid;
+  gap: clamp(40px, 6vw, 88px);
+  grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.65fr);
+  margin: 0 auto; max-width: var(--max);
+  padding: 64px var(--page-gutter);
+}
+.memoir-copy { container-type: inline-size; min-width: 0; }
+.memoir-copy h1 { font: 400 min(12rem, 16cqw)/0.95 var(--font-display); letter-spacing: -0.05em; margin: 32px 0; white-space: nowrap; }
+.memoir-copy h1 em { color: var(--signal); font-weight: 400; }
+.memoir-deck { font-size: var(--text-deck); line-height: 1.5; max-width: 700px; }
+.memoir-meta { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); margin: 32px 0; }
+.memoir-meta > div { padding: 16px 16px 0 0; }
+.memoir-meta dt { font: 700 0.7rem/1.5 var(--font-interface); text-transform: uppercase; }
+.memoir-meta dd { font: 0.8rem/1.6 var(--font-interface); margin: 8px 0 0; }
+.memoir-cover { margin: 0; padding: 24px; background: var(--ink); }
+.memoir-cover-frame { position: relative; aspect-ratio: 2 / 3; background: var(--white); }
+.memoir-cover figcaption { color: var(--paper); font: 0.7rem/1.5 var(--font-interface); padding-top: 16px; }
+.memoir-excerpt { max-width: 820px; margin: 0 auto; padding: 64px var(--page-gutter) 80px; scroll-margin-top: 88px; }
+.memoir-excerpt h2 { font: 500 clamp(2.6rem, 5vw, 4.5rem)/1.1 var(--font-body); margin: 18px 0; }
+.excerpt-note { font: 0.75rem/1.6 var(--font-interface); color: var(--ink-soft); }
+.excerpt-text { font-size: clamp(1.12rem, 1.5vw, 1.3rem); line-height: 1.75; margin: 36px 0; }
+.excerpt-text p { margin: 0 0 1.2em; }
+.excerpt-text > p:first-child { font-size: 1.25em; line-height: 1.5; }
+.memoir-excerpt .text-link { flex-wrap: wrap; }
+.memoir-interiors { padding: 64px var(--page-gutter); background: var(--paper-deep); }
+.memoir-interiors > header { max-width: 800px; margin-bottom: 40px; }
+.memoir-interiors h2, .memoir-method h2 { font: 600 var(--text-h2)/1.1 var(--font-display); letter-spacing: -0.025em; margin: 20px 0 24px; }
+.book-spread { margin: 0 auto 40px; max-width: 1120px; }
+.book-spread:last-child { margin-bottom: 0; }
+.book-spread-pages { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px; background: var(--ink); }
+.book-spread-pages a { position: relative; aspect-ratio: 2 / 3; background: var(--white); }
+.book-spread figcaption { margin-top: 14px; border-color: var(--ink-soft); }
+.memoir-method { display: grid; grid-template-columns: 0.35fr 1fr; gap: 48px; padding: 64px var(--page-gutter); max-width: var(--max); margin: auto; }
+.memoir-method h2 { margin-top: 0; }
+.memoir-method-copy > p { max-width: var(--measure-reading); }
+.memoir-parts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); margin-top: 32px; }
+.memoir-parts > div { padding: 24px 16px 0 0; }
+.memoir-parts span { font: 700 0.7rem/1.5 var(--font-interface); color: var(--signal); }
+.memoir-parts h3 { font: 500 clamp(1.5rem, 2.3vw, 2.3rem)/1.2 var(--font-body); margin: 12px 0 0; }
+.memoir-footer { border-top: 1px solid var(--line); }
+
+@media (max-width: 760px) {
+  .memoir-hero { grid-template-columns: 1fr; padding: 40px 18px; gap: 36px; }
+  .memoir-meta { grid-template-columns: 1fr; }
+  .memoir-meta > div { display: grid; grid-template-columns: 75px 1fr; align-items: baseline; gap: 16px; border-bottom: 1px solid var(--line); padding: 12px 0; }
+  .memoir-meta dd { margin: 0; }
+  .memoir-cover { width: min(74vw, 330px); margin: 0 auto; }
+  .memoir-excerpt, .memoir-interiors, .memoir-method { padding: 48px 18px; }
+  .memoir-method { grid-template-columns: 1fr; gap: 18px; }
+  .memoir-method h2, .memoir-interiors h2 { font-size: 2rem; }
+  .memoir-parts { grid-template-columns: 1fr; }
+  .memoir-parts > div { border-bottom: 1px solid var(--line); padding: 16px 0; }
+  .book-spread figcaption span { display: block; }
+}

@@ -5,6 +5,7 @@ import { SiteHeader } from "@/components/site-header";
 import { StructuredData } from "@/components/structured-data";
 import { mailtoHref, siteConfig } from "@/lib/site";
 import { sandpaperStructuredData } from "@/lib/structured-data";
+import { sandpaperExcerpt } from "@/data/sandpaper";
 
 export const metadata: Metadata = {
   title: "SANDPAPER, a memoir",
@@ -60,14 +61,14 @@ export default function SandpaperPage() {
             <h1 id="memoir-title"><em>SANDPAPER</em></h1>
             <p className="memoir-deck">
               A book-length memoir about talent, addiction, fatherhood, and the work of becoming useful.
-              The manuscript applies the same method as the rest of my practice: find the record, strip
-              away the performance, and make the structure carry the truth.
+              Written, edited, and typeset by Preston Wimberly.
             </p>
             <dl className="memoir-meta">
               <div><dt>Length</dt><dd>50,000 words</dd></div>
               <div><dt>Form</dt><dd>Three parts · 38 chapters</dd></div>
               <div><dt>Edition</dt><dd>141 pages · 6 × 9 inches</dd></div>
             </dl>
+            <a className="text-link" href="#excerpt">Read an excerpt <span aria-hidden="true">↓</span></a>
           </div>
           <figure className="memoir-cover">
             <div className="memoir-cover-frame">
@@ -83,14 +84,33 @@ export default function SandpaperPage() {
           </figure>
         </section>
 
+        <section className="memoir-excerpt" id="excerpt" aria-labelledby="excerpt-title">
+          <header><p className="section-number">From part three / Finer Grits</p><h2 id="excerpt-title">Four Hundred</h2><p className="excerpt-note">An excerpt from pages 115–116.</p></header>
+          <div className="excerpt-text">{sandpaperExcerpt.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div>
+          <p className="excerpt-note">The chapter continues in the manuscript.</p>
+          <a className="text-link" href="/downloads/sandpaper-four-hundred.pdf">Read the complete chapter <span>PDF · 2 pages</span> <span aria-hidden="true">↓</span></a>
+        </section>
+
+        <section className="memoir-interiors" aria-labelledby="interiors-title">
+          <header><p className="section-number">Inside the manuscript</p><h2 id="interiors-title">Type, pace, and the page.</h2><p>Original pages from the 6 × 9-inch manuscript, typeset in EB Garamond.</p></header>
+          {[[114, 115], [116, 117]].map((pages, index) => (
+            <figure className="book-spread" key={pages[0]}>
+              <div className="book-spread-pages">{pages.map(page => <a href={`/images/sandpaper-page-${page}.jpg`} key={page} aria-label={`Open manuscript page ${page} at full size`}>
+                <ResponsiveImage src={`/images/sandpaper-page-${page}.jpg`} alt={`SANDPAPER manuscript page ${page}, ${page === 114 ? "Part three: Finer Grits" : page === 117 ? "No Plastic" : "Four Hundred"}`} sizes="(max-width: 760px) 44vw, 40vw" objectFit="contain" />
+              </a>)}</div>
+              <figcaption>{index === 0 ? "Part three and the opening of Four Hundred · Pages 114–115" : "Four Hundred concludes; No Plastic opens · Pages 116–117"}<span> Select a page to read it at full size.</span></figcaption>
+            </figure>
+          ))}
+        </section>
+
         <section className="memoir-method" aria-labelledby="memoir-method-title">
-          <p className="section-number">01 / Editorial architecture</p>
+          <p className="section-number">The editorial decision</p>
           <div className="memoir-method-copy">
-            <h2 id="memoir-method-title">The material process became the narrative system.</h2>
+            <h2 id="memoir-method-title">Finishing a guitar gave the book its shape.</h2>
             <p>
-              Guitar finishing supplies the book’s structure without becoming decoration. The manuscript
-              moves from surface, through removal, to the slower work of repair. Each movement changes the
-              pace, evidence, and degree of distance between the narrator and the life being examined.
+              Three parts move from the surface of a life, through its stripping away, to the slower work of repair.
+              Photographs, emails, contracts, medical records, and calendars test the narrator’s memory.
+              Thirty-eight short chapters keep the story moving between music, family, craft, and work.
             </p>
             <div className="memoir-parts">
               <div><span>Part one</span><h3>The Finish</h3></div>
@@ -98,34 +118,6 @@ export default function SandpaperPage() {
               <div><span>Part three</span><h3>Finer Grits</h3></div>
             </div>
           </div>
-        </section>
-
-        <section className="memoir-proof" aria-labelledby="memoir-proof-title">
-          <header>
-            <p className="section-number">02 / What the work demonstrates</p>
-            <h2 id="memoir-proof-title">Voice held accountable by evidence.</h2>
-          </header>
-          <div className="memoir-proof-grid">
-            <article>
-              <h3>Long-form structure</h3>
-              <p>Thirty-eight short chapters carry one argument across music, addiction, family, craft, and work without flattening them into a single lesson.</p>
-            </article>
-            <article>
-              <h3>Documentary method</h3>
-              <p>Photographs, emails, contracts, medical records, and calendars test memory and keep consequential claims attached to a record.</p>
-            </article>
-            <article>
-              <h3>Book design</h3>
-              <p>The first edition is designed and typeset in EB Garamond, with restrained pacing, documentary photographs, and quiet chapter transitions.</p>
-            </article>
-          </div>
-        </section>
-
-        <section className="memoir-passage" aria-label="Selected passage">
-          <blockquote>
-            <p>“The piece has to look worse before it can look honest.”</p>
-            <cite>SANDPAPER · Bare Wood: The Inventory</cite>
-          </blockquote>
         </section>
       </main>
 
