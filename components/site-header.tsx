@@ -36,7 +36,8 @@ export function SiteHeader({
       </a>
       <header className={variant === "work" ? "site-header work-header" : "site-header"}>
         <Link className="wordmark" href="/" aria-label="Preston Wimberly, home">
-          Preston Wimberly
+          <span>Preston Wimberly</span>
+          <small>Creative Director</small>
         </Link>
         <nav className="site-nav" aria-label={navAriaLabel}>
           <Link href={workLink.href}>{workLink.label}</Link>

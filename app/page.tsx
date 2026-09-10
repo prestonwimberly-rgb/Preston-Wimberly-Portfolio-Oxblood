@@ -69,9 +69,9 @@ export default function Home() {
       <main id="main-content">
         <section className="hero" aria-labelledby="hero-title">
           <div className="hero-copy">
-            <p className="eyebrow">
-              Creative Director
-            </p>
+            <div className="hero-intro">
+              <p className="eyebrow">Creative Director</p>
+            </div>
             <h1 id="hero-title">
               Find what is true.<br />
               <em>Give it form.</em>
@@ -93,6 +93,7 @@ export default function Home() {
                 alt="A tractor crossing a runway beneath large Texas clouds"
                 priority
                 sizes="(max-width: 900px) 100vw, 43vw"
+                style={{ objectPosition: "20% center" }}
               />
             </div>
             <figcaption>
@@ -155,9 +156,20 @@ export default function Home() {
                   <p className="project-premise">
                     {project.homepagePremise ?? project.premise}
                   </p>
-                  <p className="project-context">
-                    {project.role} · {project.year}
-                  </p>
+                  <dl className="project-register" aria-label={`${project.title} project details`}>
+                    <div>
+                      <dt>Role</dt>
+                      <dd>{project.role}</dd>
+                    </div>
+                    <div>
+                      <dt>Place</dt>
+                      <dd>{project.place}</dd>
+                    </div>
+                    <div>
+                      <dt>Period</dt>
+                      <dd>{project.year}</dd>
+                    </div>
+                  </dl>
                   <p className="project-proof">
                     <span>What changed</span>
                     {project.outcomeTitle}
@@ -194,9 +206,20 @@ export default function Home() {
                   <Link href="/sandpaper">{sandpaperFeature.title}</Link>
                 </h3>
                 <p className="project-premise">{sandpaperFeature.premise}</p>
-                <p className="project-context">
-                  {sandpaperFeature.role} · {sandpaperFeature.year}
-                </p>
+                <dl className="project-register" aria-label="SANDPAPER project details">
+                  <div>
+                    <dt>Role</dt>
+                    <dd>{sandpaperFeature.role}</dd>
+                  </div>
+                  <div>
+                    <dt>Format</dt>
+                    <dd>Memoir · Editorial system</dd>
+                  </div>
+                  <div>
+                    <dt>Period</dt>
+                    <dd>{sandpaperFeature.year}</dd>
+                  </div>
+                </dl>
                 <p className="project-proof">
                   <span>What changed</span>
                   {sandpaperFeature.outcome}
