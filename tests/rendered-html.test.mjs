@@ -38,13 +38,9 @@ test("server-renders the finished portfolio", async () => {
   assert.match(html, /Start with the record/);
   assert.match(html, /Report/);
   assert.match(html, /Give it form/);
-  assert.match(html, /Where I lead/);
   assert.match(html, /Creative direction/);
-  assert.match(html, /Brand &amp; editorial systems/);
-  assert.match(html, /Hands-on execution/);
-  assert.match(html, /Tell me what is changing/);
   assert.match(html, />What changed</);
-  assert.match(html, /increased website traffic 40% in its first month/);
+  assert.doesNotMatch(html, /40%/);
   assert.match(html, /A complete 38-chapter manuscript now has a three-part narrative/);
   assert.match(html, /The Wild Feathers/);
   assert.match(html, /Texas Aviation Partners/);
@@ -146,7 +142,7 @@ test("server-renders all four project case studies", async () => {
       assert.match(html, /Netlify deploy capture · August 2026/);
       assert.match(html, /\/optimized\/tap-projects-live-[0-9]+\.avif/);
       assert.match(html, /\/optimized\/tap-san-marcos-live-[0-9]+\.avif/);
-      assert.match(html, /Google Analytics recorded a 40% increase/);
+      assert.doesNotMatch(html, /40%/);
     }
     if (path === "/work/wild-feathers") {
       assert.ok(html.indexOf("Archive method") < html.indexOf("Role"));

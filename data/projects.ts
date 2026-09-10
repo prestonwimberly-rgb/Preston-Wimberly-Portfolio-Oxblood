@@ -319,17 +319,16 @@ const projectRecords: Project[] = [
     artifactTitle: "Field record, public proof, and the next editorial system.",
     artifactIntro:
       "The sequence separates the earlier public presentation, the editorial review build, original airport photography, and the live project pages that carry the proof.",
-    outcomeTitle: "The new public system increased website traffic 40% in its first month.",
+    outcomeTitle: "Services, projects, leadership, and reporting now share one public site.",
     outcome: [
       "The company now has one public system for its services, projects, leadership, field reporting, and direct inquiries. It can add development reporting without rebuilding the story each time.",
-      "Google Analytics recorded a 40% increase in website traffic in the first month after launch.",
     ],
     artifacts: [
       {
         src: "/images/tap-site-before.jpg",
-        alt: "The current Texas Aviation Partners homepage",
+        alt: "The earlier Texas Aviation Partners homepage",
         caption:
-          "Current public homepage: a conventional corporate aviation frame led by services and broad positioning.",
+          "Earlier homepage, captured in August 2026: a conventional corporate aviation frame led by services and broad positioning.",
         credit: "Public website capture · August 2026",
         format: "landscape",
         aspect: "1363 / 852",
@@ -379,6 +378,9 @@ const projectRecords: Project[] = [
     closing:
       "A claim should lead to a project, a person, or a public record.",
     theme: "field",
+    verificationNotes: [
+      "The previous copy claimed a 40% increase in website traffic in the first month after launch, attributed to Google Analytics. Confirm the metric, comparison dates, and release measured before restoring this claim; the August 2026 review-build capture does not establish that attribution.",
+    ],
   },
   {
     slug: "wimberly-guitars",
@@ -471,7 +473,7 @@ const projectRecords: Project[] = [
     artifactTitle: "The object and its language.",
     artifactIntro:
       "The public system carries the instruments’ material vocabulary into model, product, and availability decisions.",
-    outcomeTitle: "The workshop now has a clear inquiry path.",
+    outcomeTitle: "Players can compare two models, explore materials, and join the waitlist.",
     outcome: [
       "Players can compare models and materials, learn how the workshop builds, and join the waitlist.",
     ],
