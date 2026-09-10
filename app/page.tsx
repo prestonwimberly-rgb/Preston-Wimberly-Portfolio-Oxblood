@@ -8,30 +8,6 @@ import { homeStructuredData } from "@/lib/structured-data";
 
 const workingMethod = ["Report", "Position", "Direct", "Write", "Photograph", "Build"];
 
-const services = [
-  {
-    number: "01",
-    title: "Creative direction",
-    description:
-      "Find what is distinctive, decide what the whole expression should become, and set the standards that keep it coherent.",
-    scope: "Positioning · Point of view · Creative standards · Decision-making",
-  },
-  {
-    number: "02",
-    title: "Brand & editorial systems",
-    description:
-      "Turn real work, people, history, and evidence into a clear public narrative that others can use.",
-    scope: "Message architecture · Voice · Editorial structure · Photography direction",
-  },
-  {
-    number: "03",
-    title: "Hands-on execution",
-    description:
-      "Write, photograph, design, or build when direct making is the clearest way to carry the direction through.",
-    scope: "Writing · Photography · Design · Digital production",
-  },
-];
-
 const inquiryHref = mailtoHref("Freelance project inquiry");
 
 const sandpaperFeature = {
@@ -102,8 +78,8 @@ export default function Home() {
             </h1>
             <div className="hero-bottom">
               <p>
-                I find what is distinctive in a business, set the creative
-                direction, and carry it through words, images, and finished work.
+                I set the creative direction for businesses and carry it through
+                writing, photography, and design.
               </p>
               <a className="text-link" href="#work">
                 Read the work <span aria-hidden="true">↓</span>
@@ -233,52 +209,15 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section services-section" id="services" aria-labelledby="services-title">
-          <div className="section-heading compact-heading">
-            <p className="section-number">02 / Where I lead</p>
-            <div>
-              <h2 id="services-title">Direction first. Execution when it helps.</h2>
-              <p className="services-intro">
-                I am most useful when the business is better than the way it
-                currently presents itself. The assignment begins with what is
-                true and ends with a system people can understand and use.
-              </p>
-            </div>
-          </div>
-          <div className="service-list">
-            {services.map((service) => (
-              <article className="service-row" key={service.title}>
-                <p>{service.number}</p>
-                <h3>{service.title}</h3>
-                <div>
-                  <p>{service.description}</p>
-                  <span>{service.scope}</span>
-                </div>
-              </article>
-            ))}
-          </div>
-          <div className="services-cta">
-            <p>
-              A good fit usually starts with a meaningful change: a new offer,
-              a clearer position, a body of work that needs a story, or a site
-              that no longer represents the business.
-            </p>
-            <a className="text-link" href={inquiryHref}>
-              Tell me what is changing <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-        </section>
-
         <section className="practice-note" aria-labelledby="practice-title">
           <div>
-            <p className="section-number inverse">03 / Working method</p>
-            <h2 id="practice-title">Start with the record. End with something people can use.</h2>
+            <p className="section-number inverse">02 / Working method</p>
+            <h2 id="practice-title">Start with the record.</h2>
           </div>
           <div className="practice-note-copy">
             <p>
-              I interview the people doing the work, find the useful facts, and
-              make one central decision before the writing, photographs, and
-              digital system take shape.
+              I interview the people doing the work, establish the position, and
+              carry it through writing, photography, design, and the finished site.
             </p>
             <ul aria-label="Working method disciplines">
               {workingMethod.map((item) => (
@@ -290,7 +229,7 @@ export default function Home() {
 
         <section className="section writing-section" id="writing" aria-labelledby="writing-title">
           <div className="section-heading compact-heading">
-            <p className="section-number">04 / Writing & independent work</p>
+            <p className="section-number">03 / Writing & independent work</p>
             <h2 id="writing-title">The work continues in words.</h2>
           </div>
           <div className="writing-list">
@@ -326,7 +265,7 @@ export default function Home() {
             <figcaption>Preston Wimberly in performance.</figcaption>
           </figure>
           <div className="about-copy">
-            <p className="section-number">05 / About</p>
+            <p className="section-number">04 / About</p>
             <h2 id="about-title">Different fields. The same editorial judgment.</h2>
             <p className="about-lead">
               I’m Preston Wimberly, a Creative Director based between San Marcos,
@@ -342,8 +281,7 @@ export default function Home() {
               recorded with Jamestown Revival. Building guitars turned that
               judgment toward materials, construction, repair, and aging.
               Aviation brought the same method into an operational business,
-              where every claim has to hold up against the work. The fields
-              change. The method does not.
+              where every claim has to hold up against the work.
             </p>
             <a className="text-link" href={inquiryHref}>
               Start a conversation <span aria-hidden="true">↗</span>
@@ -355,8 +293,7 @@ export default function Home() {
           <p className="eyebrow">Creative direction · Independent engagements</p>
           <h2 id="contact-title">What are you trying to make clear?</h2>
           <p className="contact-fit">
-            If the business is better than the way it currently presents itself,
-            send a short note about what is changing and what needs to become clear.
+            Tell me about the business, the assignment, and when you need it.
           </p>
           <a href={inquiryHref}>Start a project ↗</a>
         </section>
