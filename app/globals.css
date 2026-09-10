@@ -1598,6 +1598,26 @@ img {
   margin: 0;
 }
 
+.motion-study {
+  margin: clamp(44px, 6vw, 90px) auto 0;
+  max-width: 960px;
+}
+
+.motion-study h3 {
+  font-family: var(--font-body);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 400;
+  margin: 0 0 24px;
+}
+
+.motion-study video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: var(--night);
+}
+
 .artifact-landscape {
   grid-column: span 9;
 }

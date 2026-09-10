@@ -263,6 +263,29 @@ export default async function WorkPage({ params }: WorkPageProps) {
               </figure>
             ))}
           </div>
+          {project.motionStudy ? (
+            <figure className="artifact motion-study" aria-labelledby="motion-study-title">
+              <h3 id="motion-study-title">Material study</h3>
+              <video
+                controls
+                muted
+                playsInline
+                preload="none"
+                width="1920"
+                height="1080"
+                poster={project.motionStudy.poster}
+                aria-label="Play the guitar material study"
+                aria-describedby="motion-study-caption"
+              >
+                <source src={project.motionStudy.src} type="video/mp4" />
+                Your browser does not support this video.
+              </video>
+              <figcaption id="motion-study-caption">
+                {project.motionStudy.description}
+                <span>AI-generated motion study · Higgsfield</span>
+              </figcaption>
+            </figure>
+          ) : null}
         </section>
 
         <section className="case-outcome">
