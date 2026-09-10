@@ -2,10 +2,9 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-const css = await readFile(
-  new URL("../app/globals.css", import.meta.url),
-  "utf8",
-);
+const css = (await Promise.all(["globals", "case-studies", "memoir"].map(name =>
+  readFile(new URL(`../app/${name}.css`, import.meta.url), "utf8")
+))).join("\n");
 
 function colorVariable(name) {
   const match = css.match(new RegExp(`--${name}:\\s*(#[0-9a-f]{6})`, "i"));
@@ -83,10 +82,4 @@ test("mobile navigation and contact targets preserve the 44-pixel minimum", () =
   assert.match(css, /\.site-nav a\s*\{[^}]*min-height:\s*44px[^}]*min-width:\s*44px/s);
   assert.match(css, /\.contact-section > a\s*\{[^}]*min-height:\s*44px/s);
   assert.match(css, /\.skip-link\s*\{[^}]*padding:\s*13px 16px/s);
-});
-
-test("case-study evidence worlds use restrained project-specific surfaces", () => {
-  assert.match(css, /\.case-theme-field \.case-evidence\s*\{[^}]*background:\s*var\(--paper-deep\)/s);
-  assert.match(css, /\.case-theme-archive \.case-evidence\s*\{[^}]*background:\s*var\(--night\)/s);
-  assert.match(css, /\.case-theme-workshop \.case-evidence\s*\{[^}]*background:\s*var\(--signal\)/s);
 });

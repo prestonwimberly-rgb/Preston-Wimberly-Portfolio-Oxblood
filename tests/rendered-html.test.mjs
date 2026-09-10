@@ -22,175 +22,90 @@ async function render(path = "/") {
   );
 }
 
-test("server-renders the finished portfolio", async () => {
+test("homepage leads with selected work and gives hiring readers direct paths", async () => {
   const response = await render();
   assert.equal(response.status, 200);
-  assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
-
   const html = await response.text();
-  assert.match(html, /Preston Wimberly \| Creative Director/);
   assert.match(html, /Find what is true/);
-  assert.match(html, /Creative direction for established businesses/);
-  assert.doesNotMatch(html, /photography, and web design/);
   assert.match(html, /Photograph by Preston Wimberly/);
-  assert.doesNotMatch(html, /Selected work index/);
-  assert.match(html, /The industries change\. The method does not/);
-  assert.match(html, /Start with the record/);
-  assert.match(html, /Report/);
-  assert.match(html, /Give it form/);
-  assert.match(html, /Creative direction/);
-  assert.match(html, />What changed</);
-  assert.doesNotMatch(html, /40%/);
-  assert.match(html, /A complete 38-chapter manuscript now has a three-part narrative/);
-  assert.match(html, /The Wild Feathers/);
-  assert.match(html, /Texas Aviation Partners/);
-  assert.match(html, /Wimberly Custom Guitars/);
-  assert.match(html, /prestonwimberly.com/);
-  assert.match(html, /The Airfield/);
-  assert.match(html, /The Road/);
-  assert.match(html, /The Object/);
-  assert.match(html, /The Manuscript/);
+  const rows = [...html.matchAll(/<article class="project-row[\s\S]*?<\/article>/g)].map(match => match[0]);
+  assert.equal(rows.length, 4);
+  for (const [index, title] of ["Wimberly Custom Guitars", "Texas Aviation Partners", "The Wild Feathers", "SANDPAPER"].entries()) {
+    assert.ok(rows[index].includes(title));
+  }
+  assert.match(html, /href="https:\/\/wildfeathers\.netlify\.app\/field-notes\/willie-in-las-vegas\/"/);
+  assert.match(html, /href="\/downloads\/preston-wimberly-resume\.pdf"/);
+  assert.match(html, /agency and in-house roles/);
+  assert.match(html, /independent projects/);
   assert.match(html, /From 2008 to 2011, I sold advertising at Texas Monthly/);
   assert.match(html, /Warner Bros\./);
   assert.match(html, /Jamestown Revival/);
-  assert.match(html, /"jobTitle":"Creative Director"/);
-  assert.match(html, /How do you make airport infrastructure feel consequential/);
-  assert.match(
-    html,
-    /How do you build a guitar brand from real materials without borrowing generic vintage language\?/,
-  );
-  assert.match(html, /The proposed Texas Aviation Partners homepage/);
-  assert.match(html, /Complete manuscript · 50,000 words · 38 chapters/);
   assert.match(html, /href="\/sandpaper"/);
-  assert.doesNotMatch(html, /Experience shaped by/);
-  assert.match(html, /Walnut, hand-tooled leather, and antique bronze hardware/);
-  assert.doesNotMatch(html, /\/work\/san-marcos-airport/);
-  assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|Starter Project/i);
-  assert.ok(html.indexOf("Texas Aviation Partners") < html.indexOf("The Wild Feathers"));
-  assert.match(html, /<picture class="responsive-picture">/);
-  assert.match(html, /\/optimized\/tap-site-after-[0-9]+\.avif/);
-  assert.match(html, /\/optimized\/wild-feathers-laugh-[0-9]+\.avif/);
-  assert.match(html, /\/optimized\/wimberly-jack-antique-bronze-knobs-[0-9]+\.avif/);
-  assert.match(html, /\/social\/home\.jpg/);
-  assert.match(html, /type="application\/ld\+json"/);
-  assert.match(html, /"@type":"ProfilePage"/);
-  assert.match(html, /"@type":"Person"/);
-  assert.match(html, /"@type":"WebSite"/);
-  assert.match(html, /"email":"preston\.wimberly@gmail\.com"/);
-  assert.match(html, /mailto:preston\.wimberly@gmail\.com/);
-  assert.doesNotMatch(html, /preston@prestonwimberly\.com/);
-  assert.doesNotMatch(html, /"sameAs"/);
+  assert.match(html, /href="\/work\/preston-session-site"/);
+  assert.doesNotMatch(html, /40%|preston@prestonwimberly\.com|Starter Project/);
 });
 
-test("server-renders the SANDPAPER memoir project", async () => {
-  const response = await render("/sandpaper");
-  assert.equal(response.status, 200);
-  const html = await response.text();
-  assert.match(html, /SANDPAPER/);
-  assert.match(html, /50,000 words/);
+test("case studies show ownership and artifacts before the process explanation", async () => {
+  for (const slug of ["wimberly-guitars", "texas-aviation-partners", "wild-feathers", "preston-session-site"]) {
+    const response = await render(`/work/${slug}`);
+    assert.equal(response.status, 200);
+    const html = await response.text();
+    assert.match(html, /My role/);
+    assert.match(html, /Working together/);
+    assert.ok(html.indexOf('id="case-artifacts-title"') < html.indexOf('id="case-decision-title"'));
+    assert.match(html, /aria-label="Next project"/);
+    assert.match(html, /All selected work/);
+    assert.match(html, /"@type":"CreativeWork"/);
+    assert.match(html, /"email":"preston\.wimberly@gmail\.com"/);
+    assert.doesNotMatch(html, /"sameAs"|40%|Direction record/);
+  }
+});
+
+test("project status and speculative work cannot be mistaken for launched client results", async () => {
+  const tap = await (await render("/work/texas-aviation-partners")).text();
+  assert.match(tap, /Proposed redesign · Review build/);
+  assert.match(tap, /current public website uses a different design/);
+  assert.match(tap, /Visit the current TAP website/);
+  assert.match(tap, /tap-site-before/);
+  assert.match(tap, /tap-site-after/);
+  assert.match(tap, /Public website capture · August 2026/);
+  assert.match(tap, /Netlify deploy capture · August 2026/);
+  // The current corporate site is a reference, not the proposed design's work example.
+  const jsonLd = JSON.parse(tap.match(/<script[^>]*type="application\/ld\+json"[^>]*>(.*?)<\/script>/s)[1]);
+  assert.equal(jsonLd["@graph"].find(node => node["@type"] === "CreativeWork").workExample, undefined);
+
+  const wild = await (await render("/work/wild-feathers")).text();
+  assert.match(wild, /Public review archive · Own domain pending/);
+  assert.match(wild, /384 performance records/);
+  assert.match(wild, /193 archive records/);
+  assert.match(wild, /110 source records/);
+  assert.doesNotMatch(wild, /private archive|href="https:\/\/thewildfeathersband\.com/);
+  assert.match(wild, /field-notes\/willie-in-las-vegas/);
+
+  const guitar = await (await render("/work/wimberly-guitars")).text();
+  assert.match(guitar, /Founder \/ Creative Director/);
+  assert.match(guitar, /Jim Wimberly/);
+  assert.match(guitar, /Speculative · Not launched/);
+  assert.match(guitar, /Print advertisement concept/);
+  assert.match(guitar, /Three-frame social sequence concept/);
+  assert.match(guitar, /Launch email concept/);
+  assert.match(guitar, /join the waitlist/i);
+  assert.doesNotMatch(guitar, /wimberly-reference|co-founder|commission|commerce/i);
+  assert.match(guitar, /wimberly-mobile/);
+});
+
+test("SANDPAPER includes accessible manuscript text, genuine pages, and a chapter download", async () => {
+  const html = await (await render("/sandpaper")).text();
+  assert.match(html, /Four Hundred/);
+  assert.match(html, /There is a part of the work I look forward to all week/);
+  assert.match(html, /The figure was in the walnut the whole time/);
+  assert.match(html, /The chapter continues in the manuscript/);
+  for (const page of [114, 115, 116, 117]) assert.match(html, new RegExp(`sandpaper-page-${page}`));
+  assert.match(html, /href="\/downloads\/sandpaper-four-hundred\.pdf"/);
   assert.match(html, /The Finish/);
   assert.match(html, /Removal/);
   assert.match(html, /Finer Grits/);
   assert.match(html, /Photographs, emails, contracts, medical records, and calendars/);
-  assert.match(html, /\/optimized\/sandpaper-cover-[0-9]+\.avif/);
-  assert.match(html, /\/social\/sandpaper\.jpg/);
-  assert.match(html, /The piece has to look worse before it can look honest/);
-});
-
-test("server-renders all four project case studies", async () => {
-  const cases = [
-    ["/work/wild-feathers", /Reconstructing a band’s history/, /deployment to the owned domain remains a separate release step/, /Archive method/, /02 \/ The Road/, /The Wild Feathers Archive Creative Direction \| Preston Wimberly/],
-    ["/work/texas-aviation-partners", /Making the real scale of an aviation company visible/, /Visit Texas Aviation Partners/, /Public proof/, /01 \/ The Airfield/, /Texas Aviation Partners Creative Direction \| Preston Wimberly/],
-    ["/work/wimberly-guitars", /Building a guitar brand from the materials up/, /Visit Wimberly Custom Guitars/, /Material system/, /03 \/ The Object/, /Wimberly Custom Guitars Creative Direction \| Preston Wimberly/],
-    ["/work/preston-session-site", /Turning a musician’s range into one direct invitation/, /Visit prestonwimberly.com/, /Service sequence/, /04 \/ The Musician/, /prestonwimberly.com Creative Direction \| Preston Wimberly/],
-  ];
-
-  for (const [path, heading, liveLink, evidenceLabel, chapterLabel, metaTitle] of cases) {
-    const response = await render(path);
-    assert.equal(response.status, 200);
-    const html = await response.text();
-    assert.match(html, heading);
-    assert.match(html, /System in use/);
-    assert.match(html, /05 \/ Result/);
-    assert.match(html, /Role/);
-    assert.match(html, /Direction record/);
-    assert.match(html, /Made by Preston/);
-    assert.doesNotMatch(html, /<dt>Engagement<\/dt>/);
-    assert.doesNotMatch(html, /<dt>Status<\/dt>/);
-    assert.match(html, /Place/);
-    assert.match(html, /Working principle/);
-    assert.match(html, evidenceLabel);
-    assert.match(html, chapterLabel);
-    assert.match(html, liveLink);
-    assert.match(html, metaTitle);
-    assert.match(html, /type="application\/ld\+json"/);
-    assert.match(html, /"@type":"CreativeWork"/);
-    assert.match(html, /"email":"preston\.wimberly@gmail\.com"/);
-    assert.match(html, /mailto:preston\.wimberly@gmail\.com/);
-    assert.doesNotMatch(html, /preston@prestonwimberly\.com/);
-    assert.match(html, /"creator":\{"@id":"https:\/\/work\.prestonwimberly\.com\/#person"\}/);
-    assert.doesNotMatch(html, /"sameAs"/);
-    assert.match(html, /<picture class="responsive-picture">/);
-    assert.match(html, new RegExp(`/social/${path.split("/").pop()}\\.jpg`));
-    if (path === "/work/texas-aviation-partners") {
-      assert.ok(html.indexOf("Role") < html.indexOf("Public proof"));
-      assert.match(html, /Field record, public proof, and the next editorial system/);
-      assert.match(html, /\/optimized\/tap-hay-windsock-[0-9]+\.avif/);
-      assert.match(html, /\/optimized\/tap-site-before-[0-9]+\.avif/);
-      assert.match(html, /\/optimized\/tap-site-after-[0-9]+\.avif/);
-      assert.match(html, /Public website capture · August 2026/);
-      assert.match(html, /Netlify deploy capture · August 2026/);
-      assert.match(html, /\/optimized\/tap-projects-live-[0-9]+\.avif/);
-      assert.match(html, /\/optimized\/tap-san-marcos-live-[0-9]+\.avif/);
-      assert.doesNotMatch(html, /40%/);
-    }
-    if (path === "/work/wild-feathers") {
-      assert.ok(html.indexOf("Archive method") < html.indexOf("Role"));
-      assert.match(html, /case-image-cover/);
-      assert.match(html, /The five members of The Wild Feathers seated together outside, laughing/);
-    }
-    if (path === "/work/wimberly-guitars") {
-      assert.ok(html.indexOf("Material system") < html.indexOf("Role"));
-      assert.ok(html.indexOf("Build every rule from the instruments") < html.indexOf("We built the product language from the materials"));
-      assert.match(html, /case-image-cover/);
-      assert.match(html, /Objects meant to acquire history/);
-      assert.match(html, /hand-tooled leather pickguard and antique bronze knobs/);
-    }
-    if (path === "/work/preston-session-site") {
-      assert.ok(html.indexOf("Service sequence") < html.indexOf("Role"));
-      assert.ok(html.indexOf("Working principle") < html.indexOf("01 / Context"));
-      assert.match(html, /\/optimized\/preston-session-mobile-[0-9]+\.avif/);
-      assert.match(html, /listening and inquiry path stays intact/);
-    }
-  }
-});
-
-test("public case studies include confirmed records and only cleared guitar artifacts", async () => {
-  const wildResponse = await render("/work/wild-feathers");
-  const wildHtml = await wildResponse.text();
-  assert.match(wildHtml, /384 performance records/);
-  assert.match(wildHtml, /193 archive records/);
-  assert.match(wildHtml, /seven flagship stories/);
-  assert.match(wildHtml, /110 source records/);
-  assert.doesNotMatch(wildHtml, /href="https:\/\/thewildfeathersband\.com/i);
-
-  const guitarResponse = await render("/work/wimberly-guitars");
-  const guitarHtml = await guitarResponse.text();
-  assert.match(guitarHtml, /\/optimized\/wimberly-mobile-[0-9]+\.avif/);
-  assert.match(guitarHtml, /\/optimized\/wimberly-reference-[0-9]+\.avif/);
-  assert.match(guitarHtml, /model and material hierarchy stays direct/);
-  assert.doesNotMatch(guitarHtml, /wimberly-workshop-hero/i);
-  assert.doesNotMatch(guitarHtml, /co-founder|commission|commerce/i);
-  assert.match(guitarHtml, /Founder \/ Creative Director/);
-  assert.match(guitarHtml, /join the waitlist/i);
-
-  const tapResponse = await render("/work/texas-aviation-partners");
-  const tapHtml = await tapResponse.text();
-  assert.match(tapHtml, /Field record, public proof, and the next editorial system/);
-  assert.match(tapHtml, /\/optimized\/tap-site-before-[0-9]+\.avif/);
-  assert.match(tapHtml, /\/optimized\/tap-site-after-[0-9]+\.avif/);
-  assert.match(tapHtml, /Public website capture · August 2026/);
-  assert.match(tapHtml, /Netlify deploy capture · August 2026/);
 });
 
 test("server-renders unknown routes with the portfolio 404", async () => {

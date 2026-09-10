@@ -62,7 +62,7 @@ function creativeWorkNode(project: Project) {
       name: project.place,
     },
     ...(project.year.match(/^\d{4}$/) ? { dateCreated: project.year } : {}),
-    ...(project.liveUrl && project.liveLabel
+    ...(project.liveUrl && project.liveLabel && !project.liveIsReference
       ? {
           workExample: {
             "@type": "WebSite",

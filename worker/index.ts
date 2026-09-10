@@ -2,7 +2,7 @@
 import handler from "vinext/server/app-router-entry";
 
 interface Env {
-  ASSETS: Fetcher;
+  ASSETS: Pick<typeof globalThis, "fetch">;
 }
 
 interface ExecutionContext {

@@ -46,12 +46,12 @@ function socialOverlay(card) {
 
   return Buffer.from(`
     <svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
-      <rect width="720" height="630" fill="#8b1a1a"/>
-      <rect x="26" y="26" width="1148" height="578" fill="none" stroke="#f4efe6" stroke-opacity="0.48"/>
-      <text x="60" y="76" fill="#f4efe6" font-family="Arial, sans-serif" font-size="19" font-weight="700" letter-spacing="2.4">${escapeXml(card.eyebrow)}</text>
-      <line x1="60" y1="112" x2="660" y2="112" stroke="#f4efe6" stroke-opacity="0.6"/>
-      <text x="60" y="220" fill="#f4efe6" font-family="Georgia, serif" font-size="57" letter-spacing="-1.5">${titleLines}</text>
-      <text x="60" y="565" fill="#f4efe6" font-family="Georgia, serif" font-size="26" font-weight="700">Preston Wimberly</text>
+      <rect width="720" height="630" fill="#252624"/>
+      <rect x="26" y="26" width="1148" height="578" fill="none" stroke="#e8e1d4" stroke-opacity="0.48"/>
+      <text x="60" y="76" fill="#e8e1d4" font-family="Arial, sans-serif" font-size="19" font-weight="700" letter-spacing="2.4">${escapeXml(card.eyebrow)}</text>
+      <line x1="60" y1="112" x2="660" y2="112" stroke="#e8e1d4" stroke-opacity="0.6"/>
+      <text x="60" y="220" fill="#e8e1d4" font-family="Georgia, serif" font-size="57" letter-spacing="-1.5">${titleLines}</text>
+      <text x="60" y="565" fill="#e8e1d4" font-family="Georgia, serif" font-size="26" font-weight="700">Preston Wimberly</text>
     </svg>
   `);
 }
@@ -87,7 +87,7 @@ for (const card of socialCards) {
     .resize(480, 630, { fit: "cover", position: "centre" })
     .toBuffer();
   await sharp({
-    create: { width: 1200, height: 630, channels: 3, background: "#8b1a1a" },
+    create: { width: 1200, height: 630, channels: 3, background: "#252624" },
   })
     .composite([
       { input: photograph, left: 720, top: 0 },
