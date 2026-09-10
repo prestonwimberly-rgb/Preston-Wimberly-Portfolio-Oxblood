@@ -202,7 +202,7 @@ export default function Home() {
               <div className="project-copy">
                 <p className="project-index">{sandpaperFeature.chapterNumber}</p>
                 <p className="project-kicker">{sandpaperFeature.chapter}</p>
-                <h3>
+                <h3 className="sandpaper-title">
                   <Link href="/sandpaper">{sandpaperFeature.title}</Link>
                 </h3>
                 <p className="project-premise">{sandpaperFeature.premise}</p>

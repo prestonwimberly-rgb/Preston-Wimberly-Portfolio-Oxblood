@@ -530,6 +530,12 @@ img {
   white-space: nowrap;
 }
 
+.project-copy h3.sandpaper-title {
+  font-size: min(clamp(2.75rem, 4vw, 4.8rem), 15cqw);
+  overflow-wrap: normal;
+  white-space: nowrap;
+}
+
 .project-copy h3 a:hover {
   color: var(--signal);
 }
@@ -907,13 +913,19 @@ img {
   padding: clamp(80px, 9vw, 140px) var(--page-gutter);
 }
 
+.memoir-copy {
+  container-type: inline-size;
+  min-width: 0;
+}
+
 .memoir-copy h1 {
   font-family: var(--font-display);
-  font-size: clamp(5rem, 11vw, 12rem);
+  font-size: min(12rem, 16cqw);
   font-weight: 400;
   letter-spacing: -0.05em;
   line-height: 0.86;
   margin: 38px 0 46px;
+  white-space: nowrap;
 }
 
 .memoir-copy h1 em {
@@ -2069,7 +2081,6 @@ img {
   }
 
   .memoir-copy h1 {
-    font-size: clamp(3.2rem, 15vw, 6rem);
     margin: 32px 0 38px;
   }
 
