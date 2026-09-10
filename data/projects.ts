@@ -74,6 +74,7 @@ export type Project = {
   artifacts: ProjectArtifact[];
   closing: string;
   theme: "archive" | "field" | "workshop" | "studio";
+  motionStudy?: { src: string; poster: string; description: string };
   verificationNotes?: string[];
 };
 
@@ -384,6 +385,11 @@ const projectRecords: Project[] = [
   },
   {
     slug: "wimberly-guitars",
+    motionStudy: {
+      src: "/video/wimberly-material-study.mp4",
+      poster: "/images/wimberly-jack-antique-bronze-knobs.jpeg",
+      description: "A slow push-in across walnut grain, hand-tooled leather, and bronze hardware. AI-generated motion from the still photograph using Higgsfield; not filmed footage. Silent, five seconds.",
+    },
     chapterNumber: "03",
     chapter: "The Object",
     premise: "Objects meant to acquire history.",
