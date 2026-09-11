@@ -49,6 +49,7 @@ export function SiteHeader({
               {secondaryLink.label}
             </Link>
           ) : null}
+          <a className="nav-resume" href="/downloads/preston-wimberly-resume.pdf">Résumé</a>
           <a className="nav-contact" href={contactHref}>
             <span className="nav-contact-long">{contactLongLabel}</span>
             <span className="nav-contact-short">{contactShortLabel}</span>

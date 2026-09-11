@@ -30,13 +30,14 @@ test("homepage leads with selected work and gives hiring readers direct paths", 
   assert.match(html, /Photograph by Preston Wimberly/);
   const rows = [...html.matchAll(/<article class="project-row[\s\S]*?<\/article>/g)].map(match => match[0]);
   assert.equal(rows.length, 4);
-  for (const [index, title] of ["Wimberly Custom Guitars", "Texas Aviation Partners", "The Wild Feathers", "SANDPAPER"].entries()) {
+  for (const [index, title] of ["Texas Aviation Partners", "Wimberly Custom Guitars", "The Wild Feathers", "SANDPAPER"].entries()) {
     assert.ok(rows[index].includes(title));
   }
   assert.match(html, /href="https:\/\/wildfeathers\.netlify\.app\/field-notes\/willie-in-las-vegas\/"/);
   assert.match(html, /href="https:\/\/texasaviationpartners\.com\/about\/jim-wimberly\/"/);
   assert.doesNotMatch(html, /san-marcos-regional-airport-expands-with-170-acre-land-purchase|proposed website redesign|Proposed redesign · Review build/);
   assert.match(html, /href="\/downloads\/preston-wimberly-resume\.pdf"/);
+  assert.match(html.match(/<nav class="site-nav"[\s\S]*?<\/nav>/)[0], /href="\/downloads\/preston-wimberly-resume\.pdf"/);
   assert.match(html, /agency and in-house roles/);
   assert.match(html, /independent projects/);
   assert.match(html, /From 2008 to 2011, I sold advertising at Texas Monthly/);
@@ -72,12 +73,20 @@ test("project status distinguishes launched work from review and speculative wor
   assert.match(tap, /tap-site-live-2026-09/);
   assert.match(tap, /Public website capture · August 2026/);
   assert.match(tap, /Live website capture · September 2026/);
+  assert.ok(tap.indexOf('id="case-artifacts-title"') < tap.indexOf('class="case-ownership"'));
+  assert.ok(tap.indexOf('tap-site-live-2026-09') < tap.indexOf('class="case-image"'));
+  assert.match(tap.match(/<header class="case-hero">[\s\S]*?<\/header>/)[0], /href="https:\/\/texasaviationpartners\.com\/"/);
+  const collaboration = tap.match(/<section class="case-ownership"[\s\S]*?<\/section>/)[0];
+  assert.match(collaboration, /Leadership wanted more of Jim Wimberly/);
+  assert.match(collaboration, /Southwest Airlines experience in the 1980s and 1990s/);
+  assert.match(collaboration, /href="https:\/\/texasaviationpartners\.com\/about\/jim-wimberly\/"/);
   // The launched site is now a public example of the case-study work.
   const jsonLd = JSON.parse(tap.match(/<script[^>]*type="application\/ld\+json"[^>]*>(.*?)<\/script>/s)[1]);
   assert.equal(jsonLd["@graph"].find(node => node["@type"] === "CreativeWork").workExample.url, "https://texasaviationpartners.com/");
 
   const wild = await (await render("/work/wild-feathers")).text();
-  assert.match(wild, /Public review archive · Own domain pending/);
+  assert.match(wild, /<strong>Public review archive<\/strong>/);
+  assert.equal((wild.match(/<main[\s\S]*?<\/main>/)[0].match(/owned.domain/gi) ?? []).length, 1);
   assert.match(wild, /384 performance records/);
   assert.match(wild, /193 archive records/);
   assert.match(wild, /110 source records/);
@@ -94,6 +103,8 @@ test("project status distinguishes launched work from review and speculative wor
   assert.match(guitar, /join the waitlist/i);
   assert.doesNotMatch(guitar, /wimberly-reference|co-founder|commission|commerce/i);
   assert.match(guitar, /wimberly-mobile/);
+  assert.ok(guitar.indexOf('id="campaign-title"') < guitar.indexOf('id="case-artifacts-title"'));
+  assert.match(guitar.match(/<header class="case-hero">[\s\S]*?<\/header>/)[0], /href="https:\/\/wimberlycustomguitars\.com\/"/);
 });
 
 test("SANDPAPER includes accessible manuscript text, genuine pages, and a chapter download", async () => {

@@ -49,6 +49,13 @@ steps remain separate approvals.
   profile at `https://texasaviationpartners.com/about/jim-wimberly/`.
 - The previous 40% traffic claim remains unverified and excluded from public
   copy. Confirm the metric, comparison dates, and measured release before use.
+- Preston confirmed on September 11, 2026 that company leadership wanted the
+  site to show more of Jim Wimberly's Southwest Airlines experience in the
+  1980s and 1990s and his understanding of a successful aviation culture.
+  The case study connects that request to the published Jim Wimberly profile,
+  which was checked directly for its airport-to-airline career narrative and
+  discussion of people, accountability, service, and operations. This is a
+  specific editorial response, not a claim of measured business impact.
 
 ### The Wild Feathers
 
