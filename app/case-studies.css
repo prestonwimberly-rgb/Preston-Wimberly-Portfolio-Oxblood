@@ -61,7 +61,7 @@
 
 .campaign { background: var(--paper); }
 .campaign-print { margin: 0 0 40px; background: var(--ink); color: var(--paper); }
-.campaign-print-image { position: relative; aspect-ratio: 1080 / 490; }
+.campaign-print-image { position: relative; aspect-ratio: 1080 / 603; }
 .campaign-print-copy { padding: clamp(28px, 5vw, 64px); }
 .campaign-brand { font: 600 0.75rem/1.5 var(--font-interface); text-transform: uppercase; letter-spacing: 0.12em; margin: 0 0 24px; }
 .campaign-print h3 { font: 500 clamp(2.7rem, 6.5vw, 6.5rem)/1 var(--font-body); margin: 0 0 28px; letter-spacing: -0.025em; }

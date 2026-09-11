@@ -11,7 +11,7 @@ export function GuitarCampaign() {
         </div>
       </header>
       <figure className="campaign-print">
-        <div className="campaign-print-image"><ResponsiveImage src="/images/wimberly-jack-antique-bronze-knobs.jpeg" alt="Walnut guitar body, tooled leather pickguard, and bronze control knobs" sizes="(max-width: 760px) 100vw, 75vw" /></div>
+        <div className="campaign-print-image"><ResponsiveImage src="/images/wimberly-jack-antique-bronze-knobs.jpeg" alt="Walnut guitar body, tooled leather pickguard, and bronze control knobs" sizes="(max-width: 760px) 100vw, 75vw" objectFit="contain" /></div>
         <div className="campaign-print-copy"><p className="campaign-brand">Wimberly Custom Guitars</p><h3>The next chapter<br />is yours.</h3><p>We choose the walnut. Work the leather. Shape the instrument.<br />The songs, the rooms, the marks it carries home: those belong to you.</p><span className="campaign-cta">Meet the Jack. Join the waitlist.</span></div>
         <figcaption>01 / Print advertisement concept · Existing product photograph</figcaption>
       </figure>
