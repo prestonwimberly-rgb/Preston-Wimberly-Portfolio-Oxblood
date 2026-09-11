@@ -69,3 +69,22 @@ profile improve it. Measured client outcomes remain unverified and excluded.
 
 Detailed local evidence is in ignored `outputs/evidence-hierarchy/`. The existing
 untracked `.codex/` directory and resume-builder script are preserved.
+
+## Follow-up: remove the duplicate Wimberly opener
+
+Preston requested removal of the standalone guitar photograph after identifying
+its repeated use in the campaign. **REMOVE** that opener from the Wimberly case
+only; retain the photograph in the print concept, homepage project selection,
+and collapsed motion-study poster. Existing claims, captions, assets, and styling
+are unchanged.
+
+- [x] Desktop and phone review at 1440px, 390px, and 320px: one product image,
+  no standalone opener, and no horizontal overflow.
+- [x] Campaign begins about 911px down on desktop, previously 1,683px.
+- [x] Full quality gate: all 19 tests pass, zero production vulnerabilities;
+  TypeScript passes. The existing rendered-page check prevents image duplication.
+- [x] Typography, hierarchy, keyboard controls, responsive crops, and speculative
+  campaign disclosure are preserved. No CSS, new assets, or motion were added.
+
+Follow-up scores: authenticity 5, hierarchy 5, material character 4, evidence 4,
+restraint 5, usability 5, performance 4, accessibility 4.

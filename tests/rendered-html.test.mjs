@@ -103,6 +103,9 @@ test("project status distinguishes launched work from review and speculative wor
   assert.match(guitar, /join the waitlist/i);
   assert.doesNotMatch(guitar, /wimberly-reference|co-founder|commission|commerce/i);
   assert.match(guitar, /wimberly-mobile/);
+  const guitarMain = guitar.match(/<main[\s\S]*?<\/main>/)[0];
+  assert.equal((guitarMain.match(/<img\b[^>]*\bsrc="\/images\/wimberly-jack-antique-bronze-knobs\.jpeg"/g) ?? []).length, 1);
+  assert.doesNotMatch(guitarMain, /class="case-image"/);
   assert.ok(guitar.indexOf('id="campaign-title"') < guitar.indexOf('id="case-artifacts-title"'));
   assert.match(guitar.match(/<header class="case-hero">[\s\S]*?<\/header>/)[0], /href="https:\/\/wimberlycustomguitars\.com\/"/);
 });

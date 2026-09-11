@@ -28,7 +28,7 @@ function CaseArtifacts({ project, leading = false }: { project: Project; leading
 
 export function ProjectCase({ project, nextProject }: { project: Project; nextProject: Project }) {
   const hasLeadArtifacts = Boolean(project.leadArtifacts?.length);
-  const image = (
+  const image = project.slug === "wimberly-guitars" ? null : (
     <figure className="case-image">
       <div className="case-image-frame" style={{ aspectRatio: project.imageAspect ?? (project.imageFit === "cover" ? "16 / 9" : "8 / 5") }}>
         <ResponsiveImage src={project.image} alt={project.imageAlt} priority={!hasLeadArtifacts} sizes="100vw"
