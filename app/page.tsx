@@ -38,11 +38,11 @@ const writing = [
     href: "https://wildfeathers.netlify.app/field-notes/willie-in-las-vegas/",
   },
   {
-    type: "News · Economic development",
-    title: "San Marcos Airport expands with 170-acre land purchase",
+    type: "Profile · Aviation leadership",
+    title: "Jim Wimberly: Fifty years on the field",
     description:
-      "A report on a 170-acre land purchase, public infrastructure, and the airport’s growth plans.",
-    href: "https://texasaviationpartners.com/san-marcos-regional-airport-expands-with-170-acre-land-purchase/",
+      "A profile of Jim Wimberly, from municipal airports through Southwest Airlines and back to Texas aviation.",
+    href: "https://texasaviationpartners.com/about/jim-wimberly/",
   },
   {
     type: "Independent practice · Positioning",

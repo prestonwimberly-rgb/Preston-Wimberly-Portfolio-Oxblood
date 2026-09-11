@@ -37,6 +37,19 @@ Preston confirmed on August 12, 2026 that the website content and image use
 listed below are cleared for this portfolio. Deployment, domain, and release
 steps remain separate approvals.
 
+### Texas Aviation Partners
+
+- Preston confirmed on September 11, 2026 that the TAP website is live.
+  `https://texasaviationpartners.com/` was checked directly and shows the
+  operating, development, and advisory website documented in the case study.
+- The current homepage capture was taken from the live domain on September 11,
+  2026. The August 2026 capture remains labeled as the earlier homepage.
+- The retired airport-expansion article URL now redirects to Field Notes.
+  The portfolio writing sample instead links directly to the live Jim Wimberly
+  profile at `https://texasaviationpartners.com/about/jim-wimberly/`.
+- The previous 40% traffic claim remains unverified and excluded from public
+  copy. Confirm the metric, comparison dates, and measured release before use.
+
 ### The Wild Feathers
 
 - Portfolio use is cleared for the archive’s current working record: 384

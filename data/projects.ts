@@ -30,7 +30,7 @@ const projectRecords: Project[] = [
     "kicker": "Creative direction · Brand strategy · Editorial",
     "headline": "Making the real scale of an aviation company visible.",
     "homepagePremise": "Make the company’s operating, development, and advisory work clear to prospective airport partners.",
-    "cardSummary": "Positioning, original photography, writing, and a proposed website redesign for Texas Aviation Partners.",
+    "cardSummary": "Positioning, original photography, writing, and the live website for Texas Aviation Partners.",
     "summary": "Texas Aviation Partners manages, develops, and advises airports. Its old public presence made a multi-airport operating company look like one location and one category of work.",
     "image": "/images/tap-hay-windsock.jpg",
     "imageAlt": "A hay bale beside an airport windsock beneath a wide sky",
@@ -38,10 +38,10 @@ const projectRecords: Project[] = [
     "imageCredit": "Photograph by Preston Wimberly",
     "imageFit": "cover",
     "imagePosition": "center 46%",
-    "homepageImage": "/images/tap-site-after.jpg",
-    "homepageImageAlt": "The redesigned Texas Aviation Partners homepage in its Netlify review build",
-    "homepageImageCaption": "The proposed Texas Aviation Partners homepage, shown in the Netlify review build.",
-    "homepageImageCredit": "Netlify deploy capture · August 2026",
+    "homepageImage": "/images/tap-site-live-2026-09.jpg",
+    "homepageImageAlt": "The live Texas Aviation Partners homepage with airport photography and the headline The runway is only the beginning",
+    "homepageImageCaption": "Texas Aviation Partners’ live homepage, organized around operate, develop, and advise.",
+    "homepageImageCredit": "Live website capture · September 2026",
     "homepageImageFit": "cover",
     "homepageImageAspect": "8 / 5",
     "role": "Creative Director / Brand Strategy",
@@ -49,23 +49,21 @@ const projectRecords: Project[] = [
     "year": "2026",
     "place": "San Marcos, Texas",
     "engagementType": "Client engagement",
-    "status": "Proposed redesign · Review build",
+    "status": "Live",
     "ownership": "I had full creative control of the redesign: positioning, information architecture, copy, photography, visual design, and implementation.",
     "collaboration": "Independent execution with company leadership approval",
     "liveUrl": "https://texasaviationpartners.com/",
-    "liveLabel": "Visit the current TAP website",
-    "liveIsReference": true,
-    "accessNote": "The redesign shown here is a review build. The current public website uses a different design.",
+    "liveLabel": "Visit the live TAP website",
     "decisionTitle": "Operate. Develop. Advise.",
     "decision": [
       "I organized the company around three connected areas of work: operate, develop, and advise. For prospective airport partners, that makes the full scope of the business easier to understand.",
-      "The proposed site puts specific airport projects behind each service. Original field photography shows maintenance, land, and infrastructure rather than a generic aviation image."
+      "The live site connects each service with the company’s operating record. Original field photography shows maintenance, land, and infrastructure rather than a generic aviation image."
     ],
-    "artifactTitle": "The proposed direction, beside the earlier site.",
-    "artifactIntro": "August 2026 captures distinguish the redesign from the public website. The photographs are original work made at the airport.",
-    "outcomeTitle": "A complete redesign connects the company’s services with its airport work.",
+    "artifactTitle": "The live website, beside the earlier site.",
+    "artifactIntro": "The earlier homepage, captured in August 2026, appears beside the live September 2026 site. Original field photographs document the airport work behind the brand.",
+    "outcomeTitle": "The live website connects the company’s services with its airport work.",
     "outcome": [
-      "The review build brings positioning, services, projects, leadership, reporting, and contact into one proposed website. Company leadership reviewed and approved the public direction; this case documents the creative work, not a measured business result."
+      "The launched site brings capabilities, airport experience, leadership, Field Notes, and contact into one public website. Visitors can follow the company’s operating, development, and advisory work through to its airport record and start a conversation."
     ],
     "artifacts": [
       {
@@ -77,10 +75,10 @@ const projectRecords: Project[] = [
         "aspect": "1363 / 852"
       },
       {
-        "src": "/images/tap-site-after.jpg",
-        "alt": "The redesigned Texas Aviation Partners homepage in its Netlify review build",
-        "caption": "Proposed homepage: original airport photography and a clearer account of the company’s work.",
-        "credit": "Netlify deploy capture · August 2026",
+        "src": "/images/tap-site-live-2026-09.jpg",
+        "alt": "The live Texas Aviation Partners homepage with airport photography and the headline The runway is only the beginning",
+        "caption": "Live homepage: airport photography and the company’s operating, development, and advisory work.",
+        "credit": "Live website capture · September 2026",
         "format": "landscape",
         "aspect": "8 / 5"
       },
