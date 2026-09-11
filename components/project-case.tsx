@@ -3,7 +3,40 @@ import { ResponsiveImage } from "@/components/responsive-image";
 import { GuitarCampaign } from "@/components/guitar-campaign";
 import type { Project } from "@/data/projects";
 
+function CaseArtifacts({ project, leading = false }: { project: Project; leading?: boolean }) {
+  const artifacts = leading ? project.leadArtifacts ?? [] : project.artifacts;
+  const showHeading = leading || !project.leadArtifacts?.length;
+  return (
+    <section className={`case-artifacts${leading ? " case-artifacts-lead" : ""}`}
+      aria-labelledby={showHeading ? "case-artifacts-title" : undefined}
+      aria-label={showHeading ? undefined : "Supporting photographs"}>
+      {showHeading ? <header className="case-section-heading"><p className="section-number">The work</p><div><h2 id="case-artifacts-title">{project.artifactTitle}</h2><p>{project.artifactIntro}</p></div></header> : null}
+      <div className="artifact-grid">
+        {artifacts.filter(a => a.src !== project.image).map(artifact => (
+          <figure className={`artifact artifact-${artifact.format}`} key={artifact.src}>
+            <div className="artifact-image" style={{ aspectRatio: artifact.aspect ?? (artifact.format === "portrait" ? "390 / 844" : "8 / 5") }}>
+              <ResponsiveImage src={artifact.src} alt={artifact.alt} priority={leading}
+                sizes={artifact.format === "portrait" ? "(max-width: 760px) 74vw, 24vw" : leading ? "(max-width: 760px) 100vw, 50vw" : "(max-width: 760px) 100vw, 65vw"} objectFit="contain" />
+            </div>
+            <figcaption>{artifact.caption}{artifact.credit ? <span>{artifact.credit}</span> : null}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export function ProjectCase({ project, nextProject }: { project: Project; nextProject: Project }) {
+  const hasLeadArtifacts = Boolean(project.leadArtifacts?.length);
+  const image = (
+    <figure className="case-image">
+      <div className="case-image-frame" style={{ aspectRatio: project.imageAspect ?? (project.imageFit === "cover" ? "16 / 9" : "8 / 5") }}>
+        <ResponsiveImage src={project.image} alt={project.imageAlt} priority={!hasLeadArtifacts} sizes="100vw"
+          style={{ objectPosition: project.imagePosition ?? "center" }} objectFit={project.imageFit ?? "contain"} />
+      </div>
+      <figcaption>{project.imageCaption}{project.imageCredit ? <span>{project.imageCredit}</span> : null}</figcaption>
+    </figure>
+  );
   return (
     <main className={`case-study case-theme-${project.theme}`} id="case-content">
       <header className="case-hero">
@@ -12,20 +45,28 @@ export function ProjectCase({ project, nextProject }: { project: Project; nextPr
         <p className="case-summary">{project.summary}</p>
         <div className="case-status"><span>{project.engagementType}</span><strong>{project.status}</strong></div>
         {project.accessNote ? <p className="case-access-note">{project.accessNote}</p> : null}
+        {project.liveUrl && (project.slug === "texas-aviation-partners" || project.slug === "wimberly-guitars") ? (
+          <a className="text-link case-live-link" href={project.liveUrl} target="_blank" rel="noreferrer">{project.liveLabel} <span aria-hidden="true">↗</span></a>
+        ) : null}
       </header>
 
-      <figure className="case-image">
-        <div className="case-image-frame" style={{ aspectRatio: project.imageAspect ?? (project.imageFit === "cover" ? "16 / 9" : "8 / 5") }}>
-          <ResponsiveImage src={project.image} alt={project.imageAlt} priority sizes="100vw"
-            style={{ objectPosition: project.imagePosition ?? "center" }} objectFit={project.imageFit ?? "contain"} />
-        </div>
-        <figcaption>{project.imageCaption}{project.imageCredit ? <span>{project.imageCredit}</span> : null}</figcaption>
-      </figure>
+      {hasLeadArtifacts ? <CaseArtifacts project={project} leading /> : image}
 
       <section className="case-ownership" aria-label="Role and collaboration">
         <div><h2>My role</h2><p className="case-role">{project.role}</p><p>{project.ownership}</p></div>
-        <div><h2>Working together</h2><p>{project.collaboration}</p><p className="case-place">{project.place}</p></div>
+        <div><h2>Working together</h2><p>{project.collaboration}</p>
+          {project.collaborationExample ? <>
+            <p>{project.collaborationExample.request}</p>
+            <p>{project.collaborationExample.response}</p>
+            <a className="text-link" href={project.collaborationExample.href} target="_blank" rel="noreferrer">{project.collaborationExample.label} <span aria-hidden="true">↗</span></a>
+          </> : null}
+          <p className="case-place">{project.place}</p>
+        </div>
       </section>
+
+      {hasLeadArtifacts ? image : null}
+
+      {project.slug === "wimberly-guitars" ? <GuitarCampaign /> : null}
 
       {project.slug === "wild-feathers" ? (
         <aside className="case-reading" aria-label="Read the writing">
@@ -36,26 +77,12 @@ export function ProjectCase({ project, nextProject }: { project: Project; nextPr
         </aside>
       ) : null}
 
-      <section className="case-artifacts" aria-labelledby="case-artifacts-title">
-        <header className="case-section-heading"><p className="section-number">The work</p><div><h2 id="case-artifacts-title">{project.artifactTitle}</h2><p>{project.artifactIntro}</p></div></header>
-        <div className="artifact-grid">
-          {project.artifacts.filter(a => a.src !== project.image).map(artifact => (
-            <figure className={`artifact artifact-${artifact.format}`} key={artifact.src}>
-              <div className="artifact-image" style={{ aspectRatio: artifact.aspect ?? (artifact.format === "portrait" ? "390 / 844" : "8 / 5") }}>
-                <ResponsiveImage src={artifact.src} alt={artifact.alt} sizes={artifact.format === "portrait" ? "(max-width: 760px) 74vw, 24vw" : "(max-width: 760px) 100vw, 65vw"} objectFit="contain" />
-              </div>
-              <figcaption>{artifact.caption}{artifact.credit ? <span>{artifact.credit}</span> : null}</figcaption>
-            </figure>
-          ))}
-        </div>
-      </section>
+      <CaseArtifacts project={project} />
 
       <section className="case-decision" aria-labelledby="case-decision-title">
         <p className="section-number">The decision</p>
         <div><h2 id="case-decision-title">{project.decisionTitle}</h2>{project.decision.map(p => <p key={p}>{p}</p>)}</div>
       </section>
-
-      {project.slug === "wimberly-guitars" ? <GuitarCampaign /> : null}
 
       {project.motionStudy ? (
         <section className="motion-study" aria-labelledby="motion-study-title">

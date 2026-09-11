@@ -50,7 +50,8 @@ turning the portfolio into an aviation theme.
   the photographs, type, rules, and spacing rather than gradients or global
   texture effects.
 - Frame the primary homepage work as four distinct editorial chapters: The
-  Object, The Airfield, The Road, and The Manuscript, in that order. Keep the musician case
+  Airfield, The Object, The Road, and The Manuscript, in that order. Lead with
+  the launched client engagement, then the workshop, archive, and book. Keep the musician case
   available as independent practice rather than asking a fourth website case to
   carry the same weight as the client, archive, product, and book work.
 - Keep the case-study brief short, then show the strongest artifact before

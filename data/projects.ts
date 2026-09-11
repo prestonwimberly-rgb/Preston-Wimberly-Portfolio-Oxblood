@@ -12,9 +12,11 @@ export type Project = {
   homepageImagePosition?: string; homepageImageAspect?: string;
   role: string; scope: string; year: string; place: string; engagementType: string;
   status: string; ownership: string; collaboration: string;
+  collaborationExample?: { request: string; response: string; href: string; label: string };
   liveUrl?: string; liveLabel?: string; liveIsReference?: boolean; accessNote?: string;
   decisionTitle: string; decision: string[]; artifactTitle: string; artifactIntro: string;
   outcomeTitle: string; outcome: string[]; artifacts: ProjectArtifact[];
+  leadArtifacts?: ProjectArtifact[];
   theme: "archive" | "field" | "workshop" | "studio";
   motionStudy?: { src: string; poster: string; description: string };
   verificationNotes?: string[];
@@ -23,7 +25,7 @@ export type Project = {
 const projectRecords: Project[] = [
   {
     "slug": "texas-aviation-partners",
-    "chapterNumber": "02",
+    "chapterNumber": "01",
     "chapter": "The Airfield",
     "title": "Texas Aviation Partners",
     "metaTitle": "Texas Aviation Partners Creative Direction",
@@ -52,6 +54,12 @@ const projectRecords: Project[] = [
     "status": "Live",
     "ownership": "I had full creative control of the redesign: positioning, information architecture, copy, photography, visual design, and implementation.",
     "collaboration": "Independent execution with company leadership approval",
+    "collaborationExample": {
+      "request": "Leadership wanted more of Jim Wimberly’s Southwest Airlines experience in the 1980s and 1990s, and his understanding of what makes an aviation culture work.",
+      "response": "I made that experience the center of a dedicated profile, tracing his airport and airline years through to TAP’s approach to people and operations.",
+      "href": "https://texasaviationpartners.com/about/jim-wimberly/",
+      "label": "Read Jim’s profile"
+    },
     "liveUrl": "https://texasaviationpartners.com/",
     "liveLabel": "Visit the live TAP website",
     "decisionTitle": "Operate. Develop. Advise.",
@@ -60,12 +68,12 @@ const projectRecords: Project[] = [
       "The live site connects each service with the company’s operating record. Original field photography shows maintenance, land, and infrastructure rather than a generic aviation image."
     ],
     "artifactTitle": "The live website, beside the earlier site.",
-    "artifactIntro": "The earlier homepage, captured in August 2026, appears beside the live September 2026 site. Original field photographs document the airport work behind the brand.",
+    "artifactIntro": "The earlier homepage, captured in August 2026, appears beside the live September 2026 site.",
     "outcomeTitle": "The live website connects the company’s services with its airport work.",
     "outcome": [
       "The launched site brings capabilities, airport experience, leadership, Field Notes, and contact into one public website. Visitors can follow the company’s operating, development, and advisory work through to its airport record and start a conversation."
     ],
-    "artifacts": [
+    "leadArtifacts": [
       {
         "src": "/images/tap-site-before.jpg",
         "alt": "The earlier Texas Aviation Partners homepage",
@@ -81,7 +89,9 @@ const projectRecords: Project[] = [
         "credit": "Live website capture · September 2026",
         "format": "landscape",
         "aspect": "8 / 5"
-      },
+      }
+    ],
+    "artifacts": [
       {
         "src": "/images/tap-surveyor.jpg",
         "alt": "A surveyor working on an airport runway beneath a wide Texas sky",
@@ -126,7 +136,7 @@ const projectRecords: Project[] = [
     "year": "2025–2026",
     "place": "Nashville, Tennessee",
     "engagementType": "Independent editorial archive",
-    "status": "Public review archive · Own domain pending",
+    "status": "Public review archive",
     "ownership": "I researched the chronology, wrote the narrative, established source and rights notes, and designed and built the archive.",
     "collaboration": "Independent work using credited photographs, published sources, and attributed memories. My firsthand account is identified as such.",
     "liveUrl": "https://wildfeathers.netlify.app/story/",
@@ -141,7 +151,7 @@ const projectRecords: Project[] = [
     "artifactIntro": "The reading path and source ledger make the archive useful both to a casual reader and to someone checking a date or credit.",
     "outcomeTitle": "A scattered band history is now a readable, searchable public review archive.",
     "outcome": [
-      "The finished archive connects the stories to their chronology, surviving objects, sources, and rights information. Its Netlify review edition is publicly accessible; the owned-domain release is still pending."
+      "The finished archive connects the stories to their chronology, surviving objects, sources, and rights information."
     ],
     "artifacts": [
       {
@@ -168,7 +178,7 @@ const projectRecords: Project[] = [
   },
   {
     "slug": "wimberly-guitars",
-    "chapterNumber": "01",
+    "chapterNumber": "02",
     "chapter": "The Object",
     "title": "Wimberly Custom Guitars",
     "metaTitle": "Wimberly Custom Guitars Creative Direction",

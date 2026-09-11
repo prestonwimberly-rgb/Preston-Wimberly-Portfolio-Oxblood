@@ -944,6 +944,10 @@ img {
     gap: 8px;
   }
 
+  .site-nav > .nav-resume {
+    display: none;
+  }
+
   .nav-contact {
     padding: 0 10px;
   }
