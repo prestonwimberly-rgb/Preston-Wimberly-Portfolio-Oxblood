@@ -34,6 +34,8 @@ test("homepage leads with selected work and gives hiring readers direct paths", 
     assert.ok(rows[index].includes(title));
   }
   assert.match(html, /href="https:\/\/wildfeathers\.netlify\.app\/field-notes\/willie-in-las-vegas\/"/);
+  assert.match(html, /href="https:\/\/texasaviationpartners\.com\/about\/jim-wimberly\/"/);
+  assert.doesNotMatch(html, /san-marcos-regional-airport-expands-with-170-acre-land-purchase|proposed website redesign|Proposed redesign · Review build/);
   assert.match(html, /href="\/downloads\/preston-wimberly-resume\.pdf"/);
   assert.match(html, /agency and in-house roles/);
   assert.match(html, /independent projects/);
@@ -61,18 +63,18 @@ test("case studies show ownership and artifacts before the process explanation",
   }
 });
 
-test("project status and speculative work cannot be mistaken for launched client results", async () => {
+test("project status distinguishes launched work from review and speculative work", async () => {
   const tap = await (await render("/work/texas-aviation-partners")).text();
-  assert.match(tap, /Proposed redesign · Review build/);
-  assert.match(tap, /current public website uses a different design/);
-  assert.match(tap, /Visit the current TAP website/);
+  assert.match(tap, /<span>Client engagement<\/span><strong>Live<\/strong>/);
+  assert.doesNotMatch(tap, /proposed|review build|different design/i);
+  assert.match(tap, /Visit the live TAP website/);
   assert.match(tap, /tap-site-before/);
-  assert.match(tap, /tap-site-after/);
+  assert.match(tap, /tap-site-live-2026-09/);
   assert.match(tap, /Public website capture · August 2026/);
-  assert.match(tap, /Netlify deploy capture · August 2026/);
-  // The current corporate site is a reference, not the proposed design's work example.
+  assert.match(tap, /Live website capture · September 2026/);
+  // The launched site is now a public example of the case-study work.
   const jsonLd = JSON.parse(tap.match(/<script[^>]*type="application\/ld\+json"[^>]*>(.*?)<\/script>/s)[1]);
-  assert.equal(jsonLd["@graph"].find(node => node["@type"] === "CreativeWork").workExample, undefined);
+  assert.equal(jsonLd["@graph"].find(node => node["@type"] === "CreativeWork").workExample.url, "https://texasaviationpartners.com/");
 
   const wild = await (await render("/work/wild-feathers")).text();
   assert.match(wild, /Public review archive · Own domain pending/);
