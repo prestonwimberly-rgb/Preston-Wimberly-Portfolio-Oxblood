@@ -1,0 +1,21 @@
+# Project commands for Codex local tasks and worktrees.
+version = 1
+name = "Portfolio"
+
+[setup]
+script = "node .codex/workflow.mjs setup"
+
+[[actions]]
+name = "Preview"
+icon = "run"
+command = "node .codex/workflow.mjs preview"
+
+[[actions]]
+name = "Build"
+icon = "tool"
+command = "node .codex/workflow.mjs build"
+
+[[actions]]
+name = "Check"
+icon = "test"
+command = "node .codex/workflow.mjs check"

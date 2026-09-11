@@ -1,0 +1,39 @@
+{
+  "name": "Portfolio",
+  "minimumNode": "22.13",
+  "port": 3000,
+  "actions": {
+    "setup": [
+      [
+        "npm",
+        "ci"
+      ]
+    ],
+    "preview": [
+      [
+        "npm",
+        "run",
+        "dev",
+        "--",
+        "--hostname",
+        "127.0.0.1",
+        "--port",
+        "3000"
+      ]
+    ],
+    "build": [
+      [
+        "npm",
+        "run",
+        "build:netlify"
+      ]
+    ],
+    "check": [
+      [
+        "npm",
+        "run",
+        "quality"
+      ]
+    ]
+  }
+}
