@@ -88,3 +88,14 @@ are unchanged.
 
 Follow-up scores: authenticity 5, hierarchy 5, material character 4, evidence 4,
 restraint 5, usability 5, performance 4, accessibility 4.
+
+### Preserve the whole campaign photograph
+
+At Preston's request, **REFINE** the remaining campaign image to show the full
+source photograph. Its frame now matches the original 1080 × 603 dimensions,
+and `object-fit: contain` prevents cropping. The source file is unchanged.
+Reviewed at 1440px, 390px, and 320px: one loaded image, matching source/frame
+proportions, no horizontal overflow, and the full composition visible. Existing
+type, captions, controls, and image formats remain. The complete quality gate
+(19 tests, zero production vulnerabilities) and TypeScript pass. Scores above
+remain unchanged.
