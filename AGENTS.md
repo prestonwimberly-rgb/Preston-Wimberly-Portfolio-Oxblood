@@ -92,7 +92,7 @@ Use this page direction:
   builds, generates responsive assets and social cards, exports the Netlify
   site, runs tests, and audits production dependencies.
 - Netlify runs `npm run build:netlify` and publishes `netlify-dist/`. Review that
-  output after relevant changes: five public routes, the branded `404.html`,
+  output after relevant changes: six public routes, the branded `404.html`,
   `robots.txt`, `sitemap.xml`, canonical metadata, social cards, responsive
   AVIF/WebP assets, redirects, and security/cache headers.
 - Preserve the no-application-JavaScript static export. Exported pages must not
@@ -116,14 +116,17 @@ Use this page direction:
 - Treat every `verificationNotes` entry in `data/projects.ts` and every open item
   in `docs/launch-checklist.md` as unresolved until Preston confirms it. Narrow
   or remove an unverifiable claim instead of inventing a replacement.
-- The Wild Feathers archive's current working record (384 performance records,
-  193 archive records, seven flagship stories, six chronological chapters, 110
-  source records) is cleared for portfolio use, including the homepage's live
-  link to the archive, per `docs/launch-checklist.md`. Deployment of the
-  archive's own domain (`thewildfeathersband.com`) remains separately pending
-  and is not authorized by this portfolio change. Preserve provenance and
-  uncertainty; re-confirm with Preston before extending coverage beyond the
-  cleared record above.
+- The Wild Feathers archive's current working record (410 performance records,
+  209 archive records, seven flagship stories and one supporting road record,
+  six chronological chapters, and 125 source records) is cleared for portfolio
+  use, including the homepage's live link to the archive, per
+  `docs/launch-checklist.md`. The archive's own domain
+  (`thewildfeathersband.com`) is live and publicly indexable as of
+  September 12, 2026, recorded in that checklist. It remains a separate
+  release scope: portfolio work does not authorize an archive release, and
+  existing publication is not permission to publish new or uncleared
+  material. Preserve provenance and uncertainty; re-confirm with Preston
+  before extending coverage beyond the cleared record above.
 - Do not change the Wimberly Guitars co-founder/offer language, Texas Aviation
   Partners authority/collaboration claims, or the session-musician duration and
   service claims without evidence and approval.
@@ -136,7 +139,7 @@ Use this page direction:
 
 - Run `npm run quality` after implementation changes before treating work as
   ready.
-- Review the generated `netlify-dist/` output and test `/`, all four `/work/.../`
+- Review the generated `netlify-dist/` output and test `/`, `/sandpaper`, all four `/work/.../`
   routes, both legacy redirects, the branded 404, crawl files, metadata, links,
   images, and the absence of unexpected runtime scripts.
 - Review at 1440px desktop, 390px mobile, and the 320px narrow-phone edge case.
@@ -159,8 +162,9 @@ Use this page direction:
   Preston's explicit approval.
 - Do not choose between Netlify and the existing Sites binding without Preston's
   explicit approval. Repository work does not authorize changing either service.
-- Keep the default canonical origin at
-  `https://preston-wimberly-portfolio.netlify.app` until an approved custom
-  domain resolves reliably and the release checklist is complete.
+- Preserve the approved canonical origin `https://work.prestonwimberly.com`
+  recorded in `config/site.json` and `docs/launch-checklist.md`. Configuration
+  does not prove live DNS, TLS, or deployment state; verify those during
+  authorized release work.
 - Preview and branch deploys are review artifacts, not production approval.
   Never treat a passing build or draft pull request as authorization to launch.

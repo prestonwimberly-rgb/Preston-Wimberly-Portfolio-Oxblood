@@ -21,7 +21,7 @@ Custom-domain release sequence:
 
 1. Add `work.prestonwimberly.com` to the existing Netlify site and configure the
    DNS record without changing the apex musician site.
-2. Wait for DNS and TLS to resolve, then verify all five routes on the custom
+2. Wait for DNS and TLS to resolve, then verify all six routes (including `/sandpaper`) on the custom
    hostname.
 3. Set the Netlify production environment variable `SITE_URL` to
    `https://work.prestonwimberly.com` and rebuild production.
@@ -59,11 +59,20 @@ steps remain separate approvals.
 
 ### The Wild Feathers
 
-- Portfolio use is cleared for the archive’s current working record: 384
-  performance records, 193 archive records, seven flagship stories, six
-  chronological chapters, and 110 source records.
-- Deployment to `thewildfeathersband.com` remains pending. Domain ownership is
-  confirmed; this portfolio change does not authorize that release.
+- Portfolio use is cleared for the archive’s current working record: 410
+  performance records, 209 archive records, seven flagship stories and one
+  supporting road record, six chronological chapters, and 125 source records.
+  Verified against the live archive and the local build on September 12, 2026;
+  the previous clearance recorded 384 performance, 193 archive, and 110 source
+  records. The story and chapter counts are unchanged.
+- The archive is verified live at `https://thewildfeathersband.com`, checked
+  September 12, 2026: HTTP 200 from Netlify on a production deploy of `main`,
+  valid TLS with HSTS, canonical origin and `robots.txt` pointing at that
+  domain, and 239 sitemap URLs matching the local build. It is publicly
+  indexable. The earlier clearance recorded this deployment as pending; that
+  is now historical. Existing publication is not permission to publish new or
+  uncleared material, and this portfolio change does not authorize an archive
+  release.
 
 ### Wimberly Guitars
 
