@@ -1,0 +1,4 @@
+interface:
+  display_name: "Preston Creative Direction"
+  short_description: "Evidence-led editorial creative direction"
+  default_prompt: "Use $preston-creative-direction to refine this work with evidence-led hierarchy, material truth, and restrained finish."
