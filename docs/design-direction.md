@@ -10,7 +10,7 @@ of the direction, not competing job titles.
 
 **Page direction:** A modern editorial portfolio for hiring leaders and collaborators that feels field-tested, tactile, and exacting and helps visitors see what Preston owned, what he made, and what changed.
 
-The primary path is to scan the work, open the most relevant case study, and then start a conversation. Homepage project rows should therefore surface an observable change alongside role, place, and date rather than making visitors infer the result from atmosphere alone.
+The primary path is to scan the work, open the most relevant case study, and then start a conversation. Homepage projects surface an observable change alongside a compact role/date line. Place and detailed collaboration remain in the case studies.
 
 ## What the supplied references clarified
 
@@ -67,6 +67,55 @@ turning the portfolio into an aviation theme.
   clearly; never invent participants, instrument wear, recorded answers, or results.
 - At phone widths, retain Work, Résumé, and Contact in the header and give the
   tractor photograph a short landscape frame that keeps the vehicle intact.
+
+## Art-direction refinement · September 13, 2026
+
+Preston approved the senior art/creative-director review and its six recommendations.
+Keep the opening photograph, headline pairing, named palette, and static architecture.
+Sharpen hierarchy and project expression through the following refinements:
+
+- Introduce homepage projects in source order as title, image and caption, then
+  premise, compact role/date line, result, and link. Desktop uses an asymmetric
+  grid; phones retain this direct reading order. Plain chapter numbers replace
+  filled badges. The archive photograph spans the desktop grid.
+- Limit homepage project titles to roughly 48–52px at desktop widths. Use a
+  lighter Archivo weight for project titles and Newsreader for interpretive
+  case-study headings. Reserve the heaviest display weight for the opening and
+  contact statements. Keep interface metadata at 12px or larger; use IBM Plex
+  Mono only for numbers, dates, and identifiers.
+- Keep working method and About on Prairie Bone. Aviation Blue carries contact
+  controls and the final contact section. Wright Brick marks occasional labels
+  and the opening rule; the photographs supply the broad areas of material warmth.
+- Shorten case-study introductions, identify the role near the top, and bring
+  the first artifact forward. TAP uses a compact Before / After label followed
+  by the comparison and an enlarged opening-message detail. Full source captures
+  remain accessible from the images; displayed crops do not alter source files.
+- Present the launched guitar website, ownership, decision, and result before
+  the speculative campaign. Compose the print concept as a distinct poster with
+  a large serif headline, product photograph, and smaller copy beneath. Keep
+  proposed film, social, and email treatments in a native expandable section.
+  Preserve all speculative-work and production labels.
+- Give the archive a panoramic photograph, firsthand writing, and a readable
+  source-ledger detail that distinguishes fact from memory. Preserve source dates
+  and access to the complete capture, including inference and unknowns.
+- Lead Sandpaper's homepage entry with original pages 114–115. Keep the title
+  page as supporting material on the memoir page and set its main title in
+  upright Newsreader. Preserve the actual manuscript text and interior typography.
+
+Local review: all six public pages were inspected at 1440px, 390px, and 320px.
+No horizontal overflow, broken images, missing local links, or application
+runtime scripts were found. The campaign disclosure works by keyboard; skip
+navigation, visible focus, 44px navigation targets, and reduced motion were
+checked. Source-image links, captions, manuscript reading order, the branded 404,
+canonical metadata, and crawl files were reviewed. Both configured legacy
+redirects point to exported routes; their HTTP behavior requires Netlify.
+
+Editorial review scores (1–5): authenticity 4, hierarchy 4, material character 4,
+evidence 4, restraint 4, usability 4, performance 4, accessibility 4. Hierarchy
+was the first priority in this pass. Evidence remains bounded by the existing
+verification notes. Performance and accessibility scores reflect local checks,
+not field measurements or a formal accessibility audit. This is a local review,
+not a verified production deployment.
 
 ## Content standard
 

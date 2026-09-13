@@ -1,6 +1,6 @@
 import { projectSlugs } from "@/data/project-order.mjs";
 
-export type ProjectArtifact = { src: string; alt: string; caption: string; credit?: string; format: "landscape" | "portrait"; aspect?: string };
+export type ProjectArtifact = { src: string; alt: string; caption: string; credit?: string; format: "landscape" | "portrait"; aspect?: string; crop?: { left: number; top: number; width: number; height: number } };
 export type Project = {
   slug: string; chapterNumber: string; chapter: string; title: string; navTitle?: string;
   metaTitle: string; kicker: string; headline: string; homepagePremise?: string;
@@ -17,6 +17,7 @@ export type Project = {
   decisionTitle: string; decision: string[]; artifactTitle: string; artifactIntro: string;
   outcomeTitle: string; outcome: string[]; artifacts: ProjectArtifact[];
   leadArtifacts?: ProjectArtifact[];
+  detailArtifact?: ProjectArtifact;
   comparisonNotes?: { title: string; detail: string }[];
   theme: "archive" | "field" | "workshop" | "studio";
   motionStudy?: { src: string; poster: string; description: string };
@@ -34,7 +35,7 @@ const projectRecords: Project[] = [
     "headline": "Making the real scale of an aviation company visible.",
     "homepagePremise": "Make the company’s operating, development, and advisory work clear to prospective airport partners.",
     "cardSummary": "Positioning, original photography, writing, and the live website for Texas Aviation Partners.",
-    "summary": "Texas Aviation Partners manages, develops, and advises airports. Its old public presence made a multi-airport operating company look like one location and one category of work.",
+    "summary": "A multi-airport operating company needed its website to show the full scope of its work: operate, develop, and advise.",
     "image": "/images/tap-hay-windsock.jpg",
     "imageAlt": "A hay bale beside an airport windsock beneath a wide sky",
     "imageCaption": "Hay bales and an airport windsock in the working landscape.",
@@ -68,8 +69,16 @@ const projectRecords: Project[] = [
       "I organized the company around three connected areas of work: operate, develop, and advise. For prospective airport partners, that makes the full scope of the business easier to understand.",
       "The live site connects each service with the company’s operating record. Original field photography shows maintenance, land, and infrastructure rather than a generic aviation image."
     ],
-    "artifactTitle": "The live website, beside the earlier site.",
+    "artifactTitle": "Before / After",
     "artifactIntro": "The earlier homepage, captured in August 2026, appears beside the live September 2026 site.",
+    "detailArtifact": {
+      "src": "/images/tap-site-live-2026-09.jpg",
+      "alt": "Detail of TAP’s opening message, showing operate, develop, advise and the path to its operating record",
+      "caption": "Opening-message detail. The service line, headline, and operating-record link connect the company’s scope to the next step.",
+      "credit": "Live website capture · September 2026 · Select to view the complete capture",
+      "format": "landscape",
+      "crop": { "left": 70, "top": 250, "width": 800, "height": 475 }
+    },
     "comparisonNotes": [
       { "title": "Make the scope explicit", "detail": "Operate, develop, and advise give prospective partners three clear ways into the company’s work." },
       { "title": "Connect the promise to a place", "detail": "Airport experience supports the service descriptions, so readers can follow a capability into the operating record." },
@@ -94,7 +103,8 @@ const projectRecords: Project[] = [
         "caption": "Live homepage: airport photography and the company’s operating, development, and advisory work.",
         "credit": "Live website capture · September 2026",
         "format": "landscape",
-        "aspect": "8 / 5"
+        "aspect": "8 / 5",
+        "crop": { "left": 0, "top": 0, "width": 1410, "height": 880 }
       }
     ],
     "artifacts": [
@@ -130,7 +140,7 @@ const projectRecords: Project[] = [
     "headline": "A band’s history, told from inside.",
     "homepagePremise": "First-person writing, photographs, and a public archive of the years on the road.",
     "cardSummary": "First-person writing and an independent music archive connecting 410 performance records, 209 archive records, and 125 source records.",
-    "summary": "Fans can find the songs. The story around them is scattered across photographs, tour dates, interviews, and memory. As a founding guitarist, I brought those pieces together without treating my recollection as the final word.",
+    "summary": "As a founding guitarist, I brought scattered photographs, tour dates, and firsthand stories into a public archive, keeping sources and uncertainty visible.",
     "image": "/images/wild-feathers-laugh.png",
     "imageAlt": "The five members of The Wild Feathers seated together outside, laughing",
     "imageCaption": "The Wild Feathers, archival band photograph.",
@@ -169,11 +179,12 @@ const projectRecords: Project[] = [
       },
       {
         "src": "/images/wild-feathers-sources-live.png",
-        "alt": "The Wild Feathers source ledger explaining fact, memory, inference, and unknown evidence states",
-        "caption": "The source ledger keeps conflicts and limits visible instead of polishing them away.",
-        "credit": "Live archive capture · August 2026",
+        "alt": "Detail of the archive’s source ledger distinguishing documented fact from firsthand memory",
+        "caption": "Source-ledger detail: documented fact and firsthand memory have different labels. The full ledger also identifies inference and unknowns.",
+        "credit": "Live archive capture · August 2026 · Select to view the complete ledger capture",
         "format": "landscape",
-        "aspect": "36 / 25"
+        "aspect": "36 / 25",
+        "crop": { "left": 43, "top": 748, "width": 677, "height": 252 }
       }
     ],
     "theme": "archive",
@@ -191,7 +202,7 @@ const projectRecords: Project[] = [
     "headline": "Building a guitar brand from the materials up.",
     "homepagePremise": "A small guitar workshop with a point of view: materials that grow more personal with use.",
     "cardSummary": "Brand strategy, model naming, product writing, and art direction for a small-run guitar workshop.",
-    "summary": "Wimberly Custom Guitars makes small-run electric guitars from walnut, leather, steel, brass, oil, and wire. I needed a brand as considered as the instruments, with no claim to factory scale.",
+    "summary": "A small-run guitar workshop needed a brand as considered as its instruments: walnut, leather, steel, brass, oil, and wire.",
     "image": "/images/wimberly-jack-antique-bronze-knobs.jpeg",
     "imageAlt": "Close view of a walnut Wimberly guitar with a hand-tooled leather pickguard and antique bronze knobs",
     "imageCaption": "Walnut, hand-tooled leather, and antique bronze hardware.",
@@ -212,7 +223,7 @@ const projectRecords: Project[] = [
       "For players considering a small workshop, the materials and the maker need to justify the choice. I built the brand around walnut, hand-tooled leather, and metal that changes with use.",
       "The Jack and the Lucio form one model family. Close photography, plain descriptions of the finishes, and a clear waitlist explain what the workshop makes and how to follow its work."
     ],
-    "artifactTitle": "From the instrument to the invitation.",
+    "artifactTitle": "The launched website",
     "artifactIntro": "The website brings the models, materials, build journal, and waitlist into one place.",
     "outcomeTitle": "Players can compare two models, explore materials, and join the waitlist.",
     "outcome": [

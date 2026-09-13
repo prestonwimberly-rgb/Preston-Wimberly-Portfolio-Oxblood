@@ -66,7 +66,7 @@ test("the Prairie Airframe system keeps its named design tokens", () => {
   assert.match(css, /--font-metadata:\s*"IBM Plex Mono"/);
   assert.match(css, /--space-base:\s*8px/);
   assert.match(css, /--motion-standard:\s*200ms ease/);
-  assert.match(css, /\.practice-note\s*\{[^}]*background:\s*var\(--authority\)/s);
+  assert.match(css, /\.practice-note\s*\{[^}]*background:\s*var\(--paper\)/s);
   assert.match(css, /\.project-visual figcaption\s*\{[^}]*border-top:\s*1px solid var\(--line\)/s);
   assert.match(css, /\.contact-section\s*\{[^}]*background:\s*var\(--authority\)/s);
   assert.match(css, /\.next-project\s*\{[^}]*background:\s*var\(--ink\)/s);

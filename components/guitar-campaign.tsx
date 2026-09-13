@@ -11,10 +11,13 @@ export function GuitarCampaign() {
         </div>
       </header>
       <figure className="campaign-print">
+        <header className="campaign-print-heading"><p className="campaign-brand">Wimberly Custom Guitars</p><h3>The first mark<br />is yours.</h3></header>
         <div className="campaign-print-image"><ResponsiveImage src="/images/wimberly-jack-antique-bronze-knobs.jpeg" alt="Walnut guitar body, tooled leather pickguard, and bronze control knobs" sizes="(max-width: 760px) 100vw, 75vw" objectFit="contain" /></div>
-        <div className="campaign-print-copy"><p className="campaign-brand">Wimberly Custom Guitars</p><h3>The first mark<br />is yours.</h3><p>We choose the walnut. Work the leather. Shape the instrument.</p><p>The spot your hand returns to, the buckle that gets too close, the night you forget to put it back in its case. You’ll know where those marks came from.</p><span className="campaign-cta">Meet the Jack. Join the waitlist.</span></div>
+        <div className="campaign-print-copy"><p className="campaign-print-premise">We choose the walnut.<br />Work the leather.<br />Shape the instrument.</p><div><p>The spot your hand returns to, the buckle that gets too close, the night you forget to put it back in its case. You’ll know where those marks came from.</p><span className="campaign-cta">Meet the Jack. Join the waitlist.</span></div></div>
         <figcaption>01 / Print advertisement concept · Existing product photograph; no wear added</figcaption>
       </figure>
+      <details className="campaign-treatments">
+        <summary>Proposed film, social &amp; email treatments</summary>
       <section className="campaign-film" aria-labelledby="campaign-film-title">
         <header><p className="section-number">02 / Short film treatment · 30 seconds</p><h3 id="campaign-film-title">Show me the one you’d keep.</h3><p>A player, their own guitar, and one mark with a story. Record the answer in their words, then let them play.</p></header>
         <ol className="campaign-film-beats">
@@ -35,6 +38,7 @@ export function GuitarCampaign() {
         <div><p className="section-number">04 / Launch email concept</p><p className="campaign-subject">Subject: The mark you’d never fix</p></div>
         <div><h3>There’s probably a story there.</h3><p>Look at the guitar you’ve kept the longest. Is there a mark you can place? A room, a person, a night?</p><p>We’d like to hear about it. Reply with a photograph and tell us what happened.</p><p>Here at Wimberly, we’re building the Jack from walnut, hand-tooled leather, and metal. We can show you what leaves the bench. We’re interested in what happens after.</p><p className="campaign-cta">Meet the Jack. Join the waitlist.</p></div>
       </article>
+      </details>
     </section>
   );
 }

@@ -1,16 +1,17 @@
 .case-study { --case-space: clamp(48px, 6vw, 88px); }
-.case-hero { padding: var(--case-space) var(--case-gutter) 40px; }
+.case-hero { padding: clamp(40px, 4vw, 64px) var(--case-gutter) 32px; }
 .case-hero h1 {
   font-family: var(--font-display);
-  font-size: clamp(2.6rem, 5.7vw, 6rem);
-  font-weight: 900;
+  font-size: clamp(2.6rem, 5.2vw, 5.25rem);
+  font-weight: 700;
   letter-spacing: -0.025em;
   line-height: 1.02;
   max-width: 1120px;
-  margin: 24px 0 28px;
+  margin: 20px 0 24px;
   text-wrap: balance;
 }
-.case-summary { font-size: var(--text-deck); line-height: 1.5; max-width: 900px; margin: 0 0 24px; }
+.case-summary { font-size: clamp(1.18rem, 1.65vw, 1.5rem); line-height: 1.5; max-width: 840px; margin: 0 0 24px; }
+.case-role-line { font: 500 0.875rem/1.5 var(--font-interface); margin: 0 0 12px; }
 .case-status { display: flex; flex-wrap: wrap; gap: 8px 24px; font: 600 0.78rem/1.6 var(--font-interface); }
 .case-status strong { color: var(--signal); }
 .case-access-note { max-width: 820px; font: 0.8rem/1.6 var(--font-interface); margin: 12px 0 0; }
@@ -25,16 +26,17 @@
 .case-image figcaption { padding: 16px var(--case-gutter); }
 .case-image figcaption span, .artifact figcaption span { display: block; color: var(--ink-soft); margin-top: 4px; }
 .case-ownership { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding: 36px var(--case-gutter) var(--case-space); }
-.case-ownership h2 { font: 700 0.72rem/1.5 var(--font-interface); text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 14px; }
+.case-ownership h2 { font: 700 0.75rem/1.5 var(--font-interface); text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 14px; }
 .case-ownership .collaboration-label { font: 700 0.75rem/1.5 var(--font-interface); margin: 24px 0 8px; color: var(--authority); }
 .case-ownership p { max-width: 540px; margin: 8px 0; }
 .case-role { font-weight: 600; }
 .case-place { color: var(--ink-soft); font: 0.78rem/1.6 var(--font-interface); }
 .case-artifacts, .case-decision, .case-outcome, .campaign { padding: var(--case-space) var(--case-gutter); border-top: 1px solid var(--line); }
-.case-artifacts-lead { padding-top: 32px; }
+.case-artifacts-lead { padding-top: 24px; border-top: 0; }
+.case-artifact-label h2 { font: 500 1.1rem/1.4 var(--font-interface); margin: 0 0 24px; }
 .case-section-heading, .case-decision, .case-outcome { display: grid; grid-template-columns: minmax(160px, 0.32fr) minmax(0, 1fr); gap: 48px; }
 .case-section-heading { margin-bottom: 40px; }
-.case-section-heading h2, .case-decision h2, .case-outcome h2 { font: 700 var(--text-h2)/1.1 var(--font-display); letter-spacing: -0.025em; text-wrap: balance; margin: 0 0 24px; max-width: 850px; }
+.case-section-heading h2, .case-decision h2, .case-outcome h2 { font: 400 var(--text-h2)/1.1 var(--font-body); letter-spacing: -0.025em; text-wrap: balance; margin: 0 0 24px; max-width: 850px; }
 .case-section-heading p:not(.section-number), .case-decision > div > p, .case-outcome > div > p { font-size: var(--text-body); line-height: 1.65; max-width: var(--measure-reading); margin: 0 0 18px; }
 .case-artifacts-lead + .case-decision { padding-top: 32px; }
 .case-comparison-notes { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; padding: 0; margin: 0; list-style: none; }
@@ -47,7 +49,11 @@
 .artifact-portrait { grid-column: span 4; width: min(100%, 300px); justify-self: center; }
 .case-theme-workshop .artifact-landscape { grid-column: span 8; }
 .case-theme-studio .artifact-portrait { grid-column: 5 / span 4; }
-.artifact-image { position: relative; background: var(--paper-deep); margin-bottom: 16px; }
+.artifact-image { display: block; position: relative; overflow: hidden; background: var(--paper-deep); margin-bottom: 16px; }
+.case-detail { grid-column: 2; margin: 8px 0 0; max-width: 800px; }
+.case-detail figcaption { font: 0.8125rem/1.55 var(--font-interface); }
+.case-detail figcaption span { display: block; color: var(--ink-soft); margin-top: 8px; }
+.case-theme-archive .artifact-grid { align-items: end; }
 .case-reading { border-top: 1px solid var(--line); padding: 40px var(--case-gutter) var(--case-space); }
 .case-reading blockquote { font: 500 clamp(1.8rem, 3.3vw, 3.2rem)/1.25 var(--font-body); max-width: 1000px; margin: 24px 0; }
 .case-reading > p:not(.section-number) { color: var(--ink-soft); max-width: 740px; }
@@ -70,14 +76,19 @@
 .next-project .all-work { display: inline-flex; align-items: center; min-height: 44px; font: 0.8rem var(--font-interface); text-decoration: underline; text-underline-offset: 5px; }
 
 .campaign { background: var(--paper); }
-.campaign-print { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); margin: 0 0 48px; background: var(--ink); color: var(--paper); }
-.campaign-print-image { position: relative; min-height: 380px; align-self: stretch; }
-.campaign-print-copy { padding: clamp(28px, 5vw, 64px); }
-.campaign-brand { font: 600 0.75rem/1.5 var(--font-interface); text-transform: uppercase; letter-spacing: 0.12em; margin: 0 0 24px; }
-.campaign-print h3 { font: 500 clamp(2.7rem, 4.5vw, 4.8rem)/1 var(--font-body); margin: 0 0 28px; letter-spacing: -0.025em; }
-.campaign-print-copy > p:not(.campaign-brand) { font-size: clamp(1.05rem, 1.6vw, 1.45rem); max-width: 740px; }
-.campaign-cta { display: block; font: 700 0.8rem/1.5 var(--font-interface); margin-top: 24px; }
-.campaign-print figcaption { grid-column: 1 / -1; background: var(--paper); color: var(--ink-soft); padding-top: 14px; font: 0.75rem/1.6 var(--font-interface); }
+.campaign-print { max-width: 960px; margin: 0 auto 48px; background: var(--ink); color: var(--paper); }
+.campaign-print-heading { padding: clamp(32px, 5vw, 64px) 32px 32px; text-align: center; }
+.campaign-brand { font: 500 0.8125rem/1.5 var(--font-interface); text-transform: uppercase; letter-spacing: 0.12em; margin: 0 0 32px; }
+.campaign-print h3 { font: 400 clamp(3.2rem, 7.5vw, 7rem)/0.95 var(--font-body); margin: 0; letter-spacing: -0.025em; }
+.campaign-print-image { position: relative; aspect-ratio: 1080 / 603; }
+.campaign-print-copy { display: grid; grid-template-columns: 0.85fr 1fr; gap: 40px; padding: clamp(28px, 4vw, 56px); }
+.campaign-print-copy p { font-size: 1.125rem; line-height: 1.55; margin: 0; }
+.campaign-print-copy .campaign-print-premise { font-size: clamp(1.3rem, 2.3vw, 2rem); line-height: 1.3; }
+.campaign-cta { display: block; font: 700 0.8125rem/1.5 var(--font-interface); margin-top: 24px; }
+.campaign-print figcaption { background: var(--paper); color: var(--ink-soft); padding-top: 16px; font: 0.8125rem/1.6 var(--font-interface); }
+.campaign-treatments { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.campaign-treatments > summary { font: 500 1rem/1.5 var(--font-interface); min-height: 44px; padding: 24px 0; cursor: pointer; }
+.campaign-treatments[open] { padding-bottom: 32px; }
 .campaign-film { padding: 40px 0; border-top: 1px solid var(--line); }
 .campaign-film header { max-width: 780px; }
 .campaign-film h3 { font: 500 clamp(2rem, 3.5vw, 3.5rem)/1.15 var(--font-body); margin: 24px 0; }
@@ -88,10 +99,10 @@
 .campaign-film-beats p { margin: 0; max-width: 460px; }
 .campaign-production-note { font: 0.8rem/1.65 var(--font-interface); color: var(--ink-soft); max-width: 840px; margin: 24px 0; }
 .campaign-social { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2px; }
-.campaign-social article { display: flex; flex-direction: column; min-height: 370px; padding: clamp(24px, 3vw, 40px); background: var(--saddle); color: var(--paper); }
+.campaign-social article { display: flex; flex-direction: column; min-height: 370px; padding: clamp(24px, 3vw, 40px); background: var(--paper); color: var(--ink); border: 1px solid var(--line); }
 .campaign-social article:nth-child(2) { background: var(--paper-deep); color: var(--ink); }
-.campaign-social article:nth-child(3) { background: var(--ink); }
-.campaign-social span { font: 0.7rem/1.6 var(--font-interface); }
+.campaign-social article:nth-child(3) { background: var(--ink); color: var(--paper); }
+.campaign-social span { font: 0.75rem/1.6 var(--font-interface); }
 .campaign-social h3 { font: 600 clamp(1.8rem, 3vw, 3.2rem)/1.1 var(--font-body); margin: 36px 0 24px; }
 .campaign-social p { margin: auto 0 0; line-height: 1.5; max-width: 260px; }
 .campaign-letter { display: grid; grid-template-columns: 0.6fr 1fr; gap: 48px; padding: 48px 0 0; }
@@ -102,9 +113,10 @@
 @media (max-width: 760px) {
   .case-study { --case-gutter: 18px; --case-space: 48px; }
   .case-hero h1 { font-size: clamp(2.25rem, 9.5vw, 3.8rem); line-height: 1.05; }
-  .case-summary { font-size: 1.18rem; }
+  .case-summary { font-size: 1.125rem; }
   .case-ownership { grid-template-columns: 1fr; gap: 24px; }
   .case-section-heading, .case-decision, .case-outcome { grid-template-columns: 1fr; gap: 18px; }
+  .case-detail { grid-column: 1; }
   .case-comparison-notes { grid-template-columns: 1fr; gap: 24px; margin-top: 16px; }
   .case-section-heading h2, .case-decision h2, .case-outcome h2 { font-size: clamp(1.9rem, 7.5vw, 3rem); }
   .artifact-grid { grid-template-columns: 1fr; gap: 36px; }
@@ -112,7 +124,7 @@
   .artifact-portrait { width: min(74vw, 300px); }
   .next-project > a:not(.all-work) { font-size: clamp(1.8rem, 7.5vw, 3rem); }
   .campaign-social { grid-template-columns: 1fr; gap: 12px; }
-  .campaign-print { grid-template-columns: 1fr; }
+  .campaign-print-copy { grid-template-columns: 1fr; gap: 24px; }
   .campaign-print-image { min-height: 0; aspect-ratio: 1080 / 603; }
   .campaign-film-beats { grid-template-columns: 1fr; gap: 24px; }
   .campaign-film-beats li { gap: 16px; }
