@@ -19,6 +19,10 @@ check the current source/configuration before relying on deployment descriptions
 Preserve existing changes. Commit, push, merge, and deploy only when explicitly
 authorized for the requested action.
 
+“Push and merge to main” authorizes the complete
+[release completion workflow](AGENTS.md#9-release-completion), including local
+synchronization, preview refresh, and production verification.
+
 ## Local development
 
 Use Node.js 22.13 or later.
@@ -73,10 +77,11 @@ without Preston’s explicit approval. Resolve the fact and rights checks listed
 
 ## Codex local environment
 
-On this Mac, Codex actions are defined in the ignored local file
-`.codex/environments/environment.toml`. That file is not carried into a fresh
-clone by Git. Claude Code and terminal sessions can use the shell commands in
-this README; the Codex action buttons are optional conveniences:
+Codex actions and worktree setup are versioned in
+`.codex/environments/environment.toml`, so fresh clones and worktrees receive the
+same commands. Other machine-specific Codex files remain ignored. Claude Code
+and terminal sessions can use the commands in this README; the Codex action
+buttons are optional conveniences:
 
 - **Preview** builds the static Netlify export and serves `netlify-dist/` at
   `http://127.0.0.1:4172/`.

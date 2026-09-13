@@ -26,11 +26,19 @@ Before changing design, content, or implementation:
    conversion goal. Preserve distinctive existing work and state any necessary
    assumption.
 
-`docs/design-direction.md` is the canonical authority for design philosophy and
-review. The current code, configuration, and package scripts are the source of
-truth for implementation details.
+`docs/design-direction.md` records the current design direction; update it when
+Preston changes the brief. The current code, configuration, and package scripts
+are the source of truth for implementation details.
 
-## 3. Prairie Airframe design standard
+## 3. Design direction
+
+- Follow Preston's current creative direction. Existing styles, palettes,
+  typography, layouts, and aesthetic guidance here or in supporting documents
+  are editable defaults; change them when requested.
+- No shared design skill is required or canonical. Use aesthetic skills only
+  when Preston explicitly requests them.
+
+The following describes the current Prairie Airframe direction:
 
 - Governing tension: **warmth without sentimentality; precision without
   sterility; history without nostalgia; modernism without coldness.**
@@ -168,3 +176,24 @@ Use this page direction:
   authorized release work.
 - Preview and branch deploys are review artifacts, not production approval.
   Never treat a passing build or draft pull request as authorization to launch.
+
+## 9. Release completion
+
+- When I say “push and merge to main,” complete the release: run the required
+  checks, commit and push the intended changes, merge into GitHub main,
+  synchronize the canonical local checkout, rebuild and restart the relevant
+  preview, and verify the matching production deployment on the public domain.
+  Preserve unfinished work. Check for stale active worktrees and missing
+  environment configuration. Finish by reporting the merged commit, local sync
+  status, preview URL, live URL, and anything still out of date. Preserve
+  historical archives.
+- This request supplies the explicit authorization required above for the
+  scoped commit, push, pull request, merge, and routine production release through
+  the existing approved hosting configuration. Continue those steps without
+  asking for the same approval again. Follow any narrower scope Preston states;
+  retain existing content-clearance rules and separate authorization for changes
+  to hosting settings, domains, DNS, or access controls.
+- Use this README's documented checks and preview commands. Refresh locked
+  dependencies when needed and rebuild only where the project has a build step.
+  Verify the preview serves the synchronized checkout and uses the tracked
+  environment definition. Machine-specific files remain local.

@@ -1,0 +1,55 @@
+version = 1
+name = "Preston Wimberly — Creative Portfolio"
+
+[setup]
+script = "set -e\npython3 --version\nnpm ci --engine-strict --no-fund"
+
+[[actions]]
+name = "Preview"
+icon = "run"
+command = '''
+set -e
+npm run build:netlify
+python3 - <<'PY'
+from functools import partial
+from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
+from pathlib import Path
+import os
+
+class PreviewHandler(SimpleHTTPRequestHandler):
+    def translate_path(self, path):
+        target = super().translate_path(path)
+        if not Path(target).suffix and Path(target + ".html").is_file():
+            return target + ".html"
+        return target
+
+    def end_headers(self):
+        self.send_header("Cache-Control", "no-store")
+        super().end_headers()
+
+port = int(os.environ.get("PORT", "4172"))
+handler = partial(PreviewHandler, directory="netlify-dist")
+with ThreadingHTTPServer(("127.0.0.1", port), handler) as server:
+    print(f"Preview: http://127.0.0.1:{port}/", flush=True)
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        pass
+PY
+'''
+
+[[actions]]
+name = "Build"
+icon = "tool"
+command = '''
+npm run build:netlify
+'''
+
+[[actions]]
+name = "Check"
+icon = "test"
+command = '''
+set -e
+npm run quality
+git diff --check
+'''
