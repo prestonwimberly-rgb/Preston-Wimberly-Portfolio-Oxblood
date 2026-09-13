@@ -584,6 +584,12 @@ img {
   max-width: 560px;
 }
 
+.project-excerpt { margin: 24px 0; padding: 20px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.project-excerpt p { font: 500 clamp(1.5rem, 2.2vw, 2.1rem)/1.3 var(--font-body); margin: 0; }
+.project-excerpt cite { display: block; margin-top: 16px; font: 600 0.78rem/1.5 var(--font-interface); }
+.project-excerpt cite a { display: inline-flex; align-items: center; gap: 16px; min-height: 44px; text-decoration: underline; text-underline-offset: 4px; }
+.manuscript-excerpt p { font-style: italic; }
+
 .project-context {
   color: var(--ink-soft);
   font-family: var(--font-interface);
@@ -931,20 +937,24 @@ img {
 
 @media (max-width: 760px) {
   html {
-    scroll-padding-top: 66px;
+    scroll-padding-top: 112px;
   }
 
   .site-header {
-    height: 66px;
-    padding: 0 14px;
+    height: 104px;
+    padding: 8px 18px;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .site-nav {
     font-size: 0.75rem;
     gap: 8px;
+    width: 100%;
+    justify-content: space-between;
   }
 
-  .site-nav > .nav-resume {
+  .site-nav > .nav-narrow-secondary {
     display: none;
   }
 
@@ -977,17 +987,18 @@ img {
   }
 
   .hero-copy {
-    padding: 32px 18px 28px;
+    padding: 24px 18px;
   }
 
   .hero h1 {
     font-size: clamp(2.6rem, 12vw, 4.2rem);
-    margin: 28px 0 32px;
+    margin: 24px 0;
     overflow-wrap: anywhere;
   }
 
   .hero-bottom {
-    gap: 24px;
+    gap: 16px;
+    padding-top: 16px;
   }
 
   .hero-visual {
@@ -996,13 +1007,29 @@ img {
     width: 100%;
   }
 
+  .hero-image {
+    flex: none;
+    min-height: 0;
+    aspect-ratio: 3 / 2;
+  }
+
+  .hero-visual figcaption {
+    padding: 12px 18px 16px;
+  }
+
   .section {
     padding-left: 18px;
     padding-right: 18px;
   }
 
   .work-section {
-    scroll-margin-top: 66px;
+    scroll-margin-top: 0;
+    padding-top: 40px;
+  }
+
+  .work-section .section-heading {
+    gap: 24px;
+    margin-bottom: 32px;
   }
 
   .section-heading {

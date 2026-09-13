@@ -26,6 +26,20 @@ function CaseArtifacts({ project, leading = false }: { project: Project; leading
   );
 }
 
+function CaseDecision({ project }: { project: Project }) {
+  return (
+    <section className="case-decision" aria-labelledby="case-decision-title">
+      <p className="section-number">The decision</p>
+      <div><h2 id="case-decision-title">{project.decisionTitle}</h2>{project.decision.map(p => <p key={p}>{p}</p>)}</div>
+      {project.comparisonNotes ? (
+        <ol className="case-comparison-notes" aria-label="What changed in the redesign">
+          {project.comparisonNotes.map(note => <li key={note.title}><h3>{note.title}</h3><p>{note.detail}</p></li>)}
+        </ol>
+      ) : null}
+    </section>
+  );
+}
+
 export function ProjectCase({ project, nextProject }: { project: Project; nextProject: Project }) {
   const hasLeadArtifacts = Boolean(project.leadArtifacts?.length);
   const image = project.slug === "wimberly-guitars" ? null : (
@@ -45,18 +59,21 @@ export function ProjectCase({ project, nextProject }: { project: Project; nextPr
         <p className="case-summary">{project.summary}</p>
         <div className="case-status"><span>{project.engagementType}</span><strong>{project.status}</strong></div>
         {project.accessNote ? <p className="case-access-note">{project.accessNote}</p> : null}
-        {project.liveUrl && (project.slug === "texas-aviation-partners" || project.slug === "wimberly-guitars") ? (
+        {project.liveUrl && project.slug !== "preston-session-site" ? (
           <a className="text-link case-live-link" href={project.liveUrl} target="_blank" rel="noreferrer">{project.liveLabel} <span aria-hidden="true">↗</span></a>
         ) : null}
       </header>
 
       {hasLeadArtifacts ? <CaseArtifacts project={project} leading /> : image}
+      {hasLeadArtifacts ? <CaseDecision project={project} /> : null}
 
       <section className="case-ownership" aria-label="Role and collaboration">
         <div><h2>My role</h2><p className="case-role">{project.role}</p><p>{project.ownership}</p></div>
         <div><h2>Working together</h2><p>{project.collaboration}</p>
           {project.collaborationExample ? <>
+            <h3 className="collaboration-label">The request</h3>
             <p>{project.collaborationExample.request}</p>
+            <h3 className="collaboration-label">My response</h3>
             <p>{project.collaborationExample.response}</p>
             <a className="text-link" href={project.collaborationExample.href} target="_blank" rel="noreferrer">{project.collaborationExample.label} <span aria-hidden="true">↗</span></a>
           </> : null}
@@ -73,16 +90,13 @@ export function ProjectCase({ project, nextProject }: { project: Project; nextPr
           <p className="section-number">From “Willie in Las Vegas”</p>
           <blockquote>“We left the most spiritual moment of my professional life and walked straight to a craps table.”</blockquote>
           <p>A firsthand account from the 2013 tour, written from memory and labeled as such.</p>
-          <a className="text-link" href="https://wildfeathers.netlify.app/field-notes/willie-in-las-vegas/" target="_blank" rel="noreferrer">Read the essay <span aria-hidden="true">↗</span></a>
+          <a className="text-link" href="https://thewildfeathersband.com/field-notes/willie-in-las-vegas/" target="_blank" rel="noreferrer">Read the essay <span aria-hidden="true">↗</span></a>
         </aside>
       ) : null}
 
       <CaseArtifacts project={project} />
 
-      <section className="case-decision" aria-labelledby="case-decision-title">
-        <p className="section-number">The decision</p>
-        <div><h2 id="case-decision-title">{project.decisionTitle}</h2>{project.decision.map(p => <p key={p}>{p}</p>)}</div>
-      </section>
+      {!hasLeadArtifacts ? <CaseDecision project={project} /> : null}
 
       {project.motionStudy ? (
         <section className="motion-study" aria-labelledby="motion-study-title">

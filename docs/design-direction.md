@@ -58,6 +58,15 @@ turning the portfolio into an aviation theme.
   dense project detail. Selected work precedes the process explanation. The
   archive adds a direct writing sample, the workshop includes a clearly labeled
   campaign concept, and the musician case stays compact.
+- Put TAP’s organizing decision directly after its before-and-after comparison,
+  with concise annotations connecting the visual changes to the business problem.
+- Use existing first-person excerpts within the homepage’s archive and manuscript
+  entries. The archive can carry humor; the manuscript keeps its quieter cadence.
+- The guitar campaign, “The mark you’d never fix,” uses a new-instrument print
+  concept and proposed player stories, film, and email. Label production treatments
+  clearly; never invent participants, instrument wear, recorded answers, or results.
+- At phone widths, retain Work, Résumé, and Contact in the header and give the
+  tractor photograph a short landscape frame that keeps the vehicle intact.
 
 ## Content standard
 

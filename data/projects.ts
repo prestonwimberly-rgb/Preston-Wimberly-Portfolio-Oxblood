@@ -17,6 +17,7 @@ export type Project = {
   decisionTitle: string; decision: string[]; artifactTitle: string; artifactIntro: string;
   outcomeTitle: string; outcome: string[]; artifacts: ProjectArtifact[];
   leadArtifacts?: ProjectArtifact[];
+  comparisonNotes?: { title: string; detail: string }[];
   theme: "archive" | "field" | "workshop" | "studio";
   motionStudy?: { src: string; poster: string; description: string };
   verificationNotes?: string[];
@@ -69,6 +70,11 @@ const projectRecords: Project[] = [
     ],
     "artifactTitle": "The live website, beside the earlier site.",
     "artifactIntro": "The earlier homepage, captured in August 2026, appears beside the live September 2026 site.",
+    "comparisonNotes": [
+      { "title": "Make the scope explicit", "detail": "Operate, develop, and advise give prospective partners three clear ways into the company’s work." },
+      { "title": "Connect the promise to a place", "detail": "Airport experience supports the service descriptions, so readers can follow a capability into the operating record." },
+      { "title": "Show the work on the ground", "detail": "Original photographs of maintenance, land, and infrastructure establish the company’s field of work." }
+    ],
     "outcomeTitle": "The live website connects the company’s services with its airport work.",
     "outcome": [
       "The launched site brings capabilities, airport experience, leadership, Field Notes, and contact into one public website. Visitors can follow the company’s operating, development, and advisory work through to its airport record and start a conversation."
@@ -123,7 +129,7 @@ const projectRecords: Project[] = [
     "kicker": "Creative direction · Archive strategy · Editorial",
     "headline": "A band’s history, told from inside.",
     "homepagePremise": "First-person writing, photographs, and a public archive of the years on the road.",
-    "cardSummary": "First-person writing and an independent music archive connecting 384 performance records, 193 archive records, and 110 source records.",
+    "cardSummary": "First-person writing and an independent music archive connecting 410 performance records, 209 archive records, and 125 source records.",
     "summary": "Fans can find the songs. The story around them is scattered across photographs, tour dates, interviews, and memory. As a founding guitarist, I brought those pieces together without treating my recollection as the final word.",
     "image": "/images/wild-feathers-laugh.png",
     "imageAlt": "The five members of The Wild Feathers seated together outside, laughing",
@@ -136,20 +142,19 @@ const projectRecords: Project[] = [
     "year": "2025–2026",
     "place": "Nashville, Tennessee",
     "engagementType": "Independent editorial archive",
-    "status": "Public review archive",
+    "status": "Live · Independent archive",
     "ownership": "I researched the chronology, wrote the narrative, established source and rights notes, and designed and built the archive.",
     "collaboration": "Independent work using credited photographs, published sources, and attributed memories. My firsthand account is identified as such.",
-    "liveUrl": "https://wildfeathers.netlify.app/story/",
-    "liveLabel": "Explore the public review archive",
-    "accessNote": "The archive is publicly accessible on Netlify. Deployment to the owned domain remains a separate release step.",
+    "liveUrl": "https://thewildfeathersband.com/",
+    "liveLabel": "Explore the live archive",
     "decisionTitle": "Give readers a story and a way to check it.",
     "decision": [
-      "Seven flagship stories provide an edited introduction; six chronological chapters carry the longer history. A reader can begin with a scene, then follow it into the tour dates, photographs, and sources.",
-      "The archive contains 384 performance records, 193 archive records, and 110 source records. Each source note distinguishes documented fact from memory, inference, or an open question."
+      "Seven flagship stories and one supporting road record provide an edited introduction; six chronological chapters carry the longer history. A reader can begin with a scene, then follow it into the tour dates, photographs, and sources.",
+      "The archive contains 410 performance records, 209 archive records, and 125 source records, verified September 12, 2026. Each source note distinguishes documented fact from memory, inference, or an open question."
     ],
     "artifactTitle": "Stories with their sources close by.",
     "artifactIntro": "The reading path and source ledger make the archive useful both to a casual reader and to someone checking a date or credit.",
-    "outcomeTitle": "A scattered band history is now a readable, searchable public review archive.",
+    "outcomeTitle": "A scattered band history is now a readable, searchable public archive.",
     "outcome": [
       "The finished archive connects the stories to their chronology, surviving objects, sources, and rights information."
     ],
@@ -173,7 +178,7 @@ const projectRecords: Project[] = [
     ],
     "theme": "archive",
     "verificationNotes": [
-      "Owned-domain deployment remains a separate release task and is not authorized by this portfolio change."
+      "The owned domain and portfolio record were cleared September 12, 2026 in docs/launch-checklist.md. Archive releases remain a separate scope; new material and expanded coverage require confirmation."
     ]
   },
   {

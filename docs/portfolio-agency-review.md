@@ -1,35 +1,47 @@
-# Portfolio revision — September 10, 2026
+# Portfolio creative review — September 12, 2026
 
 ## Scope and intent
 
-REFINE the established portfolio; REMOVE repetitive case-study scaffolding.
-The accepted review called for a faster path from the business problem to the
-work, clearer attribution and project status, stronger writing samples, a
-résumé, and a clearly labeled campaign concept. The existing routes, fonts,
-photography, palette, and static export remain in place.
+Refine the portfolio for hiring leaders who need to understand the idea,
+Preston’s contribution, the finished work, and the next step. Preston authorized
+implementation of the seven recommendations from the creative-director review.
 
-- Homepage order: Wimberly Guitars, Texas Aviation Partners, The Wild Feathers,
-  SANDPAPER. The session-musician case remains supporting independent work.
-- Cases now move through a brief, hero artifact, ownership/collaboration,
-  selected artifacts, the central decision, and the observable result.
-- Repeated direction records, evidence panels, deliverables lists, oversized
-  secondary statements, duplicate images, and the standalone rifle reference
-  were removed from the public presentation. Existing factual verification
-  notes remain in `data/projects.ts`.
-- TAP's proposed redesign is labeled as a review build. Its current public
-  website is a reference link, not a structured-data example of the redesign.
-- The Wild Feathers is labeled as a publicly accessible Netlify review archive;
-  release to its owned domain remains a separate task.
-- “Willie in Las Vegas” has a direct homepage link and an attributed first-person
-  quotation in its case study.
-- Contact language welcomes agency and in-house roles as well as independent
-  projects. The linked résumé contains supported experience, without the
-  unverified traffic, budget, team-size, or sales claims in an older draft.
-- Guitar campaign extension: “The next chapter is yours,” expressed as a print
-  advertisement, three-frame social sequence, and launch email. All are
-  speculative portfolio executions, not launched client work or measured results.
-- Higgsfield remains an optional, keyboard-accessible native video with explicit
-  AI disclosure, no autoplay, and no application JavaScript.
+The work leads with real airport photography, the launched TAP website, the
+existing guitar product photograph, the cleared archive, and original writing.
+The references are GSD&M’s emphasis on a distinct campaign idea and Texas Monthly’s
+editorial specificity. Target qualities: authentic, honest, and capable.
+
+- Preserve the homepage order: TAP, Wimberly Custom Guitars, The Wild Feathers,
+  and SANDPAPER. The session-musician case remains supporting independent work.
+- Move TAP’s “Operate. Develop. Advise.” decision directly after the before-and-after
+  comparison. Three annotations explain scope, the operating record, and photography.
+- Give the confirmed TAP collaboration example explicit “The request” and “My response”
+  labels. Existing authority, ownership, founder, and offer language is preserved.
+- Replace the guitar campaign with “The mark you’d never fix.” The print concept,
+  30-second film treatment, player-story social sequence, and email have distinct roles.
+  The campaign is speculative and unlaunched. The film and social passages describe
+  planned production; they do not claim that interviews or performances exist.
+- Add original archive and manuscript excerpts to the homepage. The archive’s case
+  uses a dark reading panel; the manuscript excerpt keeps its own prose and cadence.
+- Keep Work, Résumé, and Contact visible in the mobile header. Use a 3:2 tractor
+  photograph at phone widths so the complete vehicle remains visible in a shorter opening.
+- Update the archive to the cleared 410 performance records, 209 archive records,
+  125 source records, seven flagship stories, one supporting road record, and six
+  chapters. Link the case, homepage, and essay to the owned domain. Historical
+  screenshots retain their August 2026 capture dates.
+
+## Evidence and remaining source needs
+
+`docs/launch-checklist.md` and `data/projects.ts` provide the factual record.
+The archive homepage and “Willie in Las Vegas” URL returned HTTP 200 during this
+review. The public launch and updated counts were already cleared September 12.
+The unverified TAP traffic claim remains excluded.
+
+A second concrete feedback or disagreement example was requested from Preston;
+none has been supplied in this turn. The confirmed TAP example is presented more
+clearly, and no second anecdote, team size, testimonial, or business result was
+invented. Producing the proposed guitar stories will require participants, real
+photographs, recorded answers, and cleared music.
 
 ## Manuscript and résumé sources
 
@@ -55,40 +67,51 @@ the public directory.
 
 ## Design QA
 
-- Reviewed the six public routes at 1440px desktop, 390px mobile, and 320px narrow
-  phone. No horizontal overflow or headings/links/captions outside the viewport.
-- Reviewed the guitar campaign, manuscript reading view, interior pages, résumé,
-  case-study openings, and mobile work selection visually.
-- SANDPAPER stays on one line. The archive headline and next-project names wrap
-  between words. Hero captions sit below the image at every width.
-- Native motion disclosure opens with Enter and its video starts with keyboard
-  controls. Navigation, labels, focus styles, semantic headings, responsive image
-  dimensions, and reduced-motion styles are retained.
-- Approximate desktop page heights: homepage 7,067px; guitars 6,632px; TAP 4,585px;
-  archive 4,331px; session case 4,049px. The previous case heights were approximately
-  10,096px, 9,812px, 11,050px, and 8,366px respectively. The book page gains actual
-  reading material and page proofs rather than being shortened artificially.
+- Reviewed all six routes at 1440px, 390px, and 320px. Scrolled through each page
+  to load lazy images; no missing images, horizontal overflow, or clipped
+  headings, copy, links, or captions were found.
+- Visually reviewed the phone opening and full tractor, desktop campaign and
+  film treatment, TAP decision and annotations, homepage archive excerpt,
+  narrow-phone layout, and branded 404.
+- The 390px homepage reaches selected work at approximately 822px from the top.
+  Work, Résumé, and Contact are visible and have 44px-high targets.
+- Fixed two short next-project links found during the 390px check. Both passed
+  the repeated touch-target check; all visible links and controls checked meet
+  the 44px minimum at the reviewed widths.
+- Keyboard testing showed the visible skip-link outline and moved sequential
+  focus into the main content. Reduced-motion emulation produced automatic
+  scrolling and effectively zero-duration transitions. The emulation was reset.
+- Existing contrast-safe palette, fonts, dimensions, captions, and native motion
+  controls remain intact. Color-pairing and motion tests pass.
 
-Review scores, 1–5: authenticity 5; hierarchy 4; material character 4; evidence 3;
-restraint 4; usability 4; performance 4; accessibility 4. Evidence is the remaining
-weakness: verified client outcomes, quotations, and concrete team-leadership
-examples would strengthen the portfolio. None were invented to fill that gap.
+| Category | Score | Basis |
+| --- | --- | --- |
+| Authenticity | 5/5 | Actual photographs, original excerpts, and clearly proposed campaign work. |
+| Editorial hierarchy | 4/5 | Earlier TAP decision and shorter phone opening; dense work remains readable. |
+| Material character | 4/5 | Existing instruments and documentary field photography carry the identity. |
+| Evidence | 3/5 | Authorship and status are clear; another leadership example and measured outcomes still need sources. |
+| Restraint | 4/5 | Existing system retained; the film is a concise written treatment. |
+| Usability | 4/5 | Direct mobile résumé, live archive links, and corrected touch targets. |
+| Performance | 4/5 | Static pages, responsive assets, no application JavaScript; no new Lighthouse benchmark claimed. |
+| Accessibility | 4/5 | Width, target, focus, contrast, semantics, and reduced-motion checks; not a full assistive-technology audit. |
+
+Evidence remains the weakest category. Improve it with verified material, not
+stronger unsupported language.
 
 ## Validation and release boundary
 
-- `npm run quality`: lint, build/export, 19 tests, production dependency audit.
-- Separate TypeScript check: `tsc --noEmit`. An existing unresolved ambient
-  `Fetcher` type in the worker entry was replaced with an explicit standard
-  fetch interface; runtime behavior is unchanged.
-- All seven exported HTML files, including the branded 404, checked for internal
-  links, fragment targets, local image files, and useful alt text.
-- Six route exports retain canonical metadata, social cards, structured data,
-  crawl files, and no application scripts. Netlify redirects/security headers
-  remain configured in `netlify.toml`; the Python preview does not emulate them.
-- Preview/branch indexing protections remain covered by the deployment tests.
-  Social-card copy now follows the revised headings and uses paper on ink.
-
-This is a local revision on `codex/portfolio-agency-review`. No production deploy,
-domain change, push, or merge is part of this revision. Real instrument-performance
-footage and verified client results still require source material. The existing
-untracked `scripts/build-creative-director-resume.py` was left untouched.
+- Final `npm run quality` passed: lint, image generation, build/export, all 19 tests,
+  and the production dependency audit with zero vulnerabilities. Generated 174
+  responsive files and six social cards; generated outputs remain ignored.
+- Checked all seven exported HTML documents, including 404, for duplicate IDs,
+  broken internal links/fragments, missing local assets, and application scripts:
+  no failures. Canonical metadata, structured data, and crawl files pass existing tests.
+- Exported both deploy-preview and branch-deploy contexts. All six public routes
+  have noindex/nofollow metadata, the branded 404 remains non-indexable, and robots
+  disallows all. Restored the local production-format export afterward.
+- Both legacy 301 redirects retain existing targets that exist in the export.
+  The seven configured security/cache header rules are unchanged. The Python
+  preview does not emulate Netlify redirects, headers, or production routing.
+- Preview: http://127.0.0.1:4172/ . Branch: `codex/portfolio-creative-review`.
+  This report records local validation before release. GitHub records the merge
+  status; production deployment requires separate verification.

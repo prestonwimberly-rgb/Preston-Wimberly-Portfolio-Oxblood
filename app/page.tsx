@@ -3,6 +3,7 @@ import { ResponsiveImage } from "@/components/responsive-image";
 import { SiteHeader } from "@/components/site-header";
 import { StructuredData } from "@/components/structured-data";
 import { featuredProjects } from "@/data/projects";
+import { sandpaperExcerpt } from "@/data/sandpaper";
 import { mailtoHref } from "@/lib/site";
 import { homeStructuredData } from "@/lib/structured-data";
 
@@ -35,7 +36,7 @@ const writing = [
     title: "Willie in Las Vegas",
     description:
       "My father’s Martin, Willie Nelson’s stage, and a badly timed visit to a craps table. A firsthand account of the 2013 tour.",
-    href: "https://wildfeathers.netlify.app/field-notes/willie-in-las-vegas/",
+    href: "https://thewildfeathersband.com/field-notes/willie-in-las-vegas/",
   },
   {
     type: "Profile · Aviation leadership",
@@ -156,6 +157,12 @@ export default function Home() {
                   <p className="project-premise">
                     {project.homepagePremise ?? project.cardSummary}
                   </p>
+                  {project.slug === "wild-feathers" ? (
+                    <blockquote className="project-excerpt">
+                      <p>“We left the most spiritual moment of my professional life and walked straight to a craps table.”</p>
+                      <cite><a href="https://thewildfeathersband.com/field-notes/willie-in-las-vegas/" target="_blank" rel="noreferrer">Read “Willie in Las Vegas” <span aria-hidden="true">↗</span></a></cite>
+                    </blockquote>
+                  ) : null}
                   <dl className="project-register" aria-label={`${project.title} project details`}>
                     <div>
                       <dt>Role</dt>
@@ -173,6 +180,7 @@ export default function Home() {
                   <Link className="text-link" href={`/work/${project.slug}`}>
                     Read the case study <span aria-hidden="true">↗</span>
                   </Link>
+                  {project.slug === "wild-feathers" ? <p className="project-live-link"><a className="text-link" href={project.liveUrl} target="_blank" rel="noreferrer">Visit the live archive <span aria-hidden="true">↗</span></a></p> : null}
                 </div>
               </article>
               );
@@ -202,6 +210,7 @@ export default function Home() {
                   <Link href="/sandpaper">{sandpaperFeature.title}</Link>
                 </h3>
                 <p className="project-premise">{sandpaperFeature.premise}</p>
+                <blockquote className="project-excerpt manuscript-excerpt"><p>“{sandpaperExcerpt[0]}”</p></blockquote>
                 <dl className="project-register" aria-label="SANDPAPER project details">
                   <div>
                     <dt>Role</dt>
