@@ -58,7 +58,7 @@ export default function SandpaperPage() {
         <section className="memoir-hero" aria-labelledby="memoir-title">
           <div className="memoir-copy">
             <p className="eyebrow">Book project · Memoir · 2026</p>
-            <h1 id="memoir-title"><em>SANDPAPER</em></h1>
+            <h1 id="memoir-title">SANDPAPER</h1>
             <p className="memoir-deck">
               A book-length memoir about talent, addiction, fatherhood, and the work of becoming useful.
               Written, edited, and typeset by Preston Wimberly.

@@ -129,6 +129,10 @@ export default function Home() {
                 className={`project-row project-row-${index + 1} project-image-${imageFit ?? "contain"}`}
                 key={project.slug}
               >
+                <header className="project-heading">
+                  <p className="project-kicker"><span className="project-index">{project.chapterNumber}</span>{project.chapter}</p>
+                  <h3><Link href={`/work/${project.slug}`}>{project.title}</Link></h3>
+                </header>
                 <figure className="project-visual">
                   <Link
                     className="project-image"
@@ -138,7 +142,7 @@ export default function Home() {
                     <ResponsiveImage
                       src={image}
                       alt={imageAlt}
-                      sizes="(max-width: 760px) 100vw, 54vw"
+                      sizes={project.slug === "wild-feathers" ? "100vw" : "(max-width: 760px) 100vw, 54vw"}
                       style={{ objectPosition: imagePosition ?? "center" }}
                       objectFit={imageFit ?? "cover"}
                     />
@@ -149,11 +153,6 @@ export default function Home() {
                   </figcaption>
                 </figure>
                 <div className="project-copy">
-                  <p className="project-index">{project.chapterNumber}</p>
-                  <p className="project-kicker">{project.chapter}</p>
-                  <h3 className={project.title.includes(" ") ? undefined : "title-nowrap"}>
-                    <Link href={`/work/${project.slug}`}>{project.title}</Link>
-                  </h3>
                   <p className="project-premise">
                     {project.homepagePremise ?? project.cardSummary}
                   </p>
@@ -163,18 +162,10 @@ export default function Home() {
                       <cite><a href="https://thewildfeathersband.com/field-notes/willie-in-las-vegas/" target="_blank" rel="noreferrer">Read “Willie in Las Vegas” <span aria-hidden="true">↗</span></a></cite>
                     </blockquote>
                   ) : null}
-                  <dl className="project-register" aria-label={`${project.title} project details`}>
-                    <div>
-                      <dt>Role</dt>
-                      <dd>{project.role}</dd>
-                    </div>
-                    <div>
-                      <dt>Period</dt>
-                      <dd>{project.year}</dd>
-                    </div>
-                  </dl>
+                  <p className="project-meta">
+                    <span>{project.role}</span><span className="project-year">{project.year}</span>
+                  </p>
                   <p className="project-proof">
-                    <span>{project.status}</span>
                     {project.outcomeTitle}
                   </p>
                   <Link className="text-link" href={`/work/${project.slug}`}>
@@ -186,43 +177,38 @@ export default function Home() {
               );
             })}
             <article className="project-row project-row-editorial">
+              <header className="project-heading">
+                <p className="project-kicker"><span className="project-index">{sandpaperFeature.chapterNumber}</span>{sandpaperFeature.chapter}</p>
+                <h3 className="sandpaper-title"><Link href="/sandpaper">{sandpaperFeature.title}</Link></h3>
+              </header>
               <figure className="project-visual project-visual-manuscript">
                 <Link
                   className="project-image project-image-manuscript"
                   href="/sandpaper"
                 >
-                  <ResponsiveImage
-                    src="/images/sandpaper-cover.png"
-                    alt="Title page for SANDPAPER, a memoir by Preston Wimberly"
-                    sizes="(max-width: 760px) 74vw, 30vw"
-                    objectFit="contain"
-                  />
+                  {[114, 115].map(page => (
+                    <span className="manuscript-page" key={page}>
+                      <ResponsiveImage
+                        src={`/images/sandpaper-page-${page}.jpg`}
+                        alt={`SANDPAPER page ${page}: ${page === 114 ? "Part three, Finer Grits" : "the opening of Four Hundred"}`}
+                        sizes="(max-width: 760px) 46vw, 28vw"
+                        objectFit="contain"
+                      />
+                    </span>
+                  ))}
                 </Link>
                 <figcaption>
-                  Complete manuscript · 50,000 words · 38 chapters
-                  <span>Read an excerpt and see the interior pages</span>
+                  Part three and the opening of Four Hundred · Pages 114–115
+                  <span>Original manuscript pages · EB Garamond · 6 × 9 inches</span>
                 </figcaption>
               </figure>
               <div className="project-copy">
-                <p className="project-index">{sandpaperFeature.chapterNumber}</p>
-                <p className="project-kicker">{sandpaperFeature.chapter}</p>
-                <h3 className="sandpaper-title">
-                  <Link href="/sandpaper">{sandpaperFeature.title}</Link>
-                </h3>
                 <p className="project-premise">{sandpaperFeature.premise}</p>
                 <blockquote className="project-excerpt manuscript-excerpt"><p>“{sandpaperExcerpt[0]}”</p></blockquote>
-                <dl className="project-register" aria-label="SANDPAPER project details">
-                  <div>
-                    <dt>Role</dt>
-                    <dd>{sandpaperFeature.role}</dd>
-                  </div>
-                  <div>
-                    <dt>Period</dt>
-                    <dd>{sandpaperFeature.year}</dd>
-                  </div>
-                </dl>
+                <p className="project-meta">
+                  <span>{sandpaperFeature.role}</span><span className="project-year">{sandpaperFeature.year}</span>
+                </p>
                 <p className="project-proof">
-                  <span>Complete manuscript</span>
                   {sandpaperFeature.outcome}
                 </p>
                 <Link className="text-link" href="/sandpaper">
@@ -235,7 +221,7 @@ export default function Home() {
 
         <section className="practice-note" aria-labelledby="practice-title">
           <div>
-            <p className="section-number inverse">02 / Working method</p>
+            <p className="section-number">02 / Working method</p>
             <h2 id="practice-title">Start with the people doing the work.</h2>
           </div>
           <div className="practice-note-copy">
