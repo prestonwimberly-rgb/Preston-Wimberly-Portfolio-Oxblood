@@ -38,10 +38,10 @@ adapters were installed.
 
 ## Project-specific guidance still governs
 
-This repo's `AGENTS.md` and `DESIGN-NORTH-STAR.md` are the authority on
-design, content, and editorial direction (oxblood/RRL/Texas Monthly
-aesthetic, evidence rules, deployment safety). ECC's rules and skills
-cover general engineering practice (TypeScript, React, a11y, SEO,
+Follow Preston's current brief and this repo's `AGENTS.md` for design,
+content, evidence rules, and deployment safety. Existing aesthetic guidance is
+editable; `docs/design-direction.md` records the current direction. ECC's rules
+and skills cover general engineering practice (TypeScript, React, a11y, SEO,
 security, performance) and do not override any project-specific
 constraint in `AGENTS.md`.
 
