@@ -33,7 +33,7 @@ test("homepage leads with selected work and gives hiring readers direct paths", 
   for (const [index, title] of ["Texas Aviation Partners", "Wimberly Custom Guitars", "The Wild Feathers", "SANDPAPER"].entries()) {
     assert.ok(rows[index].includes(title));
   }
-  assert.match(html, /href="https:\/\/wildfeathers\.netlify\.app\/field-notes\/willie-in-las-vegas\/"/);
+  assert.match(html, /href="https:\/\/thewildfeathersband\.com\/field-notes\/willie-in-las-vegas\/"/);
   assert.match(html, /href="https:\/\/texasaviationpartners\.com\/about\/jim-wimberly\/"/);
   assert.doesNotMatch(html, /san-marcos-regional-airport-expands-with-170-acre-land-purchase|proposed website redesign|Proposed redesign · Review build/);
   assert.match(html, /href="\/downloads\/preston-wimberly-resume\.pdf"/);
@@ -85,12 +85,12 @@ test("project status distinguishes launched work from review and speculative wor
   assert.equal(jsonLd["@graph"].find(node => node["@type"] === "CreativeWork").workExample.url, "https://texasaviationpartners.com/");
 
   const wild = await (await render("/work/wild-feathers")).text();
-  assert.match(wild, /<strong>Public review archive<\/strong>/);
-  assert.equal((wild.match(/<main[\s\S]*?<\/main>/)[0].match(/owned.domain/gi) ?? []).length, 1);
-  assert.match(wild, /384 performance records/);
-  assert.match(wild, /193 archive records/);
-  assert.match(wild, /110 source records/);
-  assert.doesNotMatch(wild, /private archive|href="https:\/\/thewildfeathersband\.com/);
+  assert.match(wild, /<strong>Live · Independent archive<\/strong>/);
+  assert.match(wild, /410 performance records/);
+  assert.match(wild, /209 archive records/);
+  assert.match(wild, /125 source records/);
+  assert.match(wild, /href="https:\/\/thewildfeathersband\.com\/"/);
+  assert.doesNotMatch(wild, /private archive|Public review archive|Deployment to the owned domain|wildfeathers\.netlify\.app/);
   assert.match(wild, /field-notes\/willie-in-las-vegas/);
 
   const guitar = await (await render("/work/wimberly-guitars")).text();

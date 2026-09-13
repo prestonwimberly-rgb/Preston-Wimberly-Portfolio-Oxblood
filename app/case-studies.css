@@ -26,6 +26,7 @@
 .case-image figcaption span, .artifact figcaption span { display: block; color: var(--ink-soft); margin-top: 4px; }
 .case-ownership { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding: 36px var(--case-gutter) var(--case-space); }
 .case-ownership h2 { font: 700 0.72rem/1.5 var(--font-interface); text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 14px; }
+.case-ownership .collaboration-label { font: 700 0.75rem/1.5 var(--font-interface); margin: 24px 0 8px; color: var(--authority); }
 .case-ownership p { max-width: 540px; margin: 8px 0; }
 .case-role { font-weight: 600; }
 .case-place { color: var(--ink-soft); font: 0.78rem/1.6 var(--font-interface); }
@@ -35,6 +36,11 @@
 .case-section-heading { margin-bottom: 40px; }
 .case-section-heading h2, .case-decision h2, .case-outcome h2 { font: 700 var(--text-h2)/1.1 var(--font-display); letter-spacing: -0.025em; text-wrap: balance; margin: 0 0 24px; max-width: 850px; }
 .case-section-heading p:not(.section-number), .case-decision > div > p, .case-outcome > div > p { font-size: var(--text-body); line-height: 1.65; max-width: var(--measure-reading); margin: 0 0 18px; }
+.case-artifacts-lead + .case-decision { padding-top: 32px; }
+.case-comparison-notes { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; padding: 0; margin: 0; list-style: none; }
+.case-comparison-notes li { border-top: 2px solid var(--authority); padding-top: 16px; }
+.case-comparison-notes h3 { font: 700 1rem/1.4 var(--font-interface); margin: 0 0 12px; }
+.case-comparison-notes p { margin: 0; font-size: 1.05rem; line-height: 1.55; }
 .artifact-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 44px 32px; align-items: start; }
 .artifact { margin: 0; min-width: 0; }
 .artifact-landscape { grid-column: span 6; }
@@ -45,6 +51,10 @@
 .case-reading { border-top: 1px solid var(--line); padding: 40px var(--case-gutter) var(--case-space); }
 .case-reading blockquote { font: 500 clamp(1.8rem, 3.3vw, 3.2rem)/1.25 var(--font-body); max-width: 1000px; margin: 24px 0; }
 .case-reading > p:not(.section-number) { color: var(--ink-soft); max-width: 740px; }
+.case-theme-archive .case-reading { background: var(--ink); color: var(--paper); }
+.case-theme-archive .case-reading .section-number, .case-theme-archive .case-reading > p:not(.section-number) { color: var(--paper); }
+.case-theme-archive .case-reading .text-link:hover { color: var(--white); }
+.case-theme-archive .case-decision h2 { font-family: var(--font-body); font-weight: 500; }
 .motion-study { padding: 0 var(--case-gutter) var(--case-space); }
 .motion-study details { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .motion-study summary { cursor: pointer; padding: 20px 0; min-height: 44px; font: 600 1rem/1.5 var(--font-interface); }
@@ -54,20 +64,29 @@
 .case-outcome { background: var(--paper); }
 .case-outcome .text-link { margin-top: 10px; }
 .next-project { background: var(--ink); color: var(--paper); padding: 48px var(--case-gutter); }
-.next-project > a:not(.all-work) { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; font: 800 clamp(2rem, 4vw, 4rem)/1.1 var(--font-display); margin: 24px 0; }
+.next-project > a:not(.all-work) { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; min-height: 44px; font: 800 clamp(2rem, 4vw, 4rem)/1.1 var(--font-display); margin: 24px 0; }
 .next-project > a > span:first-child { min-width: 0; text-wrap: balance; }
 .next-project > a > span:last-child { flex-shrink: 0; }
 .next-project .all-work { display: inline-flex; align-items: center; min-height: 44px; font: 0.8rem var(--font-interface); text-decoration: underline; text-underline-offset: 5px; }
 
 .campaign { background: var(--paper); }
-.campaign-print { margin: 0 0 40px; background: var(--ink); color: var(--paper); }
-.campaign-print-image { position: relative; aspect-ratio: 1080 / 603; }
+.campaign-print { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); margin: 0 0 48px; background: var(--ink); color: var(--paper); }
+.campaign-print-image { position: relative; min-height: 380px; align-self: stretch; }
 .campaign-print-copy { padding: clamp(28px, 5vw, 64px); }
 .campaign-brand { font: 600 0.75rem/1.5 var(--font-interface); text-transform: uppercase; letter-spacing: 0.12em; margin: 0 0 24px; }
-.campaign-print h3 { font: 500 clamp(2.7rem, 6.5vw, 6.5rem)/1 var(--font-body); margin: 0 0 28px; letter-spacing: -0.025em; }
+.campaign-print h3 { font: 500 clamp(2.7rem, 4.5vw, 4.8rem)/1 var(--font-body); margin: 0 0 28px; letter-spacing: -0.025em; }
 .campaign-print-copy > p:not(.campaign-brand) { font-size: clamp(1.05rem, 1.6vw, 1.45rem); max-width: 740px; }
 .campaign-cta { display: block; font: 700 0.8rem/1.5 var(--font-interface); margin-top: 24px; }
-.campaign-print figcaption { background: var(--paper); color: var(--ink-soft); padding-top: 14px; font: 0.75rem/1.6 var(--font-interface); }
+.campaign-print figcaption { grid-column: 1 / -1; background: var(--paper); color: var(--ink-soft); padding-top: 14px; font: 0.75rem/1.6 var(--font-interface); }
+.campaign-film { padding: 40px 0; border-top: 1px solid var(--line); }
+.campaign-film header { max-width: 780px; }
+.campaign-film h3 { font: 500 clamp(2rem, 3.5vw, 3.5rem)/1.15 var(--font-body); margin: 24px 0; }
+.campaign-film-beats { list-style: none; padding: 0; margin: 32px 0 24px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+.campaign-film-beats li { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 24px; border-top: 1px solid var(--line); padding-top: 20px; }
+.campaign-film-beats li > span { font: 500 0.8rem/1.5 var(--font-metadata); color: var(--ink-soft); }
+.campaign-film-beats h4 { font: 700 1rem/1.5 var(--font-interface); margin: 0 0 8px; }
+.campaign-film-beats p { margin: 0; max-width: 460px; }
+.campaign-production-note { font: 0.8rem/1.65 var(--font-interface); color: var(--ink-soft); max-width: 840px; margin: 24px 0; }
 .campaign-social { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2px; }
 .campaign-social article { display: flex; flex-direction: column; min-height: 370px; padding: clamp(24px, 3vw, 40px); background: var(--saddle); color: var(--paper); }
 .campaign-social article:nth-child(2) { background: var(--paper-deep); color: var(--ink); }
@@ -86,12 +105,17 @@
   .case-summary { font-size: 1.18rem; }
   .case-ownership { grid-template-columns: 1fr; gap: 24px; }
   .case-section-heading, .case-decision, .case-outcome { grid-template-columns: 1fr; gap: 18px; }
+  .case-comparison-notes { grid-template-columns: 1fr; gap: 24px; margin-top: 16px; }
   .case-section-heading h2, .case-decision h2, .case-outcome h2 { font-size: clamp(1.9rem, 7.5vw, 3rem); }
   .artifact-grid { grid-template-columns: 1fr; gap: 36px; }
   .artifact-landscape, .artifact-portrait, .case-theme-workshop .artifact-landscape, .case-theme-studio .artifact-portrait { grid-column: 1; }
   .artifact-portrait { width: min(74vw, 300px); }
   .next-project > a:not(.all-work) { font-size: clamp(1.8rem, 7.5vw, 3rem); }
   .campaign-social { grid-template-columns: 1fr; gap: 12px; }
+  .campaign-print { grid-template-columns: 1fr; }
+  .campaign-print-image { min-height: 0; aspect-ratio: 1080 / 603; }
+  .campaign-film-beats { grid-template-columns: 1fr; gap: 24px; }
+  .campaign-film-beats li { gap: 16px; }
   .campaign-social article { min-height: 290px; padding: 28px; }
   .campaign-social h3 { font-size: 2.6rem; }
   .campaign-letter { grid-template-columns: 1fr; gap: 24px; }
