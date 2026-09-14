@@ -114,7 +114,7 @@ test("exports the selected project photography", async () => {
   );
   assert.match(html, /\/images\/wimberly-jack-antique-bronze-knobs\.jpeg/);
   assert.match(html, /hand-tooled leather pickguard and antique bronze knobs/);
-  assert.match(html, /\/images\/wild-feathers-laugh\.png/);
+  assert.match(html, /\/images\/wild-feathers-laugh.jpg/);
   assert.match(html, /The five members of The Wild Feathers seated together outside, laughing/);
 });
 

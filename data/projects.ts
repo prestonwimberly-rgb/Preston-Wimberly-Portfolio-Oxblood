@@ -141,7 +141,7 @@ const projectRecords: Project[] = [
     "homepagePremise": "First-person writing, photographs, and a public archive of the years on the road.",
     "cardSummary": "First-person writing and an independent music archive connecting 410 performance records, 209 archive records, and 125 source records.",
     "summary": "As a founding guitarist, I brought scattered photographs, tour dates, and firsthand stories into a public archive, keeping sources and uncertainty visible.",
-    "image": "/images/wild-feathers-laugh.png",
+    "image": "/images/wild-feathers-laugh.jpg",
     "imageAlt": "The five members of The Wild Feathers seated together outside, laughing",
     "imageCaption": "The Wild Feathers, archival band photograph.",
     "imageFit": "cover",
