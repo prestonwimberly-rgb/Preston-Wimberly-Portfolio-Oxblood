@@ -10,6 +10,34 @@ The configured canonical production origin is
 The separate session-musician site remains at
 [`prestonwimberly.com`](https://prestonwimberly.com/).
 
+## Repository, production, and environment map
+
+Verified against the repository configuration and Netlify on September 14, 2026.
+
+| Target | Location |
+| --- | --- |
+| GitHub source | [prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood](https://github.com/prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood) |
+| Production branch | `main` |
+| Live site | [work.prestonwimberly.com](https://work.prestonwimberly.com/) |
+| Netlify project | [preston-wimberly-portfolio](https://app.netlify.com/projects/preston-wimberly-portfolio) |
+| Canonical Windows checkout | `C:\Users\pwimb\Documents\GitHub\Preston-Wimberly-Portfolio-Oxblood` |
+| Publish directory | `netlify-dist/` |
+| Local preview | [127.0.0.1:4172](http://127.0.0.1:4172/) |
+
+Netlify sets `SITE_URL` to the canonical production origin. The source default and `.env.example` use the same origin; a local `.env` file is optional. Netlify pins Node.js 22.13.0; local actions accept Node.js 22.13 or later and require Python 3 and locked npm dependencies. Preview deployments intentionally emit noindex metadata.
+
+Use `node .codex/workflow.mjs setup`, `node .codex/workflow.mjs check`, and
+`node .codex/workflow.mjs preview` from the canonical checkout. The tracked
+`.codex/environments/environment.toml` delegates to `.codex/workflow.json` through
+that runner. `.netlify/state.json` is an ignored local association with the project
+above; it is not the source of hosted settings. Preview processes stop at reboot.
+
+The September 11 setup worktrees are historical snapshots with separate commits;
+they are preserved, not current production checkouts. Use the canonical folder
+above for ongoing work. Dated handoff notes describe the commit they checked;
+compare local `HEAD`, freshly fetched `origin/main`, and Netlify's published
+production `commit_ref` before asserting synchronization after another release.
+
 ## Shared agent workflow
 
 Codex and Claude Code use [AGENTS.md](AGENTS.md) as the shared project instructions.
