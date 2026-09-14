@@ -16,6 +16,8 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
     ".claude/**",
+    // Downloaded agent workflow helpers are not portfolio application code.
+    ".agents/skills/**",
   ]),
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
