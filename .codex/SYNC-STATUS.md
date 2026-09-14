@@ -38,3 +38,16 @@ Reviewed by Claude Code after re-fetching origin. Local HEAD still equals origin
 - Unresolved: repo Claude hooks (`eslint-fix.sh`, `guard-files.sh`) are still shell scripts; they run under Git Bash but were not ported like TAP/guitars. Environment name changed to "Portfolio" (cosmetic). 14 dev-tool npm advisories remain.
 - Next action: commit the sync tooling when authorized; decide whether the résumé generator belongs in the repo.
 - Previews on 4171–4175 all returned HTTP 200 at the end of this review.
+
+## Post-merge verification — 2026-09-14 (Claude)
+
+This section supersedes the commit, deploy, and preview details above.
+
+- **Deployed commit:** PR prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood#33 merged to main as `7c3be0d`. Netlify production deploy `6aa818e4ddaeef0008ade565` on `preston-wimberly-portfolio` is ready, is the published deploy, and reports commit `7c3be0d`.
+- **Live:** https://work.prestonwimberly.com/ returned HTTP 200; robots.txt and sitemap.xml returned 200. No forms were submitted.
+- **Local checkout:** on `main`, HEAD equals origin/main `7c3be0d`.
+- **Environment:** `node .codex/workflow.mjs setup` passed. The preview was restarted from the synced checkout at http://127.0.0.1:4172/ and returned HTTP 200.
+- **PR checks before merge:** No GitHub checks are configured. Netlify deploy preview, header rules, and redirect rules passed; deploy-preview-33 returned 200.
+- **Remaining:** scripts/build-creative-director-resume.py remains untracked. During setup, npm said some package install scripts were not run; checks passed and the preview built. The repo's Claude hooks are still shell scripts.
+- **Preserved:** the September 11 setup worktree and the local `chore/portable-sync-tooling-2026-09-14` branch (content already in main) were left untouched.
+- **Documentation after deploy:** this section was added after the deploy and is uncommitted. It is not part of `7c3be0d`; commit it with the next authorized change.
