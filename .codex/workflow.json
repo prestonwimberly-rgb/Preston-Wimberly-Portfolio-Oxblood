@@ -1,0 +1,54 @@
+{
+  "name": "Portfolio",
+  "minimumNode": "22.13",
+  "port": 4172,
+  "actions": {
+    "setup": [
+      [
+        "node",
+        "--version"
+      ],
+      [
+        "python",
+        "--version"
+      ],
+      [
+        "npm",
+        "ci",
+        "--engine-strict",
+        "--no-fund"
+      ]
+    ],
+    "preview": [
+      [
+        "npm",
+        "run",
+        "build:netlify"
+      ],
+      [
+        "python",
+        ".codex/preview.py",
+        "netlify-dist"
+      ]
+    ],
+    "check": [
+      [
+        "npm",
+        "run",
+        "quality"
+      ],
+      [
+        "git",
+        "diff",
+        "--check"
+      ]
+    ],
+    "build": [
+      [
+        "npm",
+        "run",
+        "build:netlify"
+      ]
+    ]
+  }
+}
