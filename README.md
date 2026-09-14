@@ -93,3 +93,9 @@ Preview rebuilds on launch; for live development, use the existing `npm run dev`
 workflow. Set `PORT` in the preview launch environment to override its port. Stop a
 preview with Ctrl+C before starting it again. Local preview does not reproduce Netlify
 headers, redirects, or form delivery.
+
+## Windows and shared handoff
+
+The Codex actions use the portable `node .codex/workflow.mjs` runner on Windows, macOS, and Linux. Both assistants can use `setup`, `preview`, and `check` from the repository root. Commands, minimum Node version, and the default preview port live in `.codex/workflow.json`; keep them aligned with the checks above. Python 3 must be available as `python` on Windows or `python3` elsewhere. Preview rebuilds the public output and serves it on localhost with caching disabled.
+
+Read [.codex/SYNC-STATUS.md](.codex/SYNC-STATUS.md) for the dated checkout, deployment, and unfinished-work handoff. Update that record after verification; do not treat an old status as current evidence. Keep standing project rules in `AGENTS.md`, imported by `CLAUDE.md`.

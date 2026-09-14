@@ -54,3 +54,9 @@ yarn-error.log*
 !.codex/environments/environment.toml
 /output/
 /tmp/
+
+# Shared portable Codex and Claude workflow helpers.
+!.codex/workflow.mjs
+!.codex/workflow.json
+!.codex/preview.py
+!.codex/SYNC-STATUS.md
