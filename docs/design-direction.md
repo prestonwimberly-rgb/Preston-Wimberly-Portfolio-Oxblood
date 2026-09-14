@@ -119,4 +119,17 @@ not a verified production deployment.
 
 ## Content standard
 
+### Employer-facing refinement · September 14, 2026
+
+Keep the existing visual system and project order. The opening explains the
+responsibility from interviews and positioning through launch; About connects
+the career history to the contribution Preston makes now. Contact identifies
+creative direction, brand, and editorial roles with hands-on responsibility.
+Use the documented TAP leadership request and published response as concrete
+collaboration evidence. Preserve independent-work labels and distinguish
+delivered work from measured business impact; add results only when verified.
+For individual applications, link directly to TAP for communications, guitars
+for product and brand, or the archive for editorial work. Keep SANDPAPER in the
+selected work as evidence of sustained writing and editing.
+
 Every project should identify the problem, Preston’s ownership, collaboration, the central creative decision, the finished work, and an observable change. Unverified figures, rights status, attribution, and business outcomes remain explicitly flagged until confirmed. Project-specific evidence blocks may vary in structure, but they must stay factual, scannable, and supported by the public record or supplied assets.

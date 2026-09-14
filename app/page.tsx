@@ -79,8 +79,9 @@ export default function Home() {
             </h1>
             <div className="hero-bottom">
               <p>
-                I set the creative direction for businesses and carry it through
-                writing, photography, and design.
+                I lead brand positioning and creative direction, carrying the
+                work from interviews and strategy through writing, photography,
+                design, and launch.
               </p>
               <a className="text-link" href="#work">
                 Read the work <span aria-hidden="true">↓</span>
@@ -279,19 +280,19 @@ export default function Home() {
             <h2 id="about-title">Different fields. The same editorial judgment.</h2>
             <p className="about-lead">
               I’m Preston Wimberly, a Creative Director based between San Marcos,
-              Texas, and Salt Lake City, Utah.
+              Texas, and Salt Lake City, Utah. I help businesses clarify their
+              position and carry it into the work people read, see, and use.
             </p>
             <p>
               From 2008 to 2011, I sold advertising at Texas Monthly. It was my
-              first job out of college, and I read every issue front to back,
-              learning how reporting, typography, layout, and editing make a
-              story land. As The Wild Feathers’ lead guitarist, songwriter, and
+              first job out of college, where I learned how reporting, design,
+              and editing make a story land. As The Wild Feathers’ lead guitarist, songwriter, and
               pedal steel player through its Warner Bros. years, I also
               contributed to photography and album artwork. I later toured and
-              recorded with Jamestown Revival. Building guitars turned that
-              judgment toward materials, construction, repair, and aging.
-              Aviation brought the same method into an operational business,
-              where every claim has to hold up against the work.
+              recorded with Jamestown Revival. Guitar building brought that
+              judgment to materials and product storytelling; aviation brought
+              it to an operational business, where every claim has to hold up
+              against the work.
             </p>
             <a className="text-link" href={inquiryHref}>
               Start a conversation <span aria-hidden="true">↗</span>
@@ -306,8 +307,10 @@ export default function Home() {
           <p className="eyebrow">Creative direction · Writing · Art direction</p>
           <h2 id="contact-title">Let’s talk about the work.</h2>
           <p className="contact-fit">
-            I’m open to agency and in-house roles, as well as independent projects.
-            Tell me about the team, the assignment, or the business you’re building.
+            I’m open to agency and in-house roles in creative direction, brand,
+            and editorial work, as well as independent projects. I’m most useful
+            where setting the direction and making the work belong together.
+            Tell me about the team or assignment.
           </p>
           <a href={inquiryHref}>Start a conversation ↗</a>
         </section>

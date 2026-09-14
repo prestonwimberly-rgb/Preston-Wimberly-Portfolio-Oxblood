@@ -55,10 +55,10 @@ const projectRecords: Project[] = [
     "engagementType": "Client engagement",
     "status": "Live",
     "ownership": "I had full creative control of the redesign: positioning, information architecture, copy, photography, visual design, and implementation.",
-    "collaboration": "Independent execution with company leadership approval",
+    "collaboration": "I developed the work independently, with company leadership reviewing and approving the public direction. Their feedback shaped the editorial work below.",
     "collaborationExample": {
       "request": "Leadership wanted more of Jim Wimberly’s Southwest Airlines experience in the 1980s and 1990s, and his understanding of what makes an aviation culture work.",
-      "response": "I made that experience the center of a dedicated profile, tracing his airport and airline years through to TAP’s approach to people and operations.",
+      "response": "I wrote a dedicated profile connecting his airport and airline experience to TAP’s approach to people and operations. The published piece gives that leadership request a specific place in the site.",
       "href": "https://texasaviationpartners.com/about/jim-wimberly/",
       "label": "Read Jim’s profile"
     },
