@@ -66,7 +66,7 @@ const projectRecords: Project[] = [
     "liveLabel": "Visit the live TAP website",
     "decisionTitle": "Operate. Develop. Advise.",
     "decision": [
-      "I organized the company around three connected areas of work: operate, develop, and advise. For prospective airport partners, that makes the full scope of the business easier to understand.",
+      "The page is organized around a prospective airport partner’s decision: which part of TAP’s work fits the need, and what experience supports it? Operate, develop, and advise provide three clear starting points.",
       "The live site connects each service with the company’s operating record. Original field photography shows maintenance, land, and infrastructure rather than a generic aviation image."
     ],
     "artifactTitle": "Before / After",
@@ -221,7 +221,7 @@ const projectRecords: Project[] = [
     "decisionTitle": "Let the instrument set the rules.",
     "decision": [
       "For players considering a small workshop, the materials and the maker need to justify the choice. I built the brand around walnut, hand-tooled leather, and metal that changes with use.",
-      "The Jack and the Lucio form one model family. Close photography, plain descriptions of the finishes, and a clear waitlist explain what the workshop makes and how to follow its work."
+      "The buying question behind the presentation is why a player would consider this workshop. Close photography and plain descriptions make the materials available to examine; the Jack and the Lucio give that material approach two distinct expressions. The waitlist provides a way to follow the workshop before making a purchase decision."
     ],
     "artifactTitle": "The launched website",
     "artifactIntro": "The website brings the models, materials, build journal, and waitlist into one place.",
