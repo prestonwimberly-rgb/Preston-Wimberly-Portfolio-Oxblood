@@ -1,53 +1,29 @@
 # Shared synchronization handoff
 
-Verified 2026-09-14 by Codex. Read README.md and AGENTS.md first; CLAUDE.md imports the same rules. This is dated evidence, not a guarantee about later changes.
+Updated September 14, 2026. Read README.md and AGENTS.md first; CLAUDE.md imports the same rules. This record replaces the contradictory earlier handoffs, preserved in the external evidence folder.
 
-- Canonical Windows checkout: `C:\Users\pwimb\Documents\GitHub\Preston-Wimberly-Portfolio-Oxblood`.
-- Local HEAD and fetched origin/main: `68a202da65b3a64b6558f4ecaecaf9530b29bc8d`.
-- Ready production deploy: `6aa775d522ac98000847108e` on `preston-wimberly-portfolio`; branch `main`; matching commit verified through Netlify.
-- Live site: https://work.prestonwimberly.com.
-- Local preview: http://127.0.0.1:4172/, verified HTTP 200. Preview is a local process and must be restarted after reboot.
-- Local runtime: Node 24.19.0, npm 12.0.2, Python 3.14.6. Locked dependencies refreshed where applicable.
-- Netlify local state points to production site `40544a2e-0307-455e-a5d9-4c7732f8b90d`. This is a local association only; hosted settings, domains, and deployments were not changed.
+## Canonical environment
 
-## Verification
+- Checkout: `C:\Users\pwimb\Documents\GitHub\Preston-Wimberly-Portfolio-Oxblood`.
+- GitHub: https://github.com/prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood; production branch: `main`.
+- Live site: https://work.prestonwimberly.com; Netlify project: `preston-wimberly-portfolio`.
+- Local preview: http://127.0.0.1:4172/; publish directory: `netlify-dist/`. Restart the preview after reboot or a build change.
+- Netlify sets `SITE_URL` to the canonical production origin. The source default and `.env.example` use the same origin; a local `.env` file is optional. Netlify pins Node.js 22.13.0; local actions accept Node.js 22.13 or later and require Python 3 and locked npm dependencies. Preview deployments intentionally emit noindex metadata.
 
-Full npm run quality passed: lint, build/export, 19 tests, and production dependency audit (0 vulnerabilities). Lint rerun after environment changes passed.
+## Last verified synchronization baseline
 
-Live and local homepage, representative routes, robots.txt, and sitemap.xml returned HTTP 200. These were HTTP/content checks, not a complete new visual audit. No production forms were submitted. Windows portable preview actions were run successfully; macOS/Linux execution was not tested here.
+Before this maintenance release, local main, fetched origin/main, and the published Netlify deployment matched commit `5895ff3482ff80089911acb9883ee23b19cfc645`. Deployment `6aa82f6f405ad80007b8611e` was ready and published at 2026-09-14T17:39:48.310Z. These are dated baseline identifiers, not the commit containing this document. Resolve the current release through GitHub and Netlify before the next change.
 
-## Preserved work and environment differences
+All five repositories passed their portable setup/check actions. The combined verification passed 74 live/local HTTP and content checks and desktop/mobile browser review. Workflow tooling and README updates are merged; the old claim that they remain uncommitted is obsolete. The baseline evidence is in `C:/Users/pwimb/Documents/Codex/repo-sync-2026-09-14/`.
 
-Production SITE_URL is https://work.prestonwimberly.com. The untracked scripts/build-creative-director-resume.py is preserved. Its underline token appears to add one unused Tailwind utility to local CSS, changing the generated filename; the remaining CSS matches production. The dependency install reported 14 development-tool vulnerabilities; the required production audit reports zero. No forced dependency upgrades were applied.
+## Maintenance and form verification
 
-The September 11 setup worktree is historical and contains one unique unmerged setup commit. It was inspected and preserved, not rebased or reset. Use the canonical checkout above for current site work.
+The September 14 dependency maintenance update passes a clean npm ci and npm run quality: lint, static build/export, all 19 tests, and a full npm audit with zero vulnerabilities. The quality gate now includes development dependencies. Preserve the untracked scripts/build-creative-director-resume.py. Vite reports a nonblocking warning about a future native configuration loader; the current build passes.
 
-## Pending handoff
+The test marker is `PW-DELIVERY-20260914-A`. Form storage and email delivery are separate checks; a success page alone does not confirm either. Do not repeat tests automatically.
 
-The shared README/AGENTS/CLAUDE guidance from GitHub is synchronized. This pass additionally repaired portable Windows commands and recorded this handoff. Those new workflow/documentation changes remain local and uncommitted; they have not been pushed or deployed. Preserve the existing unrelated files when staging a future authorized release.
+## Handoff discipline
 
-At the next handoff, record the branch/commit, exact changed files, checks and failures, local preview, production deploy commit, and remaining work here. Never copy credentials or production secrets into this file. Both assistants should update this same record rather than maintain conflicting private notes.
+The September 11 setup worktree contains historical work and remains preserved. Use the canonical checkout for current development. Keep unrelated drafts out of commits. Never copy credentials or hosted secret values here. Local preview and production contexts intentionally differ where README documents analytics or indexing behavior.
 
-Backups and detailed evidence: `C:/Users/pwimb/Documents/Codex/repo-sync-2026-09-14/`.
-
-## Claude review — 2026-09-14
-
-Reviewed by Claude Code after re-fetching origin. Local HEAD still equals origin/main; the portable runner (workflow.mjs, preview.py) is byte-identical across all five repositories, and CLAUDE.md still imports AGENTS.md. Nothing was committed, pushed, merged, or deployed.
-- Changed: nothing beyond this handoff note. `scripts/build-creative-director-resume.py` left untracked and untouched.
-- Checks run: `node .codex/workflow.mjs check` passed (`npm run quality`: lint, build, 19 tests, production audit 0 vulnerabilities; git diff --check).
-- Unresolved: repo Claude hooks (`eslint-fix.sh`, `guard-files.sh`) are still shell scripts; they run under Git Bash but were not ported like TAP/guitars. Environment name changed to "Portfolio" (cosmetic). 14 dev-tool npm advisories remain.
-- Next action: commit the sync tooling when authorized; decide whether the résumé generator belongs in the repo.
-- Previews on 4171–4175 all returned HTTP 200 at the end of this review.
-
-## Post-merge verification — 2026-09-14 (Claude)
-
-This section supersedes the commit, deploy, and preview details above.
-
-- **Deployed commit:** PR prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood#33 merged to main as `7c3be0d`. Netlify production deploy `6aa818e4ddaeef0008ade565` on `preston-wimberly-portfolio` is ready, is the published deploy, and reports commit `7c3be0d`.
-- **Live:** https://work.prestonwimberly.com/ returned HTTP 200; robots.txt and sitemap.xml returned 200. No forms were submitted.
-- **Local checkout:** on `main`, HEAD equals origin/main `7c3be0d`.
-- **Environment:** `node .codex/workflow.mjs setup` passed. The preview was restarted from the synced checkout at http://127.0.0.1:4172/ and returned HTTP 200.
-- **PR checks before merge:** No GitHub checks are configured. Netlify deploy preview, header rules, and redirect rules passed; deploy-preview-33 returned 200.
-- **Remaining:** scripts/build-creative-director-resume.py remains untracked. During setup, npm said some package install scripts were not run; checks passed and the preview built. The repo's Claude hooks are still shell scripts.
-- **Preserved:** the September 11 setup worktree and the local `chore/portable-sync-tooling-2026-09-14` branch (content already in main) were left untouched.
-- **Documentation after deploy:** this section was added after the deploy and is uncommitted. It is not part of `7c3be0d`; commit it with the next authorized change.
+For the next handoff, replace this record with a dated account of changed files, actual checks, current release evidence, and remaining work. Do not append a competing status or claim deployment before verifying the published commit and public routes.

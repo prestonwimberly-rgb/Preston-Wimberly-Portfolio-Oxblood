@@ -68,7 +68,7 @@ npm run quality
 
 This lints the source, generates responsive images and social cards, builds and
 exports the static site, runs the rendering and asset tests, and audits
-production dependencies.
+all dependencies, including build tooling.
 
 ## Build and deployment
 
