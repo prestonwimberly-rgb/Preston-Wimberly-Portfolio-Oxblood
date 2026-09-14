@@ -119,6 +119,19 @@ not a verified production deployment.
 
 ## Content standard
 
+### Marketing evidence refinement · September 14, 2026
+
+Explain the visitor's decision within the existing TAP and guitar case-study
+narratives. These are readings of the site's structure, not findings from
+customer interviews. Keep the documented TAP leadership request as the
+collaboration example; do not invent a deadline, budget, or disagreement.
+The guitar campaign must connect player stories to the Jack's actual materials
+and lead to model exploration and the waitlist. Keep its distribution and
+measurement plan inside the existing expandable treatments and explicitly
+label the audience hypothesis and unrun test. No campaign is launched by this
+portfolio edit. Verified customer comments, post-launch response, and operating
+constraints remain evidence to collect before further claims are added.
+
 ### Employer-facing refinement · September 14, 2026
 
 Keep the existing visual system and project order. The opening explains the
