@@ -98,7 +98,7 @@ Use this page direction:
   documenting any other command.
 - Run the complete repository quality gate with `npm run quality`. It lints,
   builds, generates responsive assets and social cards, exports the Netlify
-  site, runs tests, and audits production dependencies.
+  site, runs tests, and audits all dependencies, including build tooling.
 - Netlify runs `npm run build:netlify` and publishes `netlify-dist/`. Review that
   output after relevant changes: six public routes, the branded `404.html`,
   `robots.txt`, `sitemap.xml`, canonical metadata, social cards, responsive
