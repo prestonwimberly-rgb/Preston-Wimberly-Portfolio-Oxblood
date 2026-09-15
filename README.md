@@ -40,6 +40,11 @@ production `commit_ref` before asserting synchronization after another release.
 
 ## Working with Codex and Claude
 
+[Local workflow reference](.codex/README.md) points to the same shared rules and
+commands. Keep this file versioned so the link also works in GitHub and fresh
+checkouts. After a release, replace pending-release instructions in the handoff
+with the verified merge and published deployment; retain dated evidence separately.
+
 Codex and Claude Code use [AGENTS.md](AGENTS.md) as the shared project instructions.
 [CLAUDE.md](CLAUDE.md) imports that file; keep project rules there instead of
 duplicating them in assistant-specific notes. Read this README for commands and
@@ -147,3 +152,11 @@ headers, redirects, or form delivery.
 The Codex actions use the portable `node .codex/workflow.mjs` runner on Windows, macOS, and Linux. Both assistants can use `setup`, `preview`, and `check` from the repository root. Commands, minimum Node version, and the default preview port live in `.codex/workflow.json`; keep them aligned with the checks above. Python 3 must be available as `python` on Windows or `python3` elsewhere. Preview rebuilds the public output and serves it on localhost with caching disabled.
 
 Read [.codex/SYNC-STATUS.md](.codex/SYNC-STATUS.md) for the dated checkout, deployment, and unfinished-work handoff. Update that record after verification; do not treat an old status as current evidence. Keep standing project rules in `AGENTS.md`, imported by `CLAUDE.md`.
+
+## Claude Code hooks
+
+The hooks in `.claude/settings.json` use Node.js and the locked local ESLint.
+`guard-files.mjs` protects generated output, the lockfile, and secret environment
+files while allowing `.env.example`. `eslint-fix.mjs` runs ESLint after script
+edits. They require no `jq` installation. Restart an existing Claude Code session
+to load changed hook settings; file checks do not prove a running session reloaded.

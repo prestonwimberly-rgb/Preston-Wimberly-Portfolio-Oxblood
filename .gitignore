@@ -60,3 +60,4 @@ yarn-error.log*
 !.codex/workflow.json
 !.codex/preview.py
 !.codex/SYNC-STATUS.md
+!.codex/README.md
