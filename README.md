@@ -38,7 +38,7 @@ above for ongoing work. Dated handoff notes describe the commit they checked;
 compare local `HEAD`, freshly fetched `origin/main`, and Netlify's published
 production `commit_ref` before asserting synchronization after another release.
 
-## Shared agent workflow
+## Working with Codex and Claude
 
 Codex and Claude Code use [AGENTS.md](AGENTS.md) as the shared project instructions.
 [CLAUDE.md](CLAUDE.md) imports that file; keep project rules there instead of
@@ -46,6 +46,26 @@ duplicating them in assistant-specific notes. Read this README for commands and
 check the current source/configuration before relying on deployment descriptions.
 Preserve existing changes. Commit, push, merge, and deploy only when explicitly
 authorized for the requested action.
+
+Start with these version-controlled records:
+
+- [AGENTS.md](AGENTS.md): shared working rules for both agents.
+- [CLAUDE.md](CLAUDE.md): Claude Code's entry point, importing those rules.
+- [.codex/SYNC-STATUS.md](.codex/SYNC-STATUS.md): current task, branch, inspected
+  commit, changes, validation, blockers, and next action.
+- [Design direction](docs/design-direction.md): the portfolio's Prairie Airframe
+  identity and documented decisions.
+- [Launch checklist](docs/launch-checklist.md): content clearance and release gates.
+- [Local development](#local-development), [build and deployment](#build-and-deployment),
+  and [project structure](#project-structure): setup, validation, and architecture.
+- [Workflow configuration](.codex/workflow.json): the commands used by the
+  [portable runner](.codex/workflow.mjs).
+
+Shared context lives in these files, not solely in private chats. The next agent
+needs the correct repository, branch, and file versions; the tools do not
+automatically synchronize their conversations or checkouts. Compare the handoff
+with the actual working tree before continuing. Update it with meaningful work,
+and keep lasting decisions in the relevant linked document.
 
 “Push and merge to main” authorizes the complete
 [release completion workflow](AGENTS.md#9-release-completion), including local
