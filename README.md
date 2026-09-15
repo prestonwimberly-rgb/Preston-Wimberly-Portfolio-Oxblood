@@ -12,7 +12,8 @@ The separate session-musician site remains at
 
 ## Repository, production, and environment map
 
-Verified against the repository configuration and Netlify on September 14, 2026.
+Repository configuration, primary domain, and published commit checked on
+September 15, 2026. Hosted settings retain the dated evidence noted below.
 
 | Target | Location |
 | --- | --- |
@@ -24,7 +25,12 @@ Verified against the repository configuration and Netlify on September 14, 2026.
 | Publish directory | `netlify-dist/` |
 | Local preview | [127.0.0.1:4172](http://127.0.0.1:4172/) |
 
-Netlify sets `SITE_URL` to the canonical production origin. The source default and `.env.example` use the same origin; a local `.env` file is optional. Netlify pins Node.js 22.13.0; local actions accept Node.js 22.13 or later and require Python 3 and locked npm dependencies. Preview deployments intentionally emit noindex metadata.
+The September 14 hosting review recorded `SITE_URL` set to the canonical
+production origin in Netlify; that hosted value was not rechecked in the
+September 15 documentation review. The source default and `.env.example` use
+the same origin; a local `.env` file is optional. `netlify.toml` pins Node.js
+22.13.0; local actions accept Node.js 22.13 or later and require Python 3 and
+locked npm dependencies. Preview deployments intentionally emit noindex metadata.
 
 Use `node .codex/workflow.mjs setup`, `node .codex/workflow.mjs check`, and
 `node .codex/workflow.mjs preview` from the canonical checkout. The tracked
@@ -42,8 +48,10 @@ production `commit_ref` before asserting synchronization after another release.
 
 [Local workflow reference](.codex/README.md) points to the same shared rules and
 commands. Keep this file versioned so the link also works in GitHub and fresh
-checkouts. After a release, replace pending-release instructions in the handoff
-with the verified merge and published deployment; retain dated evidence separately.
+checkouts. Keep the handoff as a dated snapshot and record the final merge and
+published deployment in the release pull request. On the next meaningful task,
+reconcile the snapshot with Git and Netlify; do not create another documentation
+release solely to record its own merge commit.
 
 Codex and Claude Code use [AGENTS.md](AGENTS.md) as the shared project instructions.
 [CLAUDE.md](CLAUDE.md) imports that file; keep project rules there instead of
