@@ -1,5 +1,48 @@
 # Repository instructions
 
+These are the shared repository-level rules for Codex and Claude Code.
+
+## Shared working discipline
+
+Before editing:
+
+- Confirm `origin`, branch, current commit, and working state with `git remote -v`,
+  `git branch --show-current`, `git rev-parse HEAD`, and `git status --short`.
+- Read [README.md](README.md), [.codex/SYNC-STATUS.md](.codex/SYNC-STATUS.md),
+  and applicable local instructions, including any `AGENTS.override.md` files.
+  Report overrides that prevent these shared rules from taking effect.
+- Verify preceding handoff work is present in this checkout. Reconcile stale
+  records with the actual files; read relevant design or architecture guidance
+  before changing those areas.
+
+While working:
+
+- Preserve this site's identity and approved decisions. Do not transfer another
+  site's typography, palette, layouts, or content without explicit approval.
+- Keep changes focused. Preserve work by Preston, Claude, Codex, and other
+  contributors; do not overwrite, discard, stash, or commit another contributor's
+  unfinished work without approval. Flag conflicting requirements.
+- Use the actual documented validation commands when appropriate. Never report
+  a failed or unrun check as passing. Keep credentials, secrets, and private
+  personal information out of documentation.
+
+Before finishing meaningful implementation work:
+
+- Update the shared handoff with the date, repository/site, branch, inspected
+  starting commit, actual changes, decisions, validation, blockers, and next
+  concrete action. Distinguish completed work, proposals, and unknowns; label
+  branch work so it cannot be mistaken for merged or deployed work.
+- Update README or linked documentation for lasting setup, architecture,
+  workflow, or design changes; include those updates with the related code.
+  Do not create documentation churn for simple read-only questions.
+- Report exact files changed and whether work is local, committed, pushed,
+  in a PR, merged, or deployed. Do not merge, force-push, push directly to the
+  default branch, or deploy without Preston's explicit approval.
+- For documentation-only tasks, check local links/imports, instruction
+  consistency, intended-file scope, and `git diff --check`. No dedicated
+  documentation checker is currently defined. Do not install dependencies or
+  run the full-site quality gate solely for documentation changes.
+
 ## 1. Repository identity and scope
 
 - This repository is `prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood`.
@@ -187,7 +230,7 @@ Use this page direction:
   environment configuration. Finish by reporting the merged commit, local sync
   status, preview URL, live URL, and anything still out of date. Preserve
   historical archives.
-- This request supplies the explicit authorization required above for the
+- A request to “push and merge to main” supplies the explicit authorization required above for the
   scoped commit, push, pull request, merge, and routine production release through
   the existing approved hosting configuration. Continue those steps without
   asking for the same approval again. Follow any narrower scope Preston states;

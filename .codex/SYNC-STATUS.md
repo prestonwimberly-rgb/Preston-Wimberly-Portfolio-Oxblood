@@ -1,29 +1,89 @@
 # Shared synchronization handoff
 
-Updated September 14, 2026. Read README.md and AGENTS.md first; CLAUDE.md imports the same rules. This record replaces the contradictory earlier handoffs, preserved in the external evidence folder.
+Last updated: September 15, 2026. Read [README](../README.md) and
+[shared instructions](../AGENTS.md); [CLAUDE.md](../CLAUDE.md) imports those rules.
 
-## Canonical environment
+## Current task and checkout
 
+- Repository: `prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood`.
+- Website: [work.prestonwimberly.com](https://work.prestonwimberly.com/), confirmed
+  by `config/site.json` and the matching Netlify project. This is separate from
+  the session-musician site.
 - Checkout: `C:\Users\pwimb\Documents\GitHub\Preston-Wimberly-Portfolio-Oxblood`.
-- GitHub: https://github.com/prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood; production branch: `main`.
-- Live site: https://work.prestonwimberly.com; Netlify project: `preston-wimberly-portfolio`.
-- Local preview: http://127.0.0.1:4172/; publish directory: `netlify-dist/`. Restart the preview after reboot or a build change.
-- Netlify sets `SITE_URL` to the canonical production origin. The source default and `.env.example` use the same origin; a local `.env` file is optional. Netlify pins Node.js 22.13.0; local actions accept Node.js 22.13 or later and require Python 3 and locked npm dependencies. Preview deployments intentionally emit noindex metadata.
+- Starting branch: `main`; inspected starting commit:
+  `fc543aa979f8ccd38bc5f8f2a822e4a800d3d92c` (merge of PR #39).
+- Task branch: `codex/shared-agent-handoff`, created from that local commit.
+- Task: complete the existing shared documentation and handoff system.
+  Documentation edits are complete on this local branch, prepared for a local
+  commit. Use `git log -1` to resolve the commit containing this record.
+  No push, PR, merge, or deployment was performed for this task.
+- Files changed: `README.md`, `AGENTS.md`, `CLAUDE.md`, `.codex/SYNC-STATUS.md`.
+  No competing handoff file was created.
 
-## Last verified synchronization baseline
+## Changes and decisions to preserve
 
-Before this maintenance release, local main, fetched origin/main, and the published Netlify deployment matched commit `5895ff3482ff80089911acb9883ee23b19cfc645`. Deployment `6aa82f6f405ad80007b8611e` was ready and published at 2026-09-14T17:39:48.310Z. These are dated baseline identifiers, not the commit containing this document. Resolve the current release through GitHub and Netlify before the next change.
+- README's “Working with Codex and Claude” section links the shared rules,
+  handoff, design authority, release checklist, setup, and architecture.
+- AGENTS adds checkout verification, preservation of other contributors' work,
+  reconciliation of stale handoffs, accurate validation reporting, and finishing
+  requirements. Release authorization explicitly depends on an actual request
+  to “push and merge to main”; this task does not authorize release.
+- CLAUDE retains its active `@AGENTS.md` import and points to this handoff.
+  Shared decisions belong in tracked files, not separate private chat histories.
+- Preserve Prairie Airframe, static export without application JavaScript,
+  approved canonical origin, and content/rights guardrails in the existing docs.
+  No website implementation, content, assets, dependencies, environment files,
+  or deployment configuration changed.
+- Preserve the pre-existing untracked `.agents/skills/` additions and
+  `scripts/build-creative-director-resume.py`; they are outside this task and
+  must not enter its commit. Tracked files were clean at the starting point.
 
-All five repositories passed their portable setup/check actions. The combined verification passed 74 live/local HTTP and content checks and desktop/mobile browser review. Workflow tooling and README updates are merged; the old claim that they remain uncommitted is obsolete. The baseline evidence is in `C:/Users/pwimb/Documents/Codex/repo-sync-2026-09-14/`.
+## Validation and publication boundary
 
-## Maintenance and form verification
+- Inspected repository remote, branch, HEAD, status, recent history, root agent
+  files, README, design direction, launch checklist, project content structure,
+  package scripts, Netlify/site configuration, and portable workflow runner.
+- No ancestor instruction files or repository `AGENTS.override.md` files were
+  found in the checked ancestor chain and repository inventory. No nested agent
+  instructions apply to these four files; no override conflict was found.
+- No configured `core.hooksPath`, active default Git hooks, or GitHub Actions
+  workflows were found. The repository has no dedicated documentation check;
+  `.codex/workflow.mjs check` runs the full site quality gate.
+- Documentation validation: local Markdown links and anchors, active import,
+  preserved existing guidance, four-file diff scope, and whitespace checked.
+  No dependency installation, build, site tests, or browser audit was run for
+  this documentation-only task. Historical checks below are not new test results.
+- Netlify's read-only connector confirmed project `preston-wimberly-portfolio`
+  and the configured public URL. Its response does not expose branch/PR build
+  triggers, so a deployment-free push cannot be established. Push and draft PR
+  are pending; no hosting settings or permissions were changed.
+- Current remote-main synchronization and public production behavior were not
+  verified. Claude loading these instructions was not verified.
 
-The September 14 dependency maintenance update passes a clean npm ci and npm run quality: lint, static build/export, all 19 tests, and a full npm audit with zero vulnerabilities. The quality gate now includes development dependencies. Preserve the untracked scripts/build-creative-director-resume.py. Vite reports a nonblocking warning about a future native configuration loader; the current build passes.
+## Dated baseline retained from the preceding handoff
 
-The test marker is `PW-DELIVERY-20260914-A`. Form storage and email delivery are separate checks; a success page alone does not confirm either. Do not repeat tests automatically.
+The September 14 record reports local main, fetched origin/main, and published
+Netlify matching `5895ff3482ff80089911acb9883ee23b19cfc645` before a maintenance
+release, with deployment `6aa82f6f405ad80007b8611e` published at
+2026-09-14T17:39:48.310Z. This predates the inspected starting commit above and
+is historical evidence, not current synchronization status. Its evidence folder
+is `C:/Users/pwimb/Documents/Codex/repo-sync-2026-09-14/`; it was not inspected
+in this task.
 
-## Handoff discipline
+That record reports a clean `npm ci`, passing `npm run quality`, 19 tests, zero
+audit vulnerabilities including development dependencies, and a nonblocking
+Vite configuration-loader warning. Those checks were not rerun here. The stored
+form test marker is `PW-DELIVERY-20260914-A`; storage and email delivery are
+separate checks, and tests must not be repeated automatically. Historical
+September 11 worktrees remain preserved; they were not inspected in this task.
 
-The September 11 setup worktree contains historical work and remains preserved. Use the canonical checkout for current development. Keep unrelated drafts out of commits. Never copy credentials or hosted secret values here. Local preview and production contexts intentionally differ where README documents analytics or indexing behavior.
+## Next concrete action
 
-For the next handoff, replace this record with a dated account of changed files, actual checks, current release evidence, and remaining work. Do not append a competing status or claim deployment before verifying the published commit and public routes.
+Review the local documentation commit. Before publishing the branch or opening
+a draft PR, verify Netlify's branch/PR deployment behavior or obtain Preston's
+explicit approval for any resulting preview deployment. Do not change hosting
+settings to bypass this boundary. The intended draft PR title is
+“Set up shared Codex and Claude handoff”; merge and deployment remain excluded.
+Another local agent can read these files on `codex/shared-agent-handoff` now;
+other checkouts need the same file versions before continuing. Preview commands,
+port 4172, environment requirements, and release checks remain in README.
