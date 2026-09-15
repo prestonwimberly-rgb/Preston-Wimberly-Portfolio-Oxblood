@@ -1,96 +1,58 @@
-# Shared synchronization handoff
+# Shared Codex and Claude handoff
 
-Last updated: September 15, 2026. Read [README](../README.md) and
-[shared instructions](../AGENTS.md); [CLAUDE.md](../CLAUDE.md) imports those rules.
+Verified September 15, 2026. Read [README.md](../README.md), [AGENTS.md](../AGENTS.md),
+and applicable local instructions. [CLAUDE.md](../CLAUDE.md) imports the shared rules.
 
-## Current task and checkout
+## Verified release baseline
 
-- Repository: `prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood`.
-- Website: [work.prestonwimberly.com](https://work.prestonwimberly.com/), confirmed
-  by `config/site.json` and the matching Netlify project. This is separate from
-  the session-musician site.
-- Checkout: `C:\Users\pwimb\Documents\GitHub\Preston-Wimberly-Portfolio-Oxblood`.
-- Starting branch: `main`; inspected starting commit:
-  `fc543aa979f8ccd38bc5f8f2a822e4a800d3d92c` (merge of PR #39).
-- Task branch: `codex/shared-agent-handoff`, created from that local commit.
-- Task: complete the existing shared documentation and handoff system.
-  Documentation edits were committed as `a1a7199`. Preston then explicitly
-  requested “push and merge to main” on September 15, authorizing the scoped
-  release through existing hosting. At this record, release validation passed;
-  push, merge, local sync, preview refresh, and production verification follow.
-  Resolve their outcome from GitHub/Netlify before claiming completion.
-- Files changed: `README.md`, `AGENTS.md`, `CLAUDE.md`, `.codex/SYNC-STATUS.md`.
-  No competing handoff file was created.
+- Repository: [prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood](https://github.com/prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood).
+- Canonical checkout: `C:\Users\pwimb\Documents\GitHub\Preston-Wimberly-Portfolio-Oxblood`.
+- Live site: [https://work.prestonwimberly.com](https://work.prestonwimberly.com). Netlify project: `preston-wimberly-portfolio`.
+- PR [#40](https://github.com/prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood/pull/40) is merged. Local `main`, freshly fetched `origin/main`, and Netlify's published production commit matched `1b5715f5b90dd674f6ee0c7ed75d40ed4f2de477` at this audit's start.
+- Production deployment `6aa962f5a18e500008341ed6` is ready and published at `2026-09-15T15:29:04.239Z` on branch `main`.
+- Homepage, robots.txt, sitemap.xml, and selected inner routes returned HTTP 200. This verifies availability, not every interactive behavior or form delivery.
 
-## Changes and decisions to preserve
+## Current audit work
 
-- README's “Working with Codex and Claude” section links the shared rules,
-  handoff, design authority, release checklist, setup, and architecture.
-- AGENTS adds checkout verification, preservation of other contributors' work,
-  reconciliation of stale handoffs, accurate validation reporting, and finishing
-  requirements. Release authorization explicitly depends on an actual request
-  to “push and merge to main”; this task does not authorize release.
-- CLAUDE retains its active `@AGENTS.md` import and points to this handoff.
-  Shared decisions belong in tracked files, not separate private chat histories.
-- Preserve Prairie Airframe, static export without application JavaScript,
-  approved canonical origin, and content/rights guardrails in the existing docs.
-  No website implementation, content, assets, dependencies, environment files,
-  or deployment configuration changed.
-- Preserve the pre-existing untracked `.agents/skills/` additions and
-  `scripts/build-creative-director-resume.py`; they are outside this task and
-  must not enter its commit. Tracked files were clean at the starting point.
+- Branch: `codex/repository-docs-audit-2026-09-15`, based on the verified release commit above.
+- Release authorization: Preston explicitly requested "push and merge all of this to main" on September 15, 2026 for all five active sites, including `thewildfeathersband.com`. This covers the scoped audit corrections and the existing release workflow. Use the pull request for this task branch and its release record to resolve delivery state; the baseline above predates this audit.
+- Corrected stale pre-release handoffs and made `.codex/README.md` eligible for version control in `.gitignore`; those local pointers had been ignored and absent from GitHub. Updated README with the shared pointer and post-release recording rule. Replaced the two configured Bash/jq hooks with Node equivalents after reproducing the missing-jq failure.
+- Shared rules remain in AGENTS, Claude imports them, and this is the single current-state handoff. Shared files do not synchronize private conversations or independently prove Claude loaded them.
 
-## Validation and publication boundary
+## Files in this audit
 
-- Inspected repository remote, branch, HEAD, status, recent history, root agent
-  files, README, design direction, launch checklist, project content structure,
-  package scripts, Netlify/site configuration, and portable workflow runner.
-- No ancestor instruction files or repository `AGENTS.override.md` files were
-  found in the checked ancestor chain and repository inventory. No nested agent
-  instructions apply to these four files; no override conflict was found.
-- No configured `core.hooksPath`, active default Git hooks, or GitHub Actions
-  workflows were found. The repository has no dedicated documentation check;
-  `.codex/workflow.mjs check` runs the full site quality gate.
-- Documentation validation: local Markdown links and anchors, active import,
-  preserved existing guidance, four-file diff scope, and whitespace checked.
-  Initial documentation work did not run a site audit. After release approval,
-  `npm run quality` passed lint, build/export, all 19 tests, and npm audit with
-  zero vulnerabilities. The existing Vite future-loader warning is nonblocking.
-  No dependency installation was needed. Browser verification follows release.
-- Netlify's read-only connector confirmed project `preston-wimberly-portfolio`
-  and the configured public URL. Its response does not expose branch/PR build
-  triggers. Preston subsequently authorized the routine release; this resolves
-  the original publication blocker. No hosting settings or permissions changed.
-- Current remote-main synchronization and public production behavior were not
-  verified at the initial documentation pass. The release preflight fetched
-  origin/main and confirmed it still matched the starting commit; GitHub CLI
-  uses prestonwimberly-rgb with ADMIN permission on this exact repository.
-  Claude loading these instructions was not verified.
+- `README.md`
+- `.gitignore`
+- `.codex/README.md`
+- `.codex/SYNC-STATUS.md`
+- `.claude/settings.json`
+- `.claude/hooks/guard-files.mjs`
+- `.claude/hooks/eslint-fix.mjs`
 
-## Dated baseline retained from the preceding handoff
+## Verification
 
-The September 14 record reports local main, fetched origin/main, and published
-Netlify matching `5895ff3482ff80089911acb9883ee23b19cfc645` before a maintenance
-release, with deployment `6aa82f6f405ad80007b8611e` published at
-2026-09-14T17:39:48.310Z. This predates the inspected starting commit above and
-is historical evidence, not current synchronization status. Its evidence folder
-is `C:/Users/pwimb/Documents/Codex/repo-sync-2026-09-14/`; it was not inspected
-in this task.
+Release checks were rerun after Preston's September 15 authorization. The
+independent pre-merge review found no release-blocking defects.
 
-That record reports a clean `npm ci`, passing `npm run quality`, 19 tests, zero
-audit vulnerabilities including development dependencies, and a nonblocking
-Vite configuration-loader warning. Those checks were not rerun here. The stored
-form test marker is `PW-DELIVERY-20260914-A`; storage and email delivery are
-separate checks, and tests must not be repeated automatically. Historical
-September 11 worktrees remain preserved; they were not inspected in this task.
+- `node .codex/workflow.mjs check`: The quality gate passed lint, build/static export, 19 tests, and npm audit with zero vulnerabilities. The Claude hook migration passed 39 protected/allowed path and lint-hook cases; lint passed again after editing the hooks.
+- Passed after the audit edits: local README links/anchors, active `@AGENTS.md` imports, workflow actions, and Git diff whitespace. All configured Claude hooks passed syntax and harmless-event checks. These checks do not verify a running Claude session. The `.codex/README.md` pointer is included with its `.gitignore` exception so fresh checkouts receive it.
+- No full factual review of website claims, hosted environment-variable review, or production form test was performed. The README environment map retains its explicitly dated September 14 baseline.
 
-## Next concrete action
+## Preserved work and remaining issues
 
-Push this documentation branch, open “Set up shared Codex and Claude handoff”
-against main, wait for required checks, and merge under Preston's September 15
-approval. Then fast-forward the canonical checkout, rebuild/start the tracked
-preview on port 4172, and verify the matching production commit and public site.
-Report the merged SHA, PR, local sync, preview, and deployment evidence. Preserve
-the separate historical worktree at commit `cd27d6a` and all untracked work.
-Another local agent can read this branch now; other checkouts need its exact
-file versions. Shared files do not automatically synchronize private chats.
+Preserve the pre-existing untracked `.agents/skills/` additions and `scripts/build-creative-director-resume.py`; they are unrelated work and must not be included in this audit commit. Preserve the September 11 worktree and Prairie Airframe direction. The old shell hook files remain for history; settings now call the Node hooks.
+
+## Historical evidence
+
+Earlier site and content-clearance evidence remains in Git history and docs/launch-checklist.md. No new content or rights approval was obtained. Earlier handoff versions remain in Git history; do not treat their pre-release next actions as outstanding after the verified merge above.
+
+## Continuing after this release
+
+Fetch `origin/main`, inspect the actual checkout and uncommitted work, and read
+these shared files before starting a new task. The audit pull request is identified
+by head branch `codex/repository-docs-audit-2026-09-15`; its merged state and release
+record supply the delivery evidence for this revision. Do not repeat the earlier
+release in the baseline above or infer pending work from an older handoff.
+Compare GitHub main and Netlify's published production commit when current deployment
+state matters. Preserve the named drafts and historical worktrees. Restart existing
+Claude Code sessions to load the current project instructions and hook settings.
