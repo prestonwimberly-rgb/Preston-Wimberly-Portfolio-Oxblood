@@ -14,9 +14,11 @@ Last updated: September 15, 2026. Read [README](../README.md) and
   `fc543aa979f8ccd38bc5f8f2a822e4a800d3d92c` (merge of PR #39).
 - Task branch: `codex/shared-agent-handoff`, created from that local commit.
 - Task: complete the existing shared documentation and handoff system.
-  Documentation edits are complete on this local branch, prepared for a local
-  commit. Use `git log -1` to resolve the commit containing this record.
-  No push, PR, merge, or deployment was performed for this task.
+  Documentation edits were committed as `a1a7199`. Preston then explicitly
+  requested “push and merge to main” on September 15, authorizing the scoped
+  release through existing hosting. At this record, release validation passed;
+  push, merge, local sync, preview refresh, and production verification follow.
+  Resolve their outcome from GitHub/Netlify before claiming completion.
 - Files changed: `README.md`, `AGENTS.md`, `CLAUDE.md`, `.codex/SYNC-STATUS.md`.
   No competing handoff file was created.
 
@@ -51,14 +53,19 @@ Last updated: September 15, 2026. Read [README](../README.md) and
   `.codex/workflow.mjs check` runs the full site quality gate.
 - Documentation validation: local Markdown links and anchors, active import,
   preserved existing guidance, four-file diff scope, and whitespace checked.
-  No dependency installation, build, site tests, or browser audit was run for
-  this documentation-only task. Historical checks below are not new test results.
+  Initial documentation work did not run a site audit. After release approval,
+  `npm run quality` passed lint, build/export, all 19 tests, and npm audit with
+  zero vulnerabilities. The existing Vite future-loader warning is nonblocking.
+  No dependency installation was needed. Browser verification follows release.
 - Netlify's read-only connector confirmed project `preston-wimberly-portfolio`
   and the configured public URL. Its response does not expose branch/PR build
-  triggers, so a deployment-free push cannot be established. Push and draft PR
-  are pending; no hosting settings or permissions were changed.
+  triggers. Preston subsequently authorized the routine release; this resolves
+  the original publication blocker. No hosting settings or permissions changed.
 - Current remote-main synchronization and public production behavior were not
-  verified. Claude loading these instructions was not verified.
+  verified at the initial documentation pass. The release preflight fetched
+  origin/main and confirmed it still matched the starting commit; GitHub CLI
+  uses prestonwimberly-rgb with ADMIN permission on this exact repository.
+  Claude loading these instructions was not verified.
 
 ## Dated baseline retained from the preceding handoff
 
@@ -79,11 +86,11 @@ September 11 worktrees remain preserved; they were not inspected in this task.
 
 ## Next concrete action
 
-Review the local documentation commit. Before publishing the branch or opening
-a draft PR, verify Netlify's branch/PR deployment behavior or obtain Preston's
-explicit approval for any resulting preview deployment. Do not change hosting
-settings to bypass this boundary. The intended draft PR title is
-“Set up shared Codex and Claude handoff”; merge and deployment remain excluded.
-Another local agent can read these files on `codex/shared-agent-handoff` now;
-other checkouts need the same file versions before continuing. Preview commands,
-port 4172, environment requirements, and release checks remain in README.
+Push this documentation branch, open “Set up shared Codex and Claude handoff”
+against main, wait for required checks, and merge under Preston's September 15
+approval. Then fast-forward the canonical checkout, rebuild/start the tracked
+preview on port 4172, and verify the matching production commit and public site.
+Report the merged SHA, PR, local sync, preview, and deployment evidence. Preserve
+the separate historical worktree at commit `cd27d6a` and all untracked work.
+Another local agent can read this branch now; other checkouts need its exact
+file versions. Shared files do not automatically synchronize private chats.
