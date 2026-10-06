@@ -3,6 +3,100 @@
 Verified September 15, 2026. Read [README.md](../README.md), [AGENTS.md](../AGENTS.md),
 and applicable local instructions. [CLAUDE.md](../CLAUDE.md) imports the shared rules.
 
+## October 5, 2026 release preparation
+
+- Preston explicitly requested "push and merge to main" for the career/client
+  refinement below. GitHub CLI is authenticated as `prestonwimberly-rgb` with
+  ADMIN permission on the exact origin. Fetched `origin/main` and Netlify's
+  published production commit both remain `b36558423b1fc52d6517fcf445901588fd6c9460`.
+  Only this canonical worktree is active; the configured origin and optional
+  SITE_URL default are present. No hosting settings or environment values changed.
+- Updated development tooling to `@cloudflare/vite-plugin` 1.62.5 and Wrangler
+  4.147.0, plus compatible transitive security fixes in the lockfile. Locked
+  `npm ci --engine-strict --no-fund` passed. The supported Node minimum remains
+  compatible with the tracked Netlify Node 22.13 setting.
+- Fresh `npm run quality`: lint, build/export, and all 19 tests passed; the
+  all-dependency audit still fails with seven high findings tracing to one
+  unpatched `braces` advisory (GHSA-vfj7-8cjw-p6xm). Production-only audit has
+  zero vulnerabilities. The upstream advisory lists no patched release;
+  npm's forced fix would downgrade the framework/lint tooling, so it was not run.
+- Preston explicitly approved releasing with the documented `braces` audit
+  exception after reviewing the remaining findings and passing functional and
+  production-only checks. Commit/push/merge and production verification follow
+  this preparation record; the release PR records their final status. No audit
+  configuration or threshold was weakened. Pre-existing README and September 17
+  handoff edits remain unrelated and must stay uncommitted.
+- Additional intended files: `package.json` and `package-lock.json`. Evidence:
+  ignored `outputs/career-client-review/release-*.log` and audit JSON files.
+  The local preview was restarted from the freshly rebuilt `netlify-dist/` at
+  `http://127.0.0.1:4172/`. This is a local preparation record, not a release.
+
+## October 5, 2026 career and independent-client refinement
+
+- Repository/site: `prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood`,
+  `https://work.prestonwimberly.com`. Canonical Mac root confirmed from Git.
+  Started on `main` at `b36558423b1fc52d6517fcf445901588fd6c9460`; local work
+  is on `codex/portfolio-career-client-refinement` at that same commit.
+  Nothing was staged, committed, pushed, merged, or deployed. Existing README
+  and September 17 handoff edits were preserved. No overrides were found.
+- Keep/change judgment: keep the visual direction, typography, photography,
+  project structure, voice, and ownership record; reconcile résumé facts and
+  make the TAP result and independent-project invitation more specific.
+- Changed files in this task: `app/page.tsx`, `data/projects.ts`,
+  `scripts/prepare-portfolio-pdfs.py`, `public/downloads/preston-wimberly-resume.pdf`,
+  `docs/launch-checklist.md`, `docs/portfolio-agency-review.md`, and this handoff.
+  The README diff was already present and was not edited in this task.
+- Résumé: regenerated from the existing ReportLab builder, preserving its
+  one-page letter layout. TAP reads as launched, with independent execution
+  and company leadership review/approval. The authoritative archive's
+  `content/concerts.json`, `content/photos.json`, and `content/sources.json`
+  contain 410, 209, and 125 records, matching its public shows, archive, and
+  sources ledgers. Counts are dated October 5, 2026 in both résumé and case.
+  No archive files or historical résumé variants were edited.
+- TAP: clarified the delivered path from capabilities to airport experience
+  and contact, plus leadership profiles, Field Notes, and field photography.
+  The business problem, decision, before/after captures, responsibilities,
+  and documented leadership request/response are preserved. The company's
+  airport operating figures are not attributed to the redesign.
+- Contact: names brand positioning, website launch/refresh, photography, and
+  sales materials. Agency/in-house roles and the existing session-musician
+  link remain. No prices, availability promise, form, or services page added.
+  No people-management, hiring, or budget authority inferred; the guitar
+  campaign remains explicitly speculative and unlaunched.
+- Validation: final `npm run quality` passed lint, image/social generation,
+  build/static export, and all 19 tests, then failed `npm audit` with 14
+  vulnerabilities (10 high, 4 moderate) in development/build dependencies.
+  Separate `npm audit --omit=dev` passed with zero vulnerabilities. Package
+  manifests and lockfile are unchanged; the full quality gate is not green.
+- Browser: reviewed all six public routes and branded 404 at 1440px, 390px,
+  and 320px. No overflow, missing alt attributes, duplicate IDs, runtime
+  scripts, or sub-44px visible controls found. All 34 local link/fragment
+  checks passed. A transient preview socket error affected one TAP image at
+  390px; a targeted retry loaded all six images with no browser errors and
+  returned HTTP 200 for that exact AVIF. Visually reviewed contact, TAP
+  outcomes/comparison, archive counts, and the rendered one-page résumé.
+- Keyboard skip link/focus and reduced motion passed at all three widths.
+  Crawl files, canonical metadata, original asset paths, and both legacy
+  redirect targets were checked. Eleven relevant external URLs returned 200.
+  The source, exported, and preview-served résumé PDFs are byte-identical.
+  `git diff --check` passed. The Python preview does not emulate Netlify
+  redirects/security headers; no deployment or form submission was tested.
+- Editorial scores (1–5): authenticity 5, hierarchy 4, material character 4,
+  evidence 3, restraint 5, usability 4, performance 4, accessibility 4.
+  Evidence remains weakest: consistency and delivered capabilities were
+  improved, but no redesign-specific traffic, inquiries, revenue, savings,
+  testimonial, or performance result is documented. The earlier 40% traffic
+  claim remains unresolved and excluded. No new Lighthouse or formal
+  assistive-technology audit is claimed.
+- Local preview: `http://127.0.0.1:4172/`, serving the synchronized local
+  `netlify-dist/` via the documented `.codex/preview.py` command with PORT 4172.
+  Logs, screenshots, PDF render, browser/link results, image retry, and audits
+  are in ignored `outputs/career-client-review/`.
+- Next concrete action: review the local copy and résumé. Resolve dependency
+  maintenance before treating the full gate as passing, and collect dated TAP
+  result evidence before adding business metrics. Any release needs separate
+  authorization; the historical authorizations below do not cover this work.
+
 ## Verified release baseline
 
 - Repository: [prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood](https://github.com/prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood).

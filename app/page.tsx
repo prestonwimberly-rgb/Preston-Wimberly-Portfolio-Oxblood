@@ -308,9 +308,10 @@ export default function Home() {
           <h2 id="contact-title">Let’s talk about the work.</h2>
           <p className="contact-fit">
             I’m open to agency and in-house roles in creative direction, brand,
-            and editorial work, as well as independent projects. I’m most useful
-            where setting the direction and making the work belong together.
-            Tell me about the team or assignment.
+            and editorial work. For independent projects, I can help with brand
+            positioning, a website launch or refresh, or photography and sales
+            materials. I’m most useful where setting the direction and making
+            the work belong together. Tell me about the team or assignment.
           </p>
           <a href={inquiryHref}>Start a conversation ↗</a>
         </section>

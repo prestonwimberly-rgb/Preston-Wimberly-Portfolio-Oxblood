@@ -64,6 +64,14 @@ the public directory.
 - Resume evidence is the confirmed biography, project ownership and collaboration
   in `data/projects.ts`, and content clearances in `docs/launch-checklist.md`.
   No employment dates were inferred from project dates.
+- October 5, 2026 résumé reconciliation: the editable text and layout remain in
+  `scripts/prepare-portfolio-pdfs.py`, in `resume()`. Regenerate with
+  `python3 scripts/prepare-portfolio-pdfs.py resume` using ReportLab; the output
+  is `public/downloads/preston-wimberly-resume.pdf`. TAP now reads as launched,
+  with independent execution and leadership review/approval. Archive counts
+  match the authoritative ledgers and are dated October 5, 2026. Preserve the
+  one-page layout and visually inspect the PDF after regeneration. Historical
+  résumé variants outside this repository are unchanged.
 
 ## Design QA
 
