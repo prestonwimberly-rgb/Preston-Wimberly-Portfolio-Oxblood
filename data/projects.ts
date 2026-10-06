@@ -84,9 +84,10 @@ const projectRecords: Project[] = [
       { "title": "Connect the promise to a place", "detail": "Airport experience supports the service descriptions, so readers can follow a capability into the operating record." },
       { "title": "Show the work on the ground", "detail": "Original photographs of maintenance, land, and infrastructure establish the company’s field of work." }
     ],
-    "outcomeTitle": "The live website connects the company’s services with its airport work.",
+    "outcomeTitle": "Airport partners can find the right service, check the record, and contact TAP.",
     "outcome": [
-      "The launched site brings capabilities, airport experience, leadership, Field Notes, and contact into one public website. Visitors can follow the company’s operating, development, and advisory work through to its airport record and start a conversation."
+      "The launched site gives municipalities and airport owners a path from three defined services to airport-specific experience and a project conversation. The capabilities page sets out all three services, the operating record provides context for the work, and contact is available from the main navigation.",
+      "Leadership profiles and Field Notes give TAP a place to explain its approach and publish ongoing airport work. Original field photography makes the operations behind the service descriptions visible."
     ],
     "leadArtifacts": [
       {
@@ -160,7 +161,7 @@ const projectRecords: Project[] = [
     "decisionTitle": "Give readers a story and a way to check it.",
     "decision": [
       "Seven flagship stories and one supporting road record provide an edited introduction; six chronological chapters carry the longer history. A reader can begin with a scene, then follow it into the tour dates, photographs, and sources.",
-      "The archive contains 410 performance records, 209 archive records, and 125 source records, verified September 12, 2026. Each source note distinguishes documented fact from memory, inference, or an open question."
+      "The archive contains 410 performance records, 209 archive records, and 125 source records, verified October 5, 2026. Each source note distinguishes documented fact from memory, inference, or an open question."
     ],
     "artifactTitle": "Stories with their sources close by.",
     "artifactIntro": "The reading path and source ledger make the archive useful both to a casual reader and to someone checking a date or credit.",

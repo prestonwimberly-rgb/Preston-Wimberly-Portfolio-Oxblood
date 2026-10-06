@@ -42,6 +42,10 @@ steps remain separate approvals.
 - Preston confirmed on September 11, 2026 that the TAP website is live.
   `https://texasaviationpartners.com/` was checked directly and shows the
   operating, development, and advisory website documented in the case study.
+- Rechecked October 5, 2026: the public site still presents operate, develop,
+  and advise, an airport operating record, leadership profiles, Field Notes,
+  and contact. The portfolio and downloadable résumé describe delivered
+  capabilities; no measured redesign result is established by these pages.
 - The current homepage capture was taken from the live domain on September 11,
   2026. The August 2026 capture remains labeled as the earlier homepage.
 - The retired airport-expansion article URL now redirects to Field Notes.
@@ -65,6 +69,11 @@ steps remain separate approvals.
   Verified against the live archive and the local build on September 12, 2026;
   the previous clearance recorded 384 performance, 193 archive, and 110 source
   records. The story and chapter counts are unchanged.
+- Rechecked October 5, 2026: the authoritative archive's `content/concerts.json`,
+  `content/photos.json`, and `content/sources.json` contain 410, 209, and 125
+  records respectively. The public `/shows/`, `/archive/`, and `/sources/`
+  ledgers show the same totals. The résumé and case study date these counts
+  October 5, 2026; existing clearance and coverage are unchanged.
 - The archive is verified live at `https://thewildfeathersband.com`, checked
   September 12, 2026: HTTP 200 from Netlify on a production deploy of `main`,
   valid TLS with HSTS, canonical origin and `robots.txt` pointing at that
