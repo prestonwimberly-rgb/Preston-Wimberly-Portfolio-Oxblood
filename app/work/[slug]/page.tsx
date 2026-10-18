@@ -5,6 +5,7 @@ import { ProjectCase } from "@/components/project-case";
 import { SiteHeader } from "@/components/site-header";
 import { StructuredData } from "@/components/structured-data";
 import { getProject, projects } from "@/data/projects";
+import { getNextProjectLink } from "@/data/project-order.mjs";
 import { mailtoHref, siteConfig } from "@/lib/site";
 import { projectStructuredData } from "@/lib/structured-data";
 
@@ -54,14 +55,15 @@ export default async function WorkPage({ params }: WorkPageProps) {
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) notFound();
-  const index = projects.findIndex(item => item.slug === project.slug);
+  const nextProjectLink = getNextProjectLink(project.slug);
+  const nextProject = getProject(nextProjectLink.slug);
   const inquiryHref = mailtoHref("Creative direction conversation");
   return <>
     <StructuredData data={projectStructuredData(project)} />
     <SiteHeader skipHref="#case-content" variant="work" navAriaLabel="Primary navigation"
       workLink={{ href: "/#work", label: "Work" }} secondaryLink={{ href: "/#about", label: "About", narrow: true }}
       contactHref={inquiryHref} contactLongLabel="Let’s talk" />
-    <ProjectCase project={project} nextProject={projects[(index + 1) % projects.length]} />
+    <ProjectCase project={project} nextProject={{ href: nextProjectLink.href, title: nextProject?.navTitle ?? nextProject?.title ?? "SANDPAPER" }} />
     <footer className="site-footer"><p>© 2026 Preston Wimberly</p><Link href="/#work">Selected work</Link><a href={inquiryHref}>Let’s talk ↗</a></footer>
   </>;
 }

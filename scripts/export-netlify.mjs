@@ -130,10 +130,11 @@ await writeFile(
 
 await writeFile(
   path.join(outputDirectory, "404.html"),
-  (await render("/__portfolio-not-found__", 404)).replace(
-    /<link rel="canonical"[^>]*>/i,
-    "",
-  ),
+  (await render("/__portfolio-not-found__", 404))
+    .replace(/<link\b(?=[^>]*\brel=["']canonical["'])[^>]*>/gi, "")
+    // The framework's noindex tag and inherited layout robots can conflict.
+    .replace(/<meta\b(?=[^>]*\bname=["']robots["'])[^>]*>/gi, "")
+    .replace(/<\/head>/i, '<meta name="robots" content="noindex, nofollow"/></head>'),
 );
 
 console.log(`Exported ${routes.length} routes to ${outputDirectory}`);

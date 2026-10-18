@@ -16,6 +16,7 @@ export type Project = {
   liveUrl?: string; liveLabel?: string; liveIsReference?: boolean; accessNote?: string;
   decisionTitle: string; decision: string[]; artifactTitle: string; artifactIntro: string;
   outcomeTitle: string; outcome: string[]; artifacts: ProjectArtifact[];
+  outcomeSource?: { href: string; label: string };
   leadArtifacts?: ProjectArtifact[];
   detailArtifact?: ProjectArtifact;
   comparisonNotes?: { title: string; detail: string }[];
@@ -87,8 +88,13 @@ const projectRecords: Project[] = [
     "outcomeTitle": "Airport partners can find the right service, check the record, and contact TAP.",
     "outcome": [
       "The launched site gives municipalities and airport owners a path from three defined services to airport-specific experience and a project conversation. The capabilities page sets out all three services, the operating record provides context for the work, and contact is available from the main navigation.",
-      "Leadership profiles and Field Notes give TAP a place to explain its approach and publish ongoing airport work. Original field photography makes the operations behind the service descriptions visible."
+      "Leadership profiles and Field Notes give TAP a place to explain its approach and publish ongoing airport work. Original field photography makes the operations behind the service descriptions visible.",
+      "The City of San Marcos featured the redesigned website in its City Manager’s Weekly Report on October 2, 2026."
     ],
+    "outcomeSource": {
+      "href": "https://storymaps.arcgis.com/stories/61b3e40ae8e04c339a7e1d7a9e3ed35d#ref-n-97qaa8",
+      "label": "Read the city’s report"
+    },
     "leadArtifacts": [
       {
         "src": "/images/tap-site-before.jpg",
@@ -227,9 +233,7 @@ const projectRecords: Project[] = [
     "artifactTitle": "The launched website",
     "artifactIntro": "The website brings the models, materials, build journal, and waitlist into one place.",
     "outcomeTitle": "Players can compare two models, explore materials, and join the waitlist.",
-    "outcome": [
-      "Players can compare models and materials, learn how the workshop builds, and join the waitlist."
-    ],
+    "outcome": [],
     "artifacts": [
       {
         "src": "/images/wimberly-site.jpg",
@@ -286,9 +290,7 @@ const projectRecords: Project[] = [
     "artifactTitle": "One page, from listening to inquiry.",
     "artifactIntro": "The core offer leads on desktop and mobile. Audio, services, process, and direct contact follow in that order.",
     "outcomeTitle": "Producers can hear the work and start a project on one page.",
-    "outcome": [
-      "Artists and producers can hear the work, understand the available instruments and process, and begin an inquiry."
-    ],
+    "outcome": [],
     "artifacts": [
       {
         "src": "/images/preston-session-site.jpg",

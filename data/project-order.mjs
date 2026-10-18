@@ -11,3 +11,21 @@ export const projectSlugs = [
   "wild-feathers",
   "preston-session-site",
 ];
+
+// The memoir belongs in sequential browsing, while keeping its own /sandpaper
+// route and the four /work/ exports above.
+const projectNavigationSlugs = [
+  ...projectSlugs.slice(0, 3),
+  "sandpaper",
+  ...projectSlugs.slice(3),
+];
+
+export function getNextProjectLink(slug) {
+  const index = projectNavigationSlugs.indexOf(slug);
+  if (index === -1) throw new Error(`Unknown portfolio project: ${slug}`);
+  const nextSlug = projectNavigationSlugs[(index + 1) % projectNavigationSlugs.length];
+  return {
+    slug: nextSlug,
+    href: nextSlug === "sandpaper" ? "/sandpaper" : `/work/${nextSlug}`,
+  };
+}

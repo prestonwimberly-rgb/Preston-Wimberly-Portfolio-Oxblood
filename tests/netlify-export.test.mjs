@@ -129,7 +129,9 @@ test("exports a branded, non-indexable 404 page", async () => {
   assert.match(html, /Return to selected work/);
   assert.match(html, /mailto:preston\.wimberly@gmail\.com/);
   assert.doesNotMatch(html, /preston@prestonwimberly\.com/);
-  assert.match(html, /name="robots" content="noindex/i);
+  const robots = [...html.matchAll(/<meta\b[^>]*name="robots"[^>]*>/gi)];
+  assert.equal(robots.length, 1, "404 must have one unambiguous robots directive");
+  assert.match(robots[0][0], /content="noindex, nofollow"/i);
   assert.doesNotMatch(html, /rel="canonical"/i);
   assert.doesNotMatch(
     html,

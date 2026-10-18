@@ -1,5 +1,6 @@
 .case-study { --case-space: clamp(48px, 6vw, 88px); }
 .case-hero { padding: clamp(40px, 4vw, 64px) var(--case-gutter) 32px; }
+.case-project-title { font: 600 0.875rem/1.5 var(--font-interface); margin: 24px 0 0; }
 .case-hero h1 {
   font-family: var(--font-display);
   font-size: clamp(2.6rem, 5.2vw, 5.25rem);

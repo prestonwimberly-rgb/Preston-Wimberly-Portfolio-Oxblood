@@ -39,6 +39,13 @@ steps remain separate approvals.
 
 ### Texas Aviation Partners
 
+- Preston confirmed the newsletter feature on October 17, 2026. The original
+  public [City Manager’s Weekly Report, October 2, 2026](https://storymaps.arcgis.com/stories/61b3e40ae8e04c339a7e1d7a9e3ed35d#ref-n-97qaa8)
+  was checked through the City of San Marcos’s published ArcGIS content. Its
+  Airport section describes TAP’s redesigned website and links to the live
+  domain. This supports the dated feature statement in the case study; it does
+  not establish an endorsement, audience size, traffic increase, or business
+  result. The report is public and identifies its audience as city employees.
 - Preston confirmed on September 11, 2026 that the TAP website is live.
   `https://texasaviationpartners.com/` was checked directly and shows the
   operating, development, and advisory website documented in the case study.

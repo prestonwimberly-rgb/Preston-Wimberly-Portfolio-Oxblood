@@ -45,14 +45,24 @@ test("homepage leads with selected work and gives hiring readers direct paths", 
   assert.match(html, /Jamestown Revival/);
   assert.match(html, /href="\/sandpaper"/);
   assert.match(html, /href="\/work\/preston-session-site"/);
+  const contact = html.match(/<section class="contact-section"[\s\S]*?<\/section>/)[0];
+  assert.match(contact, /<a href="mailto:preston\.wimberly@gmail\.com[^"]*">preston\.wimberly@gmail\.com<\/a>/);
   assert.doesNotMatch(html, /40%|preston@prestonwimberly\.com|Starter Project/);
 });
 
 test("case studies show ownership and artifacts before the process explanation", async () => {
-  for (const slug of ["wimberly-guitars", "texas-aviation-partners", "wild-feathers", "preston-session-site"]) {
+  for (const [slug, title] of [
+    ["wimberly-guitars", "Wimberly Custom Guitars"],
+    ["texas-aviation-partners", "Texas Aviation Partners"],
+    ["wild-feathers", "The Wild Feathers"],
+    ["preston-session-site", "prestonwimberly.com"],
+  ]) {
     const response = await render(`/work/${slug}`);
     assert.equal(response.status, 200);
     const html = await response.text();
+    const hero = html.match(/<header class="case-hero">[\s\S]*?<\/header>/)[0];
+    assert.ok(hero.includes(`<p class="case-project-title">${title}</p>`));
+    assert.ok(hero.indexOf('class="case-project-title"') < hero.indexOf("<h1>"));
     assert.match(html, /My role/);
     assert.match(html, /Working together/);
     assert.ok(html.indexOf('id="case-artifacts-title"') < html.indexOf('id="case-decision-title"'));
@@ -61,6 +71,22 @@ test("case studies show ownership and artifacts before the process explanation",
     assert.match(html, /"@type":"CreativeWork"/);
     assert.match(html, /"email":"preston\.wimberly@gmail\.com"/);
     assert.doesNotMatch(html, /"sameAs"|40%|Direction record/);
+  }
+});
+
+test("sequential project browsing includes the memoir before independent practice", async () => {
+  const sequence = [
+    "/work/texas-aviation-partners",
+    "/work/wimberly-guitars",
+    "/work/wild-feathers",
+    "/sandpaper",
+    "/work/preston-session-site",
+  ];
+  for (const [index, path] of sequence.entries()) {
+    const html = await (await render(path)).text();
+    const navigation = html.match(/<nav class="next-project"[\s\S]*?<\/nav>/)[0];
+    assert.ok(navigation.includes(`href="${sequence[(index + 1) % sequence.length]}"`));
+    assert.doesNotMatch(navigation, /href="\/work\/sandpaper"/);
   }
 });
 
