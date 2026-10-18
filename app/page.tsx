@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/site-header";
 import { StructuredData } from "@/components/structured-data";
 import { featuredProjects } from "@/data/projects";
 import { sandpaperExcerpt } from "@/data/sandpaper";
-import { mailtoHref } from "@/lib/site";
+import { mailtoHref, siteConfig } from "@/lib/site";
 import { homeStructuredData } from "@/lib/structured-data";
 
 const workingMethod = ["Report", "Position", "Direct", "Write", "Photograph", "Build"];
@@ -314,6 +314,7 @@ export default function Home() {
             the work belong together. Tell me about the team or assignment.
           </p>
           <a href={inquiryHref}>Start a conversation ↗</a>
+          <p className="contact-email"><a href={inquiryHref}>{siteConfig.email}</a></p>
         </section>
       </main>
 

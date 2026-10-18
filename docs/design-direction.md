@@ -146,3 +146,32 @@ for product and brand, or the archive for editorial work. Keep SANDPAPER in the
 selected work as evidence of sustained writing and editing.
 
 Every project should identify the problem, Preston’s ownership, collaboration, the central creative decision, the finished work, and an observable change. Unverified figures, rights status, attribution, and business outcomes remain explicitly flagged until confirmed. Project-specific evidence blocks may vary in structure, but they must stay factual, scannable, and supported by the public record or supplied assets.
+
+### Audit refinements · October 17, 2026
+
+Preston approved the audit refinements while retaining the existing visual
+direction. Case-study openings now name the project before the conceptual
+headline. Contact includes the visible email address. Sequential browsing
+follows TAP, guitars, archive, SANDPAPER, and the session practice, with the
+memoir retaining its separate `/sandpaper` route. Writing labels use Ink on
+Aluminum during hover; header contact controls use an Ink focus outline on Bone.
+
+The TAP outcome includes the dated October 2 City Manager’s Weekly Report
+feature and a link to the original public issue. The guitar and session
+outcomes omit paragraphs that repeated their headings. Selected creative-work
+dates in the one-page résumé match the existing project records; they are
+project dates, not inferred employment tenure.
+
+Local review covered all six routes at 1440px, 390px, and 320px. No broken images,
+horizontal overflow, missing alt attributes, duplicate IDs, application runtime
+scripts, or visible controls below 44px were found. Keyboard skip navigation,
+the campaign disclosure, reduced motion, the corrected hover colors, and the
+contact focus outline were checked. The regenerated résumé remains one letter
+page and was visually reviewed. This is local branch work, not a deployment.
+
+Editorial scores, 1–5: authenticity 5, hierarchy 4, material character 4,
+evidence 4, restraint 5, usability 4, performance 4 provisionally, accessibility
+4. The dated city feature strengthens evidence; measured business impact still
+needs sources. Performance was assessed from the static architecture and asset
+checks; no Lighthouse, field-performance, or formal assistive-technology
+certification is claimed.

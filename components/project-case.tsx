@@ -60,7 +60,7 @@ function CaseDecision({ project }: { project: Project }) {
   );
 }
 
-export function ProjectCase({ project, nextProject }: { project: Project; nextProject: Project }) {
+export function ProjectCase({ project, nextProject }: { project: Project; nextProject: { href: string; title: string } }) {
   const hasLeadArtifacts = Boolean(project.leadArtifacts?.length);
   const isWorkshop = project.slug === "wimberly-guitars";
   const image = project.slug === "wimberly-guitars" ? null : (
@@ -76,6 +76,7 @@ export function ProjectCase({ project, nextProject }: { project: Project; nextPr
     <main className={`case-study case-theme-${project.theme}`} id="case-content">
       <header className="case-hero">
         <p className="section-number">{project.chapterNumber} / {project.chapter} · {project.year}</p>
+        <p className="case-project-title">{project.title}</p>
         <h1>{project.headline}</h1>
         <p className="case-summary">{project.summary}</p>
         <p className="case-role-line">{project.role}</p>
@@ -121,6 +122,7 @@ export function ProjectCase({ project, nextProject }: { project: Project; nextPr
       <section className="case-outcome" aria-labelledby="case-outcome-title">
         <p className="section-number">What changed</p>
         <div><h2 id="case-outcome-title">{project.outcomeTitle}</h2>{project.outcome.map(p => <p key={p}>{p}</p>)}
+          {project.outcomeSource ? <p><a className="text-link" href={project.outcomeSource.href} target="_blank" rel="noreferrer">{project.outcomeSource.label} <span aria-hidden="true">↗</span></a></p> : null}
           {project.liveUrl ? <a className="text-link" href={project.liveUrl} target="_blank" rel="noreferrer">{project.liveLabel} <span aria-hidden="true">↗</span></a> : null}
         </div>
       </section>
@@ -141,7 +143,7 @@ export function ProjectCase({ project, nextProject }: { project: Project; nextPr
       ) : null}
       <nav className="next-project" aria-label="Next project">
         <p className="section-number inverse">Next project</p>
-        <Link href={`/work/${nextProject.slug}`}><span>{nextProject.navTitle ?? nextProject.title}</span><span aria-hidden="true">↗</span></Link>
+        <Link href={nextProject.href}><span>{nextProject.title}</span><span aria-hidden="true">↗</span></Link>
         <Link className="all-work" href="/#work">All selected work</Link>
       </nav>
     </main>

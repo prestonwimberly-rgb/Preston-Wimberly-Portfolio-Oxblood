@@ -3,6 +3,79 @@
 Verified September 15, 2026. Read [README.md](../README.md), [AGENTS.md](../AGENTS.md),
 and applicable local instructions. [CLAUDE.md](../CLAUDE.md) imports the shared rules.
 
+## October 17, 2026 audit refinements — release preparation
+
+- Repository/site: `prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood`,
+  `https://work.prestonwimberly.com`. Started on `main` at
+  `65e2ac2f13705df8f9040c61277bd6ef972d4c1e`; release branch is
+  `codex/portfolio-audit-refinements`. Preston requested the audit changes,
+  supplied the newsletter feature, and then explicitly requested "push and
+  merge to main" after the remaining seven braces findings were disclosed.
+  This authorizes the scoped release with that recorded exception. The
+  pre-existing README and older handoff edits remain excluded from the commit.
+  No applicable overrides were found. Final merge/deploy status belongs in
+  the release PR; this entry records preparation.
+- Added project names to case-study openings, a visible linked contact email,
+  contrasting hover/focus states, and SANDPAPER in the next-project sequence.
+  The four `/work/` exports and separate memoir route remain intact.
+- TAP now cites its feature in the public City Manager’s Weekly Report dated
+  October 2, 2026. The original municipal ArcGIS item and content were checked;
+  `docs/launch-checklist.md` records the source and claim boundaries. No
+  endorsement, traffic, audience, or financial result was inferred. Removed
+  repetitive guitar/session outcome paragraphs. Added existing project dates
+  to the résumé source and regenerated its one-page letter PDF.
+- Updated Sharp to 0.35.5, Cloudflare Vite plugin to 1.63.1, and Wrangler to
+  4.149.0 through the supported dependency chain. The new Sharp/librsvg advisory
+  is removed. Exported 404 metadata now has exactly one `noindex, nofollow`
+  directive. Regression checks cover the complete next-project cycle and 404.
+- Changed site/code/assets: `app/page.tsx`, `app/globals.css`,
+  `app/case-studies.css`, `app/sandpaper/page.tsx`, `app/work/[slug]/page.tsx`,
+  `components/project-case.tsx`, `data/project-order.mjs`, `data/projects.ts`,
+  `package.json`, `package-lock.json`, `scripts/export-netlify.mjs`,
+  `scripts/prepare-portfolio-pdfs.py`,
+  `public/downloads/preston-wimberly-resume.pdf`,
+  `tests/rendered-html.test.mjs`, and `tests/netlify-export.test.mjs`.
+  Documentation: `docs/design-direction.md`, `docs/launch-checklist.md`, and
+  this handoff. The existing README diff remains unrelated.
+- Validation: locked `npm ci --engine-strict --no-fund` passed; fresh
+  `npm run quality` passed lint, responsive/social generation, build/static
+  export, and all 20 tests, then failed the unchanged all-dependency audit
+  policy with seven high affected dependency entries, all from the existing
+  unpatched `braces` advisory GHSA-vfj7-8cjw-p6xm. Production-only audit is
+  zero. No forced downgrade or weakened threshold. Explicit TypeScript check
+  and `git diff --check` passed. Independent code, React, and TypeScript
+  reviews found no actionable defects. The release rerun again passed lint,
+  build/export, all 20 tests, and TypeScript; its audit reports exactly the
+  same seven braces entries and zero production findings. No new advisory
+  or functional failure was accepted. Release evidence is ignored under
+  `outputs/audit-release-2026-10-17/`.
+- Browser: six local public routes at 1440px, 390px, and 320px; no overflow,
+  broken images, missing alt attributes, duplicate IDs, application runtime
+  scripts, or visible sub-44px controls found. Checked corrected hover/focus,
+  skip navigation, native disclosure, reduced motion, email, source link,
+  sequential routes, and single 404 robots directive. The PDF is one letter
+  page and was rendered and visually reviewed. Source/export/preview PDF
+  hashes match; all 83 local link/fragment checks passed. The Python
+  preview does not reproduce Netlify HTTP redirects/security headers.
+- Preview: `http://127.0.0.1:4172/`, serving the freshly rebuilt local export.
+  Evidence is ignored under `outputs/audit-refinements-2026-10-17/`, including
+  the complete quality log, audit JSON, screenshots, and résumé render.
+- Remaining hosted control: Netlify RUM is injected on production but blocked
+  by the existing CSP. Official docs provide a dashboard disable control,
+  not a repository setting; disabling deletes its dashboard metrics. Hosted
+  settings are unchanged. Preston explicitly chose to preserve existing
+  metrics for now; leave this control unchanged until further authorization.
+- Release preflight: GitHub CLI account `prestonwimberly-rgb` has ADMIN on the
+  exact origin. Fetched `origin/main`, local starting HEAD, and the published
+  Netlify production commit match `65e2ac2f13705df8f9040c61277bd6ef972d4c1e`.
+  Only the canonical worktree is active; no stale worktrees were found. The
+  tracked SITE_URL default is present; a local `.env` is optional and absent.
+  Hosting settings, RUM, domains, and access controls are unchanged.
+- Next action: commit and push the intended scope, merge the PR after hosted
+  checks, synchronize local main, rebuild/restart the preview, and verify the
+  matching production deployment and public changes. The full quality gate
+  remains failed solely on the recorded braces advisory.
+
 ## October 5, 2026 release preparation
 
 - Preston explicitly requested "push and merge to main" for the career/client

@@ -6,6 +6,8 @@ import { StructuredData } from "@/components/structured-data";
 import { mailtoHref, siteConfig } from "@/lib/site";
 import { sandpaperStructuredData } from "@/lib/structured-data";
 import { sandpaperExcerpt } from "@/data/sandpaper";
+import { getProject } from "@/data/projects";
+import { getNextProjectLink } from "@/data/project-order.mjs";
 
 export const metadata: Metadata = {
   title: "SANDPAPER, a memoir",
@@ -40,6 +42,8 @@ export const metadata: Metadata = {
 };
 
 const inquiryHref = mailtoHref("SANDPAPER manuscript inquiry");
+const nextProjectLink = getNextProjectLink("sandpaper");
+const nextProject = getProject(nextProjectLink.slug);
 
 export default function SandpaperPage() {
   return (
@@ -119,6 +123,11 @@ export default function SandpaperPage() {
             </div>
           </div>
         </section>
+        <nav className="next-project" aria-label="Next project">
+          <p className="section-number inverse">Next project</p>
+          <Link href={nextProjectLink.href}><span>{nextProject?.navTitle ?? nextProject?.title}</span><span aria-hidden="true">↗</span></Link>
+          <Link className="all-work" href="/#work">All selected work</Link>
+        </nav>
       </main>
 
       <footer className="site-footer memoir-footer">
