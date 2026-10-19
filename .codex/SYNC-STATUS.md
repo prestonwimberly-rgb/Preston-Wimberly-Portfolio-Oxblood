@@ -3,6 +3,61 @@
 Verified September 15, 2026. Read [README.md](../README.md), [AGENTS.md](../AGENTS.md),
 and applicable local instructions. [CLAUDE.md](../CLAUDE.md) imports the shared rules.
 
+## October 19, 2026 guitar campaign motion release preparation
+
+- Repository/site: `prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood`,
+  `https://work.prestonwimberly.com`. Started on `main` at
+  `e65431be370248543b20d4bb20f4403ecdc3dcaf`; working branch is
+  `codex/guitar-motion-study`. Preston requested a refined Higgsfield study
+  beside the campaign concept and a still homepage, then requested “push and
+  merge to main” after the seven existing dependency findings were disclosed.
+  This authorizes the scoped release with that exception. Final merge and
+  deployment evidence belongs in the release PR; this entry records preparation.
+- Generated one Seedance 2.5 take from the existing product photograph.
+  The later camera move was too strong, so the opening second was selected,
+  slowed with motion interpolation, and encoded as a five-second H.264 study.
+  Both controls and the body outline stay in frame. The installed file is
+  `public/video/wimberly-material-study-refined.mp4`: 1280×720, 24 fps,
+  5.000 seconds, 799,625 bytes, no audio, fast-start metadata. Original
+  photograph and `public/video/wimberly-material-study.mp4` are preserved.
+- Changed `components/guitar-campaign.tsx`, `components/project-case.tsx`,
+  `app/case-studies.css`, `data/projects.ts`, `tests/motion-study.test.mjs`,
+  `docs/design-direction.md`, this handoff, and the new MP4. The player is
+  visible after the print concept and before collapsed campaign treatments,
+  with native controls, no autoplay/loop, and explicit AI-motion disclosure.
+  The homepage source is unchanged. Existing README and older handoff edits
+  are preserved. No applicable overrides were found.
+- Validation: final `npm run quality` passed lint, responsive/social generation,
+  build/static export, and all 20 tests. Its full dependency audit still fails
+  with the same seven high affected entries from the existing `braces` advisory
+  GHSA-vfj7-8cjw-p6xm. No dependency or audit-policy changes. Code, React, and
+  TypeScript reviews found no actionable defects; lint and no-emit TypeScript
+  checks also passed in review. Fresh release rerun again passed lint,
+  build/export, and all 20 tests, then failed solely on those same seven audit
+  entries. Production-only dependency audit reports zero vulnerabilities.
+  `git diff --check` passed.
+- Browser: all six routes at 1440px, 390px, and 320px without overflow, broken
+  images, or application runtime scripts. Exactly one video, on the guitar
+  case study. Visually reviewed the source, generated frames, refined frames,
+  and desktop/phone presentation. Verified keyboard play/pause and complete
+  five-second playback without error, with reduced motion enabled. The video
+  stays paused before interaction. Editorial scores, 1–5: authenticity 4,
+  hierarchy 4, material character 4, evidence 4, restraint 5, usability 4,
+  performance 4 provisionally, accessibility 4. No field-performance or formal
+  accessibility audit is claimed.
+- Preview: `http://127.0.0.1:4172/work/wimberly-guitars/#campaign-motion-title`,
+  serving the freshly built export. Source/export/served video parity checked.
+  Generation brief, full take, inspection frames, browser evidence, and check
+  logs are preserved under ignored `outputs/guitar-motion-2026-10-19/`.
+  GitHub CLI account `prestonwimberly-rgb` has ADMIN permission on the exact
+  origin. Fresh `origin/main`, starting HEAD, and the published ready Netlify
+  production deploy match `e65431be370248543b20d4bb20f4403ecdc3dcaf`.
+  Only the canonical worktree is active; the tracked SITE_URL default is present
+  and a local `.env` is optional. No hosting settings or environment values changed.
+- Next action: commit and push the intended scope, merge the PR, synchronize
+  local main, rebuild/restart the preview, and verify the matching production
+  deployment, visible study placement, and served MP4. The audit remains open.
+
 ## October 19, 2026 homepage headline release preparation
 
 - Repository/site: `prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood`,

@@ -126,8 +126,8 @@ export function ProjectCase({ project, nextProject }: { project: Project; nextPr
           {project.liveUrl ? <a className="text-link" href={project.liveUrl} target="_blank" rel="noreferrer">{project.liveLabel} <span aria-hidden="true">↗</span></a> : null}
         </div>
       </section>
-      {isWorkshop ? <GuitarCampaign /> : null}
-      {project.motionStudy ? (
+      {isWorkshop ? <GuitarCampaign motionStudy={project.motionStudy} /> : null}
+      {project.motionStudy && !isWorkshop ? (
         <section className="motion-study" aria-labelledby="motion-study-title">
           <details>
             <summary id="motion-study-title">Supporting motion study <span>Higgsfield · 5 seconds</span></summary>
