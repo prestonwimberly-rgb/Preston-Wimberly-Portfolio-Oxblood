@@ -26,7 +26,7 @@ test("homepage leads with selected work and gives hiring readers direct paths", 
   const response = await render();
   assert.equal(response.status, 200);
   const html = await response.text();
-  assert.match(html, /Find what is true/);
+  assert.match(html, /Clear direction/);
   assert.match(html, /Photograph by Preston Wimberly/);
   const rows = [...html.matchAll(/<article class="project-row[\s\S]*?<\/article>/g)].map(match => match[0]);
   assert.equal(rows.length, 4);

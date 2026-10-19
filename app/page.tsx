@@ -74,8 +74,8 @@ export default function Home() {
               <p className="eyebrow">Creative Director</p>
             </div>
             <h1 id="hero-title">
-              Find what is true.<br />
-              <em>Give it form.</em>
+              Clear direction.<br />
+              <em>Finished work.</em>
             </h1>
             <div className="hero-bottom">
               <p>

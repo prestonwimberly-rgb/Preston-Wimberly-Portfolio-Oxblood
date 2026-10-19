@@ -3,6 +3,47 @@
 Verified September 15, 2026. Read [README.md](../README.md), [AGENTS.md](../AGENTS.md),
 and applicable local instructions. [CLAUDE.md](../CLAUDE.md) imports the shared rules.
 
+## October 19, 2026 homepage headline release preparation
+
+- Repository/site: `prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood`,
+  `https://work.prestonwimberly.com`. Started on `main` at
+  `af54b46ff02df7361155b05123c4bf30be61022d`; local branch is
+  `codex/portfolio-headline`. Preston requested “push and merge to main” after
+  the seven existing dependency findings were disclosed. This authorizes the
+  scoped release with that exception. Final merge and deployment evidence
+  belongs in the release PR; this entry records preparation.
+- Replaced the homepage headline with “Clear direction. Finished work.”
+  in `app/page.tsx`, matched `config/social-cards.json`, and updated existing
+  assertions in `tests/rendered-html.test.mjs` and
+  `tests/netlify-export.test.mjs`. Preserved the existing typography and layout.
+  This handoff is the only additional file changed. Existing README and older
+  handoff edits were preserved. No applicable overrides were found.
+- Validation: `npm run quality` passed lint, image/social generation,
+  build/static export, and all 20 tests. Its dependency audit still fails with
+  seven high affected dependency entries tracing to the existing `braces`
+  advisory GHSA-vfj7-8cjw-p6xm. The release rerun has the same result;
+  production-only audit reports zero vulnerabilities. No dependency or
+  audit-policy changes.
+  `git diff --check` passed. Code, React, and TypeScript reviews found no defects.
+- Browser: all six public routes checked at 1440px, 390px, and 320px; no
+  horizontal overflow, broken images after loading, missing alt attributes,
+  or application runtime scripts. Homepage screenshots at each width and the
+  generated social card were visually inspected. Keyboard skip navigation and
+  visible focus work. Headline review scores, 1–5: authenticity 4, hierarchy 4,
+  material character 4, evidence 4, restraint 5, usability 4, performance 4
+  provisionally, accessibility 4. No field-performance or formal accessibility
+  audit is claimed. Local Python preview does not reproduce Netlify redirects
+  or security headers; production was not checked for this local copy change.
+- Preview rebuilt and started with `node .codex/workflow.mjs preview`:
+  `http://127.0.0.1:4172/`. GitHub CLI account `prestonwimberly-rgb` has ADMIN
+  permission on the exact origin. Fresh `origin/main`, starting HEAD, and the
+  published ready Netlify production deploy match `af54b46ff02df7361155b05123c4bf30be61022d`.
+  Only the canonical worktree is active. The tracked SITE_URL default is present;
+  a local `.env` is optional. No hosting settings or environment values changed.
+- Next action: commit and push the intended scope, merge the PR, synchronize
+  local main, rebuild/restart the preview, and verify the matching production
+  deployment and public headline. The dependency audit remains open.
+
 ## October 17, 2026 audit refinements — release preparation
 
 - Repository/site: `prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood`,
