@@ -175,3 +175,14 @@ evidence 4, restraint 5, usability 4, performance 4 provisionally, accessibility
 needs sources. Performance was assessed from the static architecture and asset
 checks; no Lighthouse, field-performance, or formal assistive-technology
 certification is claimed.
+
+### Guitar campaign motion · October 19, 2026
+
+Preston requested a refined Higgsfield material study beside the guitar campaign
+concept. Present the study immediately after the print concept and before the
+collapsed rollout, film, social, and email treatments. Keep the player visible
+with silent, user-initiated native controls and a static photograph before play.
+Label the study as AI-generated motion from the product photograph, not filmed
+footage. Preserve the original photograph and previous motion file. Keep the
+instrument geometry, material patterns, strings, and hardware stable; movement
+should come from a restrained camera move and light. The homepage remains still.

@@ -1,6 +1,7 @@
 import { ResponsiveImage } from "@/components/responsive-image";
+import type { Project } from "@/data/projects";
 
-export function GuitarCampaign() {
+export function GuitarCampaign({ motionStudy }: { motionStudy?: Project["motionStudy"] }) {
   return (
     <section className="campaign" aria-labelledby="campaign-title">
       <header className="case-section-heading">
@@ -16,6 +17,18 @@ export function GuitarCampaign() {
         <div className="campaign-print-copy"><p className="campaign-print-premise">We choose the walnut.<br />Work the leather.<br />Shape the instrument.</p><div><p>Meet the Jack: walnut, hand-tooled leather, and antique bronze hardware. The grain and tooling are already there. The marks from the years you play it will be yours.</p><span className="campaign-cta">Explore the Jack’s materials. Join the waitlist.</span></div></div>
         <figcaption>01 / Print advertisement concept · Existing product photograph; no wear added</figcaption>
       </figure>
+      {motionStudy ? (
+        <section className="campaign-motion" aria-labelledby="campaign-motion-title">
+          <header><p className="section-number">Material study · Higgsfield</p><h3 id="campaign-motion-title">The Jack, in motion.</h3></header>
+          <figure>
+            <video controls muted playsInline preload="none" poster={motionStudy.poster} aria-describedby="motion-study-caption">
+              <source src={motionStudy.src} type="video/mp4" />
+              <a href={motionStudy.src}>Download the motion study</a>
+            </video>
+            <figcaption id="motion-study-caption">{motionStudy.description}</figcaption>
+          </figure>
+        </section>
+      ) : null}
       <details className="campaign-treatments">
         <summary>Proposed rollout, film, social &amp; email treatments</summary>
       <section className="campaign-film" aria-labelledby="campaign-rollout-title">

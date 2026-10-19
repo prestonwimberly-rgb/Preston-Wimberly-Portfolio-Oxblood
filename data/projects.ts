@@ -253,9 +253,9 @@ const projectRecords: Project[] = [
     ],
     "theme": "workshop",
     "motionStudy": {
-      "src": "/video/wimberly-material-study.mp4",
+      "src": "/video/wimberly-material-study-refined.mp4",
       "poster": "/images/wimberly-jack-antique-bronze-knobs.jpeg",
-      "description": "A slow push-in across walnut grain, hand-tooled leather, and bronze hardware. AI-generated motion from the still photograph using Higgsfield; not filmed footage. Silent, five seconds."
+      "description": "A restrained push-in and soft light across the Jack’s walnut, hand-tooled leather, and bronze hardware. AI-generated motion from the still photograph using Higgsfield; not filmed footage. Silent, five seconds."
     }
   },
   {
