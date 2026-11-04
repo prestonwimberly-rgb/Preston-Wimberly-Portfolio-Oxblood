@@ -3,13 +3,18 @@
 Verified September 15, 2026. Read [README.md](../README.md), [AGENTS.md](../AGENTS.md),
 and applicable local instructions. [CLAUDE.md](../CLAUDE.md) imports the shared rules.
 
-## November 4, 2026 code audit and cleanup (Claude Code, uncommitted)
+## November 4, 2026 code audit and cleanup release preparation
 
 - Repository/site: `prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood`,
   `https://work.prestonwimberly.com`. Started on `main` at
   `1e75ee4dd124068f26cc3ebfa4ae2ba3a5b237e1` (matched `origin/main`). Work is
-  on local branch `claude/code-audit-2026-11-04`, **not committed, pushed, or
-  deployed**. Preston asked for a site audit and clean code; no release was authorized.
+  on branch `claude/code-audit-2026-11-04`. Claude committed and pushed the
+  cleanup as `2aa8a4c6b790bd0f18d6c0949e75cc237f1d0abe` in
+  [PR #47](https://github.com/prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood/pull/47).
+  After independent review and disclosure of the 10 moderate development-only
+  advisories, Preston requested "merge to main" on November 4. This authorizes
+  the scoped release with that disclosed audit exception. This entry records
+  preparation; final merge and published-deploy evidence belongs in the PR.
 - Multi-agent audit across React/TS, dead code, CSS, build scripts/tests,
   exported output/headers, and repo hygiene; each finding adversarially
   verified (44 confirmed with duplicates, 19 rejected).
@@ -43,11 +48,23 @@ and applicable local instructions. [CLAUDE.md](../CLAUDE.md) imports the shared 
   and `git diff --check` pass. Browser: computed styles of every element on
   all six routes at 1440px and 390px are identical to live production; 320px
   has no overflow or broken images; no local console errors.
-- **Open, needs Preston:** Netlify injects its Real User Monitoring script,
-  which the site CSP (`script-src 'none'`) blocks. That logs a console error
-  on every live page. Turn off RUM in Netlify or accept the error. This is a
-  hosting setting and was not changed.
-- Next action: Preston reviews the branch; commit/PR/release only on approval.
+- Independent Codex review started at `2aa8a4c` and found no introduced
+  React, TypeScript, export, or visual defects. All six routes were checked
+  at 1440px, 390px, and 320px; keyboard navigation, disclosure, reduced motion,
+  image loading, and the corrected memoir anchor were verified. The fresh
+  release quality run again passed lint, build/export, and 23/23 tests, then
+  exited only on the same 10 moderate development advisories. Production-only
+  audit reports zero vulnerabilities; no audit policy was changed.
+- **Known hosting exception:** Netlify injects its Real User Monitoring script,
+  which the site CSP (`script-src 'none'`) blocks and logs as a live console
+  error. Preston chose to preserve its dashboard metrics on October 17; leave
+  this hosting control unchanged until further authorization.
+- Only the canonical worktree is active. The tracked canonical `SITE_URL`
+  default is present; a local `.env` is optional. Preserve the unfinished
+  README and historical handoff edits outside this release commit.
+- Next action: merge PR #47 after hosted checks, synchronize local `main`,
+  rebuild and restart the tracked preview, and verify the matching ready
+  production deploy and public-domain metadata. Record final evidence in the PR.
 
 ## October 19, 2026 guitar campaign motion release preparation
 
