@@ -1,4 +1,4 @@
-import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
+import { cp, mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { isIndexableContext } from "../lib/deployment.mjs";
@@ -66,7 +66,11 @@ function stripRuntime(html) {
 async function render(route, expectedStatus = 200) {
   const response = await worker.fetch(
     new Request(`${siteOrigin}${route}`, {
-      headers: { accept: "text/html" },
+      headers: {
+        accept: "text/html",
+        // Paired with next.config.ts htmlLimitedBots so metadata renders in <head>.
+        "user-agent": "portfolio-static-export",
+      },
     }),
     makeEnvironment(),
     {
@@ -100,20 +104,37 @@ async function render(route, expectedStatus = 200) {
 await rm(outputDirectory, { recursive: true, force: true });
 await cp(clientDirectory, outputDirectory, { recursive: true });
 
+// stripRuntime removes every script reference, so the framework's client
+// chunks, build-id manifests, and Vite metadata are unreachable. Keep only
+// the hashed CSS and the fonts it references.
+const staticDirectory = path.join(outputDirectory, "_next", "static");
+for (const entry of await readdir(staticDirectory)) {
+  if (entry !== "css" && entry !== "media") {
+    await rm(path.join(staticDirectory, entry), { recursive: true, force: true });
+  }
+}
+for (const entry of [".vite", ".assetsignore", "vinext-client-entry-manifest.json"]) {
+  await rm(path.join(outputDirectory, entry), { recursive: true, force: true });
+}
+
 for (const route of routes) {
   const targetDirectory =
     route === "/"
       ? outputDirectory
       : path.join(outputDirectory, ...route.slice(1).split("/"));
   await mkdir(targetDirectory, { recursive: true });
-  await writeFile(path.join(targetDirectory, "index.html"), await render(route));
+  // trailingSlash is enabled, so render the canonical directory form.
+  await writeFile(
+    path.join(targetDirectory, "index.html"),
+    await render(route === "/" ? route : `${route}/`),
+  );
 }
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${routes
   .map((route) => {
-    const canonicalUrl = route === "/" ? siteOrigin : `${siteOrigin}${route}/`;
+    const canonicalUrl = route === "/" ? `${siteOrigin}/` : `${siteOrigin}${route}/`;
     return `  <url><loc>${canonicalUrl}</loc></url>`;
   })
   .join("\n")}
@@ -130,8 +151,9 @@ await writeFile(
 
 await writeFile(
   path.join(outputDirectory, "404.html"),
-  (await render("/__portfolio-not-found__", 404))
+  (await render("/__portfolio-not-found__/", 404))
     .replace(/<link\b(?=[^>]*\brel=["']canonical["'])[^>]*>/gi, "")
+    .replace(/<meta\b(?=[^>]*\bproperty=["']og:url["'])[^>]*>/gi, "")
     // The framework's noindex tag and inherited layout robots can conflict.
     .replace(/<meta\b(?=[^>]*\bname=["']robots["'])[^>]*>/gi, "")
     .replace(/<\/head>/i, '<meta name="robots" content="noindex, nofollow"/></head>'),

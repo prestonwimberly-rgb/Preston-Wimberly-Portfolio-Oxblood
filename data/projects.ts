@@ -9,11 +9,11 @@ export type Project = {
   imageFit?: "cover" | "contain"; imagePosition?: string; imageAspect?: string;
   homepageImage?: string; homepageImageAlt?: string; homepageImageCaption?: string;
   homepageImageCredit?: string; homepageImageFit?: "cover" | "contain";
-  homepageImagePosition?: string; homepageImageAspect?: string;
+  homepageImageAspect?: string;
   role: string; scope: string; year: string; place: string; engagementType: string;
   status: string; ownership: string; collaboration: string;
   collaborationExample?: { request: string; response: string; href: string; label: string };
-  liveUrl?: string; liveLabel?: string; liveIsReference?: boolean; accessNote?: string;
+  liveUrl?: string; liveLabel?: string;
   decisionTitle: string; decision: string[]; artifactTitle: string; artifactIntro: string;
   outcomeTitle: string; outcome: string[]; artifacts: ProjectArtifact[];
   outcomeSource?: { href: string; label: string };

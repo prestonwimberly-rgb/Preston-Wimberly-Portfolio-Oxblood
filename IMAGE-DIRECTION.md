@@ -19,12 +19,12 @@ Record project, people, action, place, date, photographer, source, permission/ri
 Generated imagery may serve as clearly labeled editorial illustration. It may not fabricate a client engagement, team, audience, campaign, award, document, performance, project outcome, or portrait of a real person.
 
 ```text
-Create a clearly non-documentary editorial illustration for the Preston Wimberly Oxblood portfolio.
+Create a clearly non-documentary editorial illustration for the Preston Wimberly portfolio.
 Case-study topic: [verified subject]
 Purpose: [concept explanation / section divider / abstract social graphic]
 Composition: [artifact-led / diagrammatic / abstract], with quiet negative space at [location]
 Allowed source facts: [explicit verified facts only]
-Palette: warm paper, black ink, restrained oxblood, quiet grey
+Palette: the Prairie Airframe palette in docs/design-direction.md (Prairie Bone, Instrument Black, Aviation Blue; Wright Brick only as a measured signal)
 Character: direct, specific, contemporary editorial craft; square geometry and useful visual hierarchy
 Avoid: named-brand imitation, agency-template gloss, fake documents, fake metrics, invented client marks, invented collaborators, fake awards, generic Americana, gradients as atmosphere, and simulated documentary photography
 Output: desktop [ratio/dimensions] plus an independently composed mobile version [ratio/dimensions]

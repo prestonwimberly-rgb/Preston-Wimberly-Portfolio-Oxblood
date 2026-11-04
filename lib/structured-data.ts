@@ -10,7 +10,7 @@ function personNode() {
     "@type": "Person",
     "@id": personId,
     name: siteConfig.name,
-    url: siteConfig.origin,
+    url: absoluteUrl("/"),
     email: siteConfig.email,
     jobTitle: "Creative Director",
     description: siteConfig.description,
@@ -30,7 +30,7 @@ function websiteNode() {
   return {
     "@type": "WebSite",
     "@id": websiteId,
-    url: siteConfig.origin,
+    url: absoluteUrl("/"),
     name: siteConfig.title,
     description: siteConfig.description,
     inLanguage: "en-US",
@@ -62,7 +62,7 @@ function creativeWorkNode(project: Project) {
       name: project.place,
     },
     ...(project.year.match(/^\d{4}$/) ? { dateCreated: project.year } : {}),
-    ...(project.liveUrl && project.liveLabel && !project.liveIsReference
+    ...(project.liveUrl && project.liveLabel
       ? {
           workExample: {
             "@type": "WebSite",
@@ -136,7 +136,7 @@ export function homeStructuredData(projects: Project[]) {
       {
         "@type": "ProfilePage",
         "@id": profilePageId,
-        url: siteConfig.origin,
+        url: absoluteUrl("/"),
         name: siteConfig.title,
         description: siteConfig.description,
         mainEntity: { "@id": personId },

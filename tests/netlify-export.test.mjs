@@ -1,15 +1,27 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readdir, readFile, stat } from "node:fs/promises";
 import test from "node:test";
 import { projectSlugs } from "../data/project-order.mjs";
 
 const pages = [
-  ["../netlify-dist/index.html", /Clear direction/, "https://work.prestonwimberly.com", "home", "Preston Wimberly | Creative Director"],
+  ["../netlify-dist/index.html", /Clear direction/, "https://work.prestonwimberly.com/", "home", "Preston Wimberly | Creative Director"],
   ["../netlify-dist/work/texas-aviation-partners/index.html", /Making the real scale/, "https://work.prestonwimberly.com/work/texas-aviation-partners/", "texas-aviation-partners", "Texas Aviation Partners Creative Direction | Preston Wimberly"],
   ["../netlify-dist/work/wild-feathers/index.html", /A band’s history, told from inside/, "https://work.prestonwimberly.com/work/wild-feathers/", "wild-feathers", "The Wild Feathers Archive Creative Direction | Preston Wimberly"],
   ["../netlify-dist/work/wimberly-guitars/index.html", /Building a guitar brand/, "https://work.prestonwimberly.com/work/wimberly-guitars/", "wimberly-guitars", "Wimberly Custom Guitars Creative Direction | Preston Wimberly"],
   ["../netlify-dist/work/preston-session-site/index.html", /The right part, played like it matters/, "https://work.prestonwimberly.com/work/preston-session-site/", "preston-session-site", "prestonwimberly.com Creative Direction | Preston Wimberly"],
 ];
+
+const exportRoot = new URL("../netlify-dist/", import.meta.url);
+
+async function exportedFiles(extension, directory = exportRoot) {
+  const files = [];
+  for (const entry of await readdir(directory, { withFileTypes: true })) {
+    const entryUrl = new URL(`${entry.name}${entry.isDirectory() ? "/" : ""}`, directory);
+    if (entry.isDirectory()) files.push(...(await exportedFiles(extension, entryUrl)));
+    else if (entry.name.endsWith(extension)) files.push(entryUrl);
+  }
+  return files;
+}
 
 function structuredData(html) {
   return [...html.matchAll(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)]
@@ -57,6 +69,52 @@ test("exports every portfolio route as standalone Netlify HTML", async () => {
       );
     }
   }
+});
+
+test("keeps page metadata in <head> on every exported page", async () => {
+  // Static pages ship without runtime JavaScript, so metadata streamed into
+  // <body> would never be hoisted for crawlers or link-preview scrapers.
+  const htmlFiles = await exportedFiles(".html");
+  assert.ok(htmlFiles.length >= 7);
+  for (const file of htmlFiles) {
+    const html = await readFile(file, "utf8");
+    const head = html.slice(0, html.search(/<\/head>/i));
+    const body = html.slice(head.length);
+    for (const pattern of [/<title>/i, /name="description"/i, /name="robots"/i, /property="og:title"/i, /name="twitter:card"/i]) {
+      assert.match(head, pattern, `${file.pathname} is missing ${pattern} in <head>`);
+      assert.doesNotMatch(body, pattern, `${file.pathname} renders ${pattern} in <body>`);
+    }
+  }
+});
+
+test("every local asset referenced by exported HTML and CSS exists", async () => {
+  const references = new Set();
+  for (const file of await exportedFiles(".html")) {
+    const html = await readFile(file, "utf8");
+    for (const [, attribute, value] of html.matchAll(/\b(src|srcset|href|content)="([^"]+)"/g)) {
+      const candidates = attribute === "srcset" ? value.split(",").map((part) => part.trim().split(/\s+/)[0]) : [value];
+      for (const candidate of candidates) {
+        if (/^\/(?:_next|optimized|images|social|video|downloads)\/|^\/favicon\./.test(candidate)) {
+          references.add(decodeURI(candidate.split(/[?#]/)[0]));
+        }
+      }
+    }
+  }
+  for (const file of await exportedFiles(".css")) {
+    const css = await readFile(file, "utf8");
+    for (const [, value] of css.matchAll(/url\(["']?(\/[^"')]+)["']?\)/g)) {
+      references.add(decodeURI(value.split(/[?#]/)[0]));
+    }
+  }
+  assert.ok(references.size > 20);
+  for (const reference of references) {
+    await assert.doesNotReject(stat(new URL(`.${reference}`, exportRoot)), `${reference} is referenced but not exported`);
+  }
+});
+
+test("publishes no unreferenced framework runtime files", async () => {
+  assert.deepEqual((await readdir(new URL("_next/static/", exportRoot))).sort(), ["css", "media"]);
+  assert.equal((await exportedFiles(".js")).length, 0);
 });
 
 test("exports crawl files for every canonical route", async () => {
@@ -133,6 +191,7 @@ test("exports a branded, non-indexable 404 page", async () => {
   assert.equal(robots.length, 1, "404 must have one unambiguous robots directive");
   assert.match(robots[0][0], /content="noindex, nofollow"/i);
   assert.doesNotMatch(html, /rel="canonical"/i);
+  assert.doesNotMatch(html, /property="og:url"/i);
   assert.doesNotMatch(
     html,
     /<script\b(?![^>]*\btype=["']application\/ld\+json["'])/i,

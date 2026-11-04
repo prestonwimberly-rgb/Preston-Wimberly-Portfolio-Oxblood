@@ -1,5 +1,7 @@
 # Preston Wimberly Portfolio — Design System
 
+> **Superseded (November 4, 2026).** This records the earlier Oxblood direction. The fonts and palette below no longer match the site. [`../../docs/design-direction.md`](../../docs/design-direction.md) and the tokens in [`../../app/globals.css`](../../app/globals.css) are current. Keep this file as history.
+
 ## Direction
 
 Contemporary editorial portfolio: confident, restrained, specific, and tactile. The design should feel like a well-art-directed magazine rather than a generic creative-agency template.

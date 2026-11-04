@@ -50,7 +50,7 @@ export function GuitarCampaign({ motionStudy }: { motionStudy?: Project["motionS
         </ol>
         <p className="campaign-production-note">Proposed production: cast and credit the player, identify their existing instrument, and clear their story and music before use. No participant, testimonial, or recorded performance is presented here.</p>
       </section>
-      <div className="campaign-social" aria-label="Three-frame social sequence concept">
+      <div className="campaign-social" role="group" aria-label="Three-frame social sequence concept">
         <article><span>03 / Player story · Frame 1</span><h3>Which mark<br />would you keep?</h3><p>Open on a detail from the player’s guitar. Let the question make someone stop.</p></article>
         <article><span>Frame 2</span><h3>How did<br />it get there?</h3><p>Pair the player’s portrait with a short excerpt from their recorded answer, credited by name.</p></article>
         <article><span>Frame 3</span><h3>The first mark<br />is yours.</h3><p>Show the Jack’s walnut, leather, and hardware, clearly identified as a new Wimberly guitar. Link to its model and materials, then the waitlist.</p></article>

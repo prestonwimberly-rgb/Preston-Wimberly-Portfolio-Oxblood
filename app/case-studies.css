@@ -15,7 +15,6 @@
 .case-role-line { font: 500 0.875rem/1.5 var(--font-interface); margin: 0 0 12px; }
 .case-status { display: flex; flex-wrap: wrap; gap: 8px 24px; font: 600 0.78rem/1.6 var(--font-interface); }
 .case-status strong { color: var(--signal); }
-.case-access-note { max-width: 820px; font: 0.8rem/1.6 var(--font-interface); margin: 12px 0 0; }
 .case-live-link { margin-top: 16px; }
 .case-image { margin: 0; }
 .case-image-frame { position: relative; width: 100%; background: var(--paper-deep); max-height: 720px; }

@@ -63,7 +63,7 @@ function CaseDecision({ project }: { project: Project }) {
 export function ProjectCase({ project, nextProject }: { project: Project; nextProject: { href: string; title: string } }) {
   const hasLeadArtifacts = Boolean(project.leadArtifacts?.length);
   const isWorkshop = project.slug === "wimberly-guitars";
-  const image = project.slug === "wimberly-guitars" ? null : (
+  const image = isWorkshop ? null : (
     <figure className="case-image">
       <div className="case-image-frame" style={{ aspectRatio: project.imageAspect ?? (project.imageFit === "cover" ? "16 / 9" : "8 / 5") }}>
         <ResponsiveImage src={project.image} alt={project.imageAlt} priority={!hasLeadArtifacts} sizes="100vw"
@@ -81,7 +81,6 @@ export function ProjectCase({ project, nextProject }: { project: Project; nextPr
         <p className="case-summary">{project.summary}</p>
         <p className="case-role-line">{project.role}</p>
         <div className="case-status"><span>{project.engagementType}</span><strong>{project.status}</strong></div>
-        {project.accessNote ? <p className="case-access-note">{project.accessNote}</p> : null}
         {project.liveUrl && project.slug !== "preston-session-site" ? (
           <a className="text-link case-live-link" href={project.liveUrl} target="_blank" rel="noreferrer">{project.liveLabel} <span aria-hidden="true">↗</span></a>
         ) : null}

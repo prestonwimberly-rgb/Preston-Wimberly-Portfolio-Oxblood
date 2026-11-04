@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import imageManifest from "@/config/images.json";
+import { candidateWidths } from "@/lib/image-widths.mjs";
 
 type ResponsiveImageProps = {
   src: string;
@@ -11,18 +12,10 @@ type ResponsiveImageProps = {
   objectFit?: "cover" | "contain";
 };
 
-const standardWidths = [480, 768, 1200, 1600];
-
 function imageDetails(src: string) {
   const details = (imageManifest as Record<string, { width: number; height: number }>)[src];
   if (!details) throw new Error(`Missing responsive image configuration: ${src}`);
   return details;
-}
-
-function candidateWidths(sourceWidth: number) {
-  const widths = standardWidths.filter((width) => width < sourceWidth);
-  widths.push(sourceWidth);
-  return widths;
 }
 
 function optimizedUrl(src: string, width: number, format: "avif" | "webp") {

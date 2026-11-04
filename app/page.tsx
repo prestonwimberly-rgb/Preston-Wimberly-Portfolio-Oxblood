@@ -50,7 +50,7 @@ const writing = [
     title: "The right part, played like it matters.",
     description:
       "A focused session-musician offer where producers can hear the work, understand the process, and start a project.",
-    href: "/work/preston-session-site",
+    href: "/work/preston-session-site/",
   },
 ];
 
@@ -120,8 +120,7 @@ export default function Home() {
               const imageCredit =
                 project.homepageImageCredit ?? project.imageCredit;
               const imageFit = project.homepageImageFit ?? project.imageFit;
-              const imagePosition =
-                project.homepageImagePosition ?? project.imagePosition;
+              const imagePosition = project.imagePosition;
               const imageAspect =
                 project.homepageImageAspect ?? project.imageAspect;
 
@@ -132,12 +131,12 @@ export default function Home() {
               >
                 <header className="project-heading">
                   <p className="project-kicker"><span className="project-index">{project.chapterNumber}</span>{project.chapter}</p>
-                  <h3><Link href={`/work/${project.slug}`}>{project.title}</Link></h3>
+                  <h3><Link href={`/work/${project.slug}/`}>{project.title}</Link></h3>
                 </header>
                 <figure className="project-visual">
                   <Link
                     className="project-image"
-                    href={`/work/${project.slug}`}
+                    href={`/work/${project.slug}/`}
                     style={{ aspectRatio: imageAspect }}
                   >
                     <ResponsiveImage
@@ -169,7 +168,7 @@ export default function Home() {
                   <p className="project-proof">
                     {project.outcomeTitle}
                   </p>
-                  <Link className="text-link" href={`/work/${project.slug}`}>
+                  <Link className="text-link" href={`/work/${project.slug}/`}>
                     Read the case study <span aria-hidden="true">↗</span>
                   </Link>
                   {project.slug === "wild-feathers" ? <p className="project-live-link"><a className="text-link" href={project.liveUrl} target="_blank" rel="noreferrer">Visit the live archive <span aria-hidden="true">↗</span></a></p> : null}
@@ -180,12 +179,12 @@ export default function Home() {
             <article className="project-row project-row-editorial">
               <header className="project-heading">
                 <p className="project-kicker"><span className="project-index">{sandpaperFeature.chapterNumber}</span>{sandpaperFeature.chapter}</p>
-                <h3 className="sandpaper-title"><Link href="/sandpaper">{sandpaperFeature.title}</Link></h3>
+                <h3 className="sandpaper-title"><Link href="/sandpaper/">{sandpaperFeature.title}</Link></h3>
               </header>
               <figure className="project-visual project-visual-manuscript">
                 <Link
                   className="project-image project-image-manuscript"
-                  href="/sandpaper"
+                  href="/sandpaper/"
                 >
                   {[114, 115].map(page => (
                     <span className="manuscript-page" key={page}>
@@ -212,7 +211,7 @@ export default function Home() {
                 <p className="project-proof">
                   {sandpaperFeature.outcome}
                 </p>
-                <Link className="text-link" href="/sandpaper">
+                <Link className="text-link" href="/sandpaper/">
                   Read an excerpt <span aria-hidden="true">↗</span>
                 </Link>
               </div>
