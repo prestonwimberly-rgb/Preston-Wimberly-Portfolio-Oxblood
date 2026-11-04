@@ -26,6 +26,6 @@ export function getNextProjectLink(slug) {
   const nextSlug = projectNavigationSlugs[(index + 1) % projectNavigationSlugs.length];
   return {
     slug: nextSlug,
-    href: nextSlug === "sandpaper" ? "/sandpaper" : `/work/${nextSlug}`,
+    href: nextSlug === "sandpaper" ? "/sandpaper/" : `/work/${nextSlug}/`,
   };
 }

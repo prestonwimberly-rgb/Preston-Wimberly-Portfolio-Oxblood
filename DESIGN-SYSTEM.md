@@ -1,5 +1,7 @@
 # Preston Wimberly Portfolio — Oxblood Design System
 
+> **Superseded (November 4, 2026).** This records the earlier Oxblood direction. The fonts and palette below no longer match the site. [`./docs/design-direction.md`](./docs/design-direction.md) and the tokens in [`./app/globals.css`](./app/globals.css) are current. Keep this file as history.
+
 This file implements [`DESIGN-NORTH-STAR.md`](./DESIGN-NORTH-STAR.md) for an **employer-facing editorial working portfolio**. The portfolio should make authorship, judgment, scope, and evidence visible without overstating seniority or borrowing another brand's surface style.
 
 The detailed implementation references remain [`design-system/preston-wimberly-portfolio/MASTER.md`](./design-system/preston-wimberly-portfolio/MASTER.md) and [`docs/design-direction.md`](./docs/design-direction.md). This root file is the concise governance layer future contributors should read first.

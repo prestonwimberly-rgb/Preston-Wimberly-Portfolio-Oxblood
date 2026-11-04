@@ -13,7 +13,6 @@ const eslintConfig = defineConfig([
     "dist/**",
     "netlify-dist/**",
     "out/**",
-    "build/**",
     "next-env.d.ts",
     ".claude/**",
     // Downloaded agent workflow helpers are not portfolio application code.

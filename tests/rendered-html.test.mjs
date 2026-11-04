@@ -7,7 +7,8 @@ async function render(path = "/") {
   const { default: worker } = await import(workerUrl.href);
 
   return worker.fetch(
-    new Request(`http://localhost${path}`, {
+    // trailingSlash is enabled, so request the canonical directory form.
+    new Request(`http://localhost${path.endsWith("/") ? path : `${path}/`}`, {
       headers: { accept: "text/html" },
     }),
     {
@@ -43,8 +44,8 @@ test("homepage leads with selected work and gives hiring readers direct paths", 
   assert.match(html, /From 2008 to 2011, I sold advertising at Texas Monthly/);
   assert.match(html, /Warner Bros\./);
   assert.match(html, /Jamestown Revival/);
-  assert.match(html, /href="\/sandpaper"/);
-  assert.match(html, /href="\/work\/preston-session-site"/);
+  assert.match(html, /href="\/sandpaper\/"/);
+  assert.match(html, /href="\/work\/preston-session-site\/"/);
   const contact = html.match(/<section class="contact-section"[\s\S]*?<\/section>/)[0];
   assert.match(contact, /<a href="mailto:preston\.wimberly@gmail\.com[^"]*">preston\.wimberly@gmail\.com<\/a>/);
   assert.doesNotMatch(html, /40%|preston@prestonwimberly\.com|Starter Project/);
@@ -85,7 +86,7 @@ test("sequential project browsing includes the memoir before independent practic
   for (const [index, path] of sequence.entries()) {
     const html = await (await render(path)).text();
     const navigation = html.match(/<nav class="next-project"[\s\S]*?<\/nav>/)[0];
-    assert.ok(navigation.includes(`href="${sequence[(index + 1) % sequence.length]}"`));
+    assert.ok(navigation.includes(`href="${sequence[(index + 1) % sequence.length]}/"`));
     assert.doesNotMatch(navigation, /href="\/work\/sandpaper"/);
   }
 });

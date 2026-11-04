@@ -2,6 +2,7 @@ import { mkdir, readFile, rm } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import sharp from "sharp";
+import { candidateWidths } from "../lib/image-widths.mjs";
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const projectDirectory = path.resolve(scriptDirectory, "..");
@@ -14,14 +15,6 @@ const imageManifest = JSON.parse(
 const socialCards = JSON.parse(
   await readFile(path.join(projectDirectory, "config", "social-cards.json"), "utf8"),
 );
-const standardWidths = [480, 768, 1200, 1600];
-
-function candidateWidths(sourceWidth) {
-  const widths = standardWidths.filter((width) => width < sourceWidth);
-  widths.push(sourceWidth);
-  return widths;
-}
-
 function outputName(source, width, format) {
   const filename = path.basename(source, path.extname(source));
   return path.join(optimizedDirectory, `${filename}-${width}.${format}`);
