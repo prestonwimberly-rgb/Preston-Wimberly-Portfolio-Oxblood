@@ -19,6 +19,7 @@ export type Project = {
   outcomeSource?: { href: string; label: string };
   leadArtifacts?: ProjectArtifact[];
   detailArtifact?: ProjectArtifact;
+  printAd?: { title: string; artifact: ProjectArtifact; transcript: string[]; programPhotos: ProjectArtifact[] };
   comparisonNotes?: { title: string; detail: string }[];
   theme: "archive" | "field" | "workshop" | "studio";
   motionStudy?: { src: string; poster: string; description: string };
@@ -132,6 +133,44 @@ const projectRecords: Project[] = [
         "aspect": "3 / 2"
       }
     ],
+    "printAd": {
+      "title": "Texas Capital Airshow",
+      "artifact": {
+        "src": "/images/tap-texas-capital-airshow.png",
+        "alt": "An airplane flies above a field of bluebonnets at San Marcos Regional Airport. The headline reads “The airport connects us every day.”",
+        "caption": "Advertisement by Preston Wimberly for San Marcos Regional Airport, published in the air show’s souvenir program. Select any image to view it full size.",
+        "format": "portrait",
+        "aspect": "17 / 22"
+      },
+      "transcript": [
+        "ENJOY THE SHOW!",
+        "The airport connects us every day.",
+        "Here, people learn to fly. Local aviation businesses get to work. And aircraft connect Central Texas to places near and far.",
+        "Texas Aviation Partners is proud to manage San Marcos Regional Airport and support the Texas Capital Airshow. To the pilots, crews, volunteers, and neighbors who make this weekend possible, thank you.",
+        "GET TO KNOW YOUR AIRPORT",
+        "flysanmarcos.com",
+        "PROUD SPONSORS OF THE TEXAS CAPITAL AIRSHOW",
+        "TEXAS AVIATION PARTNERS",
+        "texasaviationpartners.com",
+        "SAN MARCOS REGIONAL AIRPORT"
+      ],
+      "programPhotos": [
+        {
+          "src": "/images/san-marcos-regional-airport-print-ad.webp",
+          "alt": "The open souvenir program showing the bluebonnet advertisement across the full right-hand page",
+          "caption": "The ad as it appeared in print",
+          "format": "portrait",
+          "aspect": "3 / 4"
+        },
+        {
+          "src": "/images/texas-capital-air-show-program-cover.webp",
+          "alt": "Texas Capital Air Show souvenir program cover with a jet over the Texas flag",
+          "caption": "Souvenir program cover · November 7–8, 2026",
+          "format": "portrait",
+          "aspect": "3 / 4"
+        }
+      ]
+    },
     "theme": "field",
     "verificationNotes": [
       "The previous copy claimed a 40% increase in website traffic in the first month after launch, attributed to Google Analytics. Confirm the metric, comparison dates, and release measured before restoring this claim; the August 2026 review-build capture does not establish that attribution."

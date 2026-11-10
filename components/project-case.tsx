@@ -4,7 +4,7 @@ import { GuitarCampaign } from "@/components/guitar-campaign";
 import imageManifest from "@/config/images.json";
 import type { Project, ProjectArtifact } from "@/data/projects";
 
-function ArtifactImage({ artifact, priority = false }: { artifact: ProjectArtifact; priority?: boolean }) {
+function ArtifactImage({ artifact, priority = false, sizes }: { artifact: ProjectArtifact; priority?: boolean; sizes?: string }) {
   const source = imageManifest[artifact.src as keyof typeof imageManifest];
   const crop = artifact.crop;
   const scale = crop ? source.width / crop.width : 1;
@@ -12,7 +12,7 @@ function ArtifactImage({ artifact, priority = false }: { artifact: ProjectArtifa
     <a className="artifact-image" href={artifact.src} aria-label={`Open full-size image: ${artifact.alt}`}
       style={{ aspectRatio: crop ? `${crop.width} / ${crop.height}` : artifact.aspect ?? (artifact.format === "portrait" ? "390 / 844" : "8 / 5") }}>
       <ResponsiveImage src={artifact.src} alt={artifact.alt} priority={priority}
-        sizes={artifact.format === "portrait" ? "(max-width: 760px) 74vw, 24vw" : `(max-width: 760px) ${Math.ceil(100 * scale)}vw, ${Math.ceil(60 * scale)}vw`}
+        sizes={sizes ?? (artifact.format === "portrait" ? "(max-width: 760px) 74vw, 24vw" : `(max-width: 760px) ${Math.ceil(100 * scale)}vw, ${Math.ceil(60 * scale)}vw`)}
         objectFit="contain" style={crop ? {
           width: `${source.width / crop.width * 100}%`, height: `${source.height / crop.height * 100}%`,
           left: `${-crop.left / crop.width * 100}%`, top: `${-crop.top / crop.height * 100}%`,
@@ -125,6 +125,31 @@ export function ProjectCase({ project, nextProject }: { project: Project; nextPr
           {project.liveUrl ? <a className="text-link" href={project.liveUrl} target="_blank" rel="noreferrer">{project.liveLabel} <span aria-hidden="true">↗</span></a> : null}
         </div>
       </section>
+      {project.printAd ? (
+        <section className="case-print" aria-labelledby="case-print-title">
+          <p className="section-number">Print advertisement</p>
+          <div className="case-print-content">
+            <h2 id="case-print-title">{project.printAd.title}</h2>
+            <figure className="artifact">
+              <ArtifactImage artifact={project.printAd.artifact} sizes="(max-width: 760px) min(560px, calc(100vw - 36px)), 560px" />
+              <figcaption>{project.printAd.artifact.caption}</figcaption>
+            </figure>
+            <details>
+              <summary>Read the ad copy</summary>
+              {project.printAd.transcript.map(line => <p key={line}>{line}</p>)}
+            </details>
+            <h3>In the printed program</h3>
+            <div className="case-print-photos">
+              {project.printAd.programPhotos.map(photo => (
+                <figure className="artifact" key={photo.src}>
+                  <ArtifactImage artifact={photo} sizes="(max-width: 596px) calc(50vw - 26px), 272px" />
+                  <figcaption>{photo.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
       {isWorkshop ? <GuitarCampaign motionStudy={project.motionStudy} /> : null}
       {project.motionStudy && !isWorkshop ? (
         <section className="motion-study" aria-labelledby="motion-study-title">

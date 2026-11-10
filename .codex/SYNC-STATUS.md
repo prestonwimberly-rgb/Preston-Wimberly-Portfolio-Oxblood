@@ -1,5 +1,38 @@
 # Shared Codex and Claude handoff
 
+## November 9, 2026 Texas Capital Airshow advertisement
+
+- Repository `prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood`, site
+  `https://work.prestonwimberly.com`. Started from `main` at
+  `4cb3a3f17fa573572439140dab1b7b430235882e`. Release branch
+  `codex/texas-capital-airshow-ad`. The starting commit matched fresh
+  `origin/main` and the ready production deploy. Existing local documentation
+  and skills edits remain outside the release.
+- Preston supplied the ad artwork and two photographs of the souvenir program.
+  The Texas Aviation Partners case study presents the uncropped ad after the
+  website outcomes, followed by its text transcript and the program photos.
+  The printed page establishes placement. The cover supplies event context
+  and the November 7–8, 2026 dates. Each image links to the full-size file.
+- Changed `data/projects.ts`, `components/project-case.tsx`,
+  `app/case-studies.css`, `config/images.json`, this handoff, and three images
+  under `public/images/` named `tap-texas-capital-airshow.png`,
+  `san-marcos-regional-airport-print-ad.webp`, and
+  `texas-capital-air-show-program-cover.webp`.
+- Lint, static export, all 23 tests, TypeScript, and `git diff --check` passed.
+  `npm run quality` exits on the same 10 moderate development dependency
+  advisories. The production-only audit reports zero. The browser loaded all
+  six routes and the branded 404 at 1440, 390, and 320px. Checked keyboard
+  focus, the transcript, all three original file links, responsive AVIFs,
+  aspect ratios, and overflow. The three served originals match Preston’s
+  files byte for byte. Local preview cannot reproduce Netlify headers or
+  redirects. Review scores out of 5 were authenticity 5, hierarchy 5,
+  material character 5, evidence 5, restraint 5, usability 4, performance 4,
+  and accessibility 4. These checks cover the local build.
+- Preston requested “push and merge to main” after the 10 development
+  dependency findings were disclosed. The fresh release gate reproduced the
+  same audit report after all 23 tests passed. The release pull request
+  records the merge, preview rebuild, and production verification.
+
 Verified September 15, 2026. Read [README.md](../README.md), [AGENTS.md](../AGENTS.md),
 and applicable local instructions. [CLAUDE.md](../CLAUDE.md) imports the shared rules.
 
