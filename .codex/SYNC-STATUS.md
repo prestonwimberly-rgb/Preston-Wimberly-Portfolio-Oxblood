@@ -1,5 +1,35 @@
 # Shared Codex and Claude handoff
 
+## November 9, 2026 dependency audit and Netlify monitoring
+
+- Repository `prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood`, site
+  `https://work.prestonwimberly.com`. Started from synchronized `main` at
+  `7d451391f3206fb648d4ee24364e9a6d8986a624`. Release branch
+  `codex/portfolio-dependency-rum-fixes`.
+- `package.json` and `package-lock.json` pin `minimatch@11.0.5` under
+  TypeScript ESLint and `@vercel/og@1.0.3` under Vinext. The latter brings
+  in `satori@0.33.5`. Pin Satori's `fflate` to `0.7.5` to keep the patched
+  dependency tree. The candidate Vinext update introduces a Worker import
+  that breaks the current Node-based static export. The scoped overrides
+  keep that export and its Sharp social cards working. A future `next/og`
+  feature would require Vinext's newer image-response integration.
+- `netlify.toml` permits the exact RUM script URL on the canonical domain and
+  its collector URL. `tests/deployment-context.test.mjs` guards that scope.
+  `docs/launch-checklist.md` records the hosted check and retention requirement.
+  Netlify dashboard controls were untouched. Preview and alias origins retain
+  their separate script behavior.
+- On Node 22.13.0, locked install, lint, static export, all 24 tests, TypeScript,
+  and whitespace checks passed. Full and production-only npm audits report
+  zero findings. The local preview passed all six routes and the branded 404
+  at 1440, 390, and 320px. Chromium loaded the actual RUM script under the
+  proposed policy and attempted the expected collector POST on two pages.
+  The test intercepted the requests before sending metrics. An unrelated
+  same-origin script stayed blocked. The live CSP still blocks RUM until the
+  change is deployed.
+- Preston requested “push and merge to main” and verification of live collection
+  and analytics history. The release PR records the matching production deploy,
+  live browser verification, and the dashboard comparison.
+
 ## November 9, 2026 Texas Capital Airshow advertisement
 
 - Repository `prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood`, site

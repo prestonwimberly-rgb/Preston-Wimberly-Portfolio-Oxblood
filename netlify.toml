@@ -8,7 +8,8 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = "default-src 'self'; base-uri 'self'; connect-src 'self'; font-src 'self'; form-action 'self'; frame-ancestors 'none'; img-src 'self' data:; object-src 'none'; script-src 'none'; style-src 'self' 'unsafe-inline'; upgrade-insecure-requests"
+    # Netlify injects the monitoring script on the canonical production domain.
+    Content-Security-Policy = "default-src 'self'; base-uri 'self'; connect-src 'self' https://ingesteer.services-prod.nsvcs.net/rum_collection; font-src 'self'; form-action 'self'; frame-ancestors 'none'; img-src 'self' data:; object-src 'none'; script-src https://work.prestonwimberly.com/.netlify/scripts/rum; style-src 'self' 'unsafe-inline'; upgrade-insecure-requests"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
     Referrer-Policy = "strict-origin-when-cross-origin"
     X-Content-Type-Options = "nosniff"
