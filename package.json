@@ -45,5 +45,16 @@
     "vite": "8.3.5",
     "wrangler": "4.157.0"
   },
-  "type": "module"
+  "type": "module",
+  "overrides": {
+    "@typescript-eslint/typescript-estree": {
+      "minimatch": "11.0.5"
+    },
+    "vinext": {
+      "@vercel/og": "1.0.3"
+    },
+    "satori": {
+      "fflate": "0.7.5"
+    }
+  }
 }

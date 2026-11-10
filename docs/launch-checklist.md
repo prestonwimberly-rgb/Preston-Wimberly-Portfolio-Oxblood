@@ -128,6 +128,10 @@ steps remain separate approvals.
 - Confirm the production canonical origin and indexing policy.
 - Verify favicon, title, description, canonical, Open Graph image, Twitter card,
   sitemap, robots file, redirects, security headers, 404, and TLS on production.
+- Confirm Netlify Real User Monitoring loads `/.netlify/scripts/rum` on the
+  canonical domain and can report to its collector. The CSP grants those exact
+  URLs. Keep Real User Monitoring enabled to retain the dashboard history.
+  [Netlify Real User Monitoring](https://docs.netlify.com/manage/monitoring/real-user-monitoring/).
 - Submit or refresh the final sitemap only after the intended primary hostname is
   serving the approved release.
 - Monitor the first production deploy for broken routes, image errors, and form
