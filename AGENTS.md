@@ -2,6 +2,13 @@
 
 These are the shared repository-level rules for Codex and Claude Code.
 
+## Task scope and communication
+
+- Preston's current brief and explicit instructions control. A review is read-only. An implementation request authorizes scoped edits and proportionate checks. Identify the canonical inputs and intended result, then carry authorized work through a finished, reviewable result.
+- Resolve routine, reversible choices from context. Ask only when a missing fact, material decision, or authorization blocks progress; honor specific approval already given. Optional guidance must not override the brief or intentionally disabled skills.
+- Never commit unless explicitly asked. Before remote writes, verify the intended GitHub account, repository, and permissions. Preserve the existing authorization requirements for messages, publishing, releases, purchases, and destructive actions.
+- Keep replies and new copy direct, practical, concise, and plainspoken. Preserve approved wording and deliberate voice. Avoid em dashes, generic AI phrasing, stock transitions, forced contrasts, repetitive cadence, and unsupported claims. Before delivery, check case-insensitively for the dated prohibited terms: "useful", "the way", "the ways", "the kind", "the kinds", "the thing", "the things", "the sort", and "the sorts". Preserve original sources and verbatim quotations.
+
 ## Shared working discipline
 
 Before editing:
@@ -230,10 +237,12 @@ Use this page direction:
   environment configuration. Finish by reporting the merged commit, local sync
   status, preview URL, live URL, and anything still out of date. Preserve
   historical archives.
-- A request to “push and merge to main” supplies the explicit authorization required above for the
-  scoped commit, push, pull request, merge, and routine production release through
-  the existing approved hosting configuration. Continue those steps without
-  asking for the same approval again. Follow any narrower scope Preston states;
+- An explicit "push and merge to main" request, or an equivalent explicit request
+  to complete that scoped release, supplies authorization for the commit, push,
+  pull request, merge, and routine production release through the existing approved
+  hosting configuration. A settings, instruction, review, or local implementation
+  task alone does not authorize those actions. Continue an authorized release
+  without asking for the same approval again. Follow any narrower scope Preston states;
   retain existing content-clearance rules and separate authorization for changes
   to hosting settings, domains, DNS, or access controls.
 - Use this README's documented checks and preview commands. Refresh locked

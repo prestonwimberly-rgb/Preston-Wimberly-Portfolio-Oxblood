@@ -21,6 +21,7 @@ September 15, 2026. Hosted settings retain the dated evidence noted below.
 | Production branch | `main` |
 | Live site | [work.prestonwimberly.com](https://work.prestonwimberly.com/) |
 | Netlify project | [preston-wimberly-portfolio](https://app.netlify.com/projects/preston-wimberly-portfolio) |
+| Canonical Mac checkout | `~/Documents/Projects/Creative Portfolio/Preston-Wimberly-Portfolio-Oxblood` |
 | Canonical Windows checkout | `C:\Users\pwimb\Documents\GitHub\Preston-Wimberly-Portfolio-Oxblood` |
 | Publish directory | `netlify-dist/` |
 | Local preview | [127.0.0.1:4172](http://127.0.0.1:4172/) |

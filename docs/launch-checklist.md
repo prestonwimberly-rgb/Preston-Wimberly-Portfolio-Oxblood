@@ -92,7 +92,9 @@ steps remain separate approvals.
 
 ### Wimberly Guitars
 
-- Preston is the founder. The current public offer is a waitlist.
+- Preston is the founder. The [workshop website](https://wimberlycustomguitars.com/)
+  has a build waitlist for The Jack and accepts expressions of interest for
+  The Heirloom, which is in development. Checked November 10, 2026.
 - Portfolio use of `wimberly-reference.avif` and
   `wimberly-workshop-hero.avif` is cleared. The reference object is used as a
   documented source for the material system; the workshop hero remains outside

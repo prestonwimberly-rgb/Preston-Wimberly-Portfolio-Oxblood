@@ -186,3 +186,16 @@ Label the study as AI-generated motion from the product photograph, not filmed
 footage. Preserve the original photograph and previous motion file. Keep the
 instrument geometry, material patterns, strings, and hardware stable; movement
 should come from a restrained camera move and light. The homepage remains still.
+
+### Homepage evidence · November 10, 2026
+
+Homepage project summaries use the optional `homepageProof` field to surface
+dated evidence and current project status. TAP cites the October 2 City
+Manager’s Weekly Report. The Texas Capital Airshow program ad appears in the
+TAP case study. The archive cites its verified record counts. The guitar
+summary names the Jack waitlist and the Heirloom line in development. The
+opening paragraph describes Preston’s current practice. About covers his
+career history and displays the stage photograph in a matching 16:9 frame.
+The TAP homepage capture is scaled within its frame to hide the browser
+scrollbar. Claude reviewed the initial homepage edit locally at 1440, 390,
+and 320px.
