@@ -1,5 +1,78 @@
 # Shared Codex and Claude handoff
 
+## November 10, 2026 homepage evidence release preparation
+
+- Repository `prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood`, site
+  `https://work.prestonwimberly.com`. Preston approved the review suggestions,
+  then requested “push and merge to main.” Reviewed
+  `fda2be0140921ca219db4498754eb942d2d9728f` on `claude/homepage-evidence`.
+  The release branch `codex/portfolio-homepage-evidence` starts from
+  `f779843130caccb3d5ddc31c6545d0ab10790b65` on `origin/main` and contains
+  the final reviewed files. Claude's intermediate commits remain local.
+- Restored the shorter opening. The TAP homepage card cites the October 2 city
+  report, with the airshow ad in the case study. Kept the archive counts, TAP
+  crop, and 16:9 About image. The guitar copy identifies the Jack build waitlist
+  and the Heirloom in development. Captions identify the guitar screenshots as
+  earlier captures. About and the downloadable résumé credit the first two
+  Warner Bros. studio albums. Updated the design notes, content checklist, and
+  Mac checkout documentation.
+- Release files: `app/page.tsx`, `app/globals.css`, `data/projects.ts`,
+  `AGENTS.md`, `README.md`, `docs/design-direction.md`, `docs/launch-checklist.md`, this handoff,
+  `package.json`, `package-lock.json`, `scripts/prepare-portfolio-pdfs.py`,
+  and `public/downloads/preston-wimberly-resume.pdf`.
+- Pinned React, React DOM, and React Server DOM Webpack to 19.2.9 to resolve
+  [GHSA-xqc2-xf4c-x3h3](https://github.com/advisories/GHSA-xqc2-xf4c-x3h3).
+  Locked install, `npm run quality` (24 tests, zero audit findings), TypeScript,
+  and whitespace checks passed. Chromium checked six public routes and the
+  branded 404 at 1440, 390, and 320px. Checked keyboard skip navigation,
+  reduced motion, crawl files, and both redirect targets. Rendered and checked
+  the one-page Letter résumé and verified the served file. The local preview
+  does not exercise Netlify redirects or headers.
+- The pull request records the final merge, published Netlify deploy, and
+  verification of the synchronized [local preview](http://127.0.0.1:4172/).
+  The prior untracked skill folders are preserved.
+
+## November 10, 2026 homepage evidence edits, local branch only
+
+- Repository `prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood`, site
+  `https://work.prestonwimberly.com`. Started from `main` at
+  `f779843130caccb3d5ddc31c6545d0ab10790b65`, matching fresh `origin/main`.
+  Work is committed on local branch `claude/homepage-evidence` at Preston's
+  request. Not pushed, merged, or deployed. The earlier uncommitted edits to this file, `AGENTS.md`,
+  `README.md`, and the untracked `.agents/skills/` folders were carried onto
+  the branch unchanged.
+- Preston asked Claude to make the edits it judged would make the portfolio
+  most compelling after a read-only review of the live site. Evidence was the
+  weakest category, so the edits surface facts already cleared in
+  `docs/launch-checklist.md`. No new claims were added.
+- `data/projects.ts`: new optional `homepageProof` and `homepageImageCrop`
+  fields. Homepage result lines now state the October 2 City Manager's Weekly
+  Report feature and the Texas Capital Airshow program ad for TAP, the two
+  models, build journal, and waitlist for the guitars, and the 410/209/125
+  record counts for the archive. Case-study `outcomeTitle` headings are
+  unchanged. The TAP outcome now leads with the dated city feature.
+- `app/page.tsx`: the opening paragraph adds one sentence on Texas Monthly
+  advertising and The Wild Feathers' Warner Bros. years, both already stated
+  in About. The TAP homepage capture is scaled so the browser scrollbar at its
+  right edge falls outside the frame; the source file is untouched.
+- `app/globals.css`: the About photograph frame is 16:9 to match the
+  photograph, removing the black bars above and below it.
+- `docs/design-direction.md` records the decisions.
+- Validation: lint, static export, and all 24 tests passed. `npm run quality`
+  then exits non-zero on a new critical advisory for
+  `react-server-dom-webpack` 19.2.0 to 19.2.8 (GHSA-xqc2-xf4c-x3h3). npm
+  proposed 19.3.1 at the time. See the later 19.2.9 patch above.
+  The local export was reviewed in Chromium at 1440,
+  390, and 320px on the homepage: no horizontal overflow, no broken images,
+  no visible controls under 44px at 390px. Case-study pages, keyboard, and
+  reduced motion were not rechecked. Local preview does not reproduce Netlify
+  headers or redirects.
+- Still needed from Preston: a measured result or named quote for TAP, a
+  waitlist count or sale for the guitars, a portrait that shows his face with
+  date, place, and credit, and how to describe Jim Wimberly's relationship.
+- Next: Preston reviews the wording. Push and release only on his explicit
+  request, after the dependency advisory is decided.
+
 ## November 9, 2026 dependency audit and Netlify monitoring
 
 - Repository `prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood`, site
@@ -62,6 +135,13 @@
   dependency findings were disclosed. The fresh release gate reproduced the
   same audit report after all 23 tests passed. The release pull request
   records the merge, preview rebuild, and production verification.
+
+## November 4, 2026: instruction maintenance, local only
+
+- Repository: `prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood`. Inspected branch `main` at `4cb3a3f17fa573572439140dab1b7b430235882e`. Preston authorized a project-instruction review; no commit or release is authorized by this task.
+- Updated `AGENTS.md` with current scope, autonomy, Git authorization, and compact prose rules. Clarified equivalent explicit release requests where needed. Existing project identity, technical checks, content-clearance rules, optional design references, and prior local edits are preserved.
+- Documentation checks: local links and Claude import, instruction consistency, exact intended-file scope, and `git diff --check`. Site builds, browser checks, previews, and production verification are outside this documentation-only task.
+- Next: use these local instructions for subsequent work. The dated sections below remain historical evidence; verify Git and hosting state before treating an older release candidate as current or unfinished.
 
 Verified September 15, 2026. Read [README.md](../README.md), [AGENTS.md](../AGENTS.md),
 and applicable local instructions. [CLAUDE.md](../CLAUDE.md) imports the shared rules.
@@ -392,6 +472,13 @@ and applicable local instructions. [CLAUDE.md](../CLAUDE.md) imports the shared 
   result evidence before adding business metrics. Any release needs separate
   authorization; the historical authorizations below do not cover this work.
 
+## September 17 agent-skill cleanup
+
+- This change was made in a Claude Code session on the Mac checkout, directly on `main`, at Preston's request. It changed agent skills and skill docs only; site files did not change. Committed the 21 previously untracked `.agents/skills/` folders (`72e455c`), then removed 13 generic ones (`b365584`). Kept `release`, `preston-creative-direction`, `react-patterns`, `vite-patterns`, `frontend-a11y`, `seo`, `systematic-debugging`, `verification-before-completion`. Netlify published `b365584` at 13:02 UTC, and the live site returned 200.
+- **Open:** the tracked `.claude/skills/` folder, added in PR #32, holds 19 skills. As of November 10, it includes 12 of the 13 removed from `.agents/skills/`. Claude Code loads that folder. Preston has not yet decided whether to prune it.
+- Local `main` matched `origin/main` after the push. No browser review or `check` action was run for these skill-only commits.
+- The release baseline below is the September 15 snapshot. Recheck Git and Netlify before treating it as current.
+
 ## Verified release baseline
 
 - Repository: [prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood](https://github.com/prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood).
@@ -428,7 +515,7 @@ independent pre-merge review found no release-blocking defects.
 
 ## Preserved work and remaining issues
 
-Preserve the pre-existing untracked `.agents/skills/` additions and `scripts/build-creative-director-resume.py`; they are unrelated work and must not be included in this audit commit. Preserve the September 11 worktree and Prairie Airframe direction. The old shell hook files remain for history; settings now call the Node hooks.
+The formerly untracked `.agents/skills/` additions were committed and pruned on September 17 (see above). Preserve `scripts/build-creative-director-resume.py` if it is present; it is unrelated work. Preserve the September 11 worktree and Prairie Airframe direction. The old shell hook files remain for history; settings now call the Node hooks.
 
 ## Historical evidence
 

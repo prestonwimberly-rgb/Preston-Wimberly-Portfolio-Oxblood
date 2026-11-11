@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ResponsiveImage } from "@/components/responsive-image";
 import { SiteHeader } from "@/components/site-header";
 import { StructuredData } from "@/components/structured-data";
+import imageManifest from "@/config/images.json";
 import { featuredProjects } from "@/data/projects";
 import { sandpaperExcerpt } from "@/data/sandpaper";
 import { mailtoHref, siteConfig } from "@/lib/site";
@@ -123,6 +124,15 @@ export default function Home() {
               const imagePosition = project.imagePosition;
               const imageAspect =
                 project.homepageImageAspect ?? project.imageAspect;
+              // Scale past the frame so the capture's browser edge falls outside it.
+              const imageStyle = project.homepageImageCrop
+                ? {
+                    width: `${(imageManifest[image as keyof typeof imageManifest].width / project.homepageImageCrop.width) * 100}%`,
+                    height: `${(imageManifest[image as keyof typeof imageManifest].height / project.homepageImageCrop.height) * 100}%`,
+                    maxWidth: "none",
+                    objectPosition: "left top",
+                  }
+                : { objectPosition: imagePosition ?? "center" };
 
               return (
               <article
@@ -143,7 +153,7 @@ export default function Home() {
                       src={image}
                       alt={imageAlt}
                       sizes={project.slug === "wild-feathers" ? "100vw" : "(max-width: 760px) 100vw, 54vw"}
-                      style={{ objectPosition: imagePosition ?? "center" }}
+                      style={imageStyle}
                       objectFit={imageFit ?? "cover"}
                     />
                   </Link>
@@ -166,7 +176,7 @@ export default function Home() {
                     <span>{project.role}</span><span className="project-year">{project.year}</span>
                   </p>
                   <p className="project-proof">
-                    {project.outcomeTitle}
+                    {project.homepageProof ?? project.outcomeTitle}
                   </p>
                   <Link className="text-link" href={`/work/${project.slug}/`}>
                     Read the case study <span aria-hidden="true">↗</span>
@@ -285,10 +295,11 @@ export default function Home() {
             <p>
               From 2008 to 2011, I sold advertising at Texas Monthly. It was my
               first job out of college, where I learned how reporting, design,
-              and editing make a story land. As The Wild Feathers’ lead guitarist, songwriter, and
-              pedal steel player through its Warner Bros. years, I also
-              contributed to photography and album artwork. I later toured and
-              recorded with Jamestown Revival. Guitar building brought that
+              and editing make a story land. With The Wild Feathers, I played
+              lead guitar and pedal steel, wrote songs, and contributed to
+              photography and album artwork. I played on the band’s first two
+              studio albums for Warner Bros. and later toured and recorded
+              with Jamestown Revival. Guitar building brought that
               judgment to materials and product storytelling; aviation brought
               it to an operational business, where every claim has to hold up
               against the work.

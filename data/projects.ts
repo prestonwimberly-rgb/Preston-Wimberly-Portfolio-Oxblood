@@ -10,6 +10,8 @@ export type Project = {
   homepageImage?: string; homepageImageAlt?: string; homepageImageCaption?: string;
   homepageImageCredit?: string; homepageImageFit?: "cover" | "contain";
   homepageImageAspect?: string;
+  homepageImageCrop?: { width: number; height: number };
+  homepageProof?: string;
   role: string; scope: string; year: string; place: string; engagementType: string;
   status: string; ownership: string; collaboration: string;
   collaborationExample?: { request: string; response: string; href: string; label: string };
@@ -50,6 +52,8 @@ const projectRecords: Project[] = [
     "homepageImageCredit": "Live website capture · September 2026",
     "homepageImageFit": "cover",
     "homepageImageAspect": "8 / 5",
+    "homepageImageCrop": { "width": 1410, "height": 880 },
+    "homepageProof": "The City of San Marcos highlighted the redesigned website in its City Manager’s Weekly Report on October 2, 2026.",
     "role": "Creative Director / Brand Strategy",
     "scope": "Positioning, message architecture, writing, photography direction",
     "year": "2026",
@@ -88,9 +92,9 @@ const projectRecords: Project[] = [
     ],
     "outcomeTitle": "Airport partners can find the right service, check the record, and contact TAP.",
     "outcome": [
+      "The City of San Marcos featured the redesigned website in its City Manager’s Weekly Report on October 2, 2026.",
       "The launched site gives municipalities and airport owners a path from three defined services to airport-specific experience and a project conversation. The capabilities page sets out all three services, the operating record provides context for the work, and contact is available from the main navigation.",
-      "Leadership profiles and Field Notes give TAP a place to explain its approach and publish ongoing airport work. Original field photography makes the operations behind the service descriptions visible.",
-      "The City of San Marcos featured the redesigned website in its City Manager’s Weekly Report on October 2, 2026."
+      "Leadership profiles and Field Notes give TAP a place to explain its approach and publish ongoing airport work. Original field photography makes the operations behind the service descriptions visible."
     ],
     "outcomeSource": {
       "href": "https://storymaps.arcgis.com/stories/61b3e40ae8e04c339a7e1d7a9e3ed35d#ref-n-97qaa8",
@@ -193,6 +197,7 @@ const projectRecords: Project[] = [
     "imageFit": "cover",
     "imagePosition": "center 45%",
     "imageAspect": "33 / 14",
+    "homepageProof": "410 performance records, 209 archive records, and 125 source records in one public archive. Counts verified October 5, 2026.",
     "role": "Creative Director / Writer",
     "scope": "Archive strategy, research, editorial direction, writing",
     "year": "2025–2026",
@@ -254,6 +259,7 @@ const projectRecords: Project[] = [
     "imageCaption": "Walnut, hand-tooled leather, and antique bronze hardware.",
     "imageFit": "cover",
     "imagePosition": "center 52%",
+    "homepageProof": "The Jack’s build waitlist is open. The Heirloom is in development.",
     "role": "Founder / Creative Director",
     "scope": "Positioning, product language, art direction, launch",
     "year": "2026",
@@ -267,25 +273,25 @@ const projectRecords: Project[] = [
     "decisionTitle": "Let the instrument set the rules.",
     "decision": [
       "For players considering a small workshop, the materials and the maker need to justify the choice. I built the brand around walnut, hand-tooled leather, and metal that changes with use.",
-      "The buying question behind the presentation is why a player would consider this workshop. Close photography and plain descriptions make the materials available to examine; the Jack and the Lucio give that material approach two distinct expressions. The waitlist provides a way to follow the workshop before making a purchase decision."
+      "The buying question behind the presentation is why a player would consider this workshop. Detailed photography and plain descriptions let players examine the materials before they inquire."
     ],
     "artifactTitle": "The launched website",
     "artifactIntro": "The website brings the models, materials, build journal, and waitlist into one place.",
-    "outcomeTitle": "Players can compare two models, explore materials, and join the waitlist.",
+    "outcomeTitle": "Players can join The Jack’s build waitlist or register interest in The Heirloom.",
     "outcome": [],
     "artifacts": [
       {
         "src": "/images/wimberly-site.jpg",
-        "alt": "Desktop view of the Wimberly Guitars homepage",
-        "caption": "The opening centers the workshop, an unfinished instrument, and the material language.",
+        "alt": "Earlier desktop view of the Wimberly Guitars homepage",
+        "caption": "An earlier homepage capture. The opening centers the workshop, an unfinished instrument, and the material language.",
         "credit": "Creative direction and screenshot by Preston Wimberly",
         "format": "landscape",
         "aspect": "1417 / 892"
       },
       {
         "src": "/images/wimberly-mobile.jpg",
-        "alt": "Mobile view of the Wimberly Guitars homepage",
-        "caption": "The model and material hierarchy stays direct at a narrow reading width.",
+        "alt": "Earlier mobile view of the Wimberly Guitars homepage",
+        "caption": "An earlier mobile capture showing the model and material hierarchy at a narrow reading width.",
         "credit": "Creative direction and screenshot by Preston Wimberly",
         "format": "portrait"
       }
