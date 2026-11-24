@@ -153,6 +153,10 @@ buttons are optional conveniences:
   `http://127.0.0.1:4172/`.
 - **Build** runs `npm run build:netlify`.
 - **Check** runs `npm run quality` and checks the Git diff for whitespace errors.
+- **Status** (`node .codex/workflow.mjs status`) reports the checkout path, Git
+  branch, and local changes. The read-only check compares the local preview
+  homepage bytes with the existing build's homepage. It checks the configured port
+  and includes the value of `PORT` when set.
 
 Worktree setup installs the locked dependencies with `npm ci --engine-strict --no-fund`.
 Preview rebuilds on launch; for live development, use the existing `npm run dev`
@@ -162,7 +166,7 @@ headers, redirects, or form delivery.
 
 ## Windows and shared handoff
 
-The Codex actions use the portable `node .codex/workflow.mjs` runner on Windows, macOS, and Linux. Both assistants can use `setup`, `preview`, and `check` from the repository root. Commands, minimum Node version, and the default preview port live in `.codex/workflow.json`; keep them aligned with the checks above. Python 3 must be available as `python` on Windows or `python3` elsewhere. Preview rebuilds the public output and serves it on localhost with caching disabled.
+The Codex actions use the portable `node .codex/workflow.mjs` runner on Windows, macOS, and Linux. Both assistants can use `setup`, `preview`, `check`, and `status` from the repository root. Commands, minimum Node version, and the default preview port live in `.codex/workflow.json`; keep them aligned with the checks above. Python 3 must be available as `python` on Windows or `python3` elsewhere. Preview rebuilds the public output and serves it on localhost with caching disabled.
 
 Read [.codex/SYNC-STATUS.md](.codex/SYNC-STATUS.md) for the dated checkout, deployment, and unfinished-work handoff. Update that record after verification; do not treat an old status as current evidence. Keep standing project rules in `AGENTS.md`, imported by `CLAUDE.md`.
 

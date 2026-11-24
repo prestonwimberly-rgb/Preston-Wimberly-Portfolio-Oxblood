@@ -1,5 +1,12 @@
 # Shared Codex and Claude handoff
 
+## November 24, 2026 local Status action
+
+- Local branch `codex/website-status-action` starts at `633165b`, matching freshly fetched `origin/main` at the start of the work.
+- The Codex **Status** action and `node .codex/workflow.mjs status` report the checkout, Git branch and local changes, and compare the running preview home page with the existing local build. The shared action is documented in [README](../README.md).
+- macOS verification matched the home page at [127.0.0.1:4172](http://127.0.0.1:4172/) to `netlify-dist/index.html`. The Git index and build file were unchanged during the Status check.
+- Preston authorized release on November 24. The pull request records the merge, local preview, and production verification.
+
 ## November 24, 2026 opening index and case-study evidence
 
 - `prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood`, canonical site

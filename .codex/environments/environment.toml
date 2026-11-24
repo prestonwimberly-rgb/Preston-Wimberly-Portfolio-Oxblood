@@ -18,3 +18,8 @@ command = "node .codex/workflow.mjs build"
 name = "Check"
 icon = "test"
 command = "node .codex/workflow.mjs check"
+
+[[actions]]
+name = "Status"
+icon = "tool"
+command = "node .codex/workflow.mjs status"

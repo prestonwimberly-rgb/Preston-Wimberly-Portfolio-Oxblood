@@ -3,6 +3,12 @@
   "minimumNode": "22.13",
   "port": 4172,
   "actions": {
+    "status": [
+      [
+        "node",
+        ".codex/status.mjs"
+      ]
+    ],
     "setup": [
       [
         "node",
