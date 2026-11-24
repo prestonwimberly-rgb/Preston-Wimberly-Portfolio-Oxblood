@@ -199,3 +199,34 @@ career history and displays the stage photograph in a matching 16:9 frame.
 The TAP homepage capture is scaled within its frame to hide the browser
 scrollbar. Claude reviewed the initial homepage edit locally at 1440, 390,
 and 320px.
+
+### Opening index and About layout · November 23, 2026
+
+After an Impeccable critique (23/32), Preston chose to address the opening and
+About first. The opening keeps its photograph and headline pairing and adds a
+four-row index under the headline: chapter number, project name, and one
+cleared fact, each linking to its homepage row. Facts restate existing proof
+lines; no new claims. Numbers and facts use Airframe Aluminum on Instrument
+Black, never Wright Brick. About now top-aligns the stage photograph with the
+section label, moves the caption below the image on a 1px rule, and caps
+paragraphs at 62ch. The stage photograph still has no recorded credit, place,
+or date. Claude reviewed the branch locally at 1440, 390, and 320px.
+
+### Contrast, type hierarchy, and spacing · November 23, 2026
+
+The mobile header, homepage, case studies, SANDPAPER, and 404 share a 16px
+gutter. Fixed spacing follows an 8px rhythm with 4px steps. Editorial
+spacing can still scale fluidly. About shares a desktop inset for the stage
+photo and section label, including at tablet widths.
+
+Selected Work and Writing headings have a distinct size step above their
+titles. Project premise and proof use one body size. The TAP collaboration
+heading, Wimberly campaign subheads, and SANDPAPER excerpt each have clearer
+levels. SANDPAPER uses Instrument Black on the Aluminum section label. The
+contact link shifts to Prairie Bone on Aviation Blue, and the Writing hover
+updates its fill and label together.
+
+Fine-pointer links use 160ms CSS feedback with Emil Kowalski’s ease-out curve.
+Reduced motion keeps the navigation underline static. The skip link, anchor
+jumps, and native disclosures respond immediately. The page opens with its
+content visible.

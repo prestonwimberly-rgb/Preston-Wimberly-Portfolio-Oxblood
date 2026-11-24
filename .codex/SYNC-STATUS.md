@@ -1,5 +1,99 @@
 # Shared Codex and Claude handoff
 
+## November 23, 2026 portfolio release preparation
+
+- Preston authorized “push and merge to main” for the portfolio opening,
+  About, contrast, type, spacing, motion, and related design documentation.
+  Release branch `claude/opening-about` starts from GitHub main
+  `111959001e164e9c2eae5bcd1a087548d42268ca`.
+- The release includes the site changes and test, design and product records,
+  and file-scoped Impeccable exceptions, including the approved SANDPAPER
+  section label. The separate November 20 Sites handoff, local skills, hook
+  cache, critique snapshots, and generated output remain local.
+- Release checks passed: `npm run quality` (24 tests, zero audit findings)
+  and `git diff --check`. The scoped Impeccable export scan reported zero
+  warnings and 12 advisories. The stage photo is already published.
+  Photographer credit, place, and date are unrecorded.
+- The release pull request records the merge, synchronized preview, and
+  verified deployment through the existing Netlify project.
+
+## November 23, 2026 contrast, type, spacing, and motion
+
+- Repository `prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood`, site
+  `https://work.prestonwimberly.com`. Implemented on `claude/opening-about`
+  from inspected HEAD `111959001e164e9c2eae5bcd1a087548d42268ca`. The prior
+  opening index and About work remains in the working tree. This pass is local
+  and uncommitted.
+- Fixed the SANDPAPER interiors label, homepage contact link hover, and Writing
+  label hover exit. Set shared 16px mobile gutters, aligned fixed spacing to
+  4px steps, and aligned the About photo and label at tablet widths. Separated
+  section and project title sizes, unified the project body sizes, and refined
+  the TAP, guitar campaign, and SANDPAPER heading levels.
+- Fine-pointer feedback uses Emil Kowalski’s 160ms CSS ease-out. The nav rule
+  appears immediately in reduced-motion mode. Keyboard navigation and native
+  disclosures respond immediately. The static export includes no application
+  JavaScript.
+- This pass changed `app/globals.css`, `app/case-studies.css`,
+  `app/memoir.css`, `components/project-case.tsx`,
+  `tests/design-system.test.mjs`, `docs/design-direction.md`, `DESIGN.md`,
+  `.impeccable/design.json`, and this handoff.
+- `npm run quality` passed (24 tests, zero audit findings), along with
+  TypeScript and `git diff --check`. The build reported existing Vinext
+  configuration and sourcemap warnings. Chromium checked all six pages and the
+  branded 404 at 320, 390, 760, 761, 768, 820, 1024, and 1440px. The minimum
+  measured HTML text contrast was 5.67:1, including sampled hover states.
+  No overflow, broken images, or application scripts appeared in the export.
+  Verified the 16px gutters, focus, keyboard disclosures, reduced motion, and
+  fine and coarse pointer states in Chromium emulation.
+- Editorial scores (1–5): authenticity 5, hierarchy 4, material character 5,
+  evidence 4, restraint 5, usability 4, performance 4, accessibility 4.
+  The preview checks cover the local static export.
+- Impeccable export-hook triage: static detection raised 28 warnings. Added
+  six rule-specific exceptions in `.impeccable/config.json` for 27 validated
+  false positives or documented design choices, scoped to named exports.
+  Chromium verified the reported insets and campaign type. Preston then
+  confirmed that “Inside the manuscript” stays as the SANDPAPER section label.
+  Added an exception scoped to that rule on the SANDPAPER export. The
+  seven-page rerun reports zero warnings and the same 12 advisories.
+- Next: Preston reviews the rebuilt [local portfolio preview](http://127.0.0.1:4172/).
+  Commit and release await separate approval.
+
+## November 23, 2026 Impeccable product record
+
+- Claude Code ran `/impeccable init` on `main` at
+  `111959001e164e9c2eae5bcd1a087548d42268ca`. Preston confirmed: hiring leaders
+  and client collaborators carry equal weight; success is an email inquiry, a
+  résumé download, or a case study read; Sandpaper is portfolio evidence.
+- Added [PRODUCT.md](../PRODUCT.md) (product truth only, drawn from AGENTS.md,
+  the README, the launch checklist, and `data/projects.ts`) and
+  `.impeccable/config.json` recording the code-first build path. No DESIGN.md,
+  code, or visual change. README links the new record.
+- Checks: prohibited-term scan and `git diff --check` passed. Nothing committed.
+  The November 20 entry below was already uncommitted and is preserved.
+- Then ran `/impeccable document`: added [DESIGN.md](../DESIGN.md), recording
+  the shipped Prairie Airframe tokens and components from `app/*.css`, and the
+  `.impeccable/design.json` sidecar. Preston named the North Star "Warm Object,
+  Cool Frame" and confirmed #4B382C as Walnut. Saddle and Field Olive are
+  recorded as defined but unused; the 2px `--radius-detail` variable is unused.
+  `docs/design-direction.md` remains the dated rationale.
+- Ran `/impeccable critique` on the homepage: 23/32, report in
+  `.impeccable/critique/`. Preston chose the opening and About first.
+- Branch `claude/opening-about` (from `main` at `1119590`, uncommitted):
+  `app/page.tsx` adds a four-row opening index linking to new row anchors
+  (`#texas-aviation-partners`, `#wimberly-guitars`, `#wild-feathers`,
+  `#sandpaper`), with facts restating existing cleared proof lines. About
+  top-aligns the photo, moves its caption below the image, and caps
+  paragraphs at 62ch (`app/globals.css`). Documented in
+  `docs/design-direction.md` and DESIGN.md.
+- Validation: `npm run quality` passed (24 tests, 0 audit findings). Reviewed
+  at 1440, 390, and 320px: no overflow or broken images.
+- Environment: this shell's PATH puts ChatGPT.app's bundled Node first, and
+  `sharp` fails to load under it. Use `/opt/homebrew/bin` first.
+- Open: the stage photo has no recorded credit, place, or date. Remaining
+  critique items (résumé at the close, link arrows, "useful" in three lines)
+  are not started.
+- Next: Preston reviews the branch; commit only with approval.
+
 ## November 10, 2026 homepage evidence release preparation
 
 - Repository `prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood`, site

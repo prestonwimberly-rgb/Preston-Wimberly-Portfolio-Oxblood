@@ -51,6 +51,7 @@ test("core portfolio color pairings meet WCAG AA", () => {
   assert.ok(contrast(signal, paper) >= 4.5, "Wright brick on bone should meet AA");
   assert.ok(contrast(paper, saddle) >= 4.5, "Prairie bone on saddle should meet AA");
   assert.ok(contrast(white, authority) >= 7, "White on aviation blue should meet AAA");
+  assert.ok(contrast(paper, authority) >= 4.5, "Prairie bone on aviation blue should meet AA");
   assert.ok(contrast(white, signal) >= 7, "White on Wright brick should meet AAA");
   assert.ok(contrast(nightSoft, night) >= 4.5, "Aluminum on instrument black should meet AA");
 });
@@ -65,7 +66,7 @@ test("the Prairie Airframe system keeps its named design tokens", () => {
   assert.match(css, /--font-interface:\s*"Archivo"/);
   assert.match(css, /--font-metadata:\s*"IBM Plex Mono"/);
   assert.match(css, /--space-base:\s*8px/);
-  assert.match(css, /--motion-standard:\s*200ms ease/);
+  assert.match(css, /--motion-standard:\s*160ms cubic-bezier\(0.23, 1, 0.32, 1\)/);
   assert.match(css, /\.practice-note\s*\{[^}]*background:\s*var\(--paper\)/s);
   assert.match(css, /\.project-visual figcaption\s*\{[^}]*border-top:\s*1px solid var\(--line\)/s);
   assert.match(css, /\.contact-section\s*\{[^}]*background:\s*var\(--authority\)/s);
@@ -81,5 +82,5 @@ test("the Prairie Airframe system keeps its named design tokens", () => {
 test("mobile navigation and contact targets preserve the 44-pixel minimum", () => {
   assert.match(css, /\.site-nav a\s*\{[^}]*min-height:\s*44px[^}]*min-width:\s*44px/s);
   assert.match(css, /\.contact-section > a\s*\{[^}]*min-height:\s*44px/s);
-  assert.match(css, /\.skip-link\s*\{[^}]*padding:\s*13px 16px/s);
+  assert.match(css, /\.skip-link\s*\{[^}]*min-height:\s*44px/s);
 });

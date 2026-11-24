@@ -1,0 +1,315 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-24T06:04:07+00:00",
+  "title": "Design System: Preston Wimberly Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "aviation-blue": {
+        "role": "primary",
+        "displayName": "Aviation Blue",
+        "canonical": "#39566a",
+        "tonalRamp": [
+          "#152029",
+          "#1f3140",
+          "#2c4455",
+          "#39566a",
+          "#56738a",
+          "#7e98ab",
+          "#adc0ce",
+          "#dde6ec"
+        ]
+      },
+      "wright-brick": {
+        "role": "secondary",
+        "displayName": "Wright Brick",
+        "canonical": "#8b3f2f",
+        "tonalRamp": [
+          "#2e1510",
+          "#4c2219",
+          "#6c3125",
+          "#8b3f2f",
+          "#a8604f",
+          "#c38c7f",
+          "#dcb9b0",
+          "#f2e3df"
+        ]
+      },
+      "saddle": {
+        "role": "tertiary",
+        "displayName": "Saddle",
+        "canonical": "#7a4f32",
+        "tonalRamp": [
+          "#2a1b11",
+          "#43301f",
+          "#5e3f29",
+          "#7a4f32",
+          "#986f52",
+          "#b8957d",
+          "#d6bfae",
+          "#f0e5dc"
+        ]
+      },
+      "field-olive": {
+        "role": "tertiary",
+        "displayName": "Field Olive",
+        "canonical": "#646455",
+        "tonalRamp": [
+          "#22221d",
+          "#36362e",
+          "#4c4c40",
+          "#646455",
+          "#828273",
+          "#a2a296",
+          "#c5c5bc",
+          "#e6e6e1"
+        ]
+      },
+      "prairie-bone": {
+        "role": "neutral",
+        "displayName": "Prairie Bone",
+        "canonical": "#e8e1d4",
+        "tonalRamp": [
+          "#4a453d",
+          "#6b655a",
+          "#8e877a",
+          "#b0a99b",
+          "#cfc7b8",
+          "#e8e1d4",
+          "#f1ece3",
+          "#f9f7f2"
+        ]
+      },
+      "airframe-aluminum": {
+        "role": "neutral",
+        "displayName": "Airframe Aluminum",
+        "canonical": "#a7a8a3",
+        "tonalRamp": [
+          "#2c2d2b",
+          "#474845",
+          "#62635f",
+          "#7f807b",
+          "#a7a8a3",
+          "#c2c3bf",
+          "#dcdcd9",
+          "#f1f1ef"
+        ]
+      },
+      "instrument-black": {
+        "role": "neutral",
+        "displayName": "Instrument Black",
+        "canonical": "#252624",
+        "tonalRamp": [
+          "#252624",
+          "#3a3b38",
+          "#51524f",
+          "#6a6b67",
+          "#878884",
+          "#a7a8a4",
+          "#c9c9c6",
+          "#ebebe9"
+        ]
+      },
+      "walnut": {
+        "role": "neutral",
+        "displayName": "Walnut",
+        "canonical": "#4b382c",
+        "tonalRamp": [
+          "#1c1510",
+          "#2f241c",
+          "#4b382c",
+          "#685142",
+          "#876e5e",
+          "#a8917f",
+          "#cbb8aa",
+          "#ece2da"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#ffffff"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Opening and contact statements only; Archivo 900 with an italic Newsreader phrase."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section, practice note, About, and case-study headings in Newsreader."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Homepage project titles, capped near 52px at Archivo 600."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Reading text on a 46rem measure."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Navigation, eyebrows, section numbers, text links, caption credits, footer."
+      },
+      "metadata": {
+        "displayName": "Metadata",
+        "purpose": "Chapter numbers and years only."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "motion-standard",
+        "value": "160ms cubic-bezier(0.23, 1, 0.32, 1)",
+        "purpose": "Fine-pointer link feedback and navigation underline draw. Reduced motion shows the underline immediately."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow",
+        "value": "430px"
+      },
+      {
+        "name": "mobile",
+        "value": "760px"
+      },
+      {
+        "name": "tablet",
+        "value": "1050px"
+      },
+      {
+        "name": "max-content",
+        "value": "1368px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Contact Button",
+      "kind": "button",
+      "refersTo": "button-contact",
+      "description": "The one filled header control; Aviation Blue to Instrument Black on hover.",
+      "html": "<a class=\"ds-btn-contact\" href=\"#contact\">Contact</a>",
+      "css": ".ds-btn-contact{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;padding:0 16px;background:#39566a;color:#fff;font:700 0.75rem/1 Archivo,Arial,sans-serif;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-radius:0}.ds-btn-contact:focus-visible{outline:3px solid #252624;outline-offset:4px}@media (hover:hover) and (pointer:fine){.ds-btn-contact:hover{background:#252624}}"
+    },
+    {
+      "name": "Text Link",
+      "kind": "button",
+      "refersTo": "text-link",
+      "description": "Uppercase label link with an underline in the current color; Wright Brick on hover.",
+      "html": "<a class=\"ds-text-link\" href=\"#\">Read the case study <span aria-hidden=\"true\">→</span></a>",
+      "css": ".ds-text-link{display:inline-flex;align-items:center;gap:24px;min-height:44px;color:#252624;border-bottom:1px solid currentColor;font:700 0.75rem/1 Archivo,Arial,sans-serif;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none}.ds-text-link:focus-visible{outline:3px solid currentColor;outline-offset:4px}@media (hover:hover) and (pointer:fine){.ds-text-link{transition:color 160ms cubic-bezier(0.23,1,0.32,1)}.ds-text-link:hover{color:#8b3f2f}}"
+    },
+    {
+      "name": "Opening Index",
+      "kind": "nav",
+      "description": "Four ruled rows under the opening headline linking to each homepage project.",
+      "html": "<ol class=\"ds-hero-index\"><li><a href=\"#\"><span class=\"n\">01</span><span class=\"t\">Texas Aviation Partners</span><span class=\"f\">Live website, featured by the City of San Marcos</span></a></li><li><a href=\"#\"><span class=\"n\">02</span><span class=\"t\">Wimberly Guitars</span><span class=\"f\">Workshop with an open build waitlist</span></a></li></ol>",
+      "css": ".ds-hero-index{list-style:none;margin:0;padding:24px;background:#252624;color:#e8e1d4;max-width:680px}.ds-hero-index li{border-top:1px solid rgba(232,225,212,.3)}.ds-hero-index li:last-child{border-bottom:1px solid rgba(232,225,212,.3)}.ds-hero-index a{display:grid;grid-template-columns:32px 12rem minmax(0,1fr);gap:0 16px;align-items:baseline;min-height:44px;padding:12px 0;color:inherit;text-decoration:none;font-family:Archivo,Arial,sans-serif}.ds-hero-index .n{color:#a7a8a3;font:400 .75rem/1.5 'IBM Plex Mono',monospace}.ds-hero-index .t{font-size:.9375rem;font-weight:700;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:4px}.ds-hero-index .f{color:#a7a8a3;font-size:.875rem}.ds-hero-index a:focus-visible{outline:3px solid #e8e1d4;outline-offset:4px}@media (hover:hover) and (pointer:fine){.ds-hero-index .t{transition:text-decoration-color 160ms cubic-bezier(0.23,1,0.32,1)}.ds-hero-index a:hover .t{text-decoration-color:currentColor}}"
+    },
+    {
+      "name": "Site Navigation",
+      "kind": "nav",
+      "refersTo": "site-header",
+      "description": "Sticky 72px Bone bar with wordmark, underline-draw links, and the contact button.",
+      "html": "<header class=\"ds-header\"><a class=\"ds-wordmark\" href=\"#\"><span>Preston Wimberly</span><small>Creative Director</small></a><nav class=\"ds-nav\"><a href=\"#work\">Work</a><a href=\"#\">Résumé</a><a class=\"ds-nav-contact\" href=\"#contact\">Contact</a></nav></header>",
+      "css": ".ds-header{display:flex;align-items:center;justify-content:space-between;height:72px;padding:0 32px;background:#e8e1d4;color:#252624;border-bottom:1px solid #a7a8a3}.ds-wordmark{display:inline-flex;flex-direction:column;color:inherit;text-decoration:none}.ds-wordmark span{font:900 1rem/1 Archivo,Arial,sans-serif;text-transform:uppercase;letter-spacing:-0.01em}.ds-wordmark small{margin-top:4px;color:#39566a;font:700 0.75rem/1 Archivo,Arial,sans-serif;letter-spacing:0.08em;text-transform:uppercase}.ds-nav{display:flex;align-items:center;gap:32px;font:700 0.75rem/1 Archivo,Arial,sans-serif;letter-spacing:0.1em;text-transform:uppercase}.ds-nav a{position:relative;display:inline-flex;align-items:center;min-height:44px;color:inherit;text-decoration:none}.ds-nav-contact{padding:0 16px;background:#39566a;color:#fff!important}.ds-nav a:focus-visible{outline:3px solid #252624;outline-offset:4px}@media (hover:hover) and (pointer:fine){.ds-nav a:not(.ds-nav-contact)::after{content:\"\";position:absolute;inset-inline:0;bottom:8px;height:1px;background:#252624;transform:scaleX(0);transform-origin:left}.ds-nav a:not(.ds-nav-contact):hover::after{transform:scaleX(1)}.ds-nav-contact:hover{background:#252624}@media (prefers-reduced-motion:no-preference){.ds-nav a:not(.ds-nav-contact)::after{transition:transform 160ms cubic-bezier(0.23,1,0.32,1)}}}"
+    },
+    {
+      "name": "Captioned Image",
+      "kind": "custom",
+      "description": "8:5 image frame with a ruled caption and uppercase Walnut credit line.",
+      "html": "<figure class=\"ds-figure\"><div class=\"ds-figure-img\"></div><figcaption>Hay bales and an airport windsock in the working landscape.<span>Photograph by Preston Wimberly</span></figcaption></figure>",
+      "css": ".ds-figure{margin:0;max-width:520px}.ds-figure-img{aspect-ratio:8/5;background:#7a4f32}.ds-figure figcaption{margin-top:12px;padding-top:12px;border-top:1px solid #a7a8a3;color:#252624;font:400 0.76rem/1.45 Archivo,Arial,sans-serif}.ds-figure figcaption span{display:block;margin-top:4px;color:#4b382c;font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase}"
+    },
+    {
+      "name": "Project Heading",
+      "kind": "custom",
+      "description": "Signature project-row heading: Wright Brick Plex Mono index, Aviation Blue kicker, Archivo 600 title.",
+      "html": "<div class=\"ds-project\"><p class=\"ds-kicker\"><span class=\"ds-index\">01</span>The Airfield</p><h3><a href=\"#\">Texas Aviation Partners</a></h3><p class=\"ds-meta\">Creative Director / Brand Strategy <span>2026</span></p></div>",
+      "css": ".ds-project{max-width:520px;color:#252624}.ds-kicker{display:flex;gap:16px;align-items:baseline;margin:0;color:#39566a;font:700 0.75rem/1.5 Archivo,Arial,sans-serif;letter-spacing:0.14em;text-transform:uppercase}.ds-index{color:#8b3f2f;font:400 0.75rem/1.5 'IBM Plex Mono',monospace;letter-spacing:0}.ds-project h3{margin:20px 0 0;font:600 clamp(1.875rem,1.5rem + 1.5vw,3.25rem)/1.04 Archivo,Arial,sans-serif;letter-spacing:-0.025em}.ds-project h3 a{color:inherit;text-decoration:none}.ds-meta{display:flex;gap:8px 20px;margin:24px 0 0;color:#4b382c;font:500 0.8125rem/1.5 Archivo,Arial,sans-serif}.ds-meta span{font-family:'IBM Plex Mono',monospace}@media (hover:hover) and (pointer:fine){.ds-project h3 a{transition:color 160ms cubic-bezier(0.23,1,0.32,1)}.ds-project h3 a:hover{color:#8b3f2f}}"
+    },
+    {
+      "name": "Writing Row",
+      "kind": "card",
+      "description": "Ruled four-column list row; hover fills with Airframe Aluminum.",
+      "html": "<a class=\"ds-writing\" href=\"#\"><p>Field Notes</p><h3>Willie in Las Vegas</h3><span>An excerpt from the road.</span><b aria-hidden=\"true\">→</b></a>",
+      "css": ".ds-writing{display:grid;grid-template-columns:0.75fr 1.35fr 1fr 48px;gap:28px;align-items:start;min-height:152px;padding:28px 0;border-top:1px solid #a7a8a3;border-bottom:1px solid #a7a8a3;color:#252624;text-decoration:none}.ds-writing p{margin:4px 0 0;color:#8b3f2f;font:700 0.75rem/1.5 Archivo,Arial,sans-serif;letter-spacing:0.14em;text-transform:uppercase}.ds-writing h3{margin:0;font:400 clamp(1.75rem,2.6vw,3rem)/1.05 Newsreader,Georgia,serif;letter-spacing:-0.015em}.ds-writing span{color:#4b382c;font-family:Newsreader,Georgia,serif}.ds-writing b{font-size:1.5rem;font-weight:400;text-align:right}.ds-writing:focus-visible{outline:3px solid #252624;outline-offset:4px}@media (hover:hover) and (pointer:fine){.ds-writing:hover{background:#a7a8a3}.ds-writing:hover p,.ds-writing:hover span{color:#252624}}"
+    },
+    {
+      "name": "Contact Block",
+      "kind": "custom",
+      "refersTo": "contact-section",
+      "description": "Full-width Aviation Blue close with the display statement and underlined email link.",
+      "html": "<section class=\"ds-contact\"><h2>Let’s talk about the work.</h2><a href=\"mailto:\">Start a conversation</a></section>",
+      "css": ".ds-contact{display:flex;flex-direction:column;align-items:flex-start;padding:64px 48px;background:#39566a;color:#fff}.ds-contact h2{margin:0 0 40px;font:900 clamp(2.5rem,6vw,5rem)/0.9 Archivo,Arial,sans-serif;letter-spacing:-0.01em}.ds-contact a{display:inline-flex;align-items:center;min-height:44px;padding-bottom:8px;border-bottom:2px solid currentColor;color:#fff;font:700 clamp(1.15rem,2vw,2rem)/1.2 Archivo,Arial,sans-serif;text-decoration:none}.ds-contact a:focus-visible{outline:3px solid #fff;outline-offset:4px}@media (hover:hover) and (pointer:fine){.ds-contact a{transition:color 160ms cubic-bezier(0.23,1,0.32,1)}.ds-contact a:hover{color:#e8e1d4}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Warm Object, Cool Frame",
+    "overview": "The work is the warm object: documentary photographs of hay, guitars, stages, and manuscript pages, with captions that name the place, date, and credit. The frame is cool and exact: Prairie Bone paper, Instrument Black ink, fine Aluminum rules, square edges, and an 8px rhythm. The governing tension is warmth without sentimentality, precision without sterility, history without nostalgia, and modernism without coldness.\n\nHierarchy comes from scale, whitespace, placement, and rules, not from surfaces or effects. Large Archivo display type acts as composition at the opening and the contact statement; Newsreader carries narrative and section headings; IBM Plex Mono appears only for true numbers, dates, and identifiers. Each page has one dominant visual idea, and photographs supply the broad areas of material warmth.\n\nConfirmed rejections: fake age, decorative aviation motifs, generic agency theatrics, stock atmosphere, bubbly UI, rounded cards, soft shadows, gradients, and global texture effects.",
+    "keyCharacteristics": [
+      "Square construction; no radius and no shadow anywhere in the system.",
+      "Fine 1px Aluminum rules separate sections, captions, and list rows.",
+      "Asymmetric editorial grid that alternates image and text sides.",
+      "Captions sit directly under or on the image and carry credit lines.",
+      "Short, functional motion with full reduced-motion support."
+    ],
+    "rules": [
+      {
+        "name": "The Measured Signal Rule",
+        "body": "Wright Brick marks; it never fills. Use it for a rule, a number, a label, or a hover state, never as a section background, and never as small text on Instrument Black.",
+        "section": "colors"
+      },
+      {
+        "name": "The Aluminum Is Structure Rule",
+        "body": "Airframe Aluminum is a rule or fill, never text on Prairie Bone and never the color of an essential control.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tested Pairing Rule",
+        "body": "Use only the pairings asserted in `tests/design-system.test.mjs`. A new foreground and background combination needs a contrast test before it ships.",
+        "section": "colors"
+      },
+      {
+        "name": "The Heaviest Weight Rule",
+        "body": "Archivo 900 is reserved for the opening and contact statements and the wordmark. Project titles stay at 600.",
+        "section": "typography"
+      },
+      {
+        "name": "The True Data Rule",
+        "body": "IBM Plex Mono appears only for real numbers, dates, and identifiers, never as texture.",
+        "section": "typography"
+      },
+      {
+        "name": "The Twelve Pixel Rule",
+        "body": "Interface text and metadata stay at 12px or larger.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Paper Rule",
+        "body": "Surfaces never lift. Separate content with a rule, a field change, or space.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep every corner square and every surface flat.",
+      "Do separate content with 1px Airframe Aluminum rules and space on the 8px rhythm.",
+      "Do let photographs carry warmth, framed at 8:5, 4:3, or 16:9 with a caption and credit directly beneath.",
+      "Do keep Wright Brick to rules, numbers, labels, and hover states.",
+      "Do keep interactive targets at 44px or larger with a visible 3px focus outline.",
+      "Do limit fine-pointer feedback to 160ms. Make keyboard navigation immediate and honor reduced motion."
+    ],
+    "donts": [
+      "Don't add rounded cards, soft shadows, gradients, or global texture.",
+      "Don't add fake age, decorative aviation motifs, or stock atmosphere.",
+      "Don't set Airframe Aluminum as text on Prairie Bone, or Wright Brick as small text on Instrument Black.",
+      "Don't use Archivo 900 for project titles or Plex Mono for anything that is not a number, date, or identifier.",
+      "Don't fill a section with Wright Brick.",
+      "Don't add runtime JavaScript for visual effects; the export ships none."
+    ]
+  }
+}
