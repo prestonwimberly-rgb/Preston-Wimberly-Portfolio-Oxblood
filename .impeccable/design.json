@@ -164,7 +164,7 @@
       {
         "name": "motion-standard",
         "value": "160ms cubic-bezier(0.23, 1, 0.32, 1)",
-        "purpose": "Fine-pointer link feedback and navigation underline draw. Reduced motion shows the underline immediately."
+        "purpose": "Fine-pointer editorial link and opening-index underline fades."
       }
     ],
     "breakpoints": [
@@ -208,15 +208,15 @@
       "kind": "nav",
       "description": "Four ruled rows under the opening headline linking to each homepage project.",
       "html": "<ol class=\"ds-hero-index\"><li><a href=\"#\"><span class=\"n\">01</span><span class=\"t\">Texas Aviation Partners</span><span class=\"f\">Live website, featured by the City of San Marcos</span></a></li><li><a href=\"#\"><span class=\"n\">02</span><span class=\"t\">Wimberly Guitars</span><span class=\"f\">Workshop with an open build waitlist</span></a></li></ol>",
-      "css": ".ds-hero-index{list-style:none;margin:0;padding:24px;background:#252624;color:#e8e1d4;max-width:680px}.ds-hero-index li{border-top:1px solid rgba(232,225,212,.3)}.ds-hero-index li:last-child{border-bottom:1px solid rgba(232,225,212,.3)}.ds-hero-index a{display:grid;grid-template-columns:32px 12rem minmax(0,1fr);gap:0 16px;align-items:baseline;min-height:44px;padding:12px 0;color:inherit;text-decoration:none;font-family:Archivo,Arial,sans-serif}.ds-hero-index .n{color:#a7a8a3;font:400 .75rem/1.5 'IBM Plex Mono',monospace}.ds-hero-index .t{font-size:.9375rem;font-weight:700;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:4px}.ds-hero-index .f{color:#a7a8a3;font-size:.875rem}.ds-hero-index a:focus-visible{outline:3px solid #e8e1d4;outline-offset:4px}@media (hover:hover) and (pointer:fine){.ds-hero-index .t{transition:text-decoration-color 160ms cubic-bezier(0.23,1,0.32,1)}.ds-hero-index a:hover .t{text-decoration-color:currentColor}}"
+      "css": ".ds-hero-index{list-style:none;margin:0;padding:24px;background:#252624;color:#e8e1d4;max-width:680px}.ds-hero-index li{border-top:1px solid rgba(232,225,212,.3)}.ds-hero-index li:last-child{border-bottom:1px solid rgba(232,225,212,.3)}.ds-hero-index a{display:grid;grid-template-columns:32px 12rem minmax(0,1fr);gap:0 16px;align-items:baseline;min-height:44px;padding:12px 0;color:inherit;text-decoration:none;font-family:Archivo,Arial,sans-serif}.ds-hero-index .n{color:#a7a8a3;font:400 .75rem/1.5 'IBM Plex Mono',monospace}.ds-hero-index .t{font-size:.9375rem;font-weight:700;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:4px}.ds-hero-index .f{color:#a7a8a3;font-size:.875rem}.ds-hero-index a:focus-visible{outline:3px solid #e8e1d4;outline-offset:4px}@media (hover:hover) and (pointer:fine){.ds-hero-index .t{transition:text-decoration-color 160ms cubic-bezier(0.23,1,0.32,1)}.ds-hero-index a:hover .t{text-decoration-color:currentColor}}@media (any-pointer:coarse){.ds-hero-index a[href]{-webkit-tap-highlight-color:color-mix(in srgb,#a7a8a3 45%,transparent)}}"
     },
     {
       "name": "Site Navigation",
       "kind": "nav",
       "refersTo": "site-header",
-      "description": "Sticky 72px Bone bar with wordmark, underline-draw links, and the contact button.",
+      "description": "Sticky 72px Bone bar with wordmark, instant hover underlines, and the contact button.",
       "html": "<header class=\"ds-header\"><a class=\"ds-wordmark\" href=\"#\"><span>Preston Wimberly</span><small>Creative Director</small></a><nav class=\"ds-nav\"><a href=\"#work\">Work</a><a href=\"#\">Résumé</a><a class=\"ds-nav-contact\" href=\"#contact\">Contact</a></nav></header>",
-      "css": ".ds-header{display:flex;align-items:center;justify-content:space-between;height:72px;padding:0 32px;background:#e8e1d4;color:#252624;border-bottom:1px solid #a7a8a3}.ds-wordmark{display:inline-flex;flex-direction:column;color:inherit;text-decoration:none}.ds-wordmark span{font:900 1rem/1 Archivo,Arial,sans-serif;text-transform:uppercase;letter-spacing:-0.01em}.ds-wordmark small{margin-top:4px;color:#39566a;font:700 0.75rem/1 Archivo,Arial,sans-serif;letter-spacing:0.08em;text-transform:uppercase}.ds-nav{display:flex;align-items:center;gap:32px;font:700 0.75rem/1 Archivo,Arial,sans-serif;letter-spacing:0.1em;text-transform:uppercase}.ds-nav a{position:relative;display:inline-flex;align-items:center;min-height:44px;color:inherit;text-decoration:none}.ds-nav-contact{padding:0 16px;background:#39566a;color:#fff!important}.ds-nav a:focus-visible{outline:3px solid #252624;outline-offset:4px}@media (hover:hover) and (pointer:fine){.ds-nav a:not(.ds-nav-contact)::after{content:\"\";position:absolute;inset-inline:0;bottom:8px;height:1px;background:#252624;transform:scaleX(0);transform-origin:left}.ds-nav a:not(.ds-nav-contact):hover::after{transform:scaleX(1)}.ds-nav-contact:hover{background:#252624}@media (prefers-reduced-motion:no-preference){.ds-nav a:not(.ds-nav-contact)::after{transition:transform 160ms cubic-bezier(0.23,1,0.32,1)}}}"
+      "css": ".ds-header{display:flex;align-items:center;justify-content:space-between;height:72px;padding:0 32px;background:#e8e1d4;color:#252624;border-bottom:1px solid #a7a8a3}.ds-wordmark{display:inline-flex;flex-direction:column;color:inherit;text-decoration:none}.ds-wordmark span{font:900 1rem/1 Archivo,Arial,sans-serif;text-transform:uppercase;letter-spacing:-0.01em}.ds-wordmark small{margin-top:4px;color:#39566a;font:700 0.75rem/1 Archivo,Arial,sans-serif;letter-spacing:0.08em;text-transform:uppercase}.ds-nav{display:flex;align-items:center;gap:32px;font:700 0.75rem/1 Archivo,Arial,sans-serif;letter-spacing:0.1em;text-transform:uppercase}.ds-nav a{position:relative;display:inline-flex;align-items:center;min-height:44px;color:inherit;text-decoration:none}.ds-nav-contact{padding:0 16px;background:#39566a;color:#fff!important}.ds-nav a:focus-visible{outline:3px solid #252624;outline-offset:4px}@media (hover:hover) and (pointer:fine){.ds-nav a:not(.ds-nav-contact):hover::after{content:\"\";position:absolute;inset-inline:0;bottom:8px;height:1px;background:#252624}.ds-nav-contact:hover{background:#252624}}@media (any-pointer:coarse){.ds-header a[href]{-webkit-tap-highlight-color:color-mix(in srgb,#a7a8a3 45%,transparent)}}"
     },
     {
       "name": "Captioned Image",
@@ -301,7 +301,7 @@
       "Do let photographs carry warmth, framed at 8:5, 4:3, or 16:9 with a caption and credit directly beneath.",
       "Do keep Wright Brick to rules, numbers, labels, and hover states.",
       "Do keep interactive targets at 44px or larger with a visible 3px focus outline.",
-      "Do limit fine-pointer feedback to 160ms. Make keyboard navigation immediate and honor reduced motion."
+      "Do use 160ms fades for fine-pointer editorial links. Keep navigation underlines and keyboard feedback immediate. Use a translucent Airframe Aluminum tap highlight on touch-capable devices."
     ],
     "donts": [
       "Don't add rounded cards, soft shadows, gradients, or global texture.",

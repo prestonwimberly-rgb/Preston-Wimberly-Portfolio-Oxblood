@@ -230,3 +230,10 @@ Fine-pointer links use 160ms CSS feedback with Emil Kowalski’s ease-out curve.
 Reduced motion keeps the navigation underline static. The skip link, anchor
 jumps, and native disclosures respond immediately. The page opens with its
 content visible.
+
+### Tap feedback and navigation · November 24, 2026
+
+Links use a translucent Airframe Aluminum tap highlight on touch-capable
+devices. The desktop navigation underline appears immediately on hover.
+Editorial link and opening-index fades retain their 160ms timing. The Jack
+material study remains poster-first and plays on request.

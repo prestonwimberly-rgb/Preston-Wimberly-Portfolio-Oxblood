@@ -1,5 +1,29 @@
 # Shared Codex and Claude handoff
 
+## November 24, 2026 tap feedback and navigation
+
+- `prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood`, canonical site
+  `https://work.prestonwimberly.com`. Local branch `codex/portfolio-tap-feedback`
+  starts at `03745987bd72abe41775f211b2359b2cbb573642`. Preston approved the CSS
+  changes, local verification, and release to `main`.
+- Links show a translucent Airframe Aluminum tap highlight on touch-capable
+  devices. The fine-pointer navigation underline appears immediately.
+  The 160ms editorial link fades and the opt-in Jack video are preserved.
+  Changed `app/globals.css`, `DESIGN.md`, `.impeccable/design.json`,
+  `docs/design-direction.md`, and this handoff.
+- `npm run quality` passed on fnm Node 24.22.3 with 24 tests and zero audit
+  findings. The bundled app Node could not load Sharp. The passing build
+  reported the existing Vite configuration and sourcemap warnings.
+- Local Chromium checked all six routes and the branded 404 file at 1440, 390,
+  and 320px, including keyboard focus and disclosures, pointer and reduced-motion
+  behavior, and Jack playback. WebKit touch emulation confirmed the highlight
+  at 390px. Reviewed both legacy redirect definitions in `netlify.toml`.
+  The loopback preview serves the export through Python's static server.
+- Editorial QA (1–5): authenticity 5, hierarchy 4, material character 5,
+  evidence 4, restraint 5, usability 4, performance 4, accessibility 4.
+- The release pull request records the merge, synchronized local preview, and
+  production verification.
+
 ## November 23, 2026 portfolio release preparation
 
 - Preston authorized “push and merge to main” for the portfolio opening,

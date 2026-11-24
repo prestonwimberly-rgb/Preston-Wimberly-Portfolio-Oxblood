@@ -86,6 +86,12 @@ a {
   text-decoration: none;
 }
 
+@media (any-pointer: coarse) {
+  a[href] {
+    -webkit-tap-highlight-color: color-mix(in srgb, var(--line) 45%, transparent);
+  }
+}
+
 .skip-link,
 .site-nav,
 .text-link,
@@ -1097,25 +1103,13 @@ img {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .site-nav a:not(.nav-contact)::after {
+  .site-nav a:not(.nav-contact):hover::after {
     background: var(--ink);
     bottom: 8px;
     content: "";
     height: 1px;
     inset-inline: 0;
     position: absolute;
-    transform: scaleX(0);
-    transform-origin: left;
-  }
-
-  .site-nav a:not(.nav-contact):hover::after {
-    transform: scaleX(1);
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    .site-nav a:not(.nav-contact)::after {
-      transition: transform var(--motion-standard);
-    }
   }
 
   .nav-contact:hover {
