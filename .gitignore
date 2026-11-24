@@ -58,6 +58,7 @@ yarn-error.log*
 
 # Shared portable Codex and Claude workflow helpers.
 !.codex/workflow.mjs
+!.codex/status.mjs
 !.codex/workflow.json
 !.codex/preview.py
 !.codex/SYNC-STATUS.md
