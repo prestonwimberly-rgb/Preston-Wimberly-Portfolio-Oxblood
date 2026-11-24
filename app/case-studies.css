@@ -33,7 +33,9 @@
 .case-place { color: var(--ink-soft); font: 0.78rem/1.6 var(--font-interface); }
 .case-artifacts, .case-decision, .case-outcome, .case-print, .campaign { padding: var(--case-space) var(--case-gutter); border-top: 1px solid var(--line); }
 .case-artifacts-lead { padding-top: 24px; border-top: 0; }
-.case-artifact-label h2 { font: 500 1.1rem/1.4 var(--font-interface); margin: 0 0 24px; }
+.case-artifact-label { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; margin-bottom: 24px; }
+.case-artifact-label h2 { font: 500 1.1rem/1.4 var(--font-interface); margin: 0; }
+.case-artifact-label .text-link { max-width: 100%; }
 .case-section-heading, .case-decision, .case-outcome, .case-print { display: grid; grid-template-columns: minmax(160px, 0.32fr) minmax(0, 1fr); gap: 48px; }
 .case-section-heading { margin-bottom: 40px; }
 .case-section-heading h2, .case-decision h2, .case-outcome h2, .case-print h2 { font: 400 var(--text-h2)/1.1 var(--font-body); letter-spacing: -0.025em; text-wrap: balance; margin: 0 0 24px; max-width: 850px; }

@@ -29,7 +29,16 @@ function CaseArtifacts({ project, leading = false }: { project: Project; leading
     <section className={`case-artifacts${leading ? " case-artifacts-lead" : ""}`}
       aria-labelledby={showHeading ? "case-artifacts-title" : undefined}
       aria-label={showHeading ? undefined : "Supporting photographs"}>
-      {showHeading ? leading ? <header className="case-artifact-label"><h2 id="case-artifacts-title">{project.artifactTitle}</h2></header> : <header className="case-section-heading"><p className="section-number">The work</p><div><h2 id="case-artifacts-title">{project.artifactTitle}</h2><p>{project.artifactIntro}</p></div></header> : null}
+      {showHeading ? leading ? (
+        <header className="case-artifact-label">
+          <h2 id="case-artifacts-title">{project.artifactTitle}</h2>
+          {project.leadArtifactSource ? (
+            <a className="text-link" href={project.leadArtifactSource.href} target="_blank" rel="noreferrer">
+              {project.leadArtifactSource.label} <span aria-hidden="true">↗</span>
+            </a>
+          ) : null}
+        </header>
+      ) : <header className="case-section-heading"><p className="section-number">The work</p><div><h2 id="case-artifacts-title">{project.artifactTitle}</h2><p>{project.artifactIntro}</p></div></header> : null}
       <div className="artifact-grid">
         {artifacts.filter(a => a.src !== project.image).map(artifact => (
           <figure className={`artifact artifact-${artifact.format}`} key={artifact.src}>
@@ -121,7 +130,6 @@ export function ProjectCase({ project, nextProject }: { project: Project; nextPr
       <section className="case-outcome" aria-labelledby="case-outcome-title">
         <p className="section-number">What changed</p>
         <div><h2 id="case-outcome-title">{project.outcomeTitle}</h2>{project.outcome.map(p => <p key={p}>{p}</p>)}
-          {project.outcomeSource ? <p><a className="text-link" href={project.outcomeSource.href} target="_blank" rel="noreferrer">{project.outcomeSource.label} <span aria-hidden="true">↗</span></a></p> : null}
           {project.liveUrl ? <a className="text-link" href={project.liveUrl} target="_blank" rel="noreferrer">{project.liveLabel} <span aria-hidden="true">↗</span></a> : null}
         </div>
       </section>

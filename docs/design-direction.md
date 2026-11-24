@@ -237,3 +237,13 @@ Links use a translucent Airframe Aluminum tap highlight on touch-capable
 devices. The desktop navigation underline appears immediately on hover.
 Editorial link and opening-index fades retain their 160ms timing. The Jack
 material study remains poster-first and plays on request.
+
+### Opening index and case-study evidence · November 24, 2026
+
+At 1050px and below, each opening-index fact sits under its project name.
+The tall split hero uses the full-width tractor source. The stacked hero
+selects an image at the viewport width.
+
+The guitar case study labels its opening gallery as earlier website captures.
+The TAP case study links the October 2 City Manager’s Weekly Report beside
+the Before / After comparison.

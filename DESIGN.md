@@ -291,8 +291,8 @@ note to Instrument Black in the same frame.
 Four rows under the opening headline, between translucent Bone rules: a Plex
 Mono chapter number and a short fact in Airframe Aluminum, with the project
 name in Archivo 700 Bone. Each row links to its homepage project, with a 44px
-minimum height. The project name gains an underline on hover. On phones the fact
-drops beneath the name.
+minimum height. The project name gains an underline on hover. At 1050px and
+below, the fact sits beneath the project name.
 
 ### Contact Section
 A full-width Aviation Blue block, at least 500px tall, with the display-weight
