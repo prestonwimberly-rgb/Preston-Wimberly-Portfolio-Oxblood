@@ -265,11 +265,10 @@ frames (8:5 for projects, 4:3 for the manuscript spread, 16:9 for About) with
 ### Navigation
 - **Style:** sticky 72px Prairie Bone bar with a 1px Aluminum bottom rule.
   Wordmark in Archivo 900 uppercase with an Aviation Blue subtitle.
-- **Links:** uppercase labels at 0.1em tracking; a 1px Instrument Black
-  underline draws in from the left over 160ms on fine-pointer hover. With
-  reduced motion, the rule appears immediately. Every target is at least 44 × 44px.
+- **Links:** uppercase labels at 0.1em tracking. A 1px Instrument Black
+  underline appears immediately on fine-pointer hover. Every target is at least 44 × 44px.
 - **Mobile:** gaps tighten to 4px under 430px; the contact button keeps its
-  fill with reduced padding.
+  fill with reduced padding. Links use a translucent Airframe Aluminum tap highlight.
 
 ### Captions
 - **Style:** a 1px Aluminum top rule, Archivo at 0.76rem and 1.45 line height,
@@ -312,9 +311,9 @@ white to Prairie Bone on fine-pointer hover.
 - **Do** keep Wright Brick to rules, numbers, labels, and hover states.
 - **Do** keep interactive targets at 44px or larger with a visible 3px focus
   outline.
-- **Do** use 160ms ease-out for fine-pointer color and underline feedback.
-  Keep keyboard navigation and disclosures immediate. Honor reduced motion
-  by making the navigation underline appear without drawing.
+- **Do** use 160ms ease-out for fine-pointer editorial link fades, including
+  the opening index. Keep the navigation underline, keyboard navigation,
+  and disclosures immediate.
 
 ### Don't:
 - **Don't** add rounded cards, soft shadows, gradients, or global texture.
