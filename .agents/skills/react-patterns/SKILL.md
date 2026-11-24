@@ -53,7 +53,7 @@ React has no inheritance model for components. Compose with `children`, render p
 
 ## Hooks Discipline
 
-See [rules/react/hooks.md](../../rules/react/hooks.md) for the full ruleset. Highlights:
+See the [React hooks guide](../../../.claude/rules/ecc/react/hooks.md) for the full ruleset. Highlights:
 
 - Top-level only, never conditional
 - Cleanup every subscription, interval, listener
@@ -250,8 +250,8 @@ Wrap a component in `React.memo` only when:
 - Every interactive element must be reachable by keyboard
 - Form inputs need labels — `<label htmlFor>` or `aria-label` if visually labeled by an icon
 - Manage focus on route changes and modal open/close
-- Run `axe` in component tests (see [skills/react-testing](../react-testing/SKILL.md))
-- Cross-link: [skills/accessibility/SKILL.md](../accessibility/SKILL.md) covers WCAG criteria and pattern libraries
+- Run `axe` in component tests. See the [accessibility assertions example](../../../.claude/rules/ecc/react/testing.md#accessibility-assertions).
+- See [frontend-a11y](../frontend-a11y/SKILL.md) for semantic HTML, ARIA, keyboard navigation, and focus management.
 
 ## Routing
 
@@ -265,8 +265,8 @@ This skill is router-agnostic. The patterns above work with React Router, TanSta
 
 ## Related
 
-- Rules: [rules/react/](../../rules/react/) — coding-style, hooks, patterns, security, testing
-- Skills: [react-performance](../react-performance/SKILL.md) for the Vercel-derived performance ruleset, [frontend-patterns](../frontend-patterns/SKILL.md) for cross-framework UI concerns, [accessibility](../accessibility/SKILL.md), [angular-developer](../angular-developer/SKILL.md) for framework comparison
+- [React rules](../../../.claude/rules/ecc/react/) cover coding style, hooks, patterns, security, and testing. [Web patterns](../../../.claude/rules/ecc/web/patterns.md) cover cross-framework UI concerns.
+- [react-performance](../../../.claude/skills/react-performance/SKILL.md) covers the Vercel-derived performance ruleset. [frontend-a11y](../frontend-a11y/SKILL.md) covers accessibility patterns.
 - Agents: `react-reviewer` for code review, `react-build-resolver` for build/bundler errors
 - Commands: `/react-review`, `/react-build`, `/react-test`
 

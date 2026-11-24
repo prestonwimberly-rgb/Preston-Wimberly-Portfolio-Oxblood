@@ -53,6 +53,24 @@
 - The release pull request records the merge, synchronized local preview, and
   production verification.
 
+## November 23, 2026 Sites mirror refresh
+
+- With Preston’s approval, refreshed the [public Sites mirror](https://preston-wimberly-portfolio.preston-wimberly.chatgpt.site/).
+  At publication, canonical Mac `main`, `origin/main`, and
+  [Netlify deploy `6b052dac580864b603f69f4f`](https://app.netlify.com/projects/preston-wimberly-portfolio/deploys/6b052dac580864b603f69f4f)
+  matched commit `03745987bd72abe41775f211b2359b2cbb573642`.
+- Fast-forwarded the Sites source branch in an isolated checkout and published
+  version 8 as `appgdep_6b0532960cfc81919ac60d02efd4c6f8`. The Sites deployment
+  package used the static export with branded 404 handling and reused the
+  published Netlify image encodings where the builds differed.
+- All six public pages and the branded 404 matched that Netlify deploy after
+  accounting for hosting-injected scripts. All 219 checked assets
+  and crawl files matched byte for byte. Chromium checks passed at 1440, 390,
+  and 320px for motion, keyboard disclosures, and image loading. The minimum
+  sampled text contrast was 5.67:1.
+- In that check, both legacy aliases returned 404 on Sites and 301 on Netlify.
+  [Profile Showcase](https://chatgpt.com/profile) selection was unverified.
+
 ## November 23, 2026 portfolio release preparation
 
 - Preston authorized “push and merge to main” for the portfolio opening,
@@ -146,6 +164,22 @@
   critique items (résumé at the close, link arrows, "useful" in three lines)
   are not started.
 - Next: Preston reviews the branch; commit only with approval.
+
+## November 20, 2026 Sites version 7
+
+- With Preston’s approval, published Sites version 7 as
+  `appgdep_6b011de2dfe08191b3bfc00d4c8b9a23` from commit
+  `111959001e164e9c2eae5bcd1a087548d42268ca`, which matched GitHub `main` and
+  [Netlify deploy `6af3d16ab6e205574babc38f`](https://app.netlify.com/projects/preston-wimberly-portfolio/deploys/6af3d16ab6e205574babc38f).
+  The isolated build used the static export with branded 404 handling.
+- All 24 tests passed and npm audit found zero findings. The six public pages
+  and branded 404 matched the export after accounting for the injected
+  Cloudflare script. All 219 checked assets matched. Chromium checks at 1440,
+  390, and 320px found no overflow or broken loaded images.
+- The Sites static host served the redirect file as an asset. A Worker routing
+  adapter passed local redirect and 404 checks. Sites reused version 7 when
+  given a replacement package from the same commit. The adapter was never
+  deployed.
 
 ## November 10, 2026 homepage evidence release preparation
 
