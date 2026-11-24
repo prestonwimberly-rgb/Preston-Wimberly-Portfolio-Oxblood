@@ -315,7 +315,7 @@ const projectRecords: Project[] = [
     "summary": "Producers need to hear the work, understand the offer, and know how to book the session. I reduced two decades across touring, studio recording, and television—on guitar, pedal steel, and bass—to those three decisions.",
     "image": "/images/preston-session-site.jpg",
     "imageAlt": "prestonwimberly.com homepage with a musician playing guitar",
-    "imageCaption": "prestonwimberly.com, desktop opening.",
+    "imageCaption": "Earlier desktop capture",
     "role": "Creative Director / Writer",
     "scope": "Positioning, offer design, writing, visual direction",
     "year": "2026",
@@ -347,7 +347,7 @@ const projectRecords: Project[] = [
       {
         "src": "/images/preston-session-mobile.jpg",
         "alt": "Mobile view of prestonwimberly.com",
-        "caption": "The listening and inquiry path stays intact at a narrow reading width.",
+        "caption": "Earlier mobile capture. The listening and inquiry path stays intact at a narrow reading width.",
         "credit": "Creative direction and screenshot by Preston Wimberly",
         "format": "portrait"
       }
