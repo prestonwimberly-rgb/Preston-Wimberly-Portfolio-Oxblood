@@ -131,7 +131,7 @@ export function ProjectCase({ project, nextProject }: { project: Project; nextPr
           <div className="case-print-content">
             <h2 id="case-print-title">{project.printAd.title}</h2>
             <figure className="artifact">
-              <ArtifactImage artifact={project.printAd.artifact} sizes="(max-width: 760px) min(560px, calc(100vw - 36px)), 560px" />
+              <ArtifactImage artifact={project.printAd.artifact} sizes="(max-width: 760px) min(560px, calc(100vw - 32px)), 560px" />
               <figcaption>{project.printAd.artifact.caption}</figcaption>
             </figure>
             <details>
@@ -142,7 +142,7 @@ export function ProjectCase({ project, nextProject }: { project: Project; nextPr
             <div className="case-print-photos">
               {project.printAd.programPhotos.map(photo => (
                 <figure className="artifact" key={photo.src}>
-                  <ArtifactImage artifact={photo} sizes="(max-width: 596px) calc(50vw - 26px), 272px" />
+                  <ArtifactImage artifact={photo} sizes="(max-width: 592px) calc(50vw - 24px), 272px" />
                   <figcaption>{photo.caption}</figcaption>
                 </figure>
               ))}

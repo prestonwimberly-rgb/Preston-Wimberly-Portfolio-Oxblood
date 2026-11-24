@@ -24,6 +24,14 @@ const sandpaperFeature = {
     "A complete 50,000-word manuscript, edited into 38 chapters and typeset as a 141-page book.",
 };
 
+// Each fact restates a cleared homepage proof line in data/projects.ts or the SANDPAPER outcome.
+const heroIndex = [
+  { number: "01", href: "#texas-aviation-partners", title: "Texas Aviation Partners", fact: "Live website, featured by the City of San Marcos" },
+  { number: "02", href: "#wimberly-guitars", title: "Wimberly Guitars", fact: "Workshop with an open build waitlist" },
+  { number: "03", href: "#wild-feathers", title: "The Wild Feathers", fact: "Public archive of 410 performances" },
+  { number: "04", href: "#sandpaper", title: "SANDPAPER", fact: "Finished memoir, 38 chapters" },
+];
+
 const writing = [
   {
     type: "Essay · Craft & brand voice",
@@ -78,6 +86,17 @@ export default function Home() {
               Clear direction.<br />
               <em>Finished work.</em>
             </h1>
+            <ol className="hero-index" aria-label="Selected work">
+              {heroIndex.map((item) => (
+                <li key={item.href}>
+                  <a href={item.href}>
+                    <span className="hero-index-number">{item.number}</span>
+                    <span className="hero-index-title">{item.title}</span>
+                    <span className="hero-index-fact">{item.fact}</span>
+                  </a>
+                </li>
+              ))}
+            </ol>
             <div className="hero-bottom">
               <p>
                 I lead brand positioning and creative direction, carrying the
@@ -137,6 +156,7 @@ export default function Home() {
               return (
               <article
                 className={`project-row project-row-${index + 1} project-image-${imageFit ?? "contain"}`}
+                id={project.slug}
                 key={project.slug}
               >
                 <header className="project-heading">
@@ -186,7 +206,7 @@ export default function Home() {
               </article>
               );
             })}
-            <article className="project-row project-row-editorial">
+            <article className="project-row project-row-editorial" id="sandpaper">
               <header className="project-heading">
                 <p className="project-kicker"><span className="project-index">{sandpaperFeature.chapterNumber}</span>{sandpaperFeature.chapter}</p>
                 <h3 className="sandpaper-title"><Link href="/sandpaper/">{sandpaperFeature.title}</Link></h3>
@@ -275,13 +295,14 @@ export default function Home() {
 
         <section className="about-section" id="about" aria-labelledby="about-title">
           <figure>
-            <ResponsiveImage
-              src="/images/preston-stage.jpeg"
-              alt="Preston Wimberly playing electric guitar onstage"
-              sizes="(max-width: 760px) 100vw, 46vw"
-              style={{ objectPosition: "62% center" }}
-              objectFit="contain"
-            />
+            <div className="about-image">
+              <ResponsiveImage
+                src="/images/preston-stage.jpeg"
+                alt="Preston Wimberly playing electric guitar onstage"
+                sizes="(max-width: 760px) 100vw, 46vw"
+                style={{ objectPosition: "62% center" }}
+              />
+            </div>
             <figcaption>Preston Wimberly in performance.</figcaption>
           </figure>
           <div className="about-copy">

@@ -20,13 +20,13 @@
 .case-image-frame { position: relative; width: 100%; background: var(--paper-deep); max-height: 720px; }
 .case-image figcaption, .artifact figcaption, .motion-study figcaption, .campaign-motion figcaption, .book-spread figcaption {
   font: 0.75rem/1.55 var(--font-interface);
-  padding-top: 14px;
+  padding-top: 16px;
   border-top: 1px solid var(--line);
 }
 .case-image figcaption { padding: 16px var(--case-gutter); }
 .case-image figcaption span, .artifact figcaption span { display: block; color: var(--ink-soft); margin-top: 4px; }
 .case-ownership { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding: 36px var(--case-gutter) var(--case-space); }
-.case-ownership h2 { font: 700 0.75rem/1.5 var(--font-interface); text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 14px; }
+.case-ownership h2 { font: 700 1rem/1.5 var(--font-interface); text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 16px; }
 .case-ownership .collaboration-label { font: 700 0.75rem/1.5 var(--font-interface); margin: 24px 0 8px; color: var(--authority); }
 .case-ownership p { max-width: 540px; margin: 8px 0; }
 .case-role { font-weight: 600; }
@@ -37,7 +37,7 @@
 .case-section-heading, .case-decision, .case-outcome, .case-print { display: grid; grid-template-columns: minmax(160px, 0.32fr) minmax(0, 1fr); gap: 48px; }
 .case-section-heading { margin-bottom: 40px; }
 .case-section-heading h2, .case-decision h2, .case-outcome h2, .case-print h2 { font: 400 var(--text-h2)/1.1 var(--font-body); letter-spacing: -0.025em; text-wrap: balance; margin: 0 0 24px; max-width: 850px; }
-.case-section-heading p:not(.section-number), .case-decision > div > p, .case-outcome > div > p { font-size: var(--text-body); line-height: 1.65; max-width: var(--measure-reading); margin: 0 0 18px; }
+.case-section-heading p:not(.section-number), .case-decision > div > p, .case-outcome > div > p { font-size: var(--text-body); line-height: 1.65; max-width: var(--measure-reading); margin: 0 0 16px; }
 .case-artifacts-lead + .case-decision { padding-top: 32px; }
 .case-comparison-notes { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; padding: 0; margin: 0; list-style: none; }
 .case-comparison-notes li { border-top: 2px solid var(--authority); padding-top: 16px; }
@@ -59,7 +59,9 @@
 .case-reading > p:not(.section-number) { color: var(--ink-soft); max-width: 740px; }
 .case-theme-archive .case-reading { background: var(--ink); color: var(--paper); }
 .case-theme-archive .case-reading .section-number, .case-theme-archive .case-reading > p:not(.section-number) { color: var(--paper); }
-.case-theme-archive .case-reading .text-link:hover { color: var(--white); }
+@media (hover: hover) and (pointer: fine) {
+  .case-theme-archive .case-reading .text-link:hover { color: var(--white); }
+}
 .case-theme-archive .case-decision h2 { font-family: var(--font-body); font-weight: 500; }
 .motion-study { padding: 0 var(--case-gutter) var(--case-space); }
 .motion-study details { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -68,7 +70,7 @@
 .motion-study figure { margin: 0 0 24px; max-width: 960px; }
 .motion-study video, .campaign-motion video { width: 100%; aspect-ratio: 16 / 9; display: block; background: var(--ink); }
 .case-outcome { background: var(--paper); }
-.case-outcome .text-link { margin-top: 10px; }
+.case-outcome .text-link { margin-top: 8px; }
 .case-print-content { width: min(100%, 560px); }
 .case-print details { margin-top: 16px; border-top: 1px solid var(--line); }
 .case-print summary { cursor: pointer; min-height: 44px; padding: 12px 0; font: 600 0.875rem/1.5 var(--font-interface); }
@@ -95,14 +97,15 @@
 .campaign-print figcaption { background: var(--paper); color: var(--ink-soft); padding-top: 16px; font: 0.8125rem/1.6 var(--font-interface); }
 .campaign-motion { max-width: 960px; margin: 0 auto 48px; }
 .campaign-motion header { margin-bottom: 24px; }
-.campaign-motion h3 { font: 500 clamp(1.8rem, 3vw, 2.75rem)/1.15 var(--font-body); margin: 16px 0 0; }
+.campaign-motion h3, .campaign-film h3, .campaign-letter h3 { font: 500 clamp(1.5rem, 2.65vw, 2.5rem)/1.15 var(--font-body); }
+.campaign-motion h3 { margin: 16px 0 0; }
 .campaign-motion figure { margin: 0; }
 .campaign-treatments { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .campaign-treatments > summary { font: 500 1rem/1.5 var(--font-interface); min-height: 44px; padding: 24px 0; cursor: pointer; }
 .campaign-treatments[open] { padding-bottom: 32px; }
 .campaign-film { padding: 40px 0; border-top: 1px solid var(--line); }
 .campaign-film header { max-width: 780px; }
-.campaign-film h3 { font: 500 clamp(2rem, 3.5vw, 3.5rem)/1.15 var(--font-body); margin: 24px 0; }
+.campaign-film h3 { margin: 24px 0; }
 .campaign-film-beats { list-style: none; padding: 0; margin: 32px 0 24px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
 .campaign-film-beats li { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 24px; border-top: 1px solid var(--line); padding-top: 20px; }
 .campaign-film-beats li > span { font: 500 0.8rem/1.5 var(--font-metadata); color: var(--ink-soft); }
@@ -118,15 +121,14 @@
 .campaign-social p { margin: auto 0 0; line-height: 1.5; max-width: 260px; }
 .campaign-letter { display: grid; grid-template-columns: 0.6fr 1fr; gap: 48px; padding: 48px 0 0; }
 .campaign-subject { font: 600 0.9rem/1.5 var(--font-interface); max-width: 300px; }
-.campaign-letter h3 { font: 500 clamp(1.8rem, 3vw, 3rem)/1.15 var(--font-body); margin: 0 0 24px; }
+.campaign-letter h3 { margin: 0 0 24px; }
 .campaign-letter > div > p:not(.campaign-cta) { max-width: 620px; }
 
 @media (max-width: 760px) {
-  .case-study { --case-gutter: 18px; --case-space: 48px; }
   .case-hero h1 { font-size: clamp(2.25rem, 9.5vw, 3.8rem); line-height: 1.05; }
   .case-summary { font-size: 1.125rem; }
   .case-ownership { grid-template-columns: 1fr; gap: 24px; }
-  .case-section-heading, .case-decision, .case-outcome, .case-print { grid-template-columns: 1fr; gap: 18px; }
+  .case-section-heading, .case-decision, .case-outcome, .case-print { grid-template-columns: 1fr; gap: 20px; }
   .case-detail { grid-column: 1; }
   .case-comparison-notes { grid-template-columns: 1fr; gap: 24px; margin-top: 16px; }
   .case-section-heading h2, .case-decision h2, .case-outcome h2, .case-print h2 { font-size: clamp(1.9rem, 7.5vw, 3rem); }

@@ -67,6 +67,10 @@ Start with these version-controlled records:
 - [CLAUDE.md](CLAUDE.md): Claude Code's entry point, importing those rules.
 - [.codex/SYNC-STATUS.md](.codex/SYNC-STATUS.md): current task, branch, inspected
   commit, changes, validation, blockers, and next action.
+- [PRODUCT.md](PRODUCT.md): confirmed audiences, success measures, evidence on
+  hand, and product principles, used by the Impeccable design skill.
+- [DESIGN.md](DESIGN.md): the implemented Prairie Airframe tokens, components,
+  and guardrails, with `.impeccable/design.json` as its machine sidecar.
 - [Design direction](docs/design-direction.md): the portfolio's Prairie Airframe
   identity and documented decisions.
 - [Launch checklist](docs/launch-checklist.md): content clearance and release gates.

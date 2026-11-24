@@ -1,0 +1,83 @@
+{
+  "buildPath": "code",
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "netlify-dist/index.html",
+          "netlify-dist/sandpaper/index.html",
+          "netlify-dist/work/preston-session-site/index.html",
+          "netlify-dist/work/texas-aviation-partners/index.html",
+          "netlify-dist/work/wild-feathers/index.html",
+          "netlify-dist/work/wimberly-guitars/index.html"
+        ],
+        "createdAt": "2026-11-24T06:14:00.656Z",
+        "reason": "Agent: Chromium verifies the flagged text insets at 320, 390 and 1440px. The homepage photograph and Wimberly native video intentionally reach their media frames."
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "netlify-dist/404.html",
+          "netlify-dist/index.html",
+          "netlify-dist/sandpaper/index.html",
+          "netlify-dist/work/preston-session-site/index.html",
+          "netlify-dist/work/texas-aviation-partners/index.html",
+          "netlify-dist/work/wild-feathers/index.html",
+          "netlify-dist/work/wimberly-guitars/index.html"
+        ],
+        "createdAt": "2026-11-24T06:14:00.755Z",
+        "reason": "Preston: requested keeping Prairie Airframe. The approved named background is Prairie Bone (#e8e1d4), recorded in DESIGN.md and docs/design-direction.md."
+      },
+      {
+        "rule": "hero-eyebrow-chip",
+        "value": "*",
+        "files": [
+          "netlify-dist/404.html"
+        ],
+        "createdAt": "2026-11-24T06:14:00.834Z",
+        "reason": "Agent: the literal 404 status identifies the error and is part of the branded 404 export test."
+      },
+      {
+        "rule": "italic-serif-display",
+        "value": "*",
+        "files": [
+          "netlify-dist/index.html"
+        ],
+        "createdAt": "2026-11-24T06:14:00.848Z",
+        "reason": "Preston: approved retaining the opening headline pairing. Archivo leads and Newsreader italic accents the second line, as documented in DESIGN.md."
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "netlify-dist/work/wimberly-guitars/index.html"
+        ],
+        "createdAt": "2026-11-24T06:14:00.867Z",
+        "reason": "Agent: rendered editorial H2 and H3 sizes are 30.4 and 24px on phones, and 54.88 and 38.16px at 1440px. The static guess groups artifact display, labels and editorial headings."
+      },
+      {
+        "rule": "tight-leading",
+        "value": "*",
+        "files": [
+          "netlify-dist/work/wimberly-guitars/index.html"
+        ],
+        "createdAt": "2026-11-24T06:14:00.883Z",
+        "reason": "Agent: no rendered paragraph, caption or heading matches the reported 1.22 ratio at 320, 390 or 1440px. The compact print headline belongs to a displayed artifact."
+      },
+      {
+        "rule": "kicker-above-heading",
+        "value": "*",
+        "files": [
+          "netlify-dist/sandpaper/index.html"
+        ],
+        "createdAt": "2026-11-24T06:16:15.961Z",
+        "reason": "Preston confirmed that “Inside the manuscript” should remain as the SANDPAPER section label."
+      }
+    ]
+  }
+}
