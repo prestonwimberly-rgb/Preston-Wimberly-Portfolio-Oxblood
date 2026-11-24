@@ -1,5 +1,34 @@
 # Shared Codex and Claude handoff
 
+## November 24, 2026 opening index and case-study evidence
+
+- `prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood`, canonical site
+  `https://work.prestonwimberly.com`. Local branch
+  `codex/portfolio-evidence-and-tablet-hero` starts at
+  `07aa722b8ea46ea3c2c997cff5a8c8161e2d335d`. Preston approved the three portfolio
+  refinements and their release to `main`.
+- At 1050px and below, opening-index facts sit beneath their project names.
+  The tall split hero requests the largest approved tractor candidate,
+  1280 pixels wide. The stacked hero uses viewport-based image selection.
+- The guitar gallery heading reads “Earlier website captures.” The original
+  TAP city report URL and October 2 date appear beside Before / After, with
+  responsive wrapping and a 44px minimum link target.
+- Changed `app/globals.css`, `app/page.tsx`, `app/case-studies.css`,
+  `components/project-case.tsx`, `data/projects.ts`, `DESIGN.md`,
+  `.impeccable/design.json`, `docs/design-direction.md`, and this handoff.
+- `npm run quality` passed on fnm Node 24.22.3 with 24 tests and zero audit
+  findings. TypeScript and `git diff --check` passed. The build reported the
+  existing Vite configuration and sourcemap warnings.
+- Local browser checks covered hero layout and source selection from 320 to
+  1440px, both breakpoint edges, 2× phone image selection, the TAP citation’s
+  location, focus and wrapping, and the guitar gallery’s heading and captions.
+  Chromium checked all six public pages and the 404 file. Chromium and WebKit
+  checks covered the touched views and verified the recent motion feedback.
+- Editorial QA scores out of five were authenticity 5, hierarchy 4, material
+  character 5, evidence 4, restraint 5, usability 4, performance 4, accessibility 4.
+- The release pull request records the merge, synchronized local preview, and
+  production verification.
+
 ## November 24, 2026 tap feedback and navigation
 
 - `prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood`, canonical site

@@ -114,7 +114,7 @@ export default function Home() {
                 src="/images/tap-tractor.jpg"
                 alt="A tractor crossing a runway beneath large Texas clouds"
                 priority
-                sizes="(max-width: 900px) 100vw, 43vw"
+                sizes="(max-width: 760px) 100vw, 1280px"
                 style={{ objectPosition: "20% center" }}
               />
             </div>

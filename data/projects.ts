@@ -18,8 +18,8 @@ export type Project = {
   liveUrl?: string; liveLabel?: string;
   decisionTitle: string; decision: string[]; artifactTitle: string; artifactIntro: string;
   outcomeTitle: string; outcome: string[]; artifacts: ProjectArtifact[];
-  outcomeSource?: { href: string; label: string };
   leadArtifacts?: ProjectArtifact[];
+  leadArtifactSource?: { href: string; label: string };
   detailArtifact?: ProjectArtifact;
   printAd?: { title: string; artifact: ProjectArtifact; transcript: string[]; programPhotos: ProjectArtifact[] };
   comparisonNotes?: { title: string; detail: string }[];
@@ -77,6 +77,10 @@ const projectRecords: Project[] = [
     ],
     "artifactTitle": "Before / After",
     "artifactIntro": "The earlier homepage, captured in August 2026, appears beside the live September 2026 site.",
+    "leadArtifactSource": {
+      "href": "https://storymaps.arcgis.com/stories/61b3e40ae8e04c339a7e1d7a9e3ed35d#ref-n-97qaa8",
+      "label": "City of San Marcos feature · October 2, 2026"
+    },
     "detailArtifact": {
       "src": "/images/tap-site-live-2026-09.jpg",
       "alt": "Detail of TAP’s opening message, showing operate, develop, advise and the path to its operating record",
@@ -92,14 +96,9 @@ const projectRecords: Project[] = [
     ],
     "outcomeTitle": "Airport partners can find the right service, check the record, and contact TAP.",
     "outcome": [
-      "The City of San Marcos featured the redesigned website in its City Manager’s Weekly Report on October 2, 2026.",
       "The launched site gives municipalities and airport owners a path from three defined services to airport-specific experience and a project conversation. The capabilities page sets out all three services, the operating record provides context for the work, and contact is available from the main navigation.",
       "Leadership profiles and Field Notes give TAP a place to explain its approach and publish ongoing airport work. Original field photography makes the operations behind the service descriptions visible."
     ],
-    "outcomeSource": {
-      "href": "https://storymaps.arcgis.com/stories/61b3e40ae8e04c339a7e1d7a9e3ed35d#ref-n-97qaa8",
-      "label": "Read the city’s report"
-    },
     "leadArtifacts": [
       {
         "src": "/images/tap-site-before.jpg",
@@ -275,7 +274,7 @@ const projectRecords: Project[] = [
       "For players considering a small workshop, the materials and the maker need to justify the choice. I built the brand around walnut, hand-tooled leather, and metal that changes with use.",
       "The buying question behind the presentation is why a player would consider this workshop. Detailed photography and plain descriptions let players examine the materials before they inquire."
     ],
-    "artifactTitle": "The launched website",
+    "artifactTitle": "Earlier website captures",
     "artifactIntro": "The website brings the models, materials, build journal, and waitlist into one place.",
     "outcomeTitle": "Players can join The Jack’s build waitlist or register interest in The Heirloom.",
     "outcome": [],
