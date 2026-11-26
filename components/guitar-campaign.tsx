@@ -13,7 +13,7 @@ export function GuitarCampaign({ motionStudy }: { motionStudy?: Project["motionS
       </header>
       <figure className="campaign-print">
         <header className="campaign-print-heading"><p className="campaign-brand">Wimberly Custom Guitars</p><h3>The first mark<br />is yours.</h3></header>
-        <div className="campaign-print-image"><ResponsiveImage src="/images/wimberly-jack-antique-bronze-knobs.jpeg" alt="Walnut guitar body, tooled leather pickguard, and bronze control knobs" sizes="(max-width: 760px) 100vw, 75vw" objectFit="contain" /></div>
+        <div className="campaign-print-image"><ResponsiveImage src="/images/wimberly-jack-antique-bronze-knobs.jpeg" alt="The Jack’s walnut body, leather pickguard with a tooled floral pattern, and two antique bronze knobs." sizes="(max-width: 760px) 100vw, 75vw" objectFit="contain" /></div>
         <div className="campaign-print-copy"><p className="campaign-print-premise">We choose the walnut.<br />Work the leather.<br />Shape the instrument.</p><div><p>Meet the Jack: walnut, hand-tooled leather, and antique bronze hardware. The grain and tooling are already there. The marks from the years you play it will be yours.</p><span className="campaign-cta">Explore the Jack’s materials. Join the waitlist.</span></div></div>
         <figcaption>01 / Print advertisement concept · Existing product photograph; no wear added</figcaption>
       </figure>

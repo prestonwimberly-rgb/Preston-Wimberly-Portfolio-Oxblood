@@ -171,9 +171,9 @@ test("exports the selected project photography", async () => {
     "utf8",
   );
   assert.match(html, /\/images\/wimberly-jack-antique-bronze-knobs\.jpeg/);
-  assert.match(html, /hand-tooled leather pickguard and antique bronze knobs/);
+  assert.match(html, /alt="The Jack’s walnut body, leather pickguard with a tooled floral pattern, and two antique bronze knobs\."/);
   assert.match(html, /\/images\/wild-feathers-laugh.jpg/);
-  assert.match(html, /The five members of The Wild Feathers seated together outside, laughing/);
+  assert.match(html, /alt="Black-and-white portrait of the five members of The Wild Feathers seated together by a stone wall\."/);
 });
 
 test("exports a branded, non-indexable 404 page", async () => {
