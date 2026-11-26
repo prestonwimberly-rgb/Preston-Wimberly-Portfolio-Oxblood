@@ -67,6 +67,8 @@ turning the portfolio into an aviation theme.
   clearly; never invent participants, instrument wear, recorded answers, or results.
 - At phone widths, retain Work, Résumé, and Contact in the header and give the
   tractor photograph a short landscape frame that keeps the vehicle intact.
+- Lead with the matching phone captures in the guitar and session case studies
+  at widths up to 760px. Put a full-size desktop capture link in each caption.
 
 ## Art-direction refinement · September 13, 2026
 

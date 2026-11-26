@@ -19,6 +19,7 @@ export type Project = {
   decisionTitle: string; decision: string[]; artifactTitle: string; artifactIntro: string;
   outcomeTitle: string; outcome: string[]; artifacts: ProjectArtifact[];
   leadArtifacts?: ProjectArtifact[];
+  mobileLeadArtifact?: string;
   leadArtifactSource?: { href: string; label: string };
   detailArtifact?: ProjectArtifact;
   printAd?: { title: string; artifact: ProjectArtifact; transcript: string[]; programPhotos: ProjectArtifact[] };
@@ -276,6 +277,7 @@ const projectRecords: Project[] = [
       "The buying question behind the presentation is why a player would consider this workshop. Detailed photography and plain descriptions let players examine the materials before they inquire."
     ],
     "artifactTitle": "Earlier website captures",
+    "mobileLeadArtifact": "/images/wimberly-mobile.jpg",
     "artifactIntro": "The website brings the models, materials, build journal, and waitlist into one place.",
     "outcomeTitle": "Players can join The Jack’s build waitlist or register interest in The Heirloom.",
     "outcome": [],
@@ -333,6 +335,7 @@ const projectRecords: Project[] = [
       "The listening examples and service copy give a prospective collaborator enough context to start a conversation. The career history supports that decision farther down the page."
     ],
     "artifactTitle": "One page, from listening to inquiry.",
+    "mobileLeadArtifact": "/images/preston-session-mobile.jpg",
     "artifactIntro": "The core offer leads on desktop and mobile. Audio, services, process, and direct contact follow in that order.",
     "outcomeTitle": "Producers can hear the work and start a project on one page.",
     "outcome": [],

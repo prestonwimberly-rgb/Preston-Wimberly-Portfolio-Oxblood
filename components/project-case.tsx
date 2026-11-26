@@ -22,7 +22,21 @@ function ArtifactImage({ artifact, priority = false, sizes }: { artifact: Projec
   );
 }
 
-function CaseArtifacts({ project, leading = false }: { project: Project; leading?: boolean }) {
+const phoneCaptureSizes = "(max-width: 760px) min(390px, calc(100vw - 32px)), 24vw";
+
+function CaptureCaption({ artifact, desktopCapture }: { artifact: ProjectArtifact; desktopCapture?: string }) {
+  return <figcaption>
+    {artifact.caption}{artifact.credit ? <span>{artifact.credit}</span> : null}
+    {desktopCapture ? <a className="text-link case-full-capture-link" href={desktopCapture}>View full-size desktop capture</a> : null}
+  </figcaption>;
+}
+
+function CaseArtifacts({ project, leading = false, mobileCapture, desktopCapture }: {
+  project: Project;
+  leading?: boolean;
+  mobileCapture?: ProjectArtifact;
+  desktopCapture?: string;
+}) {
   const artifacts = leading ? project.leadArtifacts ?? project.artifacts : project.artifacts;
   const showHeading = leading || !project.leadArtifacts?.length;
   return (
@@ -40,12 +54,15 @@ function CaseArtifacts({ project, leading = false }: { project: Project; leading
         </header>
       ) : <header className="case-section-heading"><p className="section-number">The work</p><div><h2 id="case-artifacts-title">{project.artifactTitle}</h2><p>{project.artifactIntro}</p></div></header> : null}
       <div className="artifact-grid">
-        {artifacts.filter(a => a.src !== project.image).map(artifact => (
-          <figure className={`artifact artifact-${artifact.format}`} key={artifact.src}>
-            <ArtifactImage artifact={artifact} priority={leading} />
-            <figcaption>{artifact.caption}{artifact.credit ? <span>{artifact.credit}</span> : null}</figcaption>
-          </figure>
-        ))}
+        {artifacts.filter(a => a.src !== project.image).map(artifact => {
+          const isPhoneCapture = artifact === mobileCapture;
+          const wideOnly = leading ? artifact.src === desktopCapture : isPhoneCapture;
+          const leadOnPhone = leading && isPhoneCapture;
+          return <figure className={`artifact artifact-${artifact.format}${wideOnly ? " case-wide-only" : ""}${leadOnPhone ? " case-phone-evidence" : ""}`} key={artifact.src}>
+            <ArtifactImage artifact={artifact} priority={leading && !wideOnly} sizes={leadOnPhone ? phoneCaptureSizes : undefined} />
+            <CaptureCaption artifact={artifact} desktopCapture={leadOnPhone ? desktopCapture : undefined} />
+          </figure>;
+        })}
       </div>
     </section>
   );
@@ -72,14 +89,22 @@ function CaseDecision({ project }: { project: Project }) {
 export function ProjectCase({ project, nextProject }: { project: Project; nextProject: { href: string; title: string } }) {
   const hasLeadArtifacts = Boolean(project.leadArtifacts?.length);
   const isWorkshop = project.slug === "wimberly-guitars";
+  const mobileCapture = project.artifacts.find(artifact => artifact.src === project.mobileLeadArtifact);
+  const desktopCapture = mobileCapture ? project.artifacts.find(artifact => artifact.format === "landscape")?.src : undefined;
   const image = isWorkshop ? null : (
-    <figure className="case-image">
-      <div className="case-image-frame" style={{ aspectRatio: project.imageAspect ?? (project.imageFit === "cover" ? "16 / 9" : "8 / 5") }}>
-        <ResponsiveImage src={project.image} alt={project.imageAlt} priority={!hasLeadArtifacts} sizes="100vw"
-          style={{ objectPosition: project.imagePosition ?? "center" }} objectFit={project.imageFit ?? "contain"} />
-      </div>
-      <figcaption>{project.imageCaption}{project.imageCredit ? <span>{project.imageCredit}</span> : null}</figcaption>
-    </figure>
+    <>
+      <figure className={`case-image${mobileCapture ? " case-wide-only" : ""}`}>
+        <div className="case-image-frame" style={{ aspectRatio: project.imageAspect ?? (project.imageFit === "cover" ? "16 / 9" : "8 / 5") }}>
+          <ResponsiveImage src={project.image} alt={project.imageAlt} priority={!hasLeadArtifacts && !mobileCapture} sizes="100vw"
+            style={{ objectPosition: project.imagePosition ?? "center" }} objectFit={project.imageFit ?? "contain"} />
+        </div>
+        <figcaption>{project.imageCaption}{project.imageCredit ? <span>{project.imageCredit}</span> : null}</figcaption>
+      </figure>
+      {mobileCapture ? <figure className="artifact artifact-portrait case-phone-evidence case-mobile-capture">
+        <ArtifactImage artifact={mobileCapture} sizes={phoneCaptureSizes} />
+        <CaptureCaption artifact={mobileCapture} desktopCapture={desktopCapture} />
+      </figure> : null}
+    </>
   );
   return (
     <main className={`case-study case-theme-${project.theme}`} id="case-content">
@@ -96,7 +121,7 @@ export function ProjectCase({ project, nextProject }: { project: Project; nextPr
         ) : null}
       </header>
 
-      {hasLeadArtifacts || isWorkshop ? <CaseArtifacts project={project} leading /> : image}
+      {hasLeadArtifacts || isWorkshop ? <CaseArtifacts project={project} leading mobileCapture={mobileCapture} desktopCapture={desktopCapture} /> : image}
       {hasLeadArtifacts ? <CaseDecision project={project} /> : null}
 
       <section className="case-ownership" aria-label="Role and collaboration">
@@ -128,7 +153,7 @@ export function ProjectCase({ project, nextProject }: { project: Project; nextPr
         </aside>
       ) : null}
 
-      {!isWorkshop ? <CaseArtifacts project={project} /> : null}
+      {!isWorkshop ? <CaseArtifacts project={project} mobileCapture={mobileCapture} /> : null}
 
       {!hasLeadArtifacts ? <CaseDecision project={project} /> : null}
 

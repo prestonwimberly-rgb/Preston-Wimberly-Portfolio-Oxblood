@@ -52,6 +52,7 @@
 .artifact-portrait { grid-column: span 4; width: min(100%, 300px); justify-self: center; }
 .case-theme-workshop .artifact-landscape { grid-column: span 8; }
 .case-theme-studio .artifact-portrait { grid-column: 5 / span 4; }
+.case-mobile-capture, .text-link.case-full-capture-link { display: none; }
 .artifact-image { display: block; position: relative; overflow: hidden; background: var(--paper-deep); margin-bottom: 16px; }
 .case-detail { grid-column: 2; margin: 8px 0 0; max-width: 800px; }
 .case-detail figcaption { font: 0.8125rem/1.55 var(--font-interface); }
@@ -138,6 +139,10 @@
   .artifact-grid { grid-template-columns: 1fr; gap: 36px; }
   .artifact-landscape, .artifact-portrait, .case-theme-workshop .artifact-landscape, .case-theme-studio .artifact-portrait { grid-column: 1; }
   .artifact-portrait { width: min(74vw, 300px); }
+  .case-wide-only { display: none; }
+  .case-phone-evidence { width: min(100%, 390px); }
+  .case-mobile-capture { display: block; width: min(390px, calc(100% - 2 * var(--case-gutter))); margin-inline: auto; }
+  .text-link.case-full-capture-link { display: inline-flex; margin-top: 8px; }
   .next-project > a:not(.all-work) { font-size: clamp(1.8rem, 7.5vw, 3rem); }
   .campaign-social { grid-template-columns: 1fr; gap: 12px; }
   .campaign-print-copy { grid-template-columns: 1fr; gap: 24px; }
