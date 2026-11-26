@@ -1,5 +1,27 @@
 # Shared Codex and Claude handoff
 
+## November 26, 2026 mobile case-study captures
+
+- Repository `prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood`, public
+  site `https://work.prestonwimberly.com`. Release branch
+  `codex/portfolio-mobile-case-captures` starts at
+  `9facd6754b99e6cfa26e9071107e0f0f26870678`, matching fetched
+  `origin/main`. Preston authorized the fixes and release to `main`.
+- The Wimberly Guitars and session case studies lead with their existing
+  390px homepage captures at widths up to 760px. Each phone caption links
+  to the original desktop capture at full size. The desktop views retain
+  both historical images in their original sequence. The edits are in
+  `data/projects.ts`, `components/project-case.tsx`,
+  `app/case-studies.css`, and `docs/design-direction.md`.
+- `node .codex/workflow.mjs check` passed with 24 tests and zero dependency
+  audit vulnerabilities. Chromium on the [local preview](http://127.0.0.1:4172/)
+  verified first image selection and zero horizontal overflow at 1440, 390,
+  375, and 320px. At phone widths, each case showed one phone capture and a
+  keyboard-focusable full-size link with a 44px minimum target. Both original
+  images returned HTTP 200.
+- The release pull request records the merge, synchronized local preview,
+  and production verification.
+
 ## November 26, 2026 portfolio photo alt text
 
 - Repository `prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood`, public
