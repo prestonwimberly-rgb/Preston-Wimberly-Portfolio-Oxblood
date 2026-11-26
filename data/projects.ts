@@ -12,7 +12,7 @@ export type Project = {
   homepageImageAspect?: string;
   homepageImageCrop?: { width: number; height: number };
   homepageProof?: string;
-  role: string; scope: string; year: string; place: string; engagementType: string;
+  role: string; caseRole?: string; scope: string; year: string; place: string; engagementType: string;
   status: string; ownership: string; collaboration: string;
   collaborationExample?: { request: string; response: string; href: string; label: string };
   liveUrl?: string; liveLabel?: string;
@@ -55,13 +55,14 @@ const projectRecords: Project[] = [
     "homepageImageCrop": { "width": 1410, "height": 880 },
     "homepageProof": "The City of San Marcos highlighted the redesigned website in its City Manager’s Weekly Report on October 2, 2026.",
     "role": "Creative Director / Brand Strategy",
+    "caseRole": "Led the website redesign and launch",
     "scope": "Positioning, message architecture, writing, photography direction",
     "year": "2026",
     "place": "San Marcos, Texas",
     "engagementType": "Client engagement",
     "status": "Live",
-    "ownership": "I had full creative control of the redesign: positioning, information architecture, copy, photography, visual design, and implementation.",
-    "collaboration": "I developed the work independently, with company leadership reviewing and approving the public direction. Their feedback shaped the editorial work below.",
+    "ownership": "I wrote the service pages and leadership profile, organized the navigation, and led the launch review. Company leadership reviewed and approved the work.",
+    "collaboration": "I developed the work independently. Leadership’s feedback shaped the editorial work below.",
     "collaborationExample": {
       "request": "Leadership wanted more of Jim Wimberly’s Southwest Airlines experience in the 1980s and 1990s, and his understanding of what makes an aviation culture work.",
       "response": "I wrote a dedicated profile connecting his airport and airline experience to TAP’s approach to people and operations. The published piece gives that leadership request a specific place in the site.",
