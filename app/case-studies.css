@@ -13,6 +13,7 @@
 }
 .case-summary { font-size: clamp(1.18rem, 1.65vw, 1.5rem); line-height: 1.5; max-width: 840px; margin: 0 0 24px; }
 .case-role-line { font: 500 0.875rem/1.5 var(--font-interface); margin: 0 0 12px; }
+.case-role-summary { max-width: var(--measure-reading); margin: 0 0 16px; }
 .case-status { display: flex; flex-wrap: wrap; gap: 8px 24px; font: 600 0.78rem/1.6 var(--font-interface); }
 .case-status strong { color: var(--signal); }
 .case-live-link { margin-top: 16px; }

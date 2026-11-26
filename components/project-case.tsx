@@ -88,7 +88,8 @@ export function ProjectCase({ project, nextProject }: { project: Project; nextPr
         <p className="case-project-title">{project.title}</p>
         <h1>{project.headline}</h1>
         <p className="case-summary">{project.summary}</p>
-        <p className="case-role-line">{project.role}</p>
+        <p className="case-role-line">{project.caseRole ?? project.role}</p>
+        {project.caseRole ? <p className="case-role-summary">{project.ownership}</p> : null}
         <div className="case-status"><span>{project.engagementType}</span><strong>{project.status}</strong></div>
         {project.liveUrl && project.slug !== "preston-session-site" ? (
           <a className="text-link case-live-link" href={project.liveUrl} target="_blank" rel="noreferrer">{project.liveLabel} <span aria-hidden="true">↗</span></a>
@@ -99,7 +100,11 @@ export function ProjectCase({ project, nextProject }: { project: Project; nextPr
       {hasLeadArtifacts ? <CaseDecision project={project} /> : null}
 
       <section className="case-ownership" aria-label="Role and collaboration">
-        <div><h2>My role</h2><p className="case-role">{project.role}</p><p>{project.ownership}</p></div>
+        <div><h2>My role</h2>
+          {project.caseRole ? <p>{project.scope}</p> : <>
+            <p className="case-role">{project.role}</p><p>{project.ownership}</p>
+          </>}
+        </div>
         <div><h2>Working together</h2><p>{project.collaboration}</p>
           {project.collaborationExample ? <>
             <h3 className="collaboration-label">The request</h3>
