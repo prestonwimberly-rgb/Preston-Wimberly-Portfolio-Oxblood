@@ -2,15 +2,15 @@
 
 ## November 25, 2026 TAP case-study role
 
-- Repository \`prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood\`, public
-  site \`https://work.prestonwimberly.com\`. Release branch
-  \`codex/tap-case-study-copy\` starts at \`00592c5\`, matching GitHub \`main\`
+- Repository `prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood`, public
+  site `https://work.prestonwimberly.com`. Release branch
+  `codex/tap-case-study-copy` starts at `00592c5`, matching GitHub `main`
   at the release check. Preston authorized publishing this update.
 - The TAP case leads with “Led the website redesign and launch” and describes
   the service pages, leadership profile, navigation and launch review. The
-  case-specific role is set in \`data/projects.ts\` and displayed by
-  \`components/project-case.tsx\` with spacing in \`app/case-studies.css\`.
-- \`node .codex/workflow.mjs check\` passed with 24 tests and zero audit
+  case-specific role is set in `data/projects.ts` and displayed by
+  `components/project-case.tsx` with spacing in `app/case-studies.css`.
+- `node .codex/workflow.mjs check` passed with 24 tests and zero audit
   vulnerabilities. Desktop at 1440px and mobile at 390px and 320px showed
   the approved copy, working images and the Airshow ad anchor.
 - The release pull request records the merge, local preview rebuild and
