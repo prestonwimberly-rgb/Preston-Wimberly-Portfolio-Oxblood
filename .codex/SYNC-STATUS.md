@@ -1,5 +1,24 @@
 # Shared Codex and Claude handoff
 
+## November 26, 2026 portfolio photo alt text
+
+- Repository `prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood`, public
+  site `https://work.prestonwimberly.com`. Local branch
+  `codex/portfolio-photo-alt-text` starts at
+  `3eb56a0b19fc553473de30778d6b4ca46ae69378`. Preston approved the suggested
+  wording from the November 25 review CSV and authorized its release to `main`.
+- Applied the approved wording to six photographs across nine placements in
+  `app/page.tsx`, `data/projects.ts`, and `components/guitar-campaign.tsx`.
+  Updated the two existing homepage alt assertions in
+  `tests/netlify-export.test.mjs`.
+- `node .codex/workflow.mjs check` passed on Node 24.22.3 with 24 tests and
+  zero npm audit findings. The build reported its existing Vite configuration
+  and sourcemap warnings. All nine exported alt attributes matched the CSV
+  exactly. The preview confirmed the exact wording and loaded photos at 1440,
+  390, and 320px across the homepage and the three affected case studies.
+- Record the merge, synchronized [local preview](http://127.0.0.1:4172/),
+  and production verification in the release pull request.
+
 ## November 25, 2026 TAP case-study role
 
 - Repository `prestonwimberly-rgb/Preston-Wimberly-Portfolio-Oxblood`, public

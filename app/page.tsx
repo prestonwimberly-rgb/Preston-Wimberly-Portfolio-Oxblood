@@ -112,7 +112,7 @@ export default function Home() {
             <div className="hero-image">
               <ResponsiveImage
                 src="/images/tap-tractor.jpg"
-                alt="A tractor crossing a runway beneath large Texas clouds"
+                alt="A green tractor tows runway-maintenance equipment across a runway beneath large clouds."
                 priority
                 sizes="(max-width: 760px) 100vw, 1280px"
                 style={{ objectPosition: "20% center" }}
@@ -298,7 +298,7 @@ export default function Home() {
             <div className="about-image">
               <ResponsiveImage
                 src="/images/preston-stage.jpeg"
-                alt="Preston Wimberly playing electric guitar onstage"
+                alt="Preston Wimberly, wearing a wide-brimmed hat, plays an electric guitar under amber stage lights."
                 sizes="(max-width: 760px) 100vw, 46vw"
                 style={{ objectPosition: "62% center" }}
               />
